@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HelpType>
+  
+  <Description >
+    <ID value="Assign,Change or Confirm Seat"></ID>
+  </Description>
+  <Description >
+    <ID value="Request a Receipt"></ID>
+  </Description>
+  <Description >
+    <ID value="Resent Email Confirmation"></ID>
+  </Description>
+  <Description>
+    <ID value="Add Frequent Flyer Number"></ID>
+  </Description>
+    <Description>
+    <ID value="Other"></ID>
+  </Description>
+  
+  <Info >
+    <ID value="What are your Fare Rules"></ID>
+  </Info>
+  <Info >
+    <ID value="My new code"></ID>
+  </Info>
+  <Info >
+    <ID value="Visa or Passport Requirements"></ID>
+  </Info>
+  <Info >
+    <ID value="Inflight Services"></ID>
+  </Info>
+  <Info>
+    <ID value="Question on Airport/Lounges"></ID>
+  </Info>
+  <Info >
+    <ID value="Other"></ID>
+  </Info>
+
+  <WebIssue >
+    <ID value="Adding Seats Online"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Adding Meals"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Changing Itinerary"></ID>
+  </WebIssue>
+  <WebIssue>
+    <ID value="Availability of fares"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Pricelock"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Check-In"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Other"></ID>
+  </WebIssue>
+</HelpType>
+

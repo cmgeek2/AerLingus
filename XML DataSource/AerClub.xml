@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ClubMembership>
+ 
+  <Type value="Selected" Name="Please Select a Tier"></Type>
+  <Type Value="Concierge" Name="Concierge"></Type>
+  <Type Value="Platinum" Name="Platinum"></Type>
+  <Type Value="Silver" Name="Silver"></Type>
+  <Type Value="Green" Name="Green"></Type>
+
+  
+
+</ClubMembership>
+  

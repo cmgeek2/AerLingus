@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RepRelation>
+
+  <Relation value="Selected" Name="Please Select a Tier"></Relation>
+  <Relation Value="Travel Agent" Name="Travel Agent"></Relation>
+  <Relation Value="Consumer Group" Name="Consumer Group"></Relation>
+  <Relation Value="Family" Name="Family"></Relation>
+  <Relation Value="Friend Assistant/Colleague" Name="Friend Assistant/Colleague"></Relation>
+
+
+</RepRelation>

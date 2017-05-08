@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RefundInfo>
+
+  <Reason value="Selected" Name="Please Select a Tier"></Reason>
+  <Reason Value="Flight Related" Name="Flight Related"> </Reason>
+  <Reason Value="Fee Related" Name="Fee Related">    </Reason>
+  <Reason Value="Compensation Related" Name="Compensation Related"></Reason>
+  <FlightRelated Value="Selected" Name="Please choose"></FlightRelated>
+  <FlightRelated Value="Bereavement" Name="Bereavement"></FlightRelated>
+  <FlightRelated Value="Cancelled Flight" Name="Cancelled Flight"></FlightRelated>
+  <FlightRelated Value="Delayed Flight" Name="Delayed Flight"></FlightRelated>
+  <FlightRelated Value="Disrupted Flight" Name="Disrupted Flight"></FlightRelated>
+  <FlightRelated Value="Duplicate Booking" Name="Duplicate Booking"></FlightRelated>
+  <FlightRelated Value="Flex/Business Class Booking" Name="Flex/Business Class Booking"></FlightRelated>
+  <FlightRelated Value="Schedule Change" Name="Schedule Change"></FlightRelated>
+  <FlightRelated Value="Tax Refund" Name="Tax Refund"></FlightRelated>
+  <FeeRelated Value="Selected" Name="Please choose"></FeeRelated>
+  <FeeRelated Value="Bag Fee" Name="Bag Fee"></FeeRelated>
+  <FeeRelated Value="PreOrder Meal" Name="PreOrder Meal"></FeeRelated>
+  <FeeRelated Value="Seat Fee (Choice/Exit/Premium)" Name="Seat Fee (Choice/Exit/Premium)"></FeeRelated>
+  <FeeRelated Value="Upgrade Yourself" Name="Upgrade Yourself"></FeeRelated>
+  <FeeRelated Value="Other" Name="Other"></FeeRelated>
+  <CompRelated Value="Selected" Name="Please choose"></CompRelated>
+  <CompRelated Value="Accommodation" Name="Accommodation"></CompRelated>
+  <CompRelated Value="Cancelled Flight" Name="Cancelled Flight"></CompRelated>
+  <CompRelated Value="Delayed Flight" Name="Delayed Flight"></CompRelated>
+  <CompRelated Value="Voucher" Name="Voucher"></CompRelated>
+  <SecondaryReason value="Selected" Name="Please Select a Tier"></SecondaryReason>
+  <SecondaryReason Value="Fee Related" Name="Fee Related"></SecondaryReason>
+  <SecondaryReason Value="Compensation Related" Name="Compensation Related"></SecondaryReason>
+
+
+
+</RefundInfo>
