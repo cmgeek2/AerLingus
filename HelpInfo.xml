@@ -2,22 +2,22 @@
 <HelpType>
   
   <Description>
-    <ID value="Add a dietary meal"></ID>
+    <ID value="Add a special meal"></ID>
   </Description>
   <Description>
-    <ID value="Add frequent flyer number"></ID>
+    <ID value="Add a frequent flyer number"></ID>
   </Description>  
   <Description >
-    <ID value="Assign,change or confirm seat"></ID>
+    <ID value="Assign, change or confirm a seat"></ID>
   </Description>
   <Description >
-    <ID value="Resend email confirmation"></ID>
+    <ID value="Resend confirmation email"></ID>
   </Description>
   <Description >
-    <ID value="Schedule change"></ID>
+    <ID value="Request help with a flight schedule change"></ID>
   </Description>
   <Description >
-    <ID value="Wheelchair assistance"></ID>
+    <ID value="Request wheelchair assistance"></ID>
   </Description>
 
   <Receipt >
@@ -35,19 +35,25 @@
 
   
   <Info >
-    <ID value="What's my baggage allowance"></ID>
+    <ID value="Baggage allowance"></ID>
   </Info>
   <Info >
-    <ID value="What are your fare rules"></ID>
+    <ID value="Fare rules"></ID>
   </Info>
   <Info >
-    <ID value="Inflight services"></ID>
+    <ID value="In-flight services"></ID>
   </Info>
   <Info>
-    <ID value="Question on airport/lounges"></ID>
+    <ID value="Lounges"></ID>
+  </Info>
+  <Info>
+    <ID value="Airports"></ID>
   </Info>
   <Info >
     <ID value="Visa or passport requirements"></ID>
+  </Info>
+    <Info >
+    <ID value="Other"></ID>
   </Info>
 
 
@@ -55,7 +61,7 @@
     <ID value="Adding meals"></ID>
   </WebIssue>
   <WebIssue >
-    <ID value="Adding seats online"></ID>
+    <ID value="Adding seats"></ID>
   </WebIssue>
   <WebIssue>
     <ID value="Availability of fares"></ID>
