@@ -223,11 +223,11 @@ textboxclass{
             <td>
               <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
                     <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                    <asp:ListItem Text="Mr" Value="Mr" />
-                    <asp:ListItem Text="Mrs" Value="Mrs" />
-                    <asp:ListItem Text="Ms" Value="Ms" />
-                    <asp:ListItem Text="Miss" Value="Miss" />
-                    <asp:ListItem Text="Dr" Value="Dr" />
+                    <asp:ListItem Text="Mr" Value="Mr." />
+                    <asp:ListItem Text="Mrs" Value="Mrs." />
+                    <asp:ListItem Text="Ms" Value="Ms." />
+                    <asp:ListItem Text="Miss" Value="Miss." />
+                    <asp:ListItem Text="Dr" Value="Dr." />
               </asp:DropDownList>
                
               </td>

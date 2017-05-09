@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<HelpType>
+  
+  <Description>
+    <ID value="Add a dietary meal"></ID>
+  </Description>
+  <Description>
+    <ID value="Add frequent flyer number"></ID>
+  </Description>  
+  <Description >
+    <ID value="Assign,change or confirm seat"></ID>
+  </Description>
+  <Description >
+    <ID value="Resend email confirmation"></ID>
+  </Description>
+  <Description >
+    <ID value="Schedule change"></ID>
+  </Description>
+  <Description >
+    <ID value="Wheelchair assistance"></ID>
+  </Description>
+
+  <Receipt >
+    <ID value="Information for insurance"></ID>
+  </Receipt>
+  <Receipt >
+    <ID value="Property irregularity report"></ID>
+  </Receipt>
+  <Receipt >
+    <ID value="Cancellation invoice"></ID>
+  </Receipt>
+  <Receipt >
+    <ID value="Summary invoice"></ID>
+  </Receipt>
+
+  
+  <Info >
+    <ID value="What's my baggage allowance"></ID>
+  </Info>
+  <Info >
+    <ID value="What are your fare rules"></ID>
+  </Info>
+  <Info >
+    <ID value="Inflight services"></ID>
+  </Info>
+  <Info>
+    <ID value="Question on airport/lounges"></ID>
+  </Info>
+  <Info >
+    <ID value="Visa or passport requirements"></ID>
+  </Info>
+
+
+  <WebIssue >
+    <ID value="Adding meals"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Adding seats online"></ID>
+  </WebIssue>
+  <WebIssue>
+    <ID value="Availability of fares"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Changing itinerary"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Check in"></ID>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Unable to complete booking"></ID>
+  </WebIssue>
+
+  <Other >
+    <ID value="General travel query"></ID>
+  </Other>
+  
+
+</HelpType>
+
