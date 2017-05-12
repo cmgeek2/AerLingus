@@ -200,7 +200,7 @@
                         <!-- Second Row --> 
                     </table>
                     <table>                         
-                        <!-- Third Row --> 
+                        <!-- Country and Phone Number Row --> 
                         <tr>
                             <td>
                                 <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
@@ -211,10 +211,21 @@
                   
                                 </div>
                             </td>
+                            <td>
+                                <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/XML DataSource/CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
+                                <asp:DropDownList  CssClass=" dropdown-toggle"  ID="DropDownList1" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
+                             </td>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Telephone Number</label>
+                                </div>             
+                            </td>
                          </tr>
-                        <!-- End of Third Row --> 
-                        <!-- Fourth Row --> 
-                        <tr>             
+                        <!-- End of Country and Phone Number Row --> 
+                        <!-- Fourth Row  
+                        <tr> 
+                            <!--            
                             <td>
                                 <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
                                 <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
@@ -225,11 +236,12 @@
                                     <label class="form-control-label">Telephone Number</label>
                                 </div>             
                             </td>
+                            
                         </tr>
                         <!-- End of Fourth Row --> 
                     </table>
                     <table>
-                        <!-- Fifth Row --> 
+                        <!-- Address Row --> 
                         <tr>
                             <td >
                                 <div class="input-container" >
@@ -246,8 +258,8 @@
                         </tr>
                     </table>
                     <table> 
-                        <!-- End of Fifth Row --> 
-                        <!-- Sixth Row -->
+                    <!-- End of Address Row --> 
+                     <!-- Sixth Row -->
                         <tr>
                             <td colspan="3">
                                 <div class="input-container" >
@@ -255,21 +267,12 @@
                                     <label class="form-control-label">Town/City</label>
                                 </div>
                             </td>
-                        </tr>
-                        <!-- End of Sixth Row -->
-                        <!-- Seventh Row -->
-                        <tr>
                             <td>
                                 <div class="input-container" >
                                     <input type="text" name="countryState" id="countryState" maxlength="4" style="width: 260px" title="country or state" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Country/State</label>
                                 </div>
                             </td>
-                        </tr>
-                        <!-- End of Seventh Row -->
-                        
-                        <!-- Eighth Row -->
-                        <tr>
                             <td>
                                 <div class="input-container" >
                                     <input type="text" name="zipCode" id="zipCode" maxlength="4" style="width: 260px" title="postal zip code" class="form-control inline-label" onblur="checkvalue(this)"/>
@@ -277,12 +280,12 @@
                                 </div>
                             </td>
                         </tr>
-                        <!-- End of Eighth Row -->
-                        
-                        <!-- Nineth Row --> 
+                    </table>
+                    <!-------------------------------------------------------------------------------------------------------------------- -->
+                    <table>
                          <tr>
                             <td class="auto-style1">
-                                <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
+                                <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server">
                                     <option value="Selected" selected="selected">AerClub Tier</option>
                                     <option value="Concierge" >Concierge</option>
                                     <option value="Platinum">Platinum</option>
@@ -290,9 +293,9 @@
                                     <option value="Green" >Green</option>
                                 </select>
                             </td>
-                            <td class="auto-style1">
-                                <div class="input-container" >
-                                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display: none; width: 260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
+                            <td class="auto-style1" id="ClubMembership">
+                                <div class="input-container" id="ClubMembershipDiv" style="display: none;">
+                                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width: 260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">AerClub Membership Number</label>
                                 </div>
                             </td> 
@@ -315,9 +318,7 @@
                                     <label class="form-control-label">Flight Number</label>
                                 </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
+                             <td>
                                 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
                                 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
                                 <script>
@@ -328,28 +329,26 @@
                                 <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                                  <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                             </td>
-                        </tr>
-                        <tr>
                             <td>
                                 <div class="input-container" >
                                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Booking Reference</label>
-                                </div>
-                                <br />
-                                <br />
-                                <br />
-                            </td>                            
+                                </div>                               
+                            </td>                                
+                        </tr>
+                        <tr>
+                            <td>
+                                <br/>
+                                <br/>
+                                <br/>
+                            </td>
                         </tr>
 
                         <tr>
                             <td>
-                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="DropDownList11" Height="30px"  runat="server" Width="260px"  >
-                                <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                <asp:ListItem Text="Mr" Value="Mr." />
-                                <asp:ListItem Text="Mrs" Value="Mrs." />
-                                <asp:ListItem Text="Ms" Value="Ms." />
-                                <asp:ListItem Text="Miss" Value="Miss." />
-                                <asp:ListItem Text="Dr" Value="Dr." />
+                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="ReasonsForRefund1" Height="30px"  runat="server" Width="260px"  >
+                                    <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
+                                    <asp:ListItem Text="Mr" Value="Mr." />
                                 </asp:DropDownList>
                
                             </td>
@@ -515,12 +514,9 @@
                         <tr>
                             <td>
                                 <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
-                                    <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
-                                    <asp:ListItem Text="Need Information" Value="H"></asp:ListItem>
-                                    <asp:ListItem Text="Need Help with a Booking" Value="I"></asp:ListItem>
-                                    <asp:ListItem Text="Request a Receipt" Value="R"></asp:ListItem>
-                                    <asp:ListItem Text="Website Issue" Value="W"></asp:ListItem>
-                                    <asp:ListItem Text="Other" Value="O"></asp:ListItem>
+                                    <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
+                                    <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
+                                    <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
                                 </asp:DropDownList>
                                 <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
                             </td>
@@ -625,11 +621,14 @@
          $("#_helpQueryAerClubDropDown").change(function () {
              if (this.value != "Selected") {
                  $("#_helpQueryAerClubmembershipId").attr("disabled", false);
-                 $("#_helpQueryAerClubmembershipId").show();
+                 var div1 = document.getElementById('ClubMembershipDiv');
+                 div1.style.display = "block";
                  ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), true);
              } else {
                  $("#_helpQueryAerClubmembershipId").attr("disabled", true);
-                 $("#_helpQueryAerClubmembershipId").hide();
+                 //$("#ClubMembershipDiv").hide();
+                 var div2 = document.getElementById('ClubMembershipDiv');
+                 div2.style.display = "none";
                  ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
              }
          });
@@ -726,26 +725,15 @@
                  $("#_helpQueryDefList").attr("Disabled", true);
              }
 
-             if (this.value == "H") {
-                 setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Info');
+             if (this.value == "flight") {
+                 setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FlightRelated');
+                 return;
              }
 
-             if (this.value == "I") {
-                 setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Description');
+             if (this.value == "fee") {
+                 setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FeeRelated');
+                 return;
              }
-
-             if (this.value == "R") {
-                 setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Receipt');
-             }
-
-             if (this.value == "W") {
-                 setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'WebIssue');
-             }
-
-             if (this.value == "O") {
-                 setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'Other');
-             }
-
 
          });
 
