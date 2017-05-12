@@ -367,7 +367,7 @@ textboxclass{
                             <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
                             <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
                             <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
-                            <asp:ListItem Text="Other" Value="O"></asp:ListItem>
+                            <asp:ListItem Text="Other Special Needs" Value="O"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
                     </td>

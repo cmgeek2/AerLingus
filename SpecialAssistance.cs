@@ -12,7 +12,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class NeedHelp : System.Web.UI.Page
+public partial class SpecialAssistance : System.Web.UI.Page
 {
     /// <summary>
     /// Page load Event Triggers as soon as page loads loads the list of countries from the xml
