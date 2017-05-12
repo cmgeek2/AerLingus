@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<AssistanceType>
+  
+  <Wheelchair>
+    <ID value="I cannot walk long distances (WHCR)"></ID>
+  </Wheelchair>
+  <Wheelchair>
+    <ID value="I require lift on or carry on assistance (WCHC)"></ID>
+  </Wheelchair>  
+  <Wheelchair>
+    <ID value="I need assistance on stairs or steps (WCHS)"></ID>
+  </Wheelchair>
+
+
+  <Mobility>
+    <ID value="Standard foldable wheelchair"></ID>
+  </Mobility>
+  <Mobility>
+    <ID value="Power wheelchair"></ID>
+  </Mobility>  
+  <Mobility>
+    <ID value="Scooter"></ID>
+  </Mobility>
+  <Mobility>
+    <ID value="Other"></ID>
+  </Mobility>
+
+
+  <Cognitive>
+    <ID value="Connection assistance required"></ID>
+  </Cognitive>
+
+
+  <Oxygen>
+    <ID value="Portable oxygen concentrator"></ID>
+  </Oxygen>
+  <Oxygen>
+    <ID value="Airline supplied oxygen"></ID>
+  </Oxygen>
+
+
+  <Medical>
+    <ID value="CPAP"></ID>
+  </Medical>
+  <Medical>
+    <ID value="Respirator"></ID>
+  </Medical>  
+  <Medical>
+    <ID value="Ventilator"></ID>
+  </Medical>  
+  <Medical>
+    <ID value="Other"></ID>
+  </Medical> 
+
+  <Animal>
+    <ID value="Service animal"></ID>
+  </Animal>  
+  <Animal>
+    <ID value="Emotional support animal"></ID>
+  </Animal> 
+
+
+
+
+
+
+  <Other>
+    <ID value="Autism"></ID>
+  </Other>
+  <Other>
+    <ID value="Hearing impaired"></ID>
+  </Other>
+  <Other>
+    <ID value="Vision impaired"></ID>
+  </Other>
+  <Other>
+    <ID value="Other special needs"></ID>
+  </Other>
+  
+
+</AssistanceType>
+
