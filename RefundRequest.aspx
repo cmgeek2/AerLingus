@@ -68,6 +68,20 @@
             header2.innerText = "Representative Information"
         }
 
+        function countrySelected()
+        {
+            var country = $('#_helpQueryCountryList').find(":selected").text();
+            if (country == "United States of America")
+            {
+                $('#countryState').attr('maxlength', 2);
+            }
+            else
+            {
+                $('#countryState').attr('maxlength', 4);
+            }
+            
+        }
+
     </script>  
     
    
@@ -191,7 +205,7 @@
                             <td>
                                 <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
                                 <div class="input-container" >
-                                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required>
+                                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required onchange="countrySelected()">
                         
                                      </select>
                   
