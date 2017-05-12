@@ -1,0 +1,272 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPage.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+        <link rel="stylesheet" href="js/style-2.css" />
+        <link rel="stylesheet" href="js/screen.css"/>
+        <link rel="stylesheet" href="js/Style-3.css" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+        <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
+        <link rel="stylesheet" href="css/Common.css"/>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="/js/jquery.validate.js"></script>
+        <script src="/js/jquery-1.8.2.js"></script>
+        <style>
+             /*
+             .transparentBtn {
+                background-color: Transparent;
+                background-repeat:no-repeat;
+                border: none;
+                cursor:pointer;
+                overflow: hidden;
+                outline:none;
+
+             }
+              .input-container {
+                  display: inline-block;
+                  vertical-align: top;
+                  position: relative;
+                  max-width: 100%;
+              }
+
+             .inline-label {
+                 padding: 10px;
+             }
+             label{
+                 font-weight:400;
+             }
+
+             /* style that just styles the input 
+             .form-control {
+                 border-top-right-radius: 0;
+                 border-bottom-right-radius: 0;
+                 border-bottom-left-radius: 1px;
+                 border-top-left-radius: 1px;
+                 /*  just adds the inset shadow  
+                 background-clip: padding-box;
+                 border-width: 1px;
+                 /*  default styles for the input  
+                 display: block;
+                 padding: 19px 2px 3px;
+             }
+
+             select{
+                 border: solid  #d3d3d3;
+                 border-width:.02px
+             }
+
+             .textboxborder{
+                 border: solid  #d3d3d3;
+                 color: #777;
+                 border-width:.02px
+             }
+
+             .form-control ~ .form-control-label {
+                 -webkit-transition: all 0.5s ease;
+                 -moz-transition: all 0.5s ease;
+                 -o-transition: all 0.5s ease;
+                 -ms-transition: all 0.5s ease;
+                 transition: all 0.5s ease;
+                 -webkit-transform-origin: 0%;
+                 -moz-transform-origin: 0%;
+                 -ms-transform-origin: 0%;
+                 transform-origin: 0%;
+                 position: absolute;
+                 color: #777;
+                 cursor: text; 
+                 left: 2px;
+                 top: .85em;
+                 pointer-events: none;
+                 white-space: nowrap;
+                 max-width: 100%;
+                 text-overflow: ellipsis;
+                 overflow: hidden;
+                 padding-right: 1px;
+             }
+             .form-control:focus {
+                 color: #008374;
+                 outline: none;
+                 border: 0px solid #008374;
+                 -webkit-box-shadow: 0px 0px 2px 0px #008374;
+                 box-shadow: 0px 0px 2px 0px #008374;
+             }
+             .form-control:focus ~ .form-control-label {
+                 color: #008374;
+                 -will-change: all;
+                 -webkit-transition: all 0.2s ease;
+                 -moz-transition: all 0.2s ease;
+                 -o-transition: all 0.2s ease;
+                 -ms-transition: all 0.2s ease;
+                 transition: all 0.2s ease;
+                 -webkit-transform: scale(0.5 );
+                 -ms-transform: scale(0.5 );
+                 transform: scale(0.5);
+                 -webkit-transform: scale(0.5);
+                 -moz-transform: scale(0.5);
+                 -o-transform: scale(0.5);
+                 -ms-transform: scale(0.5);
+                 transform: scale(0.5);
+                 top: .086em;
+                 max-width: 130%;
+             }
+
+             .form-control.filled ~ .form-control-label {
+                 color: #008374;
+                 -will-change: all;
+                 -webkit-transition: all 0.2s ease;
+                 -moz-transition: all 0.2s ease;
+                 -o-transition: all 0.2s ease;
+                 -ms-transition: all 0.2s ease;
+                 transition: all 0.2s ease;
+                 -webkit-transform: scale(0.5 );
+                 -ms-transform: scale(0.5 );
+                 transform: scale(0.5);
+                 -webkit-transform: scale(0.5);
+                 -moz-transform: scale(0.5);
+                 -o-transform: scale(0.5);
+                 -ms-transform: scale(0.5);
+                 transform: scale(0.5);
+                 top: 0.086em;
+                 max-width: 130%;
+             }
+             select {
+                 direction: ltr;
+                 color:#555;
+                 padding-top: 4px;
+
+             }
+
+             label {
+                 display: inline-block;
+                 margin-bottom: 12px;
+             }
+             td{
+                 width:1.15em;
+                 height:1.55em;
+                 border:none;
+                 padding-bottom:5px;
+                 padding-top:5px;
+                 padding-right:10px
+             }
+
+
+             #_helpQueryForm label {
+                 width: 250px;
+             }
+
+             #_helpQueryForm label.error, #_helpQueryForm input.submit {
+                 margin-left: 253px;
+             }
+
+             .inputError{
+                 border: solid  #ff0000;
+                 border-width:.02px
+             }
+
+             textboxclass{
+                 width:1.95em;
+                 height:1.55em;
+                 padding-bottom:5px;
+                 padding-top:5px;
+                 padding-right:10px
+             }
+
+             .ui-datepicker {
+                 background: #333;
+                 border: 1px solid #555;
+                 color: #EEE;
+             }
+             .auto-style1 {
+                 height: 2em;
+             }
+             */
+        </style>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg" >
+        <!-- Place holder for representative information -->
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">
+        </asp:ContentPlaceHolder>
+        <div style="margin-left: 30px">
+            <h4 class="xl2 tealGreen" style="font-size: 1em">Guest Information</h4>
+            <table>
+                        <!-- First Row -->            
+                        <tr>
+                            <td>
+                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
+                                <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
+                                <asp:ListItem Text="Mr" Value="Mr." />
+                                <asp:ListItem Text="Mrs" Value="Mrs." />
+                                <asp:ListItem Text="Ms" Value="Ms." />
+                                <asp:ListItem Text="Miss" Value="Miss." />
+                                <asp:ListItem Text="Dr" Value="Dr." />
+                                </asp:DropDownList>
+               
+                            </td>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">First Name</label>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Family Name</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- End First Row --> 
+                        <!-- Second Row --> 
+                        <tr>
+                            <td colspan="3">
+                                <div class="input-container" >
+                                    <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Email Address</label>
+                                </div>
+                                <div class="input-container" >
+                                    <input type="email" name="email" id="email" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Confirm Email Address</label>
+                                </div>
+                            </td>
+                        </tr>
+                        <!-- Second Row --> 
+                        <!-- Third Row --> 
+                        <tr>
+                            <td>
+                                <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
+                                <div class="input-container" >
+                                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required>
+                        
+                                     </select>
+                  
+                                </div>
+                            </td>
+                         </tr>
+                        <!-- End of Third Row --> 
+                        <!-- Fourth Row --> 
+                        <tr>             
+                            <td>
+                                <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="~/XML DataSource/CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
+                                <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
+                             </td>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Telephone Number</label>
+                                </div>             
+                            </td>
+                        </tr>
+                        <!-- End of Fourth Row --> 
+        </table>
+        </div>
+    </div>
+    </form>
+</body>
+</html>
