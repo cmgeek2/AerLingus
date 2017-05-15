@@ -773,6 +773,7 @@
              });
          }
 
+         
          function parseSelectXML1(xml, selectid, xmlnode) {
              var firstoption = '-- Please Select --';
              var firsthtml = '<option value="">' + firstoption + '</option>';
@@ -791,7 +792,7 @@
          $("#refundReasonDropDownList1").change(function () {
              if (this.value != "Selected") {
                  $("#_helpQueryDefList").attr("Disabled", false);
-                 $("#_requestRefundReasonInfo2").empty();
+                 //$("#_requestRefundReasonInfo2").empty();
              } else {
                  $("#_helpQueryDefList").attr("Disabled", true);
              }
@@ -805,13 +806,85 @@
                  setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
+         });
+
+         $("#refundReasonDropDownList1").change(function () {
+             if (this.value != "Selected") {
+                 $("#_helpQueryDefList").attr("Disabled", false);
+                 //$("#_requestRefundReasonInfo2").empty();
+             } else {
+                 $("#_helpQueryDefList").attr("Disabled", true);
+             }
+
+             if (this.value == "flight") {
+                 setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FlightRelated');
+                 return;
+             }
+
+             if (this.value == "fee") {
+                 setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FeeRelated');
+                 return;
+             }
+         });
+
+         $("#refundReasonDropDownList2").change(function () {
+             if (this.value != "Selected") {
+                 $("#refundReason2").attr("Disabled", false);
+                 //$("#refundReason2").empty();
+             } else {
+                 $("#refundReason2").attr("Disabled", true);
+             }
+
+             if (this.value == "flight") {
+                 setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
+                 return;
+             }
+
+             if (this.value == "fee") {
+                 setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
+                 return;
+             }
 
          });
 
-         $('#refundReasonDrodDownList2').change(function () {
+         $("#refundReasonDropDownList3").change(function () {
              if (this.value != "Selected") {
-                 $('#refundReason2').attr("Disabled", false);
+                 $("#refundReason3").attr("Disabled", false);
+                 //$("#_requestRefundReasonInfo2").empty();
+             } else {
+                 $("#refundReason3").attr("Disabled", true);
              }
+
+             if (this.value == "flight") {
+                 setSelectQuery('#refundReason3', 'RefundRequestInfo.xml', 'FlightRelated');
+                 return;
+             }
+
+             if (this.value == "fee") {
+                 setSelectQuery('#refundReason3', 'RefundRequestInfo.xml', 'FeeRelated');
+                 return;
+             }
+
+         });
+
+         $("#refundReasonDropDownList4").change(function () {
+             if (this.value != "Selected") {
+                 $("#refundReason4").attr("Disabled", false);
+                 //$("#_requestRefundReasonInfo2").empty();
+             } else {
+                 $("#refundReason4").attr("Disabled", true);
+             }
+
+             if (this.value == "flight") {
+                 setSelectQuery('#refundReason4', 'RefundRequestInfo.xml', 'FlightRelated');
+                 return;
+             }
+
+             if (this.value == "fee") {
+                 setSelectQuery('#refundReason4', 'RefundRequestInfo.xml', 'FeeRelated');
+                 return;
+             }
+
          });
 
          
