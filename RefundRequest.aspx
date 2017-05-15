@@ -48,24 +48,44 @@
             }
         }
 
-        function guestRadioBtnCanged() {
-            var div = document.getElementById('representativeName');
-            var comapnyNameDiv = document.getElementById('repCompanyNameDiv');
-            div.style.display = "none";
-            comapnyNameDiv.style.display = "none";
-            var header = document.getElementById('header2');
-            header.innerText = "Guest Information";
+        function guestRadioBtnSelected() {
+            // hide representative name input row
+            var divRepName = document.getElementById('representativeName');
+            // hide company name input row
+            divRepName.style.display = "none";
+            var repCompanyNameDiv = document.getElementById('repCompanyNameDiv');
+            document.getElementById('representativeFirstName').required = false;
+            document.getElementById('representativeLastName').required = false;
+            document.getElementById('relationshipToGuestDropDown').required = false;
+            document.getElementById('repCompanyName').required = false;
+            repCompanyNameDiv.style.display = "none";
+            var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
+            aerClubDropDown.style.display = "block";
+            var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
+            relationshipToGuestDiv.style.display = 'none';
         }
 
-        function repRadioBtnChanged() {
-            var div = document.getElementById('representativeName');
-            var comapnyNameDiv = document.getElementById('repCompanyNameDiv');
-            div.style.display = "block";
-            comapnyNameDiv.style.display = "block";
-            var header1 = document.getElementById('header1');
-            header1.innerText = "Guest Information";
-            var header2 = document.getElementById('header2');
-            header2.innerText = "Representative Information"
+        function repRadioBtnSelected() {
+            // show representative name input row
+            var divRepName = document.getElementById('representativeName');
+            divRepName.style.display = "block";
+            // show company name input row
+            var repCompanyNameDiv = document.getElementById('repCompanyNameDiv');
+            repCompanyNameDiv.style.display = "block";
+            // make necessary fields required
+            document.getElementById('representativeFirstName').required = true;
+            document.getElementById('representativeLastName').required = true;
+            document.getElementById('relationshipToGuestDropDown').required = true;
+            document.getElementById('relationshipToGuestDropDown').required = true;
+            document.getElementById('repCompanyName').required = true;
+            document.getElementById('relationshipToGuestDropDownDiv').show;
+            var divRepName = document.getElementById('representativeName');
+            divRepName.style.display = "block";
+            
+            var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
+            aerClubDropDown.style.display = "none";
+            var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
+            relationshipToGuestDiv.style.display = 'block';
         }
 
         function countrySelected()
@@ -101,51 +121,15 @@
                     <br/>
                     <div class="input-container" id="radioButtonContainer">
                             <label class="radio-inline">
-                                <input type="radio" name="group1" checked="checked" onclick="guestRadioBtnCanged()"/>I am the guest
+                                <input type="radio" name="group1" checked="checked" onclick="guestRadioBtnSelected()"/>I am the guest
                             </label> 
                             <label class="radio-inline">
-                                <input type="radio" name="group1" onclick="repRadioBtnChanged()"/>I am the representative of the guest
+                                <input type="radio" name="group1" onclick="repRadioBtnSelected()"/>I am the representative of the guest
                             </label> 
                             <br/>
                             <br/>
                     </div>
                     
-                    <div class="input-container" id="representativeName" style="display: none">
-                        <h4 id="header1" class="xl2 tealGreen" style="font-size: 1em">Representative Information</h4>
-                        <table>
-                            <tr>
-                                <td>
-                                        <asp:DropDownList  CssClass="dropdown-toggle"  ID="RepresentativeDropDownList1" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
-                                    </asp:DropDownList>
-                                </td>
-                                <td>
-                                    <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="representativeFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
-                                        <label class="form-control-label">First Name</label>
-                                    </div>
-                                </td>
-                                <td>
-                                    <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="representativeLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
-                                        <label class="form-control-label">Family Name</label>
-                                    </div>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>  
-                    
-                    
-                    
-                    
-                    
-                    
-                     
                     <h4 id="header2" class="xl2 tealGreen" style="font-size: 1em">Guest Information</h4>                            
                     <table >   
                         <!-- First Row -->            
@@ -176,6 +160,36 @@
                         </tr>
                         <!-- End First Row -->
                     </table>
+
+                    <div class="input-container" id="representativeName" style="display:none;">
+                        <h4 id="header1" class="xl2 tealGreen" style="font-size: 1em">Representative Information</h4>
+                        <table>
+                            <tr>
+                                <td>
+                                        <asp:DropDownList  CssClass="dropdown-toggle"  ID="RepresentativeDropDownList1" Height="30px"  runat="server" Width="260px"  >
+                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
+                                        <asp:ListItem Text="Mr" Value="Mr." />
+                                        <asp:ListItem Text="Mrs" Value="Mrs." />
+                                        <asp:ListItem Text="Ms" Value="Ms." />
+                                        <asp:ListItem Text="Miss" Value="Miss." />
+                                        <asp:ListItem Text="Dr" Value="Dr." />
+                                    </asp:DropDownList>
+                                </td>
+                                <td>
+                                    <div class="input-container" >
+                                        <input type="text" style="width: 260px" id="representativeFirstName" title="Please enter your first name" name="representativeFirstName" class="form-control inline-label  "  onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">First Name</label>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="input-container" >
+                                        <input type="text" style="width: 260px" id="representativeLastName" title="Please enter your family name" name="representativeLastName" class="form-control inline-label"  onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Family Name</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>  
 
                     <div class="input-container" id="repCompanyNameDiv" style="display: none">
                         <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
@@ -263,24 +277,33 @@
                         <tr>
                             <td colspan="3">
                                 <div class="input-container" >
-                                    <input type="text" name="townCity" id="townCity" maxlength="4" style="width: 260px" title="town or city" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <input type="text" name="townCity" id="townCity" maxlength="20" style="width: 260px" title="town or city" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Town/City</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" name="countryState" id="countryState" maxlength="4" style="width: 260px" title="country or state" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <input type="text" name="countryState" id="countryState" maxlength="20" style="width: 260px" title="country or state" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Country/State</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" name="zipCode" id="zipCode" maxlength="4" style="width: 260px" title="postal zip code" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <input type="text" name="zipCode" id="zipCode" maxlength="20" style="width: 260px" title="postal zip code" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Postaly/Zip Code</label>
                                 </div>
                             </td>
                         </tr>
                     </table>
+                        <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
+                            <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
+                                <option value="Selected" selected="selected">Relationship to the guest</option>
+                                <option value="Travel Agent">Travel Agent</option>
+                                <option value="Consumer Group">Consumer Group</option>
+                                <option value="Family">Family</option>
+                                <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
+                            </select>
+                        </div>
                     <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
                          <tr>
@@ -294,8 +317,8 @@
                                 </select>
                             </td>
                             <td class="auto-style1" id="ClubMembership">
-                                <div class="input-container" id="ClubMembershipDiv" style="display: none;">
-                                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width: 260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                <div class="input-container" id="ClubMembershipDiv" style="display:none;">
+                                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width: 260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">AerClub Membership Number</label>
                                 </div>
                             </td> 
@@ -509,27 +532,73 @@
                             
                         </tr>
                         <tr>
-                            <td colspan="3">If you have more than one reason please choose the "+" to add additional reasons </td>   
+                            <td colspan="3">If you have more than one reason please choose the additional reasons </td>   
                         </tr>
                         <tr>
                             <td>
-                                <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
+                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList1"  runat="server"  Height="30px" Width="260px">
                                     <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
                                     <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
                                     <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
                                 </asp:DropDownList>
-                                <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
+                                <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="refundReasonDropDownList1" InitialValue="Selected" runat="server"/>
                             </td>
                             <td>
                                 <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required>
-                                    <option value="" selected="selected">-- Please Select --</option>
+
                                 </select>
                                 <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
                             </td>
+                            <!--
                             <td>
                                 <button type="button" class="transparentBtn">+</button>
                             </td>
+                            -->
                         </tr>
+                        <tr>
+                            <td>
+                                 <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList2"  runat="server"  Height="30px" Width="260px">
+                                    <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
+                                    <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
+                                    <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
+                                </asp:DropDownList>
+                 
+                            </td>
+                            <td>
+                                <select class=" dropdown-toggle" id="refundReason2" name="refundReason2"  runat="server" style="height:30px;width:260px" >
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList3"  runat="server"  Height="30px" Width="260px">
+                                    <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
+                                    <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
+                                    <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
+                            <td>
+                                <select class=" dropdown-toggle" id="refundReason3" name="refundReason3"  runat="server" style="height:30px;width:260px" >
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList4"  runat="server"  Height="30px" Width="260px">
+                                    <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
+                                    <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
+                                    <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
+                            <td>
+                                <select class=" dropdown-toggle" id="refundReason4" name="refundReason4"  runat="server" style="height:30px;width:260px" >
+                                </select>
+                            </td>
+                        </tr>
+
+
+
+
                         <tr>
                             <td>
                                 <p>Do you need a letter from your insurance?</p>
@@ -622,11 +691,13 @@
              if (this.value != "Selected") {
                  $("#_helpQueryAerClubmembershipId").attr("disabled", false);
                  var div1 = document.getElementById('ClubMembershipDiv');
+                 document.getElementById('_helpQueryAerClubmembershipId').required = true;
                  div1.style.display = "block";
                  ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), true);
              } else {
                  $("#_helpQueryAerClubmembershipId").attr("disabled", true);
-                 //$("#ClubMembershipDiv").hide();
+                 document.getElementById('_helpQueryAerClubmembershipId').required = false;
+                 $("#ClubMembershipDiv").hide();
                  var div2 = document.getElementById('ClubMembershipDiv');
                  div2.style.display = "none";
                  ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
@@ -717,7 +788,7 @@
              $(selectid).html(firsthtml + selecthtml);
          }
 
-         $("#_helpQueryTypeDropDownList").change(function () {
+         $("#refundReasonDropDownList1").change(function () {
              if (this.value != "Selected") {
                  $("#_helpQueryDefList").attr("Disabled", false);
                  $("#_requestRefundReasonInfo2").empty();
@@ -735,6 +806,12 @@
                  return;
              }
 
+         });
+
+         $('#refundReasonDrodDownList2').change(function () {
+             if (this.value != "Selected") {
+                 $('#refundReason2').attr("Disabled", false);
+             }
          });
 
          
