@@ -48,6 +48,15 @@
             }
         }
 
+        function radioButtonClicked() {
+            var radioSelected = $('#<%= guestGroup.ClientID %> input:checked').val();
+            if (radioSelected == 'guest') {
+                guestRadioBtnSelected();
+            } else {
+                repRadioBtnSelected();
+            }
+        }
+
         function guestRadioBtnSelected() {
             // hide representative name input row
             var divRepName = document.getElementById('representativeName');
@@ -76,9 +85,9 @@
             document.getElementById('representativeFirstName').required = true;
             document.getElementById('representativeLastName').required = true;
             document.getElementById('relationshipToGuestDropDown').required = true;
-            document.getElementById('relationshipToGuestDropDown').required = true;
             document.getElementById('repCompanyName').required = true;
-            document.getElementById('relationshipToGuestDropDownDiv').show;
+            var relationshipDropDown = document.getElementById('relationshipToGuestDropDownDiv');
+            relationshipDropDown.style.display = "block";
             var divRepName = document.getElementById('representativeName');
             divRepName.style.display = "block";
             
@@ -120,14 +129,13 @@
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <br/>
                     <div class="input-container" id="radioButtonContainer">
-                            <label class="radio-inline">
-                                <input type="radio" name="group1" checked="checked" onclick="guestRadioBtnSelected()"/>I am the guest
-                            </label> 
-                            <label class="radio-inline">
-                                <input type="radio" name="group1" onclick="repRadioBtnSelected()"/>I am the representative of the guest
-                            </label> 
-                            <br/>
-                            <br/>
+                        
+                        <asp:RadioButtonList runat="server" ID="guestGroup" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
+                            <asp:ListItem Text="I am the guest" Value="guest" Selected="True"/>
+                            <asp:ListItem Text="I am the representative of the guest" Value="representative" />
+                        </asp:RadioButtonList>
+                        <br/>
+                        <br/>
                     </div>
                     
                     <h4 id="header2" class="xl2 tealGreen" style="font-size: 1em">Guest Information</h4>                            
@@ -161,12 +169,12 @@
                         <!-- End First Row -->
                     </table>
 
-                    <div class="input-container" id="representativeName" style="display:none;">
+                    <div class="input-container" id="representativeName" style="display: none;">
                         <h4 id="header1" class="xl2 tealGreen" style="font-size: 1em">Representative Information</h4>
                         <table>
                             <tr>
                                 <td>
-                                        <asp:DropDownList  CssClass="dropdown-toggle"  ID="RepresentativeDropDownList1" Height="30px"  runat="server" Width="260px"  >
+                                        <asp:DropDownList  CssClass="dropdown-toggle"  ID="RepresentativeDropDownList" Height="30px"  runat="server" Width="260px"  >
                                         <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                                         <asp:ListItem Text="Mr" Value="Mr." />
                                         <asp:ListItem Text="Mrs" Value="Mrs." />
@@ -192,7 +200,7 @@
                     </div>  
 
                     <div class="input-container" id="repCompanyNameDiv" style="display: none">
-                        <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                        <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 360px" class="form-control inline-label" onblur="checkvalue(this)"/>
                         <label class="form-control-label">Company Name</label>
                     </div>
                     <table> 
@@ -227,7 +235,7 @@
                             </td>
                             <td>
                                 <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/XML DataSource/CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
-                                <asp:DropDownList  CssClass=" dropdown-toggle"  ID="DropDownList1" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
+                                <asp:DropDownList  CssClass=" dropdown-toggle"  ID="CountryCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
                              </td>
                             <td>
                                 <div class="input-container" >
@@ -544,10 +552,10 @@
                                 <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="refundReasonDropDownList1" InitialValue="Selected" runat="server"/>
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required>
+                                <select class=" dropdown-toggle" id="refundReason1" name="refundReason1"  runat="server" style="height:30px;width:260px" required>
 
                                 </select>
-                                <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
+                                <asp:RequiredFieldValidator ID="refundReason1Validator" ControlToValidate="refundReason1" InitialValue="Default" runat="server" Enabled="false"/>
                             </td>
                             <!--
                             <td>
@@ -790,47 +798,27 @@
          }
 
          $("#refundReasonDropDownList1").change(function () {
-             if (this.value != "Selected") {
-                 $("#_helpQueryDefList").attr("Disabled", false);
-                 //$("#_requestRefundReasonInfo2").empty();
+             if (this.value != "select") {
+                 $("#_refundReason1").attr("Disabled", false);
              } else {
-                 $("#_helpQueryDefList").attr("Disabled", true);
+                 $("#refundReason1").attr("Disabled", true);
              }
 
              if (this.value == "flight") {
-                 setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FlightRelated');
+                 setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
              if (this.value == "fee") {
-                 setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FeeRelated');
+                 setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
          });
 
-         $("#refundReasonDropDownList1").change(function () {
-             if (this.value != "Selected") {
-                 $("#_helpQueryDefList").attr("Disabled", false);
-                 //$("#_requestRefundReasonInfo2").empty();
-             } else {
-                 $("#_helpQueryDefList").attr("Disabled", true);
-             }
-
-             if (this.value == "flight") {
-                 setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FlightRelated');
-                 return;
-             }
-
-             if (this.value == "fee") {
-                 setSelectQuery('#_helpQueryDefList', 'RefundRequestInfo.xml', 'FeeRelated');
-                 return;
-             }
-         });
 
          $("#refundReasonDropDownList2").change(function () {
-             if (this.value != "Selected") {
+             if (this.value != "select") {
                  $("#refundReason2").attr("Disabled", false);
-                 //$("#refundReason2").empty();
              } else {
                  $("#refundReason2").attr("Disabled", true);
              }
