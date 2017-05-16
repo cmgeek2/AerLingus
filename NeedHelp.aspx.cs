@@ -115,7 +115,7 @@ public partial class NeedHelp : System.Web.UI.Page
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
+            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpFormId"];
         }
         else
         {
