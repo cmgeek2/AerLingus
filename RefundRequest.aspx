@@ -325,6 +325,7 @@
                                 <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
                             </td>
                         </tr>
+                        <!-------------------------------------------------- -->
                         <tr>
                             <td>
                                 <div class="input-container" >
@@ -333,15 +334,8 @@
                                 </div>
                             </td>
                              <td>
-                                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-                                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-                                <script>
-                                    $(function () {
-                                        $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
-                                    });
-                                </script>
                                 <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                 <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                             </td>
                             <td>
                                 <div class="input-container" >
@@ -350,18 +344,64 @@
                                 </div>                               
                             </td>                                
                         </tr>
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-                        
-
+                        <!----------------------------------------------------  -->
+                        <tr>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="QueryFlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Flight Number</label> 
+                                </div>
+                            </td>
+                            <td>
+                                <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="dateOfFlight2" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="bookingReferenceNumber2" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/> 
+                                    <label class="form-control-label">Booking Reference</label>   
+                                </div>
+                            </td>
+                        </tr>
+                        <!------------------------------------------------- --> 
+                        <tr>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="QueryFlightNumber3" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Flight Number</label> 
+                                </div>
+                            </td>
+                            <td>
+                                <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="DateValidator3" ControlToValidate="dateOfFlight3" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="bookingReferenceNumber3" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/> 
+                                    <label class="form-control-label">Booking Reference</label>   
+                                </div>
+                            </td>
+                        </tr>
+                        <!------------------------------------------------- -->
+                        <tr>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="QueryFlightNumber4" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Flight Number</label> 
+                                </div>
+                            </td>
+                            <td>
+                                <asp:TextBox  ID="dateOfFlight4" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="DateValidator4" ControlToValidate="dateOfFlight4" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="bookingReferenceNumber4" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/> 
+                                    <label class="form-control-label">Booking Reference</label>   
+                                </div>
+                            </td>
+                        </tr>
+                        <!------------------------------------------------- -->
                         <tr>
                             <td>
                                 <br/>
@@ -677,7 +717,17 @@
           
     </div>
    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
      <script type="text/javascript">
+         
+         $(function () {
+             $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
+             $("#dateOfFlight2").datepicker({ dateFormat: 'dd-M-yy' });
+             $("#dateOfFlight3").datepicker({ dateFormat: 'dd-M-yy' });
+             $("#dateOfFlight4").datepicker({ dateFormat: 'dd-M-yy' });
+         });
+
          $("#_helpQueryCountryList").change(function () {
              $("#_helpQueryTelephoneCode").val(this.value);
 
@@ -805,26 +855,26 @@
 
          $("#refundReason1")
              .change(function() {
-                if (this.selectedIndex  != 0) {
-                    $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', false);
-                } else {
-                    //Reset the other drop downs
-                    $("#<%=refundReasonDropDownList2.ClientID %>").prop('selectedIndex', 0);
-                    $("#<%=refundReasonDropDownList3.ClientID %>").prop('selectedIndex', 0);
-                    $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
-                    $('#refundReason2').prop('selectedIndex', 0);
-                    $('#refundReason3').prop('selectedIndex', 0);
-                    $('#refundReason4').prop('selectedIndex', 0);
-                    //Disable the other drop downs
-                    $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', true);
-                    $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', true);
-                    $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+                 if (this.selectedIndex  != 0) {
+                     $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', false);
+                 } else {
+                     //Reset the other drop downs
+                     $("#<%=refundReasonDropDownList2.ClientID %>").prop('selectedIndex', 0);
+                     $("#<%=refundReasonDropDownList3.ClientID %>").prop('selectedIndex', 0);
+                     $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                     $('#refundReason2').prop('selectedIndex', 0);
+                     $('#refundReason3').prop('selectedIndex', 0);
+                     $('#refundReason4').prop('selectedIndex', 0);
+                     //Disable the other drop downs
+                     $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', true);
+                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', true);
+                     $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
                     
-                    $("#refundReason2").attr('disabled', true);
-                    $("#refundReason3").attr('disabled', true);
-                    $("#refundReason4").attr('disabled', true);
+                     $("#refundReason2").attr('disabled', true);
+                     $("#refundReason3").attr('disabled', true);
+                     $("#refundReason4").attr('disabled', true);
 
-                }
+                 }
              });
 
 
@@ -921,7 +971,6 @@
              firstGuestLastName.value = lastName;
          }
 
-         
 
      </script>
                         <script type="text/javascript">
