@@ -908,6 +908,7 @@
 
          function autoPopulateFirstGuestName() {
              var firstName = document.getElementById('helpQueryFirstName').value;
+             document.getElementById('helpQueryFirstName1').classList.add('filled');
              document.getElementById('helpQueryFirstName1').focus();
              var firstGuestName = document.getElementById('helpQueryFirstName1');
              firstGuestName.value = firstName;
@@ -915,6 +916,7 @@
 
          function autoPopulateFirstGuestLastName() {
              var lastName = document.getElementById('helpQueryLastName').value;
+             document.getElementById('helpQueryLastName1').classList.add('filled');
              var firstGuestLastName = document.getElementById('helpQueryLastName1');
              firstGuestLastName.value = lastName;
          }
