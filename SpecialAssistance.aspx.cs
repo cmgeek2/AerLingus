@@ -64,8 +64,19 @@ public partial class SpecialAssistance : System.Web.UI.Page
         sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
-        sbBodyTextString.AppendLine("Query Type: " + _helpQueryTypeDropDownList.SelectedItem.ToString());
+        sbBodyTextString.AppendLine("Query Type: " + _helpQueryTypeDropDownList.SelectedItem);
         sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
+        if (Request.Form["_helpQueryTypeDropDownList2"] != "Selected")
+        {
+            sbBodyTextString.AppendLine("Query type 2: " + Request.Form["_helpQueryTypeDropDownList2"]);
+            sbBodyTextString.AppendLine("Query Definition 2: " + Request.Form["_helpQueryDefList2"]);
+
+            if (Request.Form["_helpQueryTypeDropDownList2"] != "Selected")
+            {
+                sbBodyTextString.AppendLine("Query type 3: " + Request.Form["_helpQueryTypeDropDownList3"]);
+                sbBodyTextString.AppendLine("Query Definition 3: " + Request.Form["_helpQueryDefList3"]);
+            }
+        }
 
         //starting part 2
         sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
@@ -91,6 +102,12 @@ public partial class SpecialAssistance : System.Web.UI.Page
             sbBodyTextString.AppendLine("CountryACStatus: " + "");
 
         }
+
+        // Collecting data from Request Disability Assistance
+        sbBodyTextString.AppendLine("Disability Query type: " + Request.Form["_helpQueryTypeDropDownList"]);
+        sbBodyTextString.AppendLine("First Disability Selected: " + Request.Form["_helpQueryDefList"]);
+        // Get additional disability info if set
+        
 
 
         sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text.ToString());
