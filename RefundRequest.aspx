@@ -155,13 +155,13 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
+                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
                                     <label class="form-control-label">First Name</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName(); "/>
                                     <label class="form-control-label">Family Name</label>
                                 </div>
                             </td>
@@ -234,7 +234,7 @@
                                 </div>
                             </td>
                             <td>
-                                <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/XML DataSource/CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
+                                <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
                                 <asp:DropDownList  CssClass=" dropdown-toggle"  ID="CountryCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
                              </td>
                             <td>
@@ -244,23 +244,6 @@
                                 </div>             
                             </td>
                          </tr>
-                        <!-- End of Country and Phone Number Row --> 
-                        <!-- Fourth Row  
-                        <tr> 
-                            <!--            
-                            <td>
-                                <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
-                                <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
-                             </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Telephone Number</label>
-                                </div>             
-                            </td>
-                            
-                        </tr>
-                        <!-- End of Fourth Row --> 
                     </table>
                     <table>
                         <!-- Address Row --> 
@@ -367,6 +350,18 @@
                                 </div>                               
                             </td>                                
                         </tr>
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+                        
+
                         <tr>
                             <td>
                                 <br/>
@@ -391,7 +386,7 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryLastName1"  name="helpQueryLastName" class="form-control inline-label" />
+                                    <input type="text" style="width: 260px" id="helpQueryLastName1"  name="helpQueryLastName" class="form-control focus inline-label" />
                                     <label class="form-control-label">Family Name</label>
                                 </div>
                             </td>
@@ -553,19 +548,14 @@
                             </td>
                             <td>
                                 <select class=" dropdown-toggle" id="refundReason1" name="refundReason1"  runat="server" style="height:30px;width:260px" required>
-
+                                    <option value="" selected="selected">-- Please Select --</option>
                                 </select>
                                 <asp:RequiredFieldValidator ID="refundReason1Validator" ControlToValidate="refundReason1" InitialValue="Default" runat="server" Enabled="false"/>
                             </td>
-                            <!--
-                            <td>
-                                <button type="button" class="transparentBtn">+</button>
-                            </td>
-                            -->
                         </tr>
                         <tr>
                             <td>
-                                 <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList2"  runat="server"  Height="30px" Width="260px">
+                                 <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList2" Enabled="False"  runat="server"  Height="30px" Width="260px">
                                     <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
                                     <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
                                     <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
@@ -573,53 +563,51 @@
                  
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason2" name="refundReason2"  runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason2" name="refundReason2" disabled="True" runat="server" style="height:30px;width:260px" >
+                                    <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList3"  runat="server"  Height="30px" Width="260px">
+                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList3" Enabled="False" runat="server"  Height="30px" Width="260px">
                                     <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
                                     <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
                                     <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason3" name="refundReason3"  runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason3" name="refundReason3" disabled="True"  runat="server" style="height:30px;width:260px" >
+                                    <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList4"  runat="server"  Height="30px" Width="260px">
+                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList4" Enabled="False"  runat="server"  Height="30px" Width="260px">
                                     <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
                                     <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
                                     <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason4" name="refundReason4"  runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason4" name="refundReason4" disabled="True"  runat="server" style="height:30px;width:260px" >
+                                    <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
                         </tr>
 
-
-
-
                         <tr>
-                            <td>
+                            <td colspan="1">
                                 <p>Do you need a letter from your insurance?</p>
                             </td>
                             <td colspan="2">
-                                <div class="input-container">
-                                    
-                                    <label class="radio-inline">
-                                        <input type="radio" name="insurance" value="yes" />Yes
-                                    </label> 
-                                    <label class="radio-inline">
-                                        <input type="radio" name="insurance" value="no"/>No
-                                    </label> 
+                                <div class="input-container">   
+                                    <asp:RadioButtonList runat="server" ID="RadioButtonList1" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
+                                        <asp:ListItem Text="Yes" Value="yes" />
+                                        <asp:ListItem Text="No" Value="no" Selected="True"/>
+                                    </asp:RadioButtonList>
+
                                     <br/>
                                     <br/>
                                 </div>
@@ -815,6 +803,30 @@
              }
          });
 
+         $("#refundReason1")
+             .change(function() {
+                if (this.selectedIndex  != 0) {
+                    $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', false);
+                } else {
+                    //Reset the other drop downs
+                    $("#<%=refundReasonDropDownList2.ClientID %>").prop('selectedIndex', 0);
+                    $("#<%=refundReasonDropDownList3.ClientID %>").prop('selectedIndex', 0);
+                    $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                    $('#refundReason2').prop('selectedIndex', 0);
+                    $('#refundReason3').prop('selectedIndex', 0);
+                    $('#refundReason4').prop('selectedIndex', 0);
+                    //Disable the other drop downs
+                    $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', true);
+                    $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', true);
+                    $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+                    
+                    $("#refundReason2").attr('disabled', true);
+                    $("#refundReason3").attr('disabled', true);
+                    $("#refundReason4").attr('disabled', true);
+
+                }
+             });
+
 
          $("#refundReasonDropDownList2").change(function () {
              if (this.value != "select") {
@@ -834,6 +846,25 @@
              }
 
          });
+
+         $("#refundReason2")
+             .change(function () {
+                 if (this.selectedIndex != 0) {
+                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', false);
+                 } else {
+                     //Reset the other drop downs
+                     $("#<%=refundReasonDropDownList3.ClientID %>").prop('selectedIndex', 0);
+                     $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                     $('#refundReason2').prop('selectedIndex', 0);
+                     $('#refundReason3').prop('selectedIndex', 0);
+                     $('#refundReason4').prop('selectedIndex', 0);
+                     //Disable the other drop downs
+                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', true);
+                     $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+                     $("#refundReason3").attr('disabled', true);
+                     $("#refundReason4").attr('disabled', true);
+                 }
+             });
 
          $("#refundReasonDropDownList3").change(function () {
              if (this.value != "Selected") {
@@ -874,6 +905,19 @@
              }
 
          });
+
+         function autoPopulateFirstGuestName() {
+             var firstName = document.getElementById('helpQueryFirstName').value;
+             document.getElementById('helpQueryFirstName1').focus();
+             var firstGuestName = document.getElementById('helpQueryFirstName1');
+             firstGuestName.value = firstName;
+         }
+
+         function autoPopulateFirstGuestLastName() {
+             var lastName = document.getElementById('helpQueryLastName').value;
+             var firstGuestLastName = document.getElementById('helpQueryLastName1');
+             firstGuestLastName.value = lastName;
+         }
 
          
 
