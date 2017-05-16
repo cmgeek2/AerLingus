@@ -593,9 +593,9 @@ textboxclass{
           // has been selected. 
           // The reason why it's placed here is to make sure that Ajax call has finished populating the dropdown with the values from the XML file
           // Before setting the dropdown value.
-          var requestType = $('#<%=_helpQueryTypeDropDownList2.ClientID%>').val();
-          if (requestType == "M") {
-              $('#<%=_helpQueryDefList2.ClientID%> option:selected').text("Power wheelchair");
+          var requestType = $('#<%=_helpQueryTypeDropDownList.ClientID%>').val();
+          if (requestType == "W") {
+              $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
           }
 
 
