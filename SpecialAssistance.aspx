@@ -383,7 +383,7 @@ textboxclass{
                  <tr>
                      <td>
                          
-                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList2"  runat="server"  Height="30px" Width="260px">
+                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList2" Enabled="False" runat="server"   Height="30px" Width="260px">
                             <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
@@ -397,7 +397,7 @@ textboxclass{
                     </td>
                     <td>
                    
-                        <select class=" dropdown-toggle" id="_helpQueryDefList2" name="_helpQueryDefList2"  runat="server" style="height:30px;width:260px" >
+                        <select class=" dropdown-toggle" id="_helpQueryDefList2" name="_helpQueryDefList2" disabled="True" runat="server" style="height:30px;width:260px" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator2" ControlToValidate="_helpQueryDefList2" InitialValue="Default" runat="server" Enabled="false"/>
@@ -407,7 +407,7 @@ textboxclass{
                  <tr>
                      <td>
                          
-                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3"  runat="server"  Height="30px" Width="260px">
+                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3" Enabled="False"  runat="server"  Height="30px" Width="260px">
                             <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
@@ -421,7 +421,7 @@ textboxclass{
                     </td>
                     <td>
                    
-                        <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3"  runat="server" style="height:30px;width:260px" >
+                        <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:260px" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator3" ControlToValidate="_helpQueryDefList3" InitialValue="Default" runat="server" Enabled="false"/>
@@ -604,8 +604,14 @@ textboxclass{
       $("#_helpQueryTypeDropDownList").change(function () {
           if (this.value != "Selected") {
               $("#_helpQueryDefList").attr("Disabled", false);
+              $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', false);
           } else {
+              $("#<%=_helpQueryDefList.ClientID%>").empty();
+              var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+              $("#<%=_helpQueryDefList.ClientID%>").append(defaultOption);
               $("#_helpQueryDefList").attr("Disabled", true);
+              $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', true);
+
           }
 
           if (this.value == "W") 
@@ -650,8 +656,13 @@ textboxclass{
       $("#_helpQueryTypeDropDownList2").change(function () {
           if (this.value != "Selected") {
               $("#_helpQueryDefList2").attr("Disabled", false);
+              $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
           } else {
+              $("#<%=_helpQueryDefList2.ClientID%>").empty();
+              var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+              $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
               $("#_helpQueryDefList2").attr("Disabled", true);
+              $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', true);
           }
 
           if (this.value == "W") {
@@ -660,7 +671,6 @@ textboxclass{
 
           if (this.value == "M") {
               setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Mobility');
-              //$('#<%=_helpQueryDefList2.ClientID%> option:selected').text("Power wheelchair");
           }
 
           if (this.value == "C") {
@@ -690,6 +700,9 @@ textboxclass{
              if (this.value != "Selected") {
                  $("#_helpQueryDefList3").attr("Disabled", false);
              } else {
+                 $("#<%=_helpQueryDefList3.ClientID%>").empty();
+                 var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+                 $("#<%=_helpQueryDefList3.ClientID%>").append(defaultOption);
                  $("#_helpQueryDefList3").attr("Disabled", true);
              }
 
@@ -699,7 +712,6 @@ textboxclass{
 
              if (this.value == "M") {
                  setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Mobility');
-                 //$('#<%=_helpQueryDefList2.ClientID%> option:selected').text("Power wheelchair");
              }
 
              if (this.value == "C") {
