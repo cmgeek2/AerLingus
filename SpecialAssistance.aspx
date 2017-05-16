@@ -686,6 +686,45 @@ textboxclass{
       });
 
 
+         $("#_helpQueryTypeDropDownList3").change(function () {
+             if (this.value != "Selected") {
+                 $("#_helpQueryDefList3").attr("Disabled", false);
+             } else {
+                 $("#_helpQueryDefList3").attr("Disabled", true);
+             }
+
+             if (this.value == "W") {
+                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Wheelchair');
+             }
+
+             if (this.value == "M") {
+                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Mobility');
+                 //$('#<%=_helpQueryDefList2.ClientID%> option:selected').text("Power wheelchair");
+             }
+
+             if (this.value == "C") {
+                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Cognitive');
+             }
+
+             if (this.value == "X") {
+                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Oxygen');
+             }
+
+             if (this.value == "D") {
+                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Medical');
+             }
+
+             if (this.value == "S") {
+                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Animal');
+             }
+
+             if (this.value == "O") {
+                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Other');
+             }
+
+         });
+
+
 
 
 
