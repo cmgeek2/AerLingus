@@ -353,7 +353,7 @@ textboxclass{
                  <td>&nbsp</td>
              </tr>
              <tr>
-             <td colspan="2"> <h2 class="xl2 tealGreen"> Request Disability Assistance </h2</td>
+             <td colspan="2"> <h2 class="xl2 tealGreen"> Request Disability Assistance </h2></td>
             </tr>
             
                 <tr>
@@ -379,6 +379,54 @@ textboxclass{
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
                 </tr>
+                 
+                 <tr>
+                     <td>
+                         
+                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList2"  runat="server"  Height="30px" Width="260px">
+                            <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
+                            <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
+                            <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
+                            <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
+                            <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
+                            <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
+                            <asp:ListItem Text="Other Special Needs" Value="O"></asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="_QueryTypeValidator2" ControlToValidate="_helpQueryTypeDropDownList2" InitialValue="Selected" runat="server"/>
+                    </td>
+                    <td>
+                   
+                        <select class=" dropdown-toggle" id="_helpQueryDefList2" name="_helpQueryDefList2"  runat="server" style="height:30px;width:260px" >
+                             <option value="" selected="selected">-- Please Select --</option>
+                        </select>
+                       <asp:RequiredFieldValidator ID="_helpQueryDefListValidator2" ControlToValidate="_helpQueryDefList2" InitialValue="Default" runat="server" Enabled="false"/>
+                    </td>
+                 </tr>
+                 
+                 <tr>
+                     <td>
+                         
+                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3"  runat="server"  Height="30px" Width="260px">
+                            <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
+                            <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
+                            <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
+                            <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
+                            <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
+                            <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
+                            <asp:ListItem Text="Other Special Needs" Value="O"></asp:ListItem>
+                        </asp:DropDownList>
+                        <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
+                    </td>
+                    <td>
+                   
+                        <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3"  runat="server" style="height:30px;width:260px" >
+                             <option value="" selected="selected">-- Please Select --</option>
+                        </select>
+                       <asp:RequiredFieldValidator ID="_helpQueryDefListValidator3" ControlToValidate="_helpQueryDefList3" InitialValue="Default" runat="server" Enabled="false"/>
+                    </td>
+                 </tr>
        <tr>
                        <td>&nbsp</td>
         </tr>
@@ -518,7 +566,7 @@ textboxclass{
           $.ajax({
               url: xmlpath + '?=rn' + randomno,
               success: function (xml) {
-                  parseSelectXML1(xml, selectid, xmlnode)
+                  parseSelectXML1(xml, selectid, xmlnode);
               },
               error: function (xhr, ajaxOptions, thrownError) {
                   alert(xhr.status);
@@ -540,12 +588,18 @@ textboxclass{
           });
 
           $(selectid).html(firsthtml + selecthtml);
+
+          var requestType = $('#<%=_helpQueryTypeDropDownList2.ClientID%>').val();
+          if (requestType == "M") {
+              $('#<%=_helpQueryDefList2.ClientID%> option:selected').text("Power wheelchair");
+          }
+
+
       }
 
       $("#_helpQueryTypeDropDownList").change(function () {
           if (this.value != "Selected") {
               $("#_helpQueryDefList").attr("Disabled", false);
-              $("#_requestRefundReasonInfo2").empty();
           } else {
               $("#_helpQueryDefList").attr("Disabled", true);
           }
@@ -585,8 +639,53 @@ textboxclass{
               setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Other');
           }
 
-         
       });
+
+      
+
+      $("#_helpQueryTypeDropDownList2").change(function () {
+          if (this.value != "Selected") {
+              $("#_helpQueryDefList2").attr("Disabled", false);
+          } else {
+              $("#_helpQueryDefList2").attr("Disabled", true);
+          }
+
+          if (this.value == "W") {
+              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Wheelchair');
+          }
+
+          if (this.value == "M") {
+              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Mobility');
+              //$('#<%=_helpQueryDefList2.ClientID%> option:selected').text("Power wheelchair");
+          }
+
+          if (this.value == "C") {
+              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Cognitive');
+          }
+
+          if (this.value == "X") {
+              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Oxygen');
+          }
+
+          if (this.value == "D") {
+              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Medical');
+          }
+
+          if (this.value == "S") {
+              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Animal');
+          }
+
+          if (this.value == "O") {
+              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Other');
+          }
+
+      });
+
+
+
+
+
+
 
     </script>
                         <script type="text/javascript">
