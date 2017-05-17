@@ -9,177 +9,19 @@
      <link rel="stylesheet" href="js/screen.css"/>
      <link rel="stylesheet" href="js/Style-3.css" />
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/Common.css"/>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
     	<script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
-         <style>
-             .input-container {
-  display: inline-block;
-  vertical-align: top;
-  position: relative;
-  max-width: 100%;
-}
-
-.inline-label {
-  padding: 10px;
-}
-label{
-    font-weight:400;
-}
-
-/* style that just styles the input */
-.form-control {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 1px;
-  border-top-left-radius: 1px;
-/*  just adds the inset shadow  */
-  background-clip: padding-box;
-  border-width: 1px;
-/*  default styles for the input  */
-  display: block;
-  padding: 19px 2px 3px;
- }
-
-select{
-     border: solid  #d3d3d3;
-  border-width:.02px
-}
-
-.textboxborder{
-     border: solid  #d3d3d3;
-     color: #777;
-  border-width:.02px
-}
-
-.form-control ~ .form-control-label {
-  -webkit-transition: all 0.5s ease;
-  -moz-transition: all 0.5s ease;
-  -o-transition: all 0.5s ease;
-  -ms-transition: all 0.5s ease;
-  transition: all 0.5s ease;
-  -webkit-transform-origin: 0%;
-  -moz-transform-origin: 0%;
-  -ms-transform-origin: 0%;
-  transform-origin: 0%;
-  position: absolute;
-  color: #777;
-  cursor: text; 
-  left: 2px;
-  top: .85em;
-  pointer-events: none;
-  white-space: nowrap;
-  max-width: 100%;
-  text-overflow: ellipsis;
-  overflow: hidden;
-  padding-right: 1px;
-}
-.form-control:focus {
-  color: #008374;
-  outline: none;
-  border: 0px solid #008374;
-  -webkit-box-shadow: 0px 0px 2px 0px #008374;
-  box-shadow: 0px 0px 2px 0px #008374;
-}
-.form-control:focus ~ .form-control-label {
-  color: #008374;
-      will-change: all;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    -webkit-transform: scale(0.5 );
-    -ms-transform: scale(0.5 );
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    transform: scale(0.5);
-    top: .086em;
-    max-width: 130%;
-}
-
-.form-control.filled ~ .form-control-label {
-    color: #008374;
-      will-change: all;
-    -webkit-transition: all 0.2s ease;
-    -moz-transition: all 0.2s ease;
-    -o-transition: all 0.2s ease;
-    -ms-transition: all 0.2s ease;
-    transition: all 0.2s ease;
-    -webkit-transform: scale(0.5 );
-    -ms-transform: scale(0.5 );
-    transform: scale(0.5);
-    -webkit-transform: scale(0.5);
-    -moz-transform: scale(0.5);
-    -o-transform: scale(0.5);
-    -ms-transform: scale(0.5);
-    transform: scale(0.5);
-    top: 0.086em;
-    max-width: 130%;
-}
-select {
-    direction: ltr;
-    color:#555;
-    padding-top: 4px;
-
-}
-
-label {
-  display: inline-block;
-  margin-bottom: 12px;
-}
-td{
-    width:1.15em;
-    height:1.55em;
-    border:none;
-    padding-bottom:5px;
-    padding-top:5px;
-    padding-right:10px
-}
-
-
-#_helpQueryForm label {
-		width: 250px;
-	}
-
-#_helpQueryForm label.error, #_helpQueryForm input.submit {
-		margin-left: 253px;
-	}
-
-.inputError{
-    border: solid  #ff0000;
-    border-width:.02px
-}
-
-textboxclass{
-      width:1.95em;
-    height:1.55em;
-    padding-bottom:5px;
-    padding-top:5px;
-    padding-right:10px
-}
-
-.ui-datepicker {
-   background: #333;
-   border: 1px solid #555;
-   color: #EEE;
- }
-             .auto-style1 {
-                 height: 2em;
-             }
-
-  
-
-    </style>
+         
+     
  <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
 
 
 </head>
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-     <script src"https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+     <script src="https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
     <script src="/js/jquery.js"></script>
     <script type="text/javascript">  
         function Count() {  
@@ -210,7 +52,7 @@ textboxclass{
     <form id="_helpQueryForm"  runat="server" autocomplete="off" >
         <div>
     
-        <div style="margin-left: 80px; margin-right: 172px;width:824;height:auto;margin-top:10px"  class="gray-12-bg ">
+        <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
             <div style="margin-left: 30px" >
                  <br />
               
