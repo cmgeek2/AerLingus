@@ -611,7 +611,7 @@
                             <td>
                                 <p>Do you need a letter from your insurance?</p>
                             </td>
-                            <td colspan="2">
+                            <td colspan="2" align="left">
                                 <div class="input-container">
                                     
                                     <label class="radio-inline">
