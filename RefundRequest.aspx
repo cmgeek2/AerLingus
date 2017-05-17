@@ -12,8 +12,8 @@
     <link rel="stylesheet" href="js/screen.css"/>
     <link rel="stylesheet" href="js/Style-3.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
     <link rel="stylesheet" href="css/Common.css"/>
+    <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
@@ -155,13 +155,13 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
+                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
                                     <label class="form-control-label">First Name</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName(); "/>
                                     <label class="form-control-label">Family Name</label>
                                 </div>
                             </td>
@@ -234,7 +234,7 @@
                                 </div>
                             </td>
                             <td>
-                                <asp:XmlDataSource ID="XmlDataSource1" runat="server" DataFile="~/XML DataSource/CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
+                                <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
                                 <asp:DropDownList  CssClass=" dropdown-toggle"  ID="CountryCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
                              </td>
                             <td>
@@ -244,23 +244,6 @@
                                 </div>             
                             </td>
                          </tr>
-                        <!-- End of Country and Phone Number Row --> 
-                        <!-- Fourth Row  
-                        <tr> 
-                            <!--            
-                            <td>
-                                <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
-                                <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
-                             </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Telephone Number</label>
-                                </div>             
-                            </td>
-                            
-                        </tr>
-                        <!-- End of Fourth Row --> 
                     </table>
                     <table>
                         <!-- Address Row --> 
@@ -342,6 +325,7 @@
                                 <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
                             </td>
                         </tr>
+                        <!-------------------------------------------------- -->
                         <tr>
                             <td>
                                 <div class="input-container" >
@@ -350,15 +334,8 @@
                                 </div>
                             </td>
                              <td>
-                                <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-                                <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-                                <script>
-                                    $(function () {
-                                        $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
-                                    });
-                                </script>
                                 <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                 <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                             </td>
                             <td>
                                 <div class="input-container" >
@@ -367,6 +344,64 @@
                                 </div>                               
                             </td>                                
                         </tr>
+                        <!----------------------------------------------------  -->
+                        <tr>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="QueryFlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Flight Number</label> 
+                                </div>
+                            </td>
+                            <td>
+                                <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="dateOfFlight2" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="bookingReferenceNumber2" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/> 
+                                    <label class="form-control-label">Booking Reference</label>   
+                                </div>
+                            </td>
+                        </tr>
+                        <!------------------------------------------------- --> 
+                        <tr>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="QueryFlightNumber3" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Flight Number</label> 
+                                </div>
+                            </td>
+                            <td>
+                                <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="DateValidator3" ControlToValidate="dateOfFlight3" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="bookingReferenceNumber3" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/> 
+                                    <label class="form-control-label">Booking Reference</label>   
+                                </div>
+                            </td>
+                        </tr>
+                        <!------------------------------------------------- -->
+                        <tr>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="QueryFlightNumber4" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Flight Number</label> 
+                                </div>
+                            </td>
+                            <td>
+                                <asp:TextBox  ID="dateOfFlight4" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                <asp:RequiredFieldValidator ID="DateValidator4" ControlToValidate="dateOfFlight4" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                            </td>
+                            <td>
+                                <div class="input-container">
+                                    <input type="text" id="bookingReferenceNumber4" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/> 
+                                    <label class="form-control-label">Booking Reference</label>   
+                                </div>
+                            </td>
+                        </tr>
+                        <!------------------------------------------------- -->
                         <tr>
                             <td>
                                 <br/>
@@ -391,7 +426,7 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryLastName1"  name="helpQueryLastName" class="form-control inline-label" />
+                                    <input type="text" style="width: 260px" id="helpQueryLastName1"  name="helpQueryLastName" class="form-control focus inline-label" />
                                     <label class="form-control-label">Family Name</label>
                                 </div>
                             </td>
@@ -553,19 +588,14 @@
                             </td>
                             <td>
                                 <select class=" dropdown-toggle" id="refundReason1" name="refundReason1"  runat="server" style="height:30px;width:260px" required>
-
+                                    <option value="" selected="selected">-- Please Select --</option>
                                 </select>
                                 <asp:RequiredFieldValidator ID="refundReason1Validator" ControlToValidate="refundReason1" InitialValue="Default" runat="server" Enabled="false"/>
                             </td>
-                            <!--
-                            <td>
-                                <button type="button" class="transparentBtn">+</button>
-                            </td>
-                            -->
                         </tr>
                         <tr>
                             <td>
-                                 <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList2"  runat="server"  Height="30px" Width="260px">
+                                 <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList2" Enabled="False"  runat="server"  Height="30px" Width="260px">
                                     <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
                                     <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
                                     <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
@@ -573,44 +603,45 @@
                  
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason2" name="refundReason2"  runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason2" name="refundReason2" disabled="True" runat="server" style="height:30px;width:260px" >
+                                    <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList3"  runat="server"  Height="30px" Width="260px">
+                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList3" Enabled="False" runat="server"  Height="30px" Width="260px">
                                     <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
                                     <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
                                     <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason3" name="refundReason3"  runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason3" name="refundReason3" disabled="True"  runat="server" style="height:30px;width:260px" >
+                                    <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList4"  runat="server"  Height="30px" Width="260px">
+                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList4" Enabled="False"  runat="server"  Height="30px" Width="260px">
                                     <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
                                     <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
                                     <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
                                 </asp:DropDownList>
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason4" name="refundReason4"  runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason4" name="refundReason4" disabled="True"  runat="server" style="height:30px;width:260px" >
+                                    <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
                         </tr>
 
-
-
-
                         <tr>
-                            <td>
+                            <td colspan="1">
                                 <p>Do you need a letter from your insurance?</p>
                             </td>
+<<<<<<< HEAD
                             <td colspan="2" align="left">
                                 <div class="input-container">
                                     
@@ -620,6 +651,15 @@
                                     <label class="radio-inline">
                                         <input type="radio" name="insurance" value="no"/>No
                                     </label> 
+=======
+                            <td colspan="2">
+                                <div class="input-container">   
+                                    <asp:RadioButtonList runat="server" ID="RadioButtonList1" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
+                                        <asp:ListItem Text="Yes" Value="yes" />
+                                        <asp:ListItem Text="No" Value="no" Selected="True"/>
+                                    </asp:RadioButtonList>
+
+>>>>>>> origin/master
                                     <br/>
                                     <br/>
                                 </div>
@@ -689,7 +729,17 @@
           
     </div>
    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
+     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
      <script type="text/javascript">
+         
+         $(function () {
+             $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
+             $("#dateOfFlight2").datepicker({ dateFormat: 'dd-M-yy' });
+             $("#dateOfFlight3").datepicker({ dateFormat: 'dd-M-yy' });
+             $("#dateOfFlight4").datepicker({ dateFormat: 'dd-M-yy' });
+         });
+
          $("#_helpQueryCountryList").change(function () {
              $("#_helpQueryTelephoneCode").val(this.value);
 
@@ -815,6 +865,30 @@
              }
          });
 
+         $("#refundReason1")
+             .change(function() {
+                 if (this.selectedIndex  != 0) {
+                     $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', false);
+                 } else {
+                     //Reset the other drop downs
+                     $("#<%=refundReasonDropDownList2.ClientID %>").prop('selectedIndex', 0);
+                     $("#<%=refundReasonDropDownList3.ClientID %>").prop('selectedIndex', 0);
+                     $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                     $('#refundReason2').prop('selectedIndex', 0);
+                     $('#refundReason3').prop('selectedIndex', 0);
+                     $('#refundReason4').prop('selectedIndex', 0);
+                     //Disable the other drop downs
+                     $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', true);
+                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', true);
+                     $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+                    
+                     $("#refundReason2").attr('disabled', true);
+                     $("#refundReason3").attr('disabled', true);
+                     $("#refundReason4").attr('disabled', true);
+
+                 }
+             });
+
 
          $("#refundReasonDropDownList2").change(function () {
              if (this.value != "select") {
@@ -834,6 +908,25 @@
              }
 
          });
+
+         $("#refundReason2")
+             .change(function () {
+                 if (this.selectedIndex != 0) {
+                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', false);
+                 } else {
+                     //Reset the other drop downs
+                     $("#<%=refundReasonDropDownList3.ClientID %>").prop('selectedIndex', 0);
+                     $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                     $('#refundReason2').prop('selectedIndex', 0);
+                     $('#refundReason3').prop('selectedIndex', 0);
+                     $('#refundReason4').prop('selectedIndex', 0);
+                     //Disable the other drop downs
+                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', true);
+                     $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+                     $("#refundReason3").attr('disabled', true);
+                     $("#refundReason4").attr('disabled', true);
+                 }
+             });
 
          $("#refundReasonDropDownList3").change(function () {
              if (this.value != "Selected") {
@@ -875,7 +968,21 @@
 
          });
 
-         
+         function autoPopulateFirstGuestName() {
+             var firstName = document.getElementById('helpQueryFirstName').value;
+             document.getElementById('helpQueryFirstName1').classList.add('filled');
+             document.getElementById('helpQueryFirstName1').focus();
+             var firstGuestName = document.getElementById('helpQueryFirstName1');
+             firstGuestName.value = firstName;
+         }
+
+         function autoPopulateFirstGuestLastName() {
+             var lastName = document.getElementById('helpQueryLastName').value;
+             document.getElementById('helpQueryLastName1').classList.add('filled');
+             var firstGuestLastName = document.getElementById('helpQueryLastName1');
+             firstGuestLastName.value = lastName;
+         }
+
 
      </script>
                         <script type="text/javascript">

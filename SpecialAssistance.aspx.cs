@@ -103,13 +103,7 @@ public partial class SpecialAssistance : System.Web.UI.Page
 
         }
 
-        // Collecting data from Request Disability Assistance
-        sbBodyTextString.AppendLine("Disability Query type: " + Request.Form["_helpQueryTypeDropDownList"]);
-        sbBodyTextString.AppendLine("First Disability Selected: " + Request.Form["_helpQueryDefList"]);
-        // Get additional disability info if set
         
-
-
         sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text.ToString());
 
 

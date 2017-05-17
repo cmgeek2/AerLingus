@@ -86,7 +86,7 @@ public partial class css_RefaundRequest : System.Web.UI.Page
             string countrycode = CountryCode.SelectedValue;
             sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
             char[] delimiterChars = { '(', ')' };
-            string[] code = _helpQueryTelephoneCode.SelectedItem.ToString().Split(delimiterChars);
+            string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
             sbBodyTextString.AppendLine("Telephone: " + code[1].ToString() + " " + Request.Form["_helpQueryTelephoneNumber"]);
             if (Request.Form["_helpQueryAerClubDropDown"] != "Selected")
             {
