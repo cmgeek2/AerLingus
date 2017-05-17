@@ -161,7 +161,7 @@
                 <tr>
                     <td>
                     <div class="input-container" >
-                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width:260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number"  class="form-control inline-label" onblur="checkvalue(this)">
+                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
@@ -183,13 +183,11 @@
 
                 <tr>
                    <td>
-                    <div class="input-container" >
-                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)">
-
-                    <label class="form-control-label">Booking Reference</label>
-                    </div>
-                     
-                    </td>
+                        <div class="input-container" >
+                            <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                            <label class="form-control-label">Booking Reference</label>
+                        </div> 
+                  </td>
                 </tr>
               <tr>
                  <td>&nbsp</td>
@@ -200,22 +198,24 @@
             
                 <tr>
                     <td>
-                         
-                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
-                            <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
-                            <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
-                            <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
-                            <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
-                            <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
-                            <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
-                            <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
-                            <asp:ListItem Text="Other Special Needs" Value="O"></asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
+                        <div>
+                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList" runat="server" Height="30px" Width="260px" AppendDataBoundItems="true">
+                                <asp:ListItem Text="Select Query Type" Value="Selected" Selected="True"></asp:ListItem>
+                                <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
+                                <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
+                                <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
+                                <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
+                                <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
+                                <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
+                                <asp:ListItem Text="Other Special Needs" Value="O"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="QuerytypeValidator" BorderColor="Red" ErrorMessage="Required Field" ControlToValidate="_helpQueryTypeDropDownList" Display="Dynamic"  InitialValue="Selected" runat="server"/>
+                        </div> 
+                        
                     </td>
                     <td>
                    
-                        <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required>
+                        <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required="required" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
@@ -439,6 +439,8 @@
           if (requestType == "W") {
               $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
               $("#_helpQueryDefList2").attr("Disabled", false);
+              $("#_helpQueryDefList2").attr("Required", true);
+
           }
 
 
@@ -501,6 +503,7 @@
           if (this.value != "Selected") {
               $("#_helpQueryDefList2").attr("Disabled", false);
               $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
+              $("#_helpQueryDefList2").attr("Required", true);
           } else {
               $("#<%=_helpQueryDefList2.ClientID%>").empty();
               var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
@@ -543,6 +546,7 @@
          $("#_helpQueryTypeDropDownList3").change(function () {
              if (this.value != "Selected") {
                  $("#_helpQueryDefList3").attr("Disabled", false);
+                 $("#_helpQueryDefList3").attr("Required", true);
              } else {
                  $("#<%=_helpQueryDefList3.ClientID%>").empty();
                  var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
@@ -579,6 +583,21 @@
              }
 
          });
+
+         $("#_helpQueryDefList").change(function() {
+             if (this.value != "-- Please Select --") {
+                 $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', false);
+             }
+
+         });
+
+         $("#_helpQueryDefList2").change(function () {
+             if (this.value != "-- Please Select --") {
+                 $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
+             }
+
+         });
+
 
 
 
