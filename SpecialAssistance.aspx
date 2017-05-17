@@ -75,13 +75,13 @@
               </td>
                 <td>
                  <div class="input-container" >
-                 <input type="text" style="width:260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName"  class="form-control inline-label  " required="required" onblur="checkvalue(this)">
+                     <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">First Name</label>
                     </div>
               </td>
                 <td>
                 <div class="input-container" >
-                 <input type="text" style="width:260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                  <label class="form-control-label">Family Name</label>
                 </div>
             </td>
@@ -89,12 +89,12 @@
             <tr>
                 <td colspan="3">
                     <div class="input-container" >
-                    <input  type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width:360px"  class="form-control inline-label"  required="required" onblur="checkvalue(this)">
+                        <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Email Address</label>
                     </div>
               
                   <div class="input-container" >
-                    <input type="email" name="email" id="email" style="width:360px"  class="form-control inline-label" required="required" onblur="checkvalue(this)" >
+                      <input type="email" name="email" id="email" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Confirm Email Address</label>
                     </div>
             </td>
@@ -119,7 +119,7 @@
                </td>
                 <td>
                    <div class="input-container" >
-                    <input type="text" style="width:260px"  required pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                       <input type="text" style="width: 260px" required="required" pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Telephone Number</label>
                     </div>
                
@@ -140,7 +140,7 @@
                  </td>
                  <td class="auto-style1">
                     <div class="input-container" >
-                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display:none;width:260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit AerClub Membership Number"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
+                        <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display: none; width: 260px" pattern="[0-9]{16}" required="required" title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
                     <label class="form-control-label">AerClub Membership Number</label>
                     </div>
                      
@@ -438,6 +438,7 @@
           var requestType = $('#<%=_helpQueryTypeDropDownList.ClientID%>').val();
           if (requestType == "W") {
               $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
+              $("#_helpQueryDefList2").attr("Disabled", false);
           }
 
 
@@ -457,8 +458,9 @@
           }
 
           if (this.value == "W") 
-          {   
-              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Wheelchair'); 
+          {
+              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Mobility');
+              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Wheelchair');
           }
 
           if (this.value == "M") 
