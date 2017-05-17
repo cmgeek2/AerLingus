@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<RefundInfo>
+
+  <!--
+  <Reason value="Selected" Name="Please Select a Tier"></Reason>
+  <Reason Value="Flight Related" Name="Flight Related"> </Reason>
+  <Reason Value="Fee Related" Name="Fee Related">    </Reason>
+  <Reason Value="Compensation Related" Name="Compensation Related"></Reason>
+  -->
+
+  <FlightRelated>
+    <ID value="Bereavement"> </ID>
+  </FlightRelated>
+  <FlightRelated>
+    <ID value="Cancelled Flight"></ID>
+  </FlightRelated>
+  <FlightRelated>
+    <ID value="Delayed Flight"></ID>
+   </FlightRelated>
+  <FlightRelated>
+    <ID value="Disrupted Flight"></ID>
+  </FlightRelated>
+  <FlightRelated>
+    <ID value="Duplicate Booking"></ID>   
+  </FlightRelated>
+  <FlightRelated>
+    <ID value="Flex/Business Class Booking"></ID>   
+  </FlightRelated>
+  <FlightRelated>
+    <ID value="Schedule Change"></ID>  
+  </FlightRelated>
+  <FlightRelated>
+    <ID value="Tax Refund"></ID>   
+  </FlightRelated>
+
+
+  <FeeRelated>
+    <ID value="Bag Fee"></ID> 
+  </FeeRelated>
+  <FeeRelated>
+    <ID value="PreOrder Meal"></ID>   
+  </FeeRelated>
+  <FeeRelated>
+    <ID value="Seat Fee (Choice/Exit/Premium)"></ID>   
+  </FeeRelated>
+  <FeeRelated>
+    <ID value="Upgrade Yourself"></ID>   
+  </FeeRelated>
+  <FeeRelated>
+    <ID value="Other"></ID>  
+  </FeeRelated>
+
+  <CompRelated>
+    <ID value="Accommodation"></ID> 
+  </CompRelated>
+  <CompRelated>
+    <ID value="Cancelled Flight"></ID>  
+  </CompRelated>
+  <CompRelated>
+    <ID value="Delayed Flight"></ID>  
+  </CompRelated>
+  <CompRelated>
+    <ID value="Voucher"></ID>  
+  </CompRelated>
+
+  <SecondaryReason>
+    <ID value="Fee Related"></ID>  
+  </SecondaryReason>
+  <SecondaryReason>
+    <ID value="Compensation Related"></ID> 
+  </SecondaryReason>
+
+  
+</RefundInfo>
