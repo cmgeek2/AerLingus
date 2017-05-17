@@ -957,7 +957,6 @@
          function autoPopulateFirstGuestName() {
              var firstName = document.getElementById('helpQueryFirstName').value;
              document.getElementById('helpQueryFirstName1').classList.add('filled');
-             document.getElementById('helpQueryFirstName1').focus();
              var firstGuestName = document.getElementById('helpQueryFirstName1');
              firstGuestName.value = firstName;
          }
