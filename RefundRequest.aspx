@@ -641,25 +641,13 @@
                             <td colspan="1">
                                 <p>Do you need a letter from your insurance?</p>
                             </td>
-<<<<<<< HEAD
-                            <td colspan="2" align="left">
-                                <div class="input-container">
-                                    
-                                    <label class="radio-inline">
-                                        <input type="radio" name="insurance" value="yes" />Yes
-                                    </label> 
-                                    <label class="radio-inline">
-                                        <input type="radio" name="insurance" value="no"/>No
-                                    </label> 
-=======
+
                             <td colspan="2">
                                 <div class="input-container">   
                                     <asp:RadioButtonList runat="server" ID="RadioButtonList1" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
                                         <asp:ListItem Text="Yes" Value="yes" />
                                         <asp:ListItem Text="No" Value="no" Selected="True"/>
                                     </asp:RadioButtonList>
-
->>>>>>> origin/master
                                     <br/>
                                     <br/>
                                 </div>
