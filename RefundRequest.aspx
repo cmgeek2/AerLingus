@@ -412,7 +412,7 @@
 
                         <tr>
                             <td>
-                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="ReasonsForRefund1" Height="30px"  runat="server" Width="260px"  >
+                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest1" Height="30px"  runat="server" Width="260px"  >
                                     <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                                     <asp:ListItem Text="Mr" Value="Mr." />
                                 </asp:DropDownList>
@@ -435,7 +435,7 @@
                         
                         <tr>
                             <td>
-                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="DropDownList2" Height="30px"  runat="server" Width="260px"  >
+                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest2" Height="30px"  runat="server" Width="260px"  >
                                 <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                                 <asp:ListItem Text="Mr" Value="Mr." />
                                 <asp:ListItem Text="Mrs" Value="Mrs." />
@@ -461,7 +461,7 @@
                         
                         <tr>
                             <td>
-                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="DropDownList3" Height="30px"  runat="server" Width="260px"  >
+                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest3" Height="30px"  runat="server" Width="260px"  >
                                 <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                                 <asp:ListItem Text="Mr" Value="Mr." />
                                 <asp:ListItem Text="Mrs" Value="Mrs." />
@@ -487,7 +487,7 @@
                         
                         <tr>
                             <td>
-                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="DropDownList4" Height="30px"  runat="server" Width="260px"  >
+                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest4" Height="30px"  runat="server" Width="260px"  >
                                 <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                                 <asp:ListItem Text="Mr" Value="Mr." />
                                 <asp:ListItem Text="Mrs" Value="Mrs." />
@@ -513,7 +513,7 @@
 
                         <tr>
                             <td>
-                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="DropDownList5" Height="30px"  runat="server" Width="260px"  >
+                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest5" Height="30px"  runat="server" Width="260px"  >
                                 <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                                 <asp:ListItem Text="Mr" Value="Mr." />
                                 <asp:ListItem Text="Mrs" Value="Mrs." />
@@ -539,7 +539,7 @@
                         
                         <tr>
                             <td>
-                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="DropDownList6" Height="30px"  runat="server" Width="260px"  >
+                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest6" Height="30px"  runat="server" Width="260px"  >
                                 <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                                 <asp:ListItem Text="Mr" Value="Mr." />
                                 <asp:ListItem Text="Mrs" Value="Mrs." />
@@ -937,7 +937,6 @@
          $("#refundReasonDropDownList4").change(function () {
              if (this.value != "Selected") {
                  $("#refundReason4").attr("Disabled", false);
-                 //$("#_requestRefundReasonInfo2").empty();
              } else {
                  $("#refundReason4").attr("Disabled", true);
              }
@@ -953,6 +952,14 @@
              }
 
          });
+
+         $('#_helpQuerySalutation')
+             .change(function() {
+                 var salutation = this.value;
+                 $('#<%=salutationGuest1.ClientID%> option:selected').text(salutation);
+                 
+                
+             });
 
          function autoPopulateFirstGuestName() {
              var firstName = document.getElementById('helpQueryFirstName').value;
