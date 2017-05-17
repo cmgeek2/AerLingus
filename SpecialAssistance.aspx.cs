@@ -43,15 +43,15 @@ public partial class SpecialAssistance : System.Web.UI.Page
         //form IDs are identical for both on deploy 3/29/2017
         if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["USANeedHelpFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["USASAFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["USASAFormId2"];
             sUSAorOther = "NA";
         
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["OthersNeedHelpFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["OthersNeedHelpFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["OthersSAFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["OthersSAFormId2"];
             sUSAorOther = "Other";
            
         }
@@ -123,15 +123,15 @@ public partial class SpecialAssistance : System.Web.UI.Page
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
-        if (Request.Form["_helpQueryCountryList"] == "USA")
+        if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["USASAAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["USASASubject"];
         }
         else
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersNeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersNeedHelpFormId"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersSAToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersSAFormId"];
         }
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
