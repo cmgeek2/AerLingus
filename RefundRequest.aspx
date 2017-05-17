@@ -636,7 +636,6 @@
                                 </select>
                             </td>
                         </tr>
-
                         <tr>
                             <td colspan="1">
                                 <p>Do you need a letter from your insurance?</p>
