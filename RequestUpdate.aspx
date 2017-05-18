@@ -148,55 +148,20 @@
                          </tr>
                     </table>
                     <table>
-                        <!-- Address Row --> 
                         <tr>
-                            <td >
-                                <div class="input-container" >
-                                    <input type="text" name="addres1" id="address1" style="width: 360px" class="form-control inline-label" required="required" pattern="^\s*\S+(?:\s+\S+){2}" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Address 1</label>
-                                </div> 
-                            </td>
-                            <td>
-                                <div class="input-container">  
-                                    <input type="text" name="address2" id="address2" style="width: 360px" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Address 2</label>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
-                    <table> 
-                    <!-- End of Address Row --> 
-                     <!-- Sixth Row -->
-                        <tr>
-                            <td colspan="3">
-                                <div class="input-container" >
-                                    <input type="text" name="townCity" id="townCity" maxlength="20" style="width: 260px" title="town or city" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Town/City</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" name="countryState" id="countryState" maxlength="20" style="width: 260px" title="country or state" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Country/State</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" name="zipCode" id="zipCode" maxlength="20" style="width: 260px" title="postal zip code" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Postaly/Zip Code</label>
-                                </div>
-                            </td>
-                        </tr>
-                    </table>
+                        <td>
                         <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
-                            <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
-                                <option value="Selected" selected="selected">Relationship to the guest</option>
-                                <option value="Travel Agent">Travel Agent</option>
-                                <option value="Consumer Group">Consumer Group</option>
-                                <option value="Family">Family</option>
-                                <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
-                            </select>
+                                <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
+                                    <option value="Selected" selected="selected">Relationship to the guest</option>
+                                    <option value="Travel Agent">Travel Agent</option>
+                                    <option value="Consumer Group">Consumer Group</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
+                                </select>
+                            </td>
                         </div>
+                        </tr>
+                    </table>
                     <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
                          <tr>
@@ -217,7 +182,16 @@
                             </td> 
                         </tr>
                     </table>
-               
+                    <!-------------------------------------------------------------------------------------------------------------------- -->
+                    <table>
+                         <tr>
+                                <div class="input-container" >
+                                    <input type="text" style="width: 260px" id="updateCaseID" title="Please enter your case number" name="updateCaseID" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
+                                    <label class="form-control-label">Case Number</label>
+                                </div>
+                        </tr>
+                    </table>
+                    <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
                         <tr>
                             <td>&nbsp</td>
