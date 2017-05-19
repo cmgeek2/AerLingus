@@ -125,13 +125,13 @@ public partial class SpecialAssistance : System.Web.UI.Page
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
         if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["USASAAddress"]);
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["USASAToAddress"]);
             _helpMessage.Subject = ConfigurationManager.AppSettings["USASASubject"];
         }
         else
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersSAToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersSAFormId"];
+            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersSASubject"];
         }
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);

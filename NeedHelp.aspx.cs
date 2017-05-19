@@ -115,12 +115,12 @@ public partial class NeedHelp : System.Web.UI.Page
         if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
+            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
         }
         else
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersNeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersNeedHelpFormId"];
+            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
         }
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
