@@ -208,13 +208,13 @@
                         <tr>
                             <td>
                                 <div class="input-container" >
-                                    <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width: 260px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Email Address</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="email" name="email" id="email" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <input type="email" name="email" id="email" style="width: 260px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Confirm Email Address</label>
                                 </div>
                             </td>
@@ -250,13 +250,13 @@
                         <tr>
                             <td >
                                 <div class="input-container" >
-                                    <input type="text" name="addres1" id="address1" style="width: 360px" class="form-control inline-label" required="required" pattern="^\s*\S+(?:\s+\S+){2}" onblur="checkvalue(this)"/>
+                                    <input type="text" name="addres1" id="address1" style="width: 260px" class="form-control inline-label" required="required" pattern="^\s*\S+(?:\s+\S+){2}" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 1</label>
                                 </div> 
                             </td>
                             <td>
                                 <div class="input-container">  
-                                    <input type="text" name="address2" id="address2" style="width: 360px" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <input type="text" name="address2" id="address2" style="width: 260px" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 2</label>
                                 </div>
                             </td>
@@ -329,6 +329,13 @@
                         <tr>
                             <td>
                                 <div class="input-container" >
+                                    <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Booking Reference</label>
+                                </div>                               
+                            </td>       
+                        <tr>
+                            <td>
+                                <div class="input-container" >
                                     <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Flight Number</label>
                                 </div>
@@ -336,13 +343,7 @@
                              <td>
                                 <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
-                            </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Booking Reference</label>
-                                </div>                               
-                            </td>                                
+                            </td>                         
                         </tr>
                         <!----------------------------------------------------  -->
                         <tr>
@@ -356,12 +357,6 @@
                                 <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="dateOfFlight2" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                             </td>
-                            <td>
-                                <div class="input-container">
-                                    <input type="text" id="bookingReferenceNumber2" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/> 
-                                    <label class="form-control-label">Booking Reference</label>   
-                                </div>
-                            </td>
                         </tr>
                         <!------------------------------------------------- --> 
                         <tr>
@@ -374,12 +369,6 @@
                             <td>
                                 <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                                 <asp:RequiredFieldValidator ID="DateValidator3" ControlToValidate="dateOfFlight3" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
-                            </td>
-                            <td>
-                                <div class="input-container">
-                                    <input type="text" id="bookingReferenceNumber3" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/> 
-                                    <label class="form-control-label">Booking Reference</label>   
-                                </div>
                             </td>
                         </tr>
                         <!------------------------------------------------- -->
