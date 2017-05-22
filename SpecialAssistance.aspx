@@ -225,14 +225,13 @@
                      <td>
                          
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList2" Enabled="False" runat="server"   Height="30px" Width="260px">
-                            <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Select Option" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
                             <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
                             <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
                             <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
-                            <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
-                            <asp:ListItem Text="Other Special Needs" Value="O"></asp:ListItem>
+                            <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="_QueryTypeValidator2" ControlToValidate="_helpQueryTypeDropDownList2" InitialValue="Selected" runat="server"/>
                     </td>
@@ -249,14 +248,13 @@
                      <td>
                          
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3" Enabled="False"  runat="server"  Height="30px" Width="260px">
-                            <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Select Option" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
                             <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
                             <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
                             <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
-                            <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
-                            <asp:ListItem Text="Other Special Needs" Value="O"></asp:ListItem>
+                            <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
                     </td>
