@@ -64,17 +64,17 @@ public partial class SpecialAssistance : System.Web.UI.Page
         sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
-        sbBodyTextString.AppendLine("Query Type: " + _helpQueryTypeDropDownList.SelectedItem);
-        sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
+        sbBodyTextString.AppendLine("Request Type: " + _helpQueryTypeDropDownList.SelectedItem);
+        sbBodyTextString.AppendLine("Request Definition: " + Request.Form["_helpQueryDefList"]);
         if (Request.Form["_helpQueryTypeDropDownList2"] != "Selected")
         {
-            sbBodyTextString.AppendLine("Query type 2: " + Request.Form["_helpQueryTypeDropDownList2"]);
-            sbBodyTextString.AppendLine("Query Definition 2: " + Request.Form["_helpQueryDefList2"]);
+            sbBodyTextString.AppendLine("Request Type 2: " + Request.Form["_helpQueryTypeDropDownList2"]);
+            sbBodyTextString.AppendLine("Request Definition 2: " + Request.Form["_helpQueryDefList2"]);
 
             if (Request.Form["_helpQueryTypeDropDownList2"] != "Selected")
             {
-                sbBodyTextString.AppendLine("Query type 3: " + Request.Form["_helpQueryTypeDropDownList3"]);
-                sbBodyTextString.AppendLine("Query Definition 3: " + Request.Form["_helpQueryDefList3"]);
+                sbBodyTextString.AppendLine("Request Type 3: " + Request.Form["_helpQueryTypeDropDownList3"]);
+                sbBodyTextString.AppendLine("Request Definition 3: " + Request.Form["_helpQueryDefList3"]);
             }
         }
 
