@@ -349,8 +349,6 @@
      $('#requestDisabilityPlusButton1').click(function() {
          var disability2Div = document.getElementById('disability2');
          disability2Div.style.display = 'block';
-         var displayed = document.getElementById('disabilityDisplayed').value;
-         document.getElementById('disabilityDisplayed').value = Number(displayed) + 1;
 
      });
      $('#requestDisabilityPlusButton1').mouseup(function() { this.blur() });
@@ -358,29 +356,25 @@
      $('#requestDisabilityPlusButton2').click(function () {
          var disability2Div = document.getElementById('disability3');
          disability2Div.style.display = 'block';
-         var displayed = document.getElementById('disabilityDisplayed').value;
-         document.getElementById('disabilityDisplayed').value = Number(displayed) + 1;
      });
 
      
      $('#requestDisabilityPlusButton2').mouseup(function () { this.blur() });
 
      $('#requestDisabilityMinusButton2').click(function () {
-         $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Select Option");
-         //$('#<%=_helpQueryDefList2.ClientID%> option:selected').text("-- Please Select --");
+         var dropdown = document.getElementById('_helpQueryTypeDropDownList2');
+         dropdown.selectedIndex = 0;
          $("#<%=_helpQueryDefList2.ClientID%>").empty();
          var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
          $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
          $("#_helpQueryDefList2").attr("Disabled", false);
          var disability3Div = document.getElementById('disability2');
          disability3Div.style.display = 'none';
-         var displayed = document.getElementById('disabilityDisplayed').value;
-         document.getElementById('disabilityDisplayed').value = Number(displayed) - 1;
      });
     
      $('#requestDisabilityMinusButton3').click(function () {
-         $('#<%=_helpQueryTypeDropDownList3.ClientID%> option:selected').text("Select Option");
-         //$('#<%=_helpQueryDefList3.ClientID%> option:selected').text("-- Please Select --");
+         var dropdown = document.getElementById('_helpQueryTypeDropDownList3');
+         dropdown.selectedIndex = 0;
 
          $("#<%=_helpQueryDefList3.ClientID%>").empty();
          var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
