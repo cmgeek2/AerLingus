@@ -214,7 +214,7 @@
                     </td>
                     <td colspan="2">
                    
-                        <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required="required" >
+                        <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:360px" required="required" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
@@ -237,7 +237,7 @@
                     </td>
                     <td colspan="2">
                    
-                        <select class=" dropdown-toggle" id="_helpQueryDefList2" name="_helpQueryDefList2" disabled="True" runat="server" style="height:30px;width:260px" >
+                        <select class=" dropdown-toggle" id="_helpQueryDefList2" name="_helpQueryDefList2" disabled="True" runat="server" style="height:30px;width:360px" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator2" ControlToValidate="_helpQueryDefList2" InitialValue="Default" runat="server" Enabled="false"/>
@@ -260,7 +260,7 @@
                     </td>
                     <td colspan="2">
                    
-                        <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:260px" >
+                        <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:360px" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator3" ControlToValidate="_helpQueryDefList3" InitialValue="Default" runat="server" Enabled="false"/>
