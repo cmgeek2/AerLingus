@@ -71,7 +71,7 @@ public partial class SpecialAssistance : System.Web.UI.Page
             sbBodyTextString.AppendLine("Request Type 2: " + Request.Form["_helpQueryTypeDropDownList2"]);
             sbBodyTextString.AppendLine("Request Definition 2: " + Request.Form["_helpQueryDefList2"]);
 
-            if (Request.Form["_helpQueryTypeDropDownList2"] != "Selected")
+            if (Request.Form["_helpQueryTypeDropDownList3"] != "Selected")
             {
                 sbBodyTextString.AppendLine("Request Type 3: " + Request.Form["_helpQueryTypeDropDownList3"]);
                 sbBodyTextString.AppendLine("Request Definition 3: " + Request.Form["_helpQueryDefList3"]);
