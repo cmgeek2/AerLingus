@@ -9,15 +9,15 @@
      <link rel="stylesheet" href="js/screen.css"/>
      <link rel="stylesheet" href="js/Style-3.css" />
      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-    <link rel="stylesheet" href="css/Common.css"/>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+     <link rel="stylesheet" href="css/Common.css"/>
+     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     
     	<script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
          
      
  <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
-
+    
 
 </head>
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -44,10 +44,7 @@
    
   
 <body>
-  
-   
-    
-   
+    <input type="hidden" id="disabilityDisplayed" value="1"/>
     <div id="page1" data-role="page">
     <form id="_helpQueryForm"  runat="server" autocomplete="off" >
         <div>
@@ -147,17 +144,10 @@
                  </td> 
              </tr>
              </table>
-               
+            <br/>
+            <br/>
+             <div><h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2></div>  
              <table>
-             <tr>
-                 <td>&nbsp</td>
-             </tr>
-          <tr>
-              <td colspan="2">
-                         <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
-
-                  </td>
-        </tr>
                 <tr>
                     <td>
                     <div class="input-container" >
@@ -180,22 +170,20 @@
                         <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
-
                 <tr>
-                   <td>
+                    <td>
                         <div class="input-container" >
                             <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
                             <label class="form-control-label">Booking Reference</label>
                         </div> 
-                  </td>
+                    </td>
                 </tr>
-              <tr>
-                 <td>&nbsp</td>
-             </tr>
-             <tr>
-             <td colspan="2"> <h2 class="xl2 tealGreen"> Request Disability Assistance </h2></td>
-            </tr>
-            
+                <tr>
+                    <td>&nbsp</td>
+                </tr>
+            </table>
+            <div class="input-container"> <h2 class="xl2 tealGreen"> Request Disability Assistance </h2></div>    
+            <table>
                 <tr>
                     <td>
                         <div>
@@ -213,14 +201,18 @@
                         
                     </td>
                     <td colspan="2">
-                   
                         <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:360px" required="required" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
+                    <td>
+                        <button type="button" id="requestDisabilityPlusButton1" class="transparentBtn">+</button>
+                    </td>
                 </tr>
-                 
+            </table>
+            <div id="disability2" style="display: none;">
+                <table>     
                  <tr>
                      <td>
                          
@@ -236,51 +228,60 @@
                         <asp:RequiredFieldValidator ID="_QueryTypeValidator2" ControlToValidate="_helpQueryTypeDropDownList2" InitialValue="Selected" runat="server"/>
                     </td>
                     <td colspan="2">
-                   
                         <select class=" dropdown-toggle" id="_helpQueryDefList2" name="_helpQueryDefList2" disabled="True" runat="server" style="height:30px;width:360px" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator2" ControlToValidate="_helpQueryDefList2" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
-                 </tr>
-                 
-                 <tr>
-                     <td>
-                         
-                           <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3" Enabled="False"  runat="server"  Height="30px" Width="260px">
-                            <asp:ListItem Text="Select Option" Value="Selected"></asp:ListItem>
-                            <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
-                            <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
-                            <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
-                            <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
-                            <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
-                            <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
-                        </asp:DropDownList>
-                        <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
+                    <td>
+                        <button type="button" id="requestDisabilityPlusButton2" class="transparentBtn">+</button>
                     </td>
-                    <td colspan="2">
-                   
-                        <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:360px" >
-                             <option value="" selected="selected">-- Please Select --</option>
-                        </select>
-                       <asp:RequiredFieldValidator ID="_helpQueryDefListValidator3" ControlToValidate="_helpQueryDefList3" InitialValue="Default" runat="server" Enabled="false"/>
+                    <td>
+                        <button type="button" id="requestDisabilityMinusButton2" class="transparentBtn">-</button>
                     </td>
                  </tr>
-       <tr>
-                       <td>&nbsp</td>
-        </tr>
-        <tr>
-
-            <td> 
-                             <h2 class="xl2 tealGreen"> Comments</h2>  
-
-
-            </td>
-       </tr>
-            
-       </table>
-          <p>Please provide any additional information to assist us with your request, i.e. include make and model; dimensions and weight; battery type and wattage</p>
-        <div>
+            </table>
+            </div>    
+            <div id="disability3" style="display: none;">
+                <table>     
+                    <tr>
+                        <td>
+                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3" Enabled="False"  runat="server"  Height="30px" Width="260px">
+                                <asp:ListItem Text="Select Option" Value="Selected"></asp:ListItem>
+                                <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
+                                <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
+                                <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
+                                <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
+                                <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
+                                <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
+                            </asp:DropDownList>
+                            <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
+                        </td>
+                        <td colspan="2">
+                            <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:360px" >
+                                <option value="" selected="selected">-- Please Select --</option>
+                            </select>
+                            <asp:RequiredFieldValidator ID="_helpQueryDefListValidator3" ControlToValidate="_helpQueryDefList3" InitialValue="Default" runat="server" Enabled="false"/>
+                        </td>               
+                        <td>
+                            <button type="button" id="requestDisabilityMinusButton3" class="transparentBtn">-</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+              
+            <table>  
+                <tr>
+                    <td>&nbsp</td>
+                </tr>
+                <tr>
+                    <td> 
+                        <h2 class="xl2 tealGreen"> Comments</h2>  
+                    </td>
+                </tr>            
+            </table>
+            <p>Please provide any additional information to assist us with your request, i.e. include make and model; dimensions and weight; battery type and wattage</p>
+            <div>
             <table width="100%">
                   <tr>
                 <td>
@@ -344,6 +345,44 @@
               ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
           }
       });
+
+     $('#requestDisabilityPlusButton1').click(function() {
+         var disability2Div = document.getElementById('disability2');
+         disability2Div.style.display = 'block';
+         var displayed = document.getElementById('disabilityDisplayed').value;
+         document.getElementById('disabilityDisplayed').value = Number(displayed) + 1;
+
+     });
+     $('#requestDisabilityPlusButton1').mouseup(function() { this.blur() });
+
+     $('#requestDisabilityPlusButton2').click(function () {
+         var disability2Div = document.getElementById('disability3');
+         disability2Div.style.display = 'block';
+         var displayed = document.getElementById('disabilityDisplayed').value;
+         document.getElementById('disabilityDisplayed').value = Number(displayed) + 1;
+     });
+
+     
+     $('#requestDisabilityPlusButton2').mouseup(function () { this.blur() });
+
+     $('#requestDisabilityMinusButton2').click(function () {
+         $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Select Option");
+         $('#<%=_helpQueryDefList2.ClientID%> option:selected').text("-- Please Select --");
+         var disability3Div = document.getElementById('disability2');
+         disability3Div.style.display = 'none';
+         var displayed = document.getElementById('disabilityDisplayed').value;
+         document.getElementById('disabilityDisplayed').value = Number(displayed) - 1;
+     });
+    
+     $('#requestDisabilityMinusButton3').click(function () {
+         $('#<%=_helpQueryTypeDropDownList3.ClientID%> option:selected').text("Select Option");
+         $('#<%=_helpQueryDefList3.ClientID%> option:selected').text("-- Please Select --");
+         var disability3Div = document.getElementById('disability3');
+         disability3Div.style.display = 'none';
+         var displayed = document.getElementById('disabilityDisplayed').value;
+         document.getElementById('disabilityDisplayed').value = Number(displayed) - 1;
+     });
+
 
     
       setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
