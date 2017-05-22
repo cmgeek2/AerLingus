@@ -14,27 +14,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
-    <style>
-   
-
-    </style>
+    
 </head>
 <body>
   
    
   <div id="page1" data-role="page">
     <form id="requestUpdateForm"  runat="server" autocomplete="off" >
-       
-            <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
+        <div id="FirstInner" style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
                 <div style="margin-left: 30px" >
                     <br />
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <br/>
                     <div class="input-container" id="radioButtonContainer">
-                        
-                        <asp:RadioButtonList runat="server" ID="guestGroup"  style="display:inline" RepeatLayout="Flow" RepeatDirection="Horizontal" onclick="radioButtonClicked()">
+                        <asp:RadioButtonList runat="server" ID="guestGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
                             <asp:ListItem Text="I am the guest" Value="guest" Selected="True"/>
-                            <asp:ListItem Text="I am the representative of the guest" Value="representative" />
+                            <asp:ListItem Text="I am the representative of the guest" Value="representative" style="margin-left: 100px"/>
                         </asp:RadioButtonList>
                         <br/>
                         <br/>
@@ -70,7 +65,6 @@
                         </tr>
                         <!-- End First Row -->
                     </table>
-
                     <div class="input-container" id="representativeName" style="display: none;">
                         <h4 id="header1" class="xl2 tealGreen" style="font-size: 1em">Representative Information</h4>
                         <table>
@@ -99,8 +93,7 @@
                                 </td>
                             </tr>
                         </table>
-                    </div>  
-
+                    </div> 
                     <div class="input-container" id="repCompanyNameDiv" style="display: none">
                         <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 360px" class="form-control inline-label" onblur="checkvalue(this)"/>
                         <label class="form-control-label">Company Name</label>
@@ -147,21 +140,27 @@
                             </td>
                          </tr>
                     </table>
-                    <table>
-                        <tr>
-                        <td>
-                        <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
-                                <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
-                                    <option value="Selected" selected="selected">Relationship to the guest</option>
-                                    <option value="Travel Agent">Travel Agent</option>
-                                    <option value="Consumer Group">Consumer Group</option>
-                                    <option value="Family">Family</option>
-                                    <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
-                                </select>
-                            </td>
-                        </div>
-                        </tr>
-                    </table>
+                    <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
+                                        <option value="Selected" selected="selected">Relationship to the guest</option>
+                                        <option value="Travel Agent">Travel Agent</option>
+                                        <option value="Consumer Group">Consumer Group</option>
+                                        <option value="Family">Family</option>
+                                        <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    
+                                </td>
+                            </tr>
+                            
+                            
+
+                        </table>             
+                   </div>      
                     <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
                          <tr>
@@ -174,6 +173,7 @@
                                     <option value="Green" >Green</option>
                                 </select>
                             </td>
+                             
                             <td class="auto-style1" id="ClubMembership">
                                 <div class="input-container" id="ClubMembershipDiv" style="display:none;">
                                     <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width: 260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
@@ -181,15 +181,7 @@
                                 </div>
                             </td> 
                         </tr>
-                    </table>
-                    <!-------------------------------------------------------------------------------------------------------------------- -->
-                    <table>
-                         <tr>
-                                <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="updateCaseID" title="Please enter your case number" name="updateCaseID" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
-                                    <label class="form-control-label">Case Number</label>
-                                </div>
-                        </tr>
+
                     </table>
                     <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
@@ -203,106 +195,95 @@
                          </tr>
         
                     </table>
-          <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
-        <div>
-            <table width="100%">
-                <tr>
-                    <td>
-                        <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
-                        <br />
-                        <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
-                    </td>
-                </tr>
-                <tr>
-			        <td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
-		        </tr>
-            </table>
-            <div id="bankDiv">
-                <br/>
-                <br/>
-                <asp:CheckBox runat="server" ID="bankCheckBox" Text="Click here to add bank details"/>
-                <div id="bankInfoDiv" style="display: none;">
-                    <table>
-                        <tr>
-                            <td colspan="3">
-                                <div class="input-container" >
-                                    <input type="text" name="townCity" id="bankName" maxlength="20" style="width: 260px" title="Bank Name" class="form-control inline-label" />
-                                    <label class="form-control-label">Bank Name</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" name="countryState" id="accountHolderName" maxlength="20" style="width: 260px" title="Account Holder Name" class="form-control inline-label" />
-                                    <label class="form-control-label">Account Holder Name</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" name="zipCode" id="accountNumber" maxlength="20" style="width: 260px" title="Account Number" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Account Number</label>
-                                </div>
-                            </td>
-                        </tr>
+                    <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
+                    <div>
+                        <table width="100%">
+                            <tr>
+                                <td>
+                                    <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+                                    <br />
+                                    <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
+                                </td>
+                            </tr>
+                            <tr>
+			                    <td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
+		                    </tr>
+                        </table>
+                    </div>
+                    <div id="bankDiv">
+                        <br/>
+                        <br/>
+                        <div style="margin-left: 20px">
+                            <asp:CheckBox runat="server" ID="bankCheckBox" Text="Click here to add bank details"  CssClass="checkbox"/>
+                        </div> 
+                        <div id="bankInfoDiv" style="display: none;">
+                            <table>
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="input-container" >
+                                            <input type="text" name="townCity" id="bankName" maxlength="20" style="width: 260px" title="Bank Name" class="form-control inline-label" />
+                                            <label class="form-control-label">Bank Name</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                    <div class="input-container" >
+                                        <input type="text" name="countryState" id="accountHolderName" maxlength="20" style="width: 260px" title="Account Holder Name" class="form-control inline-label" />
+                                        <label class="form-control-label">Account Holder Name</label>
+                                    </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-container" >
+                                            <input type="text" name="zipCode" id="accountNumber" maxlength="20" style="width: 260px" title="Account Number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                            <label class="form-control-label">Account Number</label>
+                                        </div>
+                                    </td>
+                                </tr>
                         
+                                <tr>
+                                    <td colspan="3">
+                                        <div class="input-container" >
+                                            <input type="text" name="townCity" id="swiftCode" maxlength="20" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label" />
+                                            <label class="form-control-label">Swift (BIC) Code</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-container" >
+                                            <input type="text" name="countryState" id="ibanNumber" maxlength="20" style="width: 260px" title="IBAN Number" class="form-control inline-label" />
+                                            <label class="form-control-label">IBAN Number</label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="input-container" >
+                                            <input type="text" name="zipCode" id="codeNumber" maxlength="20" style="width: 260px" title="Code Number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                            <label class="form-control-label">Code Number</label>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <br/>
+                        <br/>
+                    </div>
+                    <table>   
                         <tr>
                             <td colspan="3">
-                                <div class="input-container" >
-                                    <input type="text" name="townCity" id="swiftCode" maxlength="20" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label" />
-                                    <label class="form-control-label">Swift (BIC) Code</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" name="countryState" id="ibanNumber" maxlength="20" style="width: 260px" title="IBAN Number" class="form-control inline-label" />
-                                    <label class="form-control-label">IBAN Number</label>
-                                </div>
-                            </td>
-                            <td>
-                                <div class="input-container" >
-                                    <input type="text" name="zipCode" id="codeNumber" maxlength="20" style="width: 260px" title="Code Number" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Code Number</label>
-                                </div>
+                                <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>  
+                                <asp:FileUpload ID="_helpQueryFileUploader"  onchange="return CheckFile(this);" runat="server" />
                             </td>
                         </tr>
+                        <tr><td><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
                     </table>
                 </div>
-                <br/>
-                <br/>
+                <br />
+                <br />
+                <div style="margin-left: 200px;padding:20px" >
+                    <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
+                </div>
             </div>
-             <table>   
-                <tr>
-                    <td colspan="3">
-
-                        <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
-                           
-                        <asp:FileUpload ID="_helpQueryFileUploader"  onchange="return CheckFile(this);" runat="server" />
-                    </td>
-                </tr>
-                <tr><td><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
-            </table>
-        </div>
-        
-        <br />
-        <br />
-      
-       <div style="margin-left: 200px;padding:20px" >
-      
-           <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
-        </div>
-            </div>
-            </div>
-        <!--
-            </div>
-            -->
-    </form>
-   
-  
-    
-   </div> 
-    <div style="margin:80px">
-        
-          
-    </div>
+    </form> 
+  </div>  
+            
+            
    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
