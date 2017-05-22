@@ -93,11 +93,12 @@
                                 </td>
                             </tr>
                         </table>
-                    </div> 
-                    <div class="input-container" id="repCompanyNameDiv" style="display: none">
+                        <div class="input-container" id="repCompanyNameDiv" style="display: none">
                         <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 360px" class="form-control inline-label" onblur="checkvalue(this)"/>
                         <label class="form-control-label">Company Name</label>
                     </div>
+                    </div> 
+                    
                     <table> 
                         <!-- Second Row --> 
                         <tr>
@@ -140,27 +141,8 @@
                             </td>
                          </tr>
                     </table>
-                    <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
-                        <table>
-                            <tr>
-                                <td>
-                                    <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
-                                        <option value="Selected" selected="selected">Relationship to the guest</option>
-                                        <option value="Travel Agent">Travel Agent</option>
-                                        <option value="Consumer Group">Consumer Group</option>
-                                        <option value="Family">Family</option>
-                                        <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
-                                    </select>
-                                </td>
-                                <td>
-                                    
-                                </td>
-                            </tr>
-                            
-                            
-
-                        </table>             
-                   </div>      
+                    <!-- End Country and Phone Number Row -->
+                    
                     <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
                          <tr>

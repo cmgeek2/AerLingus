@@ -120,7 +120,7 @@
                     <br/>
                     <div class="input-container" id="radioButtonContainer">
                         
-                        <asp:RadioButtonList runat="server" ID="guestGroup" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
+                        <asp:RadioButtonList runat="server" ID="guestGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
                             <asp:ListItem Text="I am the guest" Value="guest" Selected="True"/>
                             <asp:ListItem Text="I am the representative of the guest" Value="representative" />
                         </asp:RadioButtonList>
