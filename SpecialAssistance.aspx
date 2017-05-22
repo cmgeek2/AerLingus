@@ -367,7 +367,11 @@
 
      $('#requestDisabilityMinusButton2').click(function () {
          $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Select Option");
-         $('#<%=_helpQueryDefList2.ClientID%> option:selected').text("-- Please Select --");
+         //$('#<%=_helpQueryDefList2.ClientID%> option:selected').text("-- Please Select --");
+         $("#<%=_helpQueryDefList2.ClientID%>").empty();
+         var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+         $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
+         $("#_helpQueryDefList2").attr("Disabled", false);
          var disability3Div = document.getElementById('disability2');
          disability3Div.style.display = 'none';
          var displayed = document.getElementById('disabilityDisplayed').value;
@@ -376,7 +380,14 @@
     
      $('#requestDisabilityMinusButton3').click(function () {
          $('#<%=_helpQueryTypeDropDownList3.ClientID%> option:selected').text("Select Option");
-         $('#<%=_helpQueryDefList3.ClientID%> option:selected').text("-- Please Select --");
+         //$('#<%=_helpQueryDefList3.ClientID%> option:selected').text("-- Please Select --");
+
+         $("#<%=_helpQueryDefList3.ClientID%>").empty();
+         var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+         $("#<%=_helpQueryDefList3.ClientID%>").append(defaultOption);
+         $("#_helpQueryDefList3").attr("Disabled", false);
+
+
          var disability3Div = document.getElementById('disability3');
          disability3Div.style.display = 'none';
          var displayed = document.getElementById('disabilityDisplayed').value;
