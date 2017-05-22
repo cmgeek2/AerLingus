@@ -2,13 +2,13 @@
 <AssistanceType>
   
   <Wheelchair>
-    <ID value="I cannot walk long distances (WHCR)"></ID>
+    <ID value="WCHR assistance for distance to/from the aircraft"></ID>
   </Wheelchair>
   <Wheelchair>
-    <ID value="I require lift on or carry on assistance (WCHC)"></ID>
+    <ID value="WCHS assistance to ascend/descend steps"></ID>
   </Wheelchair>  
   <Wheelchair>
-    <ID value="I need assistance on stairs or steps (WCHS)"></ID>
+    <ID value="WCHC carry on assistance to/from cabin seat"></ID>
   </Wheelchair>
 
 
@@ -52,29 +52,9 @@
     <ID value="Other"></ID>
   </Medical> 
 
-  <Animal>
-    <ID value="Service animal"></ID>
-  </Animal>  
-  <Animal>
-    <ID value="Emotional support animal"></ID>
-  </Animal> 
-
-
-
-
-
 
   <Other>
-    <ID value="Autism"></ID>
-  </Other>
-  <Other>
-    <ID value="Hearing impaired"></ID>
-  </Other>
-  <Other>
-    <ID value="Vision impaired"></ID>
-  </Other>
-  <Other>
-    <ID value="Other special needs"></ID>
+    <ID value="Please use comments below"></ID>
   </Other>
   
 

@@ -200,20 +200,19 @@
                     <td>
                         <div>
                             <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList" runat="server" Height="30px" Width="260px" AppendDataBoundItems="true">
-                                <asp:ListItem Text="Select Query Type" Value="Selected" Selected="True"></asp:ListItem>
+                                <asp:ListItem Text="Select Option" Value="Selected" Selected="True"></asp:ListItem>
                                 <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
                                 <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
                                 <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
                                 <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
                                 <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
-                                <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
-                                <asp:ListItem Text="Other Special Needs" Value="O"></asp:ListItem>
+                                <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="QuerytypeValidator" BorderColor="Red" ErrorMessage="Required Field" ControlToValidate="_helpQueryTypeDropDownList" Display="Dynamic"  InitialValue="Selected" runat="server"/>
                         </div> 
                         
                     </td>
-                    <td>
+                    <td colspan="2">
                    
                         <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required="required" >
                              <option value="" selected="selected">-- Please Select --</option>
@@ -237,7 +236,7 @@
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="_QueryTypeValidator2" ControlToValidate="_helpQueryTypeDropDownList2" InitialValue="Selected" runat="server"/>
                     </td>
-                    <td>
+                    <td colspan="2">
                    
                         <select class=" dropdown-toggle" id="_helpQueryDefList2" name="_helpQueryDefList2" disabled="True" runat="server" style="height:30px;width:260px" >
                              <option value="" selected="selected">-- Please Select --</option>
@@ -261,7 +260,7 @@
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
                     </td>
-                    <td>
+                    <td colspan="2">
                    
                         <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:260px" >
                              <option value="" selected="selected">-- Please Select --</option>
@@ -282,7 +281,7 @@
        </tr>
             
        </table>
-          <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
+          <p>Please provide any additional information to assist us with your request, i.e. include make and model; dimensions and weight; battery type and wattage</p>
         <div>
             <table width="100%">
                   <tr>
@@ -294,7 +293,7 @@
                 </td>
                 </tr>
                  <tr>
-			<td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
+			<td colspan="3">Please upload all the relevant documentation with your request so it can be processed' with 'Please upload all the relevant documentation with your request including all medical device specifications.</td>
 		</tr>
 
                 <tr>
