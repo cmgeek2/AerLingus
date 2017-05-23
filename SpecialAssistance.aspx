@@ -60,6 +60,7 @@
              
             <tr>
             <td>
+                <label class="visuallyhidden">Select your title</label>
               <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
                     <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                     <asp:ListItem Text="Mr" Value="Mr." />
@@ -98,6 +99,7 @@
             </tr>
              <tr>
              <td>
+                 <label class="visuallyhidden">Select your Country</label>
                   <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
                   <div class="input-container" >
                     <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required>
@@ -110,6 +112,7 @@
             <tr>
               
             <td>
+                <label class="visuallyhidden">Select your Telephone Country Code</label>
                 <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
                 <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
                 
@@ -185,6 +188,7 @@
                 <tr>
                     <td>
                         <div>
+                            <label class="visuallyhidden">Select a Disability Request</label>
                             <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList" runat="server" Height="30px" Width="260px" AppendDataBoundItems="true">
                                 <asp:ListItem Text="Select Option" Value="Selected" Selected="True"></asp:ListItem>
                                 <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
@@ -199,6 +203,7 @@
                         
                     </td>
                     <td colspan="2">
+                        <label class="visuallyhidden">Select a specific Disability Request</label>
                         <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:360px" required="required" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
@@ -213,7 +218,7 @@
                 <table>     
                  <tr>
                      <td>
-                         
+                         <label class="visuallyhidden">Select a Disability Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList2" Enabled="False" runat="server"   Height="30px" Width="260px">
                             <asp:ListItem Text="Select Option" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
@@ -226,6 +231,7 @@
                         <asp:RequiredFieldValidator ID="_QueryTypeValidator2" ControlToValidate="_helpQueryTypeDropDownList2" InitialValue="Selected" runat="server"/>
                     </td>
                     <td colspan="2">
+                        <label class="visuallyhidden">Select a specific Disability Request</label>
                         <select class=" dropdown-toggle" id="_helpQueryDefList2" name="_helpQueryDefList2" disabled="True" runat="server" style="height:30px;width:360px" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
@@ -244,6 +250,7 @@
                 <table>     
                     <tr>
                         <td>
+                            <label class="visuallyhidden">Select a Disability Request</label>
                             <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3" Enabled="False"  runat="server"  Height="30px" Width="260px">
                                 <asp:ListItem Text="Select Option" Value="Selected"></asp:ListItem>
                                 <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
@@ -256,6 +263,7 @@
                             <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
                         </td>
                         <td colspan="2">
+                            <label class="visuallyhidden">Select a specific Disability Request</label>
                             <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:360px" >
                                 <option value="" selected="selected">-- Please Select --</option>
                             </select>
