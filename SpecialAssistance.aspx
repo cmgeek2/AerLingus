@@ -280,7 +280,7 @@
                     </td>
                 </tr>            
             </table>
-            <p>Please provide any additional information to assist us with your request, i.e. include make and model; dimensions and weight; battery type and wattage</p>
+            <p>Please provide any additional information to assist us with your request, <br> i.e. include make and model; dimensions and weight; battery type and wattage</p>
             <div>
             <table width="100%">
                   <tr>
@@ -292,7 +292,7 @@
                 </td>
                 </tr>
                  <tr>
-			<td colspan="3">Please upload all the relevant documentation with your request so it can be processed' with 'Please upload all the relevant documentation with your request including all medical device specifications.</td>
+			<td colspan="3">Please upload all the relevant documentation with your request including all medical device specifications.</td>
 		</tr>
 
                 <tr>

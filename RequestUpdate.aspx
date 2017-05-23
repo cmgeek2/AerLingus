@@ -94,7 +94,7 @@
                             </tr>
                         </table>
                         <div class="input-container" id="repCompanyNameDiv" style="display: none">
-                        <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 360px" class="form-control inline-label" onblur="checkvalue(this)"/>
+                        <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 260px" class="form-control inline-label" onblur="checkvalue(this)"/>
                         <label class="form-control-label">Company Name</label>
                     </div>
                     </div> 
