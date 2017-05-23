@@ -86,12 +86,12 @@
             <tr>
                 <td colspan="3">
                     <div class="input-container" >
-                        <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                        <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" title="Please enter your email address" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Email Address</label>
                     </div>
               
                   <div class="input-container" >
-                      <input type="email" name="email" id="email" style="width: 360px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                      <input type="email" name="email" id="email" style="width: 360px" title="Please confirm your email address" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Confirm Email Address</label>
                     </div>
             </td>
@@ -116,17 +116,15 @@
                </td>
                 <td>
                    <div class="input-container" >
-                       <input type="text" style="width: 260px" required="required" pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                       <input type="text" style="width: 260px" required="required" pattern="[0-9]{5,12}" maxlength="12" title="Please enter your phone number - area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Telephone Number</label>
                     </div>
-               
-                
-               
             </td>
             </tr>
              <tr>
                  <td class="auto-style1">
-                       <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
+                       <label class="visuallyhidden">Select AerClub Tier</label>
+                       <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server">
                             <option value="Selected" selected="selected">AerClub Tier</option>
                             <option value="Concierge" >Concierge</option>
                             <option value="Platinum">Platinum</option>
@@ -151,7 +149,7 @@
                 <tr>
                     <td>
                     <div class="input-container" >
-                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
@@ -166,14 +164,14 @@
                                  }
                               );
                             </script>
-                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date" title="Please click to select your flight date"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
                 <tr>
                     <td>
                         <div class="input-container" >
-                            <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                            <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
                             <label class="form-control-label">Booking Reference</label>
                         </div> 
                     </td>
@@ -207,7 +205,7 @@
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
                     <td>
-                        <button type="button" id="requestDisabilityPlusButton1" class="transparentBtn">+</button>
+                        <button type="button" id="requestDisabilityPlusButton1" class="transparentBtn" aria-label="Click to add an additional request">+</button>
                     </td>
                 </tr>
             </table>
@@ -234,10 +232,10 @@
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator2" ControlToValidate="_helpQueryDefList2" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
                     <td>
-                        <button type="button" id="requestDisabilityPlusButton2" class="transparentBtn">+</button>
+                        <button type="button" id="requestDisabilityPlusButton2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
                     </td>
                     <td>
-                        <button type="button" id="requestDisabilityMinusButton2" class="transparentBtn">-</button>
+                        <button type="button" id="requestDisabilityMinusButton2" class="transparentBtn" aria-label="Click to remove request">-</button>
                     </td>
                  </tr>
             </table>
@@ -264,7 +262,7 @@
                             <asp:RequiredFieldValidator ID="_helpQueryDefListValidator3" ControlToValidate="_helpQueryDefList3" InitialValue="Default" runat="server" Enabled="false"/>
                         </td>               
                         <td>
-                            <button type="button" id="requestDisabilityMinusButton3" class="transparentBtn">-</button>
+                            <button type="button" id="requestDisabilityMinusButton3" class="transparentBtn" aria-label="Click to remove request">-</button>
                         </td>
                     </tr>
                 </table>
@@ -285,7 +283,7 @@
             <table width="100%">
                   <tr>
                 <td>
-              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server" aria-label="Please provide any additional information to assist us with your request."></asp:TextBox>
 
                     <br />
                   <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
