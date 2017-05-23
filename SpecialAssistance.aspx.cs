@@ -68,12 +68,12 @@ public partial class SpecialAssistance : System.Web.UI.Page
         sbBodyTextString.AppendLine("Request Definition: " + Request.Form["_helpQueryDefList"]);
         if (Request.Form["_helpQueryTypeDropDownList2"] != "Selected")
         {
-            sbBodyTextString.AppendLine("Request Type 2: " + Request.Form["_helpQueryTypeDropDownList2"]);
+            sbBodyTextString.AppendLine("Request Type 2: " + _helpQueryTypeDropDownList2.SelectedItem);
             sbBodyTextString.AppendLine("Request Definition 2: " + Request.Form["_helpQueryDefList2"]);
 
             if (Request.Form["_helpQueryTypeDropDownList3"] != "Selected")
             {
-                sbBodyTextString.AppendLine("Request Type 3: " + Request.Form["_helpQueryTypeDropDownList3"]);
+                sbBodyTextString.AppendLine("Request Type 3: " + _helpQueryTypeDropDownList3.SelectedItem);
                 sbBodyTextString.AppendLine("Request Definition 3: " + Request.Form["_helpQueryDefList3"]);
             }
         }
@@ -123,6 +123,7 @@ public partial class SpecialAssistance : System.Web.UI.Page
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
+        
         if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USASAToAddress"]);
@@ -133,7 +134,7 @@ public partial class SpecialAssistance : System.Web.UI.Page
             _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersSAToAddress"]);
             _helpMessage.Subject = ConfigurationManager.AppSettings["OthersSASubject"];
         }
-
+        
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
         SmtpClient SMTPServer = new SmtpClient();
         AlternateView PlainText;
