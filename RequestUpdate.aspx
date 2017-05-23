@@ -93,10 +93,16 @@
                                 </td>
                             </tr>
                         </table>
-                        <div class="input-container" id="repCompanyNameDiv" style="display: none">
-                        <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 260px" class="form-control inline-label" onblur="checkvalue(this)"/>
-                        <label class="form-control-label">Company Name</label>
-                    </div>
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input-container" id="repCompanyNameDiv" style="display: none">
+                                        <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 260px" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Company Name</label>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
                     </div> 
                     
                     <table> 
@@ -144,27 +150,61 @@
                     <!-- End Country and Phone Number Row -->
                     
                     <!-------------------------------------------------------------------------------------------------------------------- -->
-                    <table>
-                         <tr>
-                            <td class="auto-style1">
-                                <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server">
-                                    <option value="Selected" selected="selected">AerClub Tier</option>
-                                    <option value="Concierge" >Concierge</option>
-                                    <option value="Platinum">Platinum</option>
-                                    <option value="Silver" >Silver</option>
-                                    <option value="Green" >Green</option>
-                                </select>
-                            </td>
+                    <div class="input-container" id="aerClubInfoDiv">
+                        <table>
+                            <tr>
+                                <td class="auto-style1">
+                                    <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server">
+                                        <option value="Selected" selected="selected">AerClub Tier</option>
+                                        <option value="Concierge" >Concierge</option>
+                                        <option value="Platinum">Platinum</option>
+                                        <option value="Silver" >Silver</option>
+                                        <option value="Green" >Green</option>
+                                    </select>
+                                </td>
                              
-                            <td class="auto-style1" id="ClubMembership">
-                                <div class="input-container" id="ClubMembershipDiv" style="display:none;">
-                                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width: 260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">AerClub Membership Number</label>
-                                </div>
-                            </td> 
-                        </tr>
-
-                    </table>
+                                <td class="auto-style1" id="ClubMembership">
+                                    <div class="input-container" id="ClubMembershipDiv" style="display:none;">
+                                        <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width: 260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">AerClub Membership Number</label>
+                                    </div>
+                                </td> 
+                             </tr>
+                            <tr class="auto-style1" >
+                                <td>
+                                    <div class="input-container" >
+                                        <input type="text" style="width: 260px" id="updateCaseID" title="Please enter your case number" name="updateCaseID" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
+                                        <label class="form-control-label">Case/Request Number</label>
+                                    </div> 
+                                </td>                              
+                            </tr>
+                        </table>    
+                                                     
+                    </div>
+                    <!-------------------------------------------------------------------------------------------------------------------- -->
+                    <div class="input-container" id="relationToGuestDiv" style="display: none">
+                        <table>
+                            <tr>
+                                <td>
+                                    <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
+                                        <option value="Selected" selected="selected">Relationship to the guest</option>
+                                        <option value="Travel Agent">Travel Agent</option>
+                                        <option value="Consumer Group">Consumer Group</option>
+                                        <option value="Family">Family</option>
+                                        <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <div class="input-container" >
+                                        <input type="text" style="width: 260px" id="companyCaseNumber" title="Please enter your case number" name="companyCaseNumber" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
+                                        <label class="form-control-label">Company Case Number</label>
+                                    </div>
+                                </td>
+                                
+                            </tr>
+                        </table>
+                        
+                    </div>
                     <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
                         <tr>
@@ -203,19 +243,19 @@
                                 <tr>
                                     <td colspan="3">
                                         <div class="input-container" >
-                                            <input type="text" name="townCity" id="bankName" maxlength="20" style="width: 260px" title="Bank Name" class="form-control inline-label" />
+                                            <input type="text" id="bankName" maxlength="40" style="width: 260px" title="Bank Name" class="form-control inline-label" />
                                             <label class="form-control-label">Bank Name</label>
                                         </div>
                                     </td>
                                     <td>
                                     <div class="input-container" >
-                                        <input type="text" name="countryState" id="accountHolderName" maxlength="20" style="width: 260px" title="Account Holder Name" class="form-control inline-label" />
+                                        <input type="text" id="accountHolderName" maxlength="40" style="width: 260px" title="Account Holder Name" class="form-control inline-label" />
                                         <label class="form-control-label">Account Holder Name</label>
                                     </div>
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text" name="zipCode" id="accountNumber" maxlength="20" style="width: 260px" title="Account Number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                            <input type="text" id="accountNumber" maxlength="25" style="width: 260px" title="Account Number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                             <label class="form-control-label">Account Number</label>
                                         </div>
                                     </td>
@@ -224,19 +264,19 @@
                                 <tr>
                                     <td colspan="3">
                                         <div class="input-container" >
-                                            <input type="text" name="townCity" id="swiftCode" maxlength="20" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label" />
+                                            <input type="text"  id="swiftCode" maxlength="15" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label" />
                                             <label class="form-control-label">Swift (BIC) Code</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text" name="countryState" id="ibanNumber" maxlength="20" style="width: 260px" title="IBAN Number" class="form-control inline-label" />
+                                            <input type="text"  id="ibanNumber" maxlength="25" style="width: 260px" title="IBAN Number" class="form-control inline-label" />
                                             <label class="form-control-label">IBAN Number</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text" name="zipCode" id="codeNumber" maxlength="20" style="width: 260px" title="Code Number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                            <input type="text"  id="codeNumber" maxlength="15" style="width: 260px" title="Code Number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                             <label class="form-control-label">Code Number</label>
                                         </div>
                                     </td>
@@ -305,6 +345,10 @@
              var checked = this.checked;
              if (checked == true) {
                  bankDiv.style.display = "block";
+                 //Commenting the next three lines out since it might be required.
+                 //document.getElementById('bankName').required = true;
+                 //document.getElementById('accountHolderName').required = true;
+                 //document.getElementById('accountNumber').required = true;
              } else {
                  bankDiv.style.display = "none";
              } 
@@ -417,12 +461,15 @@
              var repCompanyNameDiv = document.getElementById('repCompanyNameDiv');
              document.getElementById('representativeFirstName').required = false;
              document.getElementById('representativeLastName').required = false;
+             var aerClubDiv = document.getElementById('aerClubInfoDiv');
+             aerClubDiv.style.display = "block";
              document.getElementById('relationshipToGuestDropDown').required = false;
+
              document.getElementById('repCompanyName').required = false;
              repCompanyNameDiv.style.display = "none";
              var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
              aerClubDropDown.style.display = "block";
-             var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
+             var relationshipToGuestDiv = document.getElementById('relationToGuestDiv');
              relationshipToGuestDiv.style.display = 'none';
          }
 
@@ -436,17 +483,13 @@
              // make necessary fields required
              document.getElementById('representativeFirstName').required = true;
              document.getElementById('representativeLastName').required = true;
-             document.getElementById('relationshipToGuestDropDown').required = true;
              document.getElementById('repCompanyName').required = true;
-             var relationshipDropDown = document.getElementById('relationshipToGuestDropDownDiv');
-             relationshipDropDown.style.display = "block";
-             var divRepName = document.getElementById('representativeName');
-             divRepName.style.display = "block";
-            
-             var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
-             aerClubDropDown.style.display = "none";
-             var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
+             var aerClubDiv = document.getElementById('aerClubInfoDiv');
+             aerClubDiv.style.display = "none";
+             var relationshipToGuestDiv = document.getElementById('relationToGuestDiv');
              relationshipToGuestDiv.style.display = 'block';
+             document.getElementById('relationshipToGuestDropDown').required = true;
+             
          }
 
          
