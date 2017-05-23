@@ -482,13 +482,13 @@
           // has been selected. 
           // The reason why it's placed here is to make sure that Ajax call has finished populating the dropdown with the values from the XML file
           // Before setting the dropdown value.
-          var requestType = $('#<%=_helpQueryTypeDropDownList.ClientID%>').val();
-          if (requestType == "W") {
-              $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
-              $("#_helpQueryDefList2").attr("Disabled", false);
-              $("#_helpQueryDefList2").attr("Required", true);
+          //var requestType = $('#<%=_helpQueryTypeDropDownList.ClientID%>').val();
+          //if (requestType == "W") {
+          //    $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
+          //    $("#_helpQueryDefList2").attr("Disabled", false);
+          //    $("#_helpQueryDefList2").attr("Required", true);
 
-          }
+          //}
 
 
       }
@@ -508,7 +508,6 @@
 
           if (this.value == "W") 
           {
-              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Mobility');
               setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Wheelchair');
           }
 
