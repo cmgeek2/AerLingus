@@ -183,7 +183,8 @@
                     <td>&nbsp</td>
                 </tr>
             </table>
-            <div class="input-container"> <h2 class="xl2 tealGreen"> Request Disability Assistance </h2></div>    
+            <div class="input-container"> <h2 class="xl2 tealGreen"> Request Disability Assistance </h2></div>
+            <div>To add more than one request, simply click the '+' sign:</div>    
             <table>
                 <tr>
                     <td>
