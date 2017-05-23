@@ -24,6 +24,13 @@
         <div id="FirstInner" style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
                 <div style="margin-left: 30px" >
                     <br />
+                    <div>
+                        <h4 id="RefNumberheader" class="xl2 tealGreen" style="font-size: 1em">Reference Number</h4>
+                    </div>
+                    <div class="input-container" >
+                         <input type="text" style="width: 260px" id="updateCaseID" title="Please enter your case number" name="updateCaseID" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
+                         <label class="form-control-label">Case/Request Number</label>
+                    </div>
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <br/>
                     <div class="input-container" id="radioButtonContainer">
@@ -170,14 +177,6 @@
                                     </div>
                                 </td> 
                              </tr>
-                            <tr class="auto-style1" >
-                                <td>
-                                    <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="updateCaseID" title="Please enter your case number" name="updateCaseID" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
-                                        <label class="form-control-label">Case/Request Number</label>
-                                    </div> 
-                                </td>                              
-                            </tr>
                         </table>    
                                                      
                     </div>
