@@ -72,7 +72,7 @@
                         </tr>
                         <!-- End First Row -->
                     </table>
-                    <div class="input-container" id="representativeName" style="display: none;">
+                    <div class="input-container" id="representativeName" style="display: none">
                         <h4 id="header1" class="xl2 tealGreen" style="font-size: 1em">Representative Information</h4>
                         <table>
                             <tr>
@@ -195,8 +195,8 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="companyCaseNumber" title="Please enter your case number" name="companyCaseNumber" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
-                                        <label class="form-control-label">Company Case Number</label>
+                                        <input type="text" style="width: 260px" id="companyCaseNumber" title="Please enter your case number" name="companyCaseNumber" class="form-control inline-label  " onblur="checkvalue(this);"/>
+                                        <label class="form-control-label">Internal Case Number</label>
                                     </div>
                                 </td>
                                 
