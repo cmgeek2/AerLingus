@@ -151,7 +151,7 @@ public partial class SpecialAssistance : System.Web.UI.Page
         try
         {
             //SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx?" + "SA");
+            Response.Redirect("ThankYou.aspx?" + Server.UrlEncode("Special Assistance"));
            
 
             _helpMessage.Dispose();

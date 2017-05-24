@@ -140,7 +140,7 @@ public partial class NeedHelp : System.Web.UI.Page
         {
             //SMTPServer.Send(_helpMessage);
             Session["Value"] = "NH";
-            Response.Redirect("ThankYou.aspx?" + "NH");
+            Response.Redirect("ThankYou.aspx?" + Server.UrlEncode("Need Help"));
            
 
             _helpMessage.Dispose();
