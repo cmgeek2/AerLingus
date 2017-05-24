@@ -145,7 +145,7 @@ public partial class css_RefaundRequest : System.Web.UI.Page
         try
         {
             SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx");
+            Response.Redirect("ThankYou.aspx?" + Server.UrlEncode("Refund Request"));
 
 
             _helpMessage.Dispose();
