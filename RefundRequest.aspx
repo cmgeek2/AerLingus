@@ -295,6 +295,7 @@
                                     <option value="Platinum">Platinum</option>
                                     <option value="Silver" >Silver</option>
                                     <option value="Green" >Green</option>
+                                    <option value="Not a Member">Not a member</option>
                                 </select>
                             </td>
                             <td class="auto-style1" id="ClubMembership">
@@ -711,7 +712,8 @@
          });
 
          $("#_helpQueryAerClubDropDown").change(function () {
-             if (this.value != "Selected") {
+             if(this.value!="Selected" && this.value!="Not a Member") 
+             {
                  $("#_helpQueryAerClubmembershipId").attr("disabled", false);
                  var div1 = document.getElementById('ClubMembershipDiv');
                  document.getElementById('_helpQueryAerClubmembershipId').required = true;

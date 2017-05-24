@@ -288,7 +288,7 @@
                     </td>
                 </tr>            
             </table>
-            <p>Please provide any additional information to assist us with your request, <br> i.e. include make and model; dimensions and weight; battery type and wattage</p>
+            <p>Please provide any additional information to assist us with your request, <br>i.e. include device make and model; dimensions and weight; battery type and wattage</p>
             <div>
             <table width="100%">
                   <tr>
@@ -318,7 +318,7 @@
         <br />
         <br />
       
-       <div style="margin-left: 200px;padding:20px" >
+       <div style="margin-left: 400px;padding:20px" >
       
            <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
         </div>
