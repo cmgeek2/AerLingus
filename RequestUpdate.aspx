@@ -236,7 +236,7 @@
                     <div id="bankDiv">
                         <br/>
                         <br/>
-                        <div style="margin-left: 20px">
+                        <div style="margin-left: 20px; display: none" >
                             <asp:CheckBox runat="server" ID="bankCheckBox" Text="Click here to add bank details"  CssClass="checkbox"/>
                         </div> 
                         <div id="bankInfoDiv" style="display: none;">
