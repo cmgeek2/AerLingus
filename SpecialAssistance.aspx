@@ -318,7 +318,7 @@
         <br />
         <br />
       
-       <div style="margin-left: 400px;padding:20px" >
+       <div style="margin-left: 600px;padding:20px" >
       
            <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
         </div>
