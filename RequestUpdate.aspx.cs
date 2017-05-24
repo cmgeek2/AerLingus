@@ -26,21 +26,21 @@ public partial class RequestUpdate: System.Web.UI.Page
         //form IDs are identical for both on deploy 3/29/2017
         if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["USANeedHelpFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["USAUpdateFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["USAUpdateFormId2"];
             sUSAorOther = "NA";
 
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["OthersNeedHelpFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["OthersNeedHelpFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["OthersUpdateFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["OthersUpdateFormId2"];
             sUSAorOther = "Other";
 
         }
 
         StringBuilder sbBodyTextString = new StringBuilder();
-        
+        sbBodyTextString.AppendLine("Reference Number: " + Request.Form["updateCaseID"]);
         // if the user is a representative of the guest, collect representative information.
         if (guestGroup.SelectedValue != "guest")
         {
@@ -56,10 +56,18 @@ public partial class RequestUpdate: System.Web.UI.Page
             sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
             // Representative information
             sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
+            sbBodyTextString.AppendLine("Internal Case Number: " + Request.Form["companyCaseNumber"]);
             sbBodyTextString.AppendLine("RepresentativeTitle: " + RepresentativeDropDownList.SelectedValue);
             sbBodyTextString.AppendLine("Representative Given Name: " + Request.Form["representativeFirstName"]);
             sbBodyTextString.AppendLine("Representative Last Name: " + Request.Form["representativeLastName"]);
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
+            sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
+            sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
+            char[] delimiterChars = { '(', ')' };
+            string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
+            sbBodyTextString.AppendLine("Telephone: " + code[1].ToString() + " " + Request.Form["_helpQueryTelephoneNumber"]);
+            sbBodyTextString.AppendLine("Relationship to guest: " + Request.Form["relationshipToGuestDropDown"]);
+
             string countrycode = CountryCode.SelectedValue;
         }
         else
@@ -73,7 +81,7 @@ public partial class RequestUpdate: System.Web.UI.Page
             sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue);
             sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["helpQueryFirstName"]);
             sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
-            sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
+            sbBodyTextString.AppendLine("Email: " + Request.Form["email"]);
             string countrycode = CountryCode.SelectedValue;
             sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
             char[] delimiterChars = { '(', ')' };
@@ -92,11 +100,30 @@ public partial class RequestUpdate: System.Web.UI.Page
                 sbBodyTextString.AppendLine("CountryACStatus: " + "");
 
             }
-
-
-            sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text.ToString());
+                
         }
-        
+
+        // Capture bank information
+        if (bankCheckBox.Checked)
+        {
+            sbBodyTextString.AppendLine("Bank Name: " + Request.Form["bankName"]);
+            sbBodyTextString.AppendLine("Account Holder Name: " + Request.Form["accountHolderName"]);
+            sbBodyTextString.AppendLine("Account Number: " + Request.Form["accountNumber"]);
+            sbBodyTextString.AppendLine("Swift (BIC) Code: " + Request.Form["swiftCode"]);
+            sbBodyTextString.AppendLine("IBAN Number: " + Request.Form["ibanNumber"]);
+            sbBodyTextString.AppendLine("Code Number: " + Request.Form["codeNumber"]);
+        }
+        else
+        {
+            sbBodyTextString.AppendLine("Bank Name: " + "");
+            sbBodyTextString.AppendLine("Account Holder Name: " + "");
+            sbBodyTextString.AppendLine("Account Number: " + "");
+            sbBodyTextString.AppendLine("Swift (BIC) Code: " + "");
+            sbBodyTextString.AppendLine("IBAN Number: " + "");
+            sbBodyTextString.AppendLine("Code Number: " + "");
+        }      
+
+        sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text.ToString());
 
         return sbBodyTextString.ToString(); 
     }
@@ -109,15 +136,15 @@ public partial class RequestUpdate: System.Web.UI.Page
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
-        if (Request.Form["_helpQueryCountryList"] == "USA")
+        if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["USAUpdateToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["USAUpdateSubject"];
         }
         else
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersNeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersNeedHelpFormId"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersUpdateToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersUpdateSubject"];
         }
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);

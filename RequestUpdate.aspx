@@ -59,13 +59,13 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
+                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">First Name</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName(); "/>
+                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Family Name</label>
                                 </div>
                             </td>
@@ -104,7 +104,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container" id="repCompanyNameDiv" style="display: none">
-                                        <input type="text" name="_helpQueryEmail" id="repCompanyName" style="width: 260px" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" name="repCompanyName" id="repCompanyName" style="width: 260px" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Company Name</label>
                                     </div>
                                 </td>
@@ -242,13 +242,13 @@
                                 <tr>
                                     <td colspan="3">
                                         <div class="input-container" >
-                                            <input type="text" id="bankName" maxlength="40" style="width: 260px" title="Bank Name" class="form-control inline-label" />
+                                            <input type="text" id="bankName" maxlength="40" style="width: 260px" title="Bank Name" class="form-control inline-label  " onblur="checkvalue(this)" />
                                             <label class="form-control-label">Bank Name</label>
                                         </div>
                                     </td>
                                     <td>
                                     <div class="input-container" >
-                                        <input type="text" id="accountHolderName" maxlength="40" style="width: 260px" title="Account Holder Name" class="form-control inline-label" />
+                                        <input type="text" id="accountHolderName" maxlength="40" style="width: 260px" title="Account Holder Name" class="form-control inline-label  " onblur="checkvalue(this)" />
                                         <label class="form-control-label">Account Holder Name</label>
                                     </div>
                                     </td>
@@ -263,13 +263,13 @@
                                 <tr>
                                     <td colspan="3">
                                         <div class="input-container" >
-                                            <input type="text"  id="swiftCode" maxlength="15" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label" />
+                                            <input type="text"  id="swiftCode" maxlength="15" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label  " onblur="checkvalue(this)" />
                                             <label class="form-control-label">Swift (BIC) Code</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text"  id="ibanNumber" maxlength="25" style="width: 260px" title="IBAN Number" class="form-control inline-label" />
+                                            <input type="text"  id="ibanNumber" maxlength="25" style="width: 260px" title="IBAN Number" class="form-control inline-label  "  onblur="checkvalue(this)" />
                                             <label class="form-control-label">IBAN Number</label>
                                         </div>
                                     </td>
