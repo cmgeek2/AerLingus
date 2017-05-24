@@ -17,6 +17,19 @@ namespace ContactUs
 
             string sSiteTitle = ConfigurationManager.AppSettings["SiteTitle"];
             Page.Title = sSiteTitle;
+            
+            string pageSender = Request.QueryString.ToString();
+            
+            if (pageSender == "NH")
+            {
+                idHeading.Text = "Help Request Sent Successfully";
+                idFooter.Text = "Your Help Request has been Sent Successfully";
+            }
+            if (pageSender == "SA")
+            {
+                idHeading.Text = "Special Assistance Request Sent Successfully";
+                idFooter.Text = "Your Special Assistance Request has been Sent Successfully";
+            }
         }
     }
 }

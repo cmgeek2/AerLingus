@@ -150,8 +150,8 @@ public partial class SpecialAssistance : System.Web.UI.Page
         }
         try
         {
-            SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx");
+            //SMTPServer.Send(_helpMessage);
+            Response.Redirect("ThankYou.aspx?" + "SA");
            
 
             _helpMessage.Dispose();

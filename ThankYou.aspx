@@ -60,11 +60,11 @@ span{
                     </td>
                     <td>
                         <table >
-                            <tr><td style="padding-bottom:20px" class="auto-style2" ><span class="tealGreen xxl">Help Request Sent Successfully</span></td></tr>
-                            <tr><td class="auto-style2" style="padding-bottom:20px"><span class="tealGreen xsmall-table">Thank You</span></td></tr>
+                            <tr><td style="padding-bottom:20px" class="auto-style2" ><asp:label runat="server" id="idHeading" class="tealGreen xxl"></asp:label></td></tr>
+                            <tr><td class="auto-style2" style="padding-bottom:20px"><asp:label runat="server" id="idBody" class="tealGreen xsmall-table">Thank You</asp:label></td></tr>
                             <tr><td class="auto-style2" style="padding-bottom:20px">
                                
-                                <span class="tealGreen xsmall-table">Your Help Request has been Sent Successfully</span></td></tr>
+                                <asp:label runat="server" id="idFooter" class="tealGreen xsmall-table"></asp:label></td></tr>
                         </table>
                     </td>
                    

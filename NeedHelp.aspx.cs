@@ -138,8 +138,9 @@ public partial class NeedHelp : System.Web.UI.Page
         }
         try
         {
-            SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx");
+            //SMTPServer.Send(_helpMessage);
+            Session["Value"] = "NH";
+            Response.Redirect("ThankYou.aspx?" + "NH");
            
 
             _helpMessage.Dispose();
