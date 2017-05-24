@@ -133,6 +133,7 @@
                             <option value="Platinum">Platinum</option>
                             <option value="Silver" >Silver</option>
                             <option value="Green" >Green</option>
+                            <option value="Not a Member">Not a member</option>
                        </select>
 
                  </td>
@@ -183,7 +184,7 @@
                     <td>&nbsp</td>
                 </tr>
             </table>
-            <div class="input-container"> <h2 class="xl2 tealGreen"> Request Disability Assistance </h2></div>
+            <div class="input-container"> <h2 class="xl2 tealGreen"> Type of Disability Assistance needed</h2></div>
             <div>To add more than one request, simply click the '+' sign:</div>    
             <table>
                 <tr>
@@ -287,7 +288,7 @@
                     </td>
                 </tr>            
             </table>
-            <p>Please provide any additional information to assist us with your request, <br> i.e. include make and model; dimensions and weight; battery type and wattage</p>
+            <p>Please provide any additional information to assist us with your request, <br>i.e. include device make and model; dimensions and weight; battery type and wattage</p>
             <div>
             <table width="100%">
                   <tr>
@@ -317,7 +318,7 @@
         <br />
         <br />
       
-       <div style="margin-left: 200px;padding:20px" >
+       <div style="margin-left: 600px;padding:20px" >
       
            <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
         </div>
@@ -341,7 +342,7 @@
       });
 
       $("#_helpQueryAerClubDropDown").change(function () {
-          if(this.value!="Selected")
+          if(this.value!="Selected" && this.value!="Not a Member")
           {
               $("#_helpQueryAerClubmembershipId").attr("disabled", false);
               $("#_helpQueryAerClubmembershipId").show();
