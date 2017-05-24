@@ -25,12 +25,13 @@
                 <div style="margin-left: 30px" >
                     <br />
                     <div>
-                        <h4 id="RefNumberheader" class="xl2 tealGreen" style="font-size: 1em">Reference Number</h4>
+                        <h2 id="RefNumberheader" class="xl2 tealGreen">Reference Number</h2>
                     </div>
                     <div class="input-container" >
                          <input type="text" style="width: 260px" id="updateCaseID" title="Please enter your case number" name="updateCaseID" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
                          <label class="form-control-label">Case/Request Number</label>
                     </div>
+                        <br><br><br>
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <br/>
                     <div class="input-container" id="radioButtonContainer">
