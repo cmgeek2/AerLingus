@@ -192,7 +192,7 @@
                         <div>
                             <label class="visuallyhidden">Select a Disability Request</label>
                             <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList" runat="server" Height="30px" Width="260px" AppendDataBoundItems="true">
-                                <asp:ListItem Text="Select Option" Value="Selected" Selected="True"></asp:ListItem>
+                                <asp:ListItem Text="Select Assistance Needed" Value="Selected" Selected="True"></asp:ListItem>
                                 <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
                                 <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
                                 <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
@@ -222,7 +222,7 @@
                      <td>
                          <label class="visuallyhidden">Select a Disability Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList2" Enabled="False" runat="server"   Height="30px" Width="260px">
-                            <asp:ListItem Text="Select Option" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Select Assistance Needed" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
                             <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
@@ -254,7 +254,7 @@
                         <td>
                             <label class="visuallyhidden">Select a Disability Request</label>
                             <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3" Enabled="False"  runat="server"  Height="30px" Width="260px">
-                                <asp:ListItem Text="Select Option" Value="Selected"></asp:ListItem>
+                                <asp:ListItem Text="Select Assistance Needed" Value="Selected"></asp:ListItem>
                                 <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
                                 <asp:ListItem Text="Mobility Device" Value="M"></asp:ListItem>
                                 <asp:ListItem Text="Cognitive Disability" Value="C"></asp:ListItem>
