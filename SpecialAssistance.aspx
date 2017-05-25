@@ -168,7 +168,7 @@
                                  }
                               );
                             </script>
-                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date" title="Please click to select your flight date"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date" title="Please enter your flight date, Day-Month-Year"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                     </td>
                 </tr>
