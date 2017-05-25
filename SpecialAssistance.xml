@@ -3,58 +3,84 @@
   
   <Wheelchair>
     <ID value="WCHR assistance for distance to/from the aircraft"></ID>
+    <RC value="PB SHR MD WC"></RC>
   </Wheelchair>
   <Wheelchair>
     <ID value="WCHS assistance to ascend/descend steps"></ID>
+    <RC value="PB SHR MD WC"></RC>
   </Wheelchair>  
   <Wheelchair>
     <ID value="WCHC carry on assistance to/from cabin seat"></ID>
+    <RC value="PB SHR MD WC"></RC>
   </Wheelchair>
 
 
   <Mobility>
     <ID value="Standard foldable wheelchair"></ID>
+    <RC value="PB SHR MD COW"></RC>
   </Mobility>
   <Mobility>
     <ID value="Power wheelchair"></ID>
+    <RC value="PB SHR MD COW"></RC>
   </Mobility>  
   <Mobility>
     <ID value="Scooter"></ID>
+    <RC value="PB SHR MD COW"></RC>
   </Mobility>
   <Mobility>
     <ID value="Other"></ID>
+    <RC value="PB SHR MD OT"></RC>
   </Mobility>
 
 
   <Cognitive>
     <ID value="Connection assistance required"></ID>
+    <RC value="PB SHR MA AA"></RC>
   </Cognitive>
 
 
   <Oxygen>
     <ID value="Portable oxygen concentrator"></ID>
+    <RC value="PB SHR MD CP"></RC>
   </Oxygen>
   <Oxygen>
     <ID value="Airline supplied oxygen"></ID>
+    <RC value="PB SHR MC OXY"></RC>
   </Oxygen>
 
 
   <Medical>
     <ID value="CPAP"></ID>
+    <RC value="PB SHR MD CP"></RC>
   </Medical>
   <Medical>
     <ID value="Respirator"></ID>
+    <RC value="PB SHR MD CP"></RC>
   </Medical>  
   <Medical>
     <ID value="Ventilator"></ID>
+    <RC value="PB SHR MD CP"></RC>
   </Medical>  
   <Medical>
     <ID value="Other"></ID>
+    <RC value="PB SHR MD CP"></RC>
   </Medical> 
 
-
   <Other>
-    <ID value="Please use comments below"></ID>
+    <ID value="Autism"></ID>
+    <RC value="PB SHR MB AA"></RC>
+  </Other>
+  <Other>
+    <ID value="Hearing Impaired"></ID>
+    <RC value="PB SHR MB AA"></RC>
+  </Other>
+  <Other>
+    <ID value="Vision Impaired"></ID>
+    <RC value="PB SHR MB AA"></RC>
+  </Other>
+  <Other>
+    <ID value="Other Special Needs - Please use comments below"></ID>
+    <RC value="PB SHR MB AA"></RC>
   </Other>
   
 
