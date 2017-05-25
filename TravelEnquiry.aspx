@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TravelEnquiry.aspx.cs" Inherits="TravelEnquiry"  EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="TravelEnquiry.aspx.cs" Inherits="TravelEnquiry" %>
 
 <!DOCTYPE html>
 
