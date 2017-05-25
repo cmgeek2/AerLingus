@@ -474,7 +474,7 @@
           $(xml).find(xmlnode).each(function () {
 
               var selecttext = $(this).find('ID').attr('value');
-              var selectvalue = $(this).find('ID').attr('value');
+              var selectvalue = $(this).find('RC').attr('value');
               selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
           });
 
