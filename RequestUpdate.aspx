@@ -28,7 +28,7 @@
                         <h2 id="RefNumberheader" class="xl2 tealGreen">Reference Number</h2>
                     </div>
                     <div class="input-container" >
-                         <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" ToolTip="Please enter your case number" CssClass="form-control inline-label  " required="required"  runat="server"/>
+                         <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" Title="Please enter your case number" CssClass="form-control inline-label  " required="required"  runat="server" onblur="checkvalue(this)"/>
                          <label class="form-control-label">Case/Request Number</label>
                          <asp:RangeValidator runat="server" id="rangeValidator1" 
                              ErrorMessage="Please enter a number between 500000 and 9999999"
