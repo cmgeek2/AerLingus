@@ -15,7 +15,8 @@ public partial class RequestUpdate: System.Web.UI.Page
         string caseNumberSent = Request.QueryString.ToString();
         if (caseNumberSent != "")
         {
-            
+            updateCaseID.Text = caseNumberSent;
+            updateCaseID.Enabled = false;
         }
     }
 
