@@ -12,7 +12,7 @@ public partial class RequestUpdate: System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-        string caseNumberSent = Request.QueryString["CaseID"];
+        string caseNumberSent = Request.QueryString["caseid"];
         if (caseNumberSent != "")
         {
             updateCaseID.Text = caseNumberSent;
