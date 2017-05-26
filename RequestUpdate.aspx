@@ -28,10 +28,17 @@
                         <h2 id="RefNumberheader" class="xl2 tealGreen">Reference Number</h2>
                     </div>
                     <div class="input-container" >
-                         <input type="text" style="width: 260px" id="updateCaseID" title="Please enter your case number" name="updateCaseID" class="form-control inline-label  " required="required" onblur="checkvalue(this);"/>
+                         <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" ToolTip="Please enter your case number" CssClass="form-control inline-label  " required="required"  runat="server"/>
                          <label class="form-control-label">Case/Request Number</label>
+                         <asp:RangeValidator runat="server" id="rangeValidator1" 
+                             ErrorMessage="Please enter a number between 500000 and 9999999"
+                             ControlToValidate="updateCaseID"
+                             MaximumValue="9999999"
+                             MinimumValue="500000"
+                             Type="Integer">                             
+                         </asp:RangeValidator>
                     </div>
-                        <br><br><br>
+                    <br/><br/><br/>
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <br/>
                     <div class="input-container" id="radioButtonContainer">

@@ -12,7 +12,11 @@ public partial class RequestUpdate: System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        string caseNumberSent = Request.QueryString.ToString();
+        if (caseNumberSent != "")
+        {
+            
+        }
     }
 
     private string BuildMessageBody(string _FormID)
