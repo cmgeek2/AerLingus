@@ -30,7 +30,8 @@
                     <div class="input-container" >
                          <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" ToolTip="Please enter your case number" CssClass="form-control inline-label  " required="required"  runat="server"/>
                          <label class="form-control-label">Case/Request Number</label>
-                         <asp:RangeValidator runat="server" id="rangeValidator1" 
+                         <asp:RangeValidator runat="server" id="rangeValidator1"
+                             ValidationGroup="Submit" 
                              ErrorMessage="Please enter a number between 500000 and 9999999"
                              ControlToValidate="updateCaseID"
                              MaximumValue="9999999"
