@@ -46,6 +46,7 @@ public partial class RequestUpdate: System.Web.UI.Page
 
         StringBuilder sbBodyTextString = new StringBuilder();
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["updateCaseID"]);
+        sbBodyTextString.AppendLine("Guest Type: " + guestGroup.SelectedValue);
         // if the user is a representative of the guest, collect representative information.
         if (guestGroup.SelectedValue != "guest")
         {
@@ -117,16 +118,7 @@ public partial class RequestUpdate: System.Web.UI.Page
             sbBodyTextString.AppendLine("Swift (BIC) Code: " + Request.Form["swiftCode"]);
             sbBodyTextString.AppendLine("IBAN Number: " + Request.Form["ibanNumber"]);
             sbBodyTextString.AppendLine("Code Number: " + Request.Form["codeNumber"]);
-        }
-        else
-        {
-            sbBodyTextString.AppendLine("Bank Name: " + "");
-            sbBodyTextString.AppendLine("Account Holder Name: " + "");
-            sbBodyTextString.AppendLine("Account Number: " + "");
-            sbBodyTextString.AppendLine("Swift (BIC) Code: " + "");
-            sbBodyTextString.AppendLine("IBAN Number: " + "");
-            sbBodyTextString.AppendLine("Code Number: " + "");
-        }      
+        }    
 
         sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text.ToString());
 
