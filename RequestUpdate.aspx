@@ -332,7 +332,7 @@
          });
 
          $("#_helpQueryCountryList").change(function () {
-             $("#_helpQueryTelephoneCode").val(this.value);
+             $("#CountryCode").val(this.value);
 
          });
 
