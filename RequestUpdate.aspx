@@ -25,12 +25,16 @@
                 <div style="margin-left: 30px" >
                     <br />
                     <div>
-                        <h2 id="RefNumberheader" class="xl2 tealGreen">Reference Number</h2>
+                        <h2 id="RefNumberheader" class="xl2 tealGreen">Case/Reference Number</h2>
+                        <p>Please enter your case/reference number</p>
                     </div>
                     <div class="input-container" >
                          <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" Title="Please enter your case number" CssClass="form-control inline-label  " required="required"  runat="server" onblur="checkvalue(this)"/>
+                         <!--
                          <label class="form-control-label">Case/Request Number</label>
+                         -->
                          <asp:RangeValidator runat="server" id="rangeValidator1"
+                             style="color:red;"
                              ValidationGroup="Submit" 
                              ErrorMessage="Please enter a number between 500000 and 9999999"
                              ControlToValidate="updateCaseID"
@@ -39,7 +43,7 @@
                              Type="Integer">                             
                          </asp:RangeValidator>
                     </div>
-                    <br/><br/><br/>
+                    <br/><br/>
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <br/>
                     <div class="input-container" id="radioButtonContainer">
