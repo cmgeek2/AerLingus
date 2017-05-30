@@ -213,7 +213,7 @@ public partial class RefundRequest : System.Web.UI.Page
         }
         try
         {
-            //SMTPServer.Send(_helpMessage);
+            SMTPServer.Send(_helpMessage);
             Response.Redirect("ThankYou.aspx?sender=RefundRequest.aspx&message=" + Server.UrlEncode("Refund"));
 
             _helpMessage.Dispose();
