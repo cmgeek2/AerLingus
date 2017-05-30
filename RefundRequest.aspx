@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RefundRequest.aspx.cs" Inherits="css_RefaundRequest" EnableEventValidation="false" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="RefundRequest.aspx.cs" Inherits="RefundRequest" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -93,6 +93,8 @@
             if (country == "United States of America")
             {
                 $('#countryState').attr('maxlength', 2);
+                $('#countryState').css({ 'text-transform': "uppercase" });
+
             }
             else
             {
@@ -145,13 +147,13 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
+                                    <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
                                     <label class="form-control-label">First Name</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName(); "/>
+                                    <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName(); "/>
                                     <label class="form-control-label">Family Name</label>
                                 </div>
                             </td>
@@ -262,7 +264,7 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" name="countryState" id="countryState" maxlength="20" style="width: 260px" title="country or state" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <input type="text" name="countryState" id="countryState" maxlength="20" style="width: 260px;" title="country or state" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Country/State</label>
                                 </div>
                             </td>
@@ -347,7 +349,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="QueryFlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="QueryFlightNumber2" name="QueryFlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Number</label> 
                                     </div>
                                 </td>
@@ -369,7 +371,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="QueryFlightNumber3" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="QueryFlightNumber3" name="QueryFlightNumber3" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Number</label> 
                                     </div>
                                 </td>
@@ -393,7 +395,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="QueryFlightNumber4" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="QueryFlightNumber4" name="QueryFlightNumber4" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Number</label> 
                                     </div>
                                 </td>
@@ -424,13 +426,13 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="firstGuestFirstName" name="firstGuestFirstName" class="form-control inline-label"  />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="firstGuestFirstName" name="firstGuestFirstName" class="form-control inline-label"  />
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="firstGuestLastName"  name="firstGuestLastName" class="form-control focus inline-label" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="firstGuestLastName"  name="firstGuestLastName" class="form-control focus inline-label" />
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -456,13 +458,13 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="secondGuestFirstName" name="secondGuestFirstName" class="form-control inline-label"  />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="secondGuestFirstName" name="secondGuestFirstName" class="form-control inline-label"  onblur="checkvalue(this)"/>
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="secondGuestLastName"  name="secondGuestLastName" class="form-control inline-label" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="secondGuestLastName"  name="secondGuestLastName" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -490,13 +492,13 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="thirdGuestFirstName2" name="thirdGuestFirstName2" class="form-control inline-label"  />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestFirstName2" name="thirdGuestFirstName2" class="form-control inline-label"  onblur="checkvalue(this)"/>
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="thirdGuestLastName"  name="thirdGuestLastName" class="form-control inline-label" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestLastName"  name="thirdGuestLastName" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -525,13 +527,13 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="fourthGuestFirstName" name="fourthGuestFirstName" class="form-control inline-label"  />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="fourthGuestFirstName" name="fourthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="fourthGuestLastName"  name="fourthGuestLastName" class="form-control inline-label" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="fourthGuestLastName"  name="fourthGuestLastName" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -560,13 +562,13 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="fifthGuestFirstName" name="fifthGuestFirstName" class="form-control inline-label"  />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="fifthGuestFirstName" name="fifthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="fifthGuestLastName"  name="fifthGuestFirstName" class="form-control inline-label" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="fifthGuestLastName"  name="fifthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this) "/>
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -594,13 +596,13 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="helpQueryFirstName6" name="helpQueryFirstName2" class="form-control inline-label"  />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryFirstName6" name="helpQueryFirstName2" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px" id="helpQueryLastName6"  name="helpQueryLastName" class="form-control inline-label" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryLastName6"  name="helpQueryLastName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -730,9 +732,9 @@
                             </td>
                             <td colspan="2">
                                 <div class="input-container">   
-                                    <asp:RadioButtonList runat="server" ID="RadioButtonList1" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
-                                        <asp:ListItem Text="Yes" Value="yes" />
-                                        <asp:ListItem Text="No" Value="no" Selected="True"/>
+                                    <asp:RadioButtonList runat="server" ID="insuranceGroup" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
+                                        <asp:ListItem Text="Yes" Value="Yes" />
+                                        <asp:ListItem Text="No" Value="No" Selected="True"/>
                                     </asp:RadioButtonList>
                                     <br/>
                                     <br/>
@@ -802,7 +804,7 @@
          });
 
          $("#_helpQueryCountryList").change(function () {
-             $("#_helpQueryTelephoneCode").val(this.value);
+             $("#CountryCode").val(this.value);
 
          });
 
@@ -1164,8 +1166,21 @@
              if (this.value == "fee") {
                  setSelectQuery('#refundReason3', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
+             } else {
+                 
              }
 
+         });
+
+         $("#refundReason3").change(function() {
+             if (this.selectedIndex != 0) {
+                 $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', false);
+             } else {
+                 $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                 $('#refundReason4').prop('selectedIndex', 0);
+                 $("#refundReason4").attr('disabled', true);
+                 $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+             }
          });
 
          $("#refundReasonDropDownList4").change(function () {

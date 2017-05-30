@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
-public partial class css_RefaundRequest : System.Web.UI.Page
+public partial class RefundRequest : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
@@ -21,7 +21,6 @@ public partial class css_RefaundRequest : System.Web.UI.Page
         string sEmailFormId2;
         string sUSAorOther;
         string lsFormIdBuild = _FormID;
-        bool isGuest;
         //use this if we need to split mailboxes or IDs for processing.
         //form IDs are identical for both on deploy 3/29/2017
         if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
@@ -40,72 +39,141 @@ public partial class css_RefaundRequest : System.Web.UI.Page
         }
 
         StringBuilder sbBodyTextString = new StringBuilder();
+
+        //splitting this into 2
+        sbBodyTextString.AppendLine("Guest Type: " + guestGroup.SelectedValue);
+        sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
+        sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
+        sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
+        sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text);
+        sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
         
+        sbBodyTextString.AppendLine("Refund Reason Type 1: " + refundReasonDropDownList1.SelectedItem);
+        sbBodyTextString.AppendLine("Refund Reason 1: " + Request.Form["refundReason1"]);
+
+        // Guest Information
+        sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
+        sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue);
+        sbBodyTextString.AppendLine("Guest Given Name: " + (Request.Form["helpQueryFirstName"]).ToUpper());
+        sbBodyTextString.AppendLine("Guest Last Name: " + (Request.Form["helpQueryLastName"]).ToUpper());
+
         // if the user is a representative of the guest, collect representative information.
         if (guestGroup.SelectedValue != "guest")
         {
-            //splitting this into 2
-            sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
-            sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
-            sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
-            sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
-            sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
-            sbBodyTextString.AppendLine("Refund Reason Type: " + refundReasonDropDownList1.SelectedItem.ToString());
-            sbBodyTextString.AppendLine("Refund Reason: " + Request.Form["refundReason1"]);
-
-            // Guest Information
-            sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
-            sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue);
-            sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["helpQueryFirstName"]);
-            sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
             // Representative information
             sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
             sbBodyTextString.AppendLine("RepresentativeTitle: " + RepresentativeDropDownList.SelectedValue);
-            sbBodyTextString.AppendLine("Representative Given Name: " + Request.Form["representativeFirstName"]);
-            sbBodyTextString.AppendLine("Representative Last Name: " + Request.Form["representativeLastName"]);
+            sbBodyTextString.AppendLine("Representative Given Name: " + (Request.Form["representativeFirstName"]).ToUpper());
+            sbBodyTextString.AppendLine("Representative Last Name: " + (Request.Form["representativeLastName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
+            sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationsipToGuestDropDown"]);
             string countrycode = CountryCode.SelectedValue;
         }
         else
         {
-            //splitting this into 2. Pre-processing and when pulled from queue
-            sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
-            sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
-            sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text);
-            sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
-            sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
-            sbBodyTextString.AppendLine("Query Type: " + refundReasonDropDownList1.SelectedItem);
-            sbBodyTextString.AppendLine("Query Definition: " + Request.Form["refundReason1"]);
-
             //starting part 2
-            sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
-            sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue);
-            sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["helpQueryFirstName"]);
-            sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
             sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
             string countrycode = CountryCode.SelectedValue;
             sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
             char[] delimiterChars = { '(', ')' };
             string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
             sbBodyTextString.AppendLine("Telephone: " + code[1].ToString() + " " + Request.Form["_helpQueryTelephoneNumber"]);
-            if (Request.Form["_helpQueryAerClubDropDown"] != "Selected")
-            {
-                sbBodyTextString.AppendLine("AerClub Tier: " + Request.Form["_helpQueryAerClubDropDown"]);
-                sbBodyTextString.AppendLine("AerClub Member ID: " + Request.Form["_helpQueryAerClubmembershipId"]);
-                sbBodyTextString.AppendLine("CountryACStatus: " + sUSAorOther + Request.Form["_helpQueryAerClubDropDown"]);
-            }
-            else
-            {
-                sbBodyTextString.AppendLine("AerClub Tier: " + "");
-                sbBodyTextString.AppendLine("AerClub Member ID: " + "");
-                sbBodyTextString.AppendLine("CountryACStatus: " + "");
-
-            }
-
-
-            sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text.ToString());
+            
+  
         }
-        
+
+        if (Request.Form["_helpQueryAerClubDropDown"] != "Selected")
+        {
+            sbBodyTextString.AppendLine("AerClub Tier: " + Request.Form["_helpQueryAerClubDropDown"]);
+            sbBodyTextString.AppendLine("AerClub Member ID: " + Request.Form["_helpQueryAerClubmembershipId"]);
+            sbBodyTextString.AppendLine("CountryACStatus: " + sUSAorOther + Request.Form["_helpQueryAerClubDropDown"]);
+        }
+        else
+        {
+            sbBodyTextString.AppendLine("AerClub Tier: " + "");
+            sbBodyTextString.AppendLine("AerClub Member ID: " + "");
+            sbBodyTextString.AppendLine("CountryACStatus: " + "");
+
+        }
+
+        // Get additional flights information
+        if (Request.Form["QueryFlightNumber2"] != "")
+        {
+            sbBodyTextString.AppendLine("Flight Date 2: " + dateOfFlight2.Text);
+            sbBodyTextString.AppendLine("Flight Number 2: " + Request.Form["QueryFlightNumber2"]);
+        }
+
+        if (Request.Form["QueryFlightNumber3"] != "")
+        {
+            sbBodyTextString.AppendLine("Flight Date 3: " + dateOfFlight3.Text);
+            sbBodyTextString.AppendLine("Flight Number 3: " + Request.Form["QueryFlightNumber3"]);
+        }
+
+
+        if (Request.Form["QueryFlightNumber4"] != "")
+        {
+            sbBodyTextString.AppendLine("Flight Date 4: " + dateOfFlight4.Text);
+            sbBodyTextString.AppendLine("Flight Number 4: " + Request.Form["QueryFlightNumber4"]);
+        }
+
+        // Additional guests information
+        if (Request.Form["salutationGuest2"] != "Selected")
+        {
+            sbBodyTextString.AppendLine("Guest 2 Title: " + salutationGuest2.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 2 Given Name: " + (Request.Form["secondGuestFirstName"]).ToUpper());
+            sbBodyTextString.AppendLine("Guest 2 Last Name: " + (Request.Form["secondGuestLastName"]).ToUpper());
+        }
+
+        if (Request.Form["salutationGuest3"] != "Selected")
+        {
+            sbBodyTextString.AppendLine("Guest 3 Title: " + salutationGuest3.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 3 Given Name: " + (Request.Form["thirdGuestFirstName"]).ToUpper());
+            sbBodyTextString.AppendLine("Guest 3 Last Name: " + (Request.Form["thirdGuestLastName"]).ToUpper());
+        }
+
+        if (Request.Form["salutationGuest4"] != "Selected")
+        {
+            sbBodyTextString.AppendLine("Guest 4 Title: " + salutationGuest4.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 4 Given Name: " + (Request.Form["fourthGuestFirstName"]).ToUpper());
+            sbBodyTextString.AppendLine("Guest 4 Last Name: " + Request.Form["fourthGuestLastName"]);
+        }
+
+        if (Request.Form["salutationGuest5"] != "Selected")
+        {
+            sbBodyTextString.AppendLine("Guest 5 Title: " + salutationGuest5.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 5 Given Name: " + (Request.Form["fifthGuestFirstName"]).ToUpper());
+            sbBodyTextString.AppendLine("Guest 5 Last Name: " + (Request.Form["fifthGuestLastName"]).ToUpper());
+        }
+
+        if (Request.Form["salutationGuest6"] != "Selected")
+        {
+            sbBodyTextString.AppendLine("Guest 6 Title: " + salutationGuest6.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 6 Given Name: " + (Request.Form["sixthGuestFirstName"]).ToUpper());
+            sbBodyTextString.AppendLine("Guest 6 Last Name: " + (Request.Form["sixthGuestLastName"]).ToUpper());
+        }
+
+        // Additional refund reasons info.
+        if (refundReasonDropDownList2.SelectedIndex > 0)
+        {
+            sbBodyTextString.AppendLine("Refund Reason Type 2: " + refundReasonDropDownList2.SelectedItem);
+            sbBodyTextString.AppendLine("Refund Reason 2: " + Request.Form["refundReason2"]);
+        }
+
+        if (refundReasonDropDownList3.SelectedIndex > 0)
+        {
+            sbBodyTextString.AppendLine("Refund Reason Type 3: " + refundReasonDropDownList3.SelectedItem);
+            sbBodyTextString.AppendLine("Refund Reason 3: " + Request.Form["refundReason3"]);
+        }
+
+        if (refundReasonDropDownList4.SelectedIndex > 0)
+        {
+            sbBodyTextString.AppendLine("Refund Reason Type 3: " + refundReasonDropDownList4.SelectedItem);
+            sbBodyTextString.AppendLine("Refund Reason 3: " + Request.Form["refundReason4"]);
+        }
+
+        sbBodyTextString.AppendLine("Need a letter from insurance: " + insuranceGroup.SelectedValue);
+
+        sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text);
 
         return sbBodyTextString.ToString(); 
     }
@@ -118,6 +186,7 @@ public partial class css_RefaundRequest : System.Web.UI.Page
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
+        
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
@@ -128,7 +197,7 @@ public partial class css_RefaundRequest : System.Web.UI.Page
             _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersNeedHelpToAddress"]);
             _helpMessage.Subject = ConfigurationManager.AppSettings["OthersNeedHelpFormId"];
         }
-
+        
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
         SmtpClient SMTPServer = new SmtpClient();
         AlternateView PlainText;
@@ -144,9 +213,8 @@ public partial class css_RefaundRequest : System.Web.UI.Page
         }
         try
         {
-            SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx?" + Server.UrlEncode("Refund Request"));
-
+            //SMTPServer.Send(_helpMessage);
+            Response.Redirect("ThankYou.aspx?sender=RefundRequest.aspx&message=" + Server.UrlEncode("Refund"));
 
             _helpMessage.Dispose();
         }
