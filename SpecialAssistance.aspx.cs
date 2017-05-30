@@ -59,7 +59,7 @@ public partial class SpecialAssistance : System.Web.UI.Page
         
         StringBuilder sbBodyTextString = new StringBuilder();
         //splitting this into 2. Pre-processing and when pulled from queue
-        sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
+        sbBodyTextString.AppendLine(sEmailFormId1);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
         sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
