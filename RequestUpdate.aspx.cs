@@ -13,10 +13,14 @@ public partial class RequestUpdate: System.Web.UI.Page
     protected void Page_Load(object sender, EventArgs e)
     {
         string caseNumberSent = Request.QueryString["caseid"];
-        if (caseNumberSent != "")
+        if (caseNumberSent != null)
         {
             updateCaseID.Text = caseNumberSent;
             updateCaseID.Enabled = false;
+        }
+        else
+        {
+            updateCaseID.Enabled = true;
         }
     }
 
@@ -160,7 +164,7 @@ public partial class RequestUpdate: System.Web.UI.Page
         try
         {
             SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx");
+            Response.Redirect("ThankYou.aspx?sender=RequestUpdate.aspx&message=" + Server.UrlEncode("Request Update"));
 
 
             _helpMessage.Dispose();

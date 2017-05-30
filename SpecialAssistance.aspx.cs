@@ -122,8 +122,8 @@ public partial class SpecialAssistance : System.Web.UI.Page
     protected void SubmitButton_Click(object sender, EventArgs e)
     {
         Page.Validate();
-       
-      
+
+        string sendingPage = "SpecialAssistance.aspx";
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
@@ -154,8 +154,8 @@ public partial class SpecialAssistance : System.Web.UI.Page
         }
         try
         {
-            //SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx?" + Server.UrlEncode("Special Assistance"));
+            SMTPServer.Send(_helpMessage);
+            Response.Redirect("ThankYou.aspx?sender=SpecialAssistance.aspx&message=" + Server.UrlEncode("Special Assistance") );
            
 
             _helpMessage.Dispose();

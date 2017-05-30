@@ -135,8 +135,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
         try
         {
             SMTPServer.Send(_helpMessage);
-            Session["Value"] = "NH";
-            Response.Redirect("ThankYou.aspx?" + Server.UrlEncode("Travel Enquiry"));
+            Response.Redirect("ThankYou.aspx?sender=TravelEnquiry.aspx&message=" + Server.UrlEncode("Travel Enquiry"));
 
 
             _helpMessage.Dispose();
