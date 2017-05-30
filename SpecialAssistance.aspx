@@ -310,7 +310,7 @@
                 <tr>
                     <td colspan="3">
 
-                        <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
+                        <asp:Label for="_helpQueryFileUploader" BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>
                            
                         <asp:FileUpload ID="_helpQueryFileUploader" onchange="return CheckFile(this);" runat="server" />
                     </td>
