@@ -21,10 +21,6 @@
     <ID value="Request help with a flight schedule change"></ID>
     <RC value="MB CIV IS O"></RC>
   </Description>
-  <Description >
-    <ID value="Request wheelchair assistance"></ID>
-    <RC value="PB SHR MD WC"></RC>
-  </Description>
 
   <Receipt >
     <ID value="Information for insurance"></ID>
