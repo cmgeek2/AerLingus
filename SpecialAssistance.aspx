@@ -184,13 +184,13 @@
                     <td>&nbsp</td>
                 </tr>
             </table>
-            <div class="input-container"> <h2 class="xl2 tealGreen"> Type of Special Assistance needed</h2></div>
+            <div class="input-container"> <h2 class="xl2 tealGreen"> Type of Disability Assistance needed</h2></div>
             <div>To add more than one request, simply click the '+' sign:</div>    
             <table>
                 <tr>
                     <td>
                         <div>
-                            <label class="visuallyhidden">Select a Special Assistance Request</label>
+                            <label class="visuallyhidden">Select a Disability Assistance Request</label>
                             <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList" runat="server" Height="30px" Width="260px" AppendDataBoundItems="true" required>
                                 <asp:ListItem Text="Select Assistance Needed" Value="Selected" Selected="True"></asp:ListItem>
                                 <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
@@ -199,7 +199,7 @@
                                 <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
                                 <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
                                 <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
-                                <asp:ListItem Text="Other Special Assistance Requests" Value="O"></asp:ListItem>
+                                <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
                             </asp:DropDownList>
                         </div> 
                     </td>
@@ -207,7 +207,7 @@
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" BorderColor="Red" ErrorMessage="Required Field" ControlToValidate="_helpQueryTypeDropDownList" Display="Dynamic"  InitialValue="Selected" runat="server" ValidationGroup="Submit" style="color:red;"/>
                     </td>
                     <td colspan="2">
-                        <label class="visuallyhidden">Select a Special Assistance Request</label>
+                        <label class="visuallyhidden">Select a Specific Disability Request</label>
                         <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:360px" required="required" >
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
@@ -222,7 +222,7 @@
                 <table>     
                  <tr>
                      <td>
-                         <label class="visuallyhidden">Select a Special Assistance Request</label>
+                         <label class="visuallyhidden">Select a Disability Assistance Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList2" Enabled="False" runat="server"   Height="30px" Width="260px">
                             <asp:ListItem Text="Select Assistance Needed" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
@@ -231,7 +231,7 @@
                             <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
                             <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
                             <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
-                            <asp:ListItem Text="Other Special Assistance Requests" Value="O"></asp:ListItem>
+                            <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="_QueryTypeValidator2" ControlToValidate="_helpQueryTypeDropDownList2" InitialValue="Selected" runat="server"/>
                     </td>
@@ -255,7 +255,7 @@
                 <table>     
                     <tr>
                         <td>
-                            <label class="visuallyhidden">Select a Special Assistance Request</label>
+                            <label class="visuallyhidden">Select a Disability Assistance Request</label>
                             <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3" Enabled="False"  runat="server"  Height="30px" Width="260px">
                                 <asp:ListItem Text="Select Assistance Needed" Value="Selected"></asp:ListItem>
                                 <asp:ListItem Text="Wheelchair" Value="W"></asp:ListItem>
@@ -264,12 +264,12 @@
                                 <asp:ListItem Text="Oxygen" Value="X"></asp:ListItem>
                                 <asp:ListItem Text="Medical Device" Value="D"></asp:ListItem>
                                 <asp:ListItem Text="Service Animal" Value="S"></asp:ListItem>
-                                <asp:ListItem Text="Other Special Assistance Requests" Value="O"></asp:ListItem>
+                                <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
                         </td>
                         <td colspan="2">
-                            <label class="visuallyhidden">Select a Special Assistance Request</label>
+                            <label class="visuallyhidden">Select a specific Disability Request</label>
                             <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:360px" >
                                 <option value="" selected="selected">-- Please Select --</option>
                             </select>
