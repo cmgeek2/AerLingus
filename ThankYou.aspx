@@ -53,7 +53,7 @@
     </script>
 </head>
     
-    <body style="align-items:center">
+    <body style="align-items:center" onload="window.parent.scrollTo(0,0)">
         <div  style="align-content:center;width:800px;height:150px;border:2px solid #73AD21 ; background-color:#F8FDEC;border-radius:10px;align-content:center">             
             <table style="width: 100%">
                 <tr>
