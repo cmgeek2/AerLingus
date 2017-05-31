@@ -72,6 +72,7 @@ public partial class SpecialAssistance : System.Web.UI.Page
             sbBodyTextString.AppendLine("Request Definition 2: " + Request.Form["_helpQueryDefList2"]);
             sbBodyTextString.AppendLine("Flight Date 2: " + _helpQueryDateOfFlight.Text.ToString());
             sbBodyTextString.AppendLine("Flight Number 2: " + Request.Form["_helpQueryFlightNumber"]);
+            sbBodyTextString.AppendLine("Reference Number 2: " + Request.Form["_helpQuerybookingReferenceNumber"]);
 
             if (Request.Form["_helpQueryTypeDropDownList3"] != "Selected")
             {
@@ -79,6 +80,7 @@ public partial class SpecialAssistance : System.Web.UI.Page
                 sbBodyTextString.AppendLine("Request Definition 3: " + Request.Form["_helpQueryDefList3"]);
                 sbBodyTextString.AppendLine("Flight Date 3: " + _helpQueryDateOfFlight.Text.ToString());
                 sbBodyTextString.AppendLine("Flight Number 3: " + Request.Form["_helpQueryFlightNumber"]);
+                sbBodyTextString.AppendLine("Reference Number 3: " + Request.Form["_helpQuerybookingReferenceNumber"]);
             }
         }
 
