@@ -21,7 +21,7 @@ namespace ContactUs
             string messageFooter = "Your " + Server.UrlDecode(Request.QueryString["message"]) + " Request has been Sent Successfully";
             headingTD.InnerHtml = "<h1 id=\"idHeading\" class=\"tealGreen xxl\"> " + messageHeading + "</h1>";
             fromLink.NavigateUrl = Server.UrlDecode(Request.QueryString["sender"]);
-            idFooter.Text = messageFooter;
+            //idFooter.Text = messageFooter;
         }
     }
 }

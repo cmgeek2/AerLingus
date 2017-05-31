@@ -27,7 +27,7 @@
             margin-left:auto;
             margin-right:auto;
             width: 500px;
-            margin-top:100px;
+            margin-top:0px;
             height: 150px;    
         }
 
@@ -67,11 +67,6 @@
                             </tr>
                             <tr>
                                 <td class="auto-style2" style="padding-bottom:20px"><asp:label runat="server" id="idBody" class="tealGreen xsmall-table">Thank You</asp:label></td>
-                            </tr>
-                            <tr>
-                                <td class="auto-style2" style="padding-bottom:20px">                               
-                                    <asp:label runat="server" id="idFooter" class="tealGreen xsmall-table"></asp:label>
-                                </td>
                             </tr>
                         </table>
                     </td>
