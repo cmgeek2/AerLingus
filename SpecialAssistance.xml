@@ -73,19 +73,19 @@
 
   <Other>
     <ID value="Autism"></ID>
-    <RC value="PB SHR MB AA"></RC>
+    <RC value="PB SHR MA AA"></RC>
   </Other>
   <Other>
     <ID value="Hearing Impaired"></ID>
-    <RC value="PB SHR MB AA"></RC>
+    <RC value="PB SHR MA AA"></RC>
   </Other>
   <Other>
     <ID value="Vision Impaired"></ID>
-    <RC value="PB SHR MB AA"></RC>
+    <RC value="PB SHR MA AA"></RC>
   </Other>
   <Other>
     <ID value="Other needs - Please use comments below"></ID>
-    <RC value="PB SHR MB AA"></RC>
+    <RC value="PB SHR MA AA"></RC>
   </Other>
   
 
