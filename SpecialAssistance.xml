@@ -2,7 +2,7 @@
 <AssistanceType>
   
   <Wheelchair>
-    <ID value="WCHR assistance for distance to/from the aircraft"></ID>
+    <ID value="WCHR assistance for distance to/from aircraft"></ID>
     <RC value="PB SHR MD WC"></RC>
   </Wheelchair>
   <Wheelchair>
