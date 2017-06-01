@@ -222,6 +222,7 @@
                 <table>     
                  <tr>
                      <td>
+                         <div>
                          <label class="visuallyhidden">Select a Disability Assistance Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList2" Enabled="False" runat="server"   Height="30px" Width="260px">
                             <asp:ListItem Text="Select Assistance Needed" Value="Selected"></asp:ListItem>
@@ -234,6 +235,10 @@
                             <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="_QueryTypeValidator2" ControlToValidate="_helpQueryTypeDropDownList2" InitialValue="Selected" runat="server"/>
+                        </div>
+                    </td>
+                    <td>
+                       &nbsp;
                     </td>
                     <td colspan="2">
                         <label class="visuallyhidden">Select a specific Disability Request</label>
@@ -255,6 +260,7 @@
                 <table>     
                     <tr>
                         <td>
+                            <div>
                             <label class="visuallyhidden">Select a Disability Assistance Request</label>
                             <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList3" Enabled="False"  runat="server"  Height="30px" Width="260px">
                                 <asp:ListItem Text="Select Assistance Needed" Value="Selected"></asp:ListItem>
@@ -267,7 +273,11 @@
                                 <asp:ListItem Text="Other Disability Assistance Requests" Value="O"></asp:ListItem>
                             </asp:DropDownList>
                             <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
+                            </div>
                         </td>
+ 			<td>
+                       		&nbsp;
+                    	</td>
                         <td colspan="2">
                             <label class="visuallyhidden">Select a specific Disability Request</label>
                             <select class=" dropdown-toggle" id="_helpQueryDefList3" name="_helpQueryDefList3" disabled="True" runat="server" style="height:30px;width:360px" >
