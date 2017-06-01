@@ -275,7 +275,7 @@
                             <asp:RequiredFieldValidator ID="_QueryTypeValidator3" ControlToValidate="_helpQueryTypeDropDownList3" InitialValue="Selected" runat="server"/>
                             </div>
                         </td>
- 			<td>
+ 			            <td>
                        		&nbsp;
                     	</td>
                         <td colspan="2">
