@@ -20,9 +20,9 @@
     
 </head>
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-     <script src = "https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
-    <script src="/js/jquery.js"></script>
-    <script type="text/javascript">
+  <script src = "https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
+  <script src="/js/jquery.js"></script>
+  <script type="text/javascript">
         function Count() {
 
             var i = document.getElementById("_helpQueryAdditionInformation").value.length;
