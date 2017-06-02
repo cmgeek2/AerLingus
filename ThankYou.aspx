@@ -68,6 +68,11 @@
                             <tr>
                                 <td class="auto-style2" style="padding-bottom:20px"><asp:label runat="server" id="idBody" class="tealGreen xsmall-table">Thank You</asp:label></td>
                             </tr>
+                            <tr>
+                                <td class="auto-style2" style="padding-bottom:20px">                               
+                                    <asp:label runat="server" id="idFooter" class="tealGreen xsmall-table"></asp:label>
+                                </td>
+                            </tr>
                         </table>
                     </td>
                     <td  style="vertical-align:top;padding-top:8px" class="auto-style1; width:20%;">
