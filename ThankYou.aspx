@@ -47,14 +47,21 @@
     </style>
 
     <script type="text/javascript">
+        window.onload=function()
+        {
+               document.getElementById("wrapper").scrollIntoView();
+        }
+     </script>
+
+    <script type="text/javascript">
         $(document).ready(function () {
             document.getElementById("idHeading").focus();
         });
     </script>
 </head>
     
-    <body style="align-items:center" onload="window.parent.scrollTo(0,0)">
-        <div  style="align-content:center;width:800px;height:150px;border:2px solid #73AD21 ; background-color:#F8FDEC;border-radius:10px;align-content:center">             
+    <body style="align-items:center">
+        <div  style="align-content:center;width:800px;height:150px;border:2px solid #73AD21 ; background-color:#F8FDEC;border-radius:10px;align-content:center" id="wrapper">             
             <table style="width: 100%">
                 <tr>
                     <td style="padding: 10px; width: 20%">
@@ -68,6 +75,11 @@
                             <tr>
                                 <td class="auto-style2" style="padding-bottom:20px"><asp:label runat="server" id="idBody" class="tealGreen xsmall-table">Thank You</asp:label></td>
                             </tr>
+                            <tr>
+                                <td class="auto-style2" style="padding-bottom:20px">                               
+                                    <asp:label runat="server" id="idFooter" class="tealGreen xsmall-table"></asp:label>
+                                </td>
+                            </tr>
                         </table>
                     </td>
                     <td  style="vertical-align:top;padding-top:8px" class="auto-style1; width:20%;">
@@ -80,3 +92,10 @@
         </div>       
     </body>
 </html>
+
+    <script type="text/javascript">
+        window.onload=function()
+        {
+               document.getElementById("wrapper").scrollIntoView();
+        }
+     </script>
