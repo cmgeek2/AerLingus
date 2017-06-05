@@ -196,6 +196,9 @@
             </div> 
             <!------------------------------------------------- -->
                     <br/><br/><br/>
+            <div class="input-container" style="width: 100%"> <h2 class="xl2 tealGreen"> Meal Request</h2></div>
+            <div>To add more than one request, simply click the '+' sign:</div>
+                
                     <div class="input-container" id="guest1div">
                         <table>
                             <tr>
@@ -491,8 +494,7 @@
                     <!------------------------------------------------- -->                
 
             
-            <div class="input-container" style="width: 100%"> <h2 class="xl2 tealGreen"> Meal Request</h2></div>
-            <div>To add more than one request, simply click the '+' sign:</div>    
+
             
             
             
