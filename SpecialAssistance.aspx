@@ -410,394 +410,407 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
+        
+
+        // all content including images has been loaded
+        window.onload = function () {
+            // post our message to the parent
+            window.parent.postMessage(
+                // get height of the content
+                document.body.scrollHeight
+                // set target domain
+                ,
+                "*"
+            );
+        };
          
         $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
         $("#dateOfFlight2").datepicker({ dateFormat: 'dd-M-yy' });
         $("#dateOfFlight3").datepicker({ dateFormat: 'dd-M-yy' });
         $("#dateOfFlight4").datepicker({ dateFormat: 'dd-M-yy' });
          
-         $("#_helpQueryCountryList").change(function () {
-             $("#_helpQueryTelephoneCode").val(this.value);
+        $("#_helpQueryCountryList").change(function () {
+            $("#_helpQueryTelephoneCode").val(this.value);
          
-         });
+        });
 
-         $("#_helpQueryAerClubDropDown").change(function () {
-             if(this.value!="Selected" && this.value!="Not a Member")
-             {
-                 $("#_helpQueryAerClubmembershipId").attr("disabled", false);
-                 $("#_helpQueryAerClubmembershipId").show();
-                 ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), true);
-             } else {
-                 $("#_helpQueryAerClubmembershipId").attr("disabled", true);
-                 $("#_helpQueryAerClubmembershipId").hide();
-                 ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
-             }
-         });
+        $("#_helpQueryAerClubDropDown").change(function () {
+            if(this.value!="Selected" && this.value!="Not a Member")
+            {
+                $("#_helpQueryAerClubmembershipId").attr("disabled", false);
+                $("#_helpQueryAerClubmembershipId").show();
+                ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), true);
+            } else {
+                $("#_helpQueryAerClubmembershipId").attr("disabled", true);
+                $("#_helpQueryAerClubmembershipId").hide();
+                ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
+            }
+        });
 
-         $('#requestDisabilityPlusButton1').click(function() {
-             var disability2Div = document.getElementById('disability2');
-             disability2Div.style.display = 'block';
+        $('#requestDisabilityPlusButton1').click(function() {
+            var disability2Div = document.getElementById('disability2');
+            disability2Div.style.display = 'block';
 
-         });
-         $('#requestDisabilityPlusButton1').mouseup(function() { this.blur() });
+        });
+        $('#requestDisabilityPlusButton1').mouseup(function() { this.blur() });
 
-         $('#requestDisabilityPlusButton2').click(function () {
-             var disability2Div = document.getElementById('disability3');
-             disability2Div.style.display = 'block';
-         });
+        $('#requestDisabilityPlusButton2').click(function () {
+            var disability2Div = document.getElementById('disability3');
+            disability2Div.style.display = 'block';
+        });
 
      
-         $('#requestDisabilityPlusButton2').mouseup(function () { this.blur() });
+        $('#requestDisabilityPlusButton2').mouseup(function () { this.blur() });
 
-         $('#requestDisabilityMinusButton2').click(function () {
-             var dropdown = document.getElementById('_helpQueryTypeDropDownList2');
-             dropdown.selectedIndex = 0;
-             $("#<%=_helpQueryDefList2.ClientID%>").empty();
-             var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-             $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
-             $("#_helpQueryDefList2").attr("Disabled", false);
-             var disability3Div = document.getElementById('disability2');
-             disability3Div.style.display = 'none';
-         });
+        $('#requestDisabilityMinusButton2').click(function () {
+            var dropdown = document.getElementById('_helpQueryTypeDropDownList2');
+            dropdown.selectedIndex = 0;
+            $("#<%=_helpQueryDefList2.ClientID%>").empty();
+            var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+            $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
+            $("#_helpQueryDefList2").attr("Disabled", false);
+            var disability3Div = document.getElementById('disability2');
+            disability3Div.style.display = 'none';
+        });
     
-         $('#requestDisabilityMinusButton3').click(function () {
-             var dropdown = document.getElementById('_helpQueryTypeDropDownList3');
-             dropdown.selectedIndex = 0;
+        $('#requestDisabilityMinusButton3').click(function () {
+            var dropdown = document.getElementById('_helpQueryTypeDropDownList3');
+            dropdown.selectedIndex = 0;
 
-             $("#<%=_helpQueryDefList3.ClientID%>").empty();
-             var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-             $("#<%=_helpQueryDefList3.ClientID%>").append(defaultOption);
-             $("#_helpQueryDefList3").attr("Disabled", false);
-
-
-             var disability3Div = document.getElementById('disability3');
-             disability3Div.style.display = 'none';
-             var displayed = document.getElementById('disabilityDisplayed').value;
-             document.getElementById('disabilityDisplayed').value = Number(displayed) - 1;
-         });
-
-         $("#addFlightsButton1")
-             .click(function () {
-                 addButtonclicked(1, "flights");
-             });
-         $('#addFlightsButton1').mouseup(function () { this.blur() });
+            $("#<%=_helpQueryDefList3.ClientID%>").empty();
+            var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+            $("#<%=_helpQueryDefList3.ClientID%>").append(defaultOption);
+            $("#_helpQueryDefList3").attr("Disabled", false);
 
 
-         $('#addFlightsButton2')
-             .click(function () {
-                 addButtonclicked(2, "flights");
-             });
-         $('#removeFlightsButton2').click(function () {
-             removeButtonClicked(2, "flights");
-         });
+            var disability3Div = document.getElementById('disability3');
+            disability3Div.style.display = 'none';
+            var displayed = document.getElementById('disabilityDisplayed').value;
+            document.getElementById('disabilityDisplayed').value = Number(displayed) - 1;
+        });
 
-         $('#addFlightsButton2').mouseup(function () { this.blur() });
-
-
-         $('#addFlightsButton3').click(function () {
-             addButtonclicked(3, "flights");
-         });
-
-         $('#removeFlightsButton3').click(function () {
-             removeButtonClicked(3, "flights");
-         });
-         $('#addFlightsButton3').mouseup(function () { this.blur() });
+        $("#addFlightsButton1")
+            .click(function () {
+                addButtonclicked(1, "flights");
+            });
+        $('#addFlightsButton1').mouseup(function () { this.blur() });
 
 
+        $('#addFlightsButton2')
+            .click(function () {
+                addButtonclicked(2, "flights");
+            });
+        $('#removeFlightsButton2').click(function () {
+            removeButtonClicked(2, "flights");
+        });
 
-         $('#removeFlightsButton4').click(function () {
-             removeButtonClicked(4, "flights");
-         });
-
-         function addButtonclicked(guestNumber, option) {
-             var buttons = new Array();
-             if (option == "guest")
-                 buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
-             if (option == "refund")
-                 buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
-             if (option == "flights")
-                 buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
-             var currentIndex = guestNumber - 1;
-             if (currentIndex == 0 || currentIndex == 1) {
-                 var guestDiv = document.getElementById(buttons[currentIndex + 1]);
-                 guestDiv.style.display = "block";
-             } else {
-                 var guestDiv2 = document.getElementById(buttons[currentIndex - 1]);
-                 if (guestDiv2.style.display == "none")
-                     guestDiv2.style.display = "block";
-                 else {
-                     guestDiv2 = document.getElementById(buttons[currentIndex + 1]);
-                     guestDiv2.style.display = "block";
-                 }
-             }
-         }
-
-         function removeButtonClicked(guestNumber, option) {
-             var buttons = new Array();
-             if (option == "guest")
-                 buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
-             if (option == "refund")
-                 buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
-             if (option == "flights")
-                 buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
-             var currentIndex = guestNumber - 1;
-             var guestDiv = document.getElementById(buttons[currentIndex]);
-             guestDiv.style.display = "none";
+        $('#addFlightsButton2').mouseup(function () { this.blur() });
 
 
-         }
+        $('#addFlightsButton3').click(function () {
+            addButtonclicked(3, "flights");
+        });
+
+        $('#removeFlightsButton3').click(function () {
+            removeButtonClicked(3, "flights");
+        });
+        $('#addFlightsButton3').mouseup(function () { this.blur() });
+
+
+
+        $('#removeFlightsButton4').click(function () {
+            removeButtonClicked(4, "flights");
+        });
+
+        function addButtonclicked(guestNumber, option) {
+            var buttons = new Array();
+            if (option == "guest")
+                buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
+            if (option == "refund")
+                buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
+            if (option == "flights")
+                buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
+            var currentIndex = guestNumber - 1;
+            if (currentIndex == 0 || currentIndex == 1) {
+                var guestDiv = document.getElementById(buttons[currentIndex + 1]);
+                guestDiv.style.display = "block";
+            } else {
+                var guestDiv2 = document.getElementById(buttons[currentIndex - 1]);
+                if (guestDiv2.style.display == "none")
+                    guestDiv2.style.display = "block";
+                else {
+                    guestDiv2 = document.getElementById(buttons[currentIndex + 1]);
+                    guestDiv2.style.display = "block";
+                }
+            }
+        }
+
+        function removeButtonClicked(guestNumber, option) {
+            var buttons = new Array();
+            if (option == "guest")
+                buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
+            if (option == "refund")
+                buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
+            if (option == "flights")
+                buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
+            var currentIndex = guestNumber - 1;
+            var guestDiv = document.getElementById(buttons[currentIndex]);
+            guestDiv.style.display = "none";
+
+
+        }
 
     
-         setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
+        setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
 
-         function setSelect(selectid, xmlpath, xmlnode) {
-             var loadingtext = '-- Loading --';
-             var loadinghtml = '<option value="">' + loadingtext + '</option>';
-             var randomno = Math.ceil(Math.random() * 999);
+        function setSelect(selectid, xmlpath, xmlnode) {
+            var loadingtext = '-- Loading --';
+            var loadinghtml = '<option value="">' + loadingtext + '</option>';
+            var randomno = Math.ceil(Math.random() * 999);
 
-             $(selectid).html(loadinghtml);
+            $(selectid).html(loadinghtml);
 
-             $.ajax({
-                 url: xmlpath + '?=rn' + randomno,
-                 success: function (xml) {
-                     parseSelectXML(xml, selectid, xmlnode)
-                 },
-                 error: function (xhr, ajaxOptions, thrownError) {
-                     alert(xhr.status);
-                     alert(thrownError);
-                 }
-             });
-         }
+            $.ajax({
+                url: xmlpath + '?=rn' + randomno,
+                success: function (xml) {
+                    parseSelectXML(xml, selectid, xmlnode)
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                }
+            });
+        }
      
 
-         function parseSelectXML(xml, selectid, xmlnode) {
-             var firstoption = 'Select Country';
-             var firsthtml = '<option value="">' + firstoption + '</option>';
-             var selecthtml = '';
+        function parseSelectXML(xml, selectid, xmlnode) {
+            var firstoption = 'Select Country';
+            var firsthtml = '<option value="">' + firstoption + '</option>';
+            var selecthtml = '';
 
-             $(xml).find(xmlnode).each(function () {
+            $(xml).find(xmlnode).each(function () {
             
-                 var selecttext = $(this).find('ID').attr('value');
-                 var selectvalue = $(this).find('Name').attr('value');
-                 selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
-             });
+                var selecttext = $(this).find('ID').attr('value');
+                var selectvalue = $(this).find('Name').attr('value');
+                selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
+            });
 
-             $(selectid).html(firsthtml + selecthtml);
-         }
-
-
+            $(selectid).html(firsthtml + selecthtml);
+        }
 
 
-         function IsEmail(email) {
-             var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-             if (!regex.test(email)) {
-                 return false;
-             } else {
-                 return true;
-             }
-         }
-
-         function setSelectQuery(selectid, xmlpath, xmlnode) {
-             var loadingtext = '-- Loading --';
-             var loadinghtml = '<option value="">' + loadingtext + '</option>';
-             var randomno = Math.ceil(Math.random() * 999);
-
-             $(selectid).html(loadinghtml);
-
-             $.ajax({
-                 url: xmlpath + '?=rn' + randomno,
-                 success: function (xml) {
-                     parseSelectXML1(xml, selectid, xmlnode);
-                 },
-                 error: function (xhr, ajaxOptions, thrownError) {
-                     alert(xhr.status);
-                     alert(thrownError);
-                 }
-             });
-         }
-
-         function parseSelectXML1(xml, selectid, xmlnode) {
-             var firstoption = '-- Please Select --';
-             var firsthtml = '<option value="">' + firstoption + '</option>';
-             var selecthtml = '';
-
-             $(xml).find(xmlnode).each(function () {
-
-                 var selecttext = $(this).find('ID').attr('value');
-                 var selectvalue = $(this).find('RC').attr('value');
-                 selecthtml += '<option value="' + selectvalue + '{' + selecttext + '">' + selecttext + '</option>';
-             });
-
-             $(selectid).html(firsthtml + selecthtml);
-
-             // This section of code sets the value of the second Request Disability Assistance dropdown when Mobility Device 
-             // has been selected. 
-             // The reason why it's placed here is to make sure that Ajax call has finished populating the dropdown with the values from the XML file
-             // Before setting the dropdown value.
-             //var requestType = $('#<%=_helpQueryTypeDropDownList.ClientID%>').val();
-             //if (requestType == "W") {
-             //    $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
-             //    $("#_helpQueryDefList2").attr("Disabled", false);
-             //    $("#_helpQueryDefList2").attr("Required", true);
-
-             //}
 
 
-         }
+        function IsEmail(email) {
+            var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+            if (!regex.test(email)) {
+                return false;
+            } else {
+                return true;
+            }
+        }
 
-         $("#_helpQueryTypeDropDownList").change(function () {
-             if (this.value != "Selected") {
-                 $("#_helpQueryDefList").attr("Disabled", false);
-                 $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', false);
-             } else {
-                 $("#<%=_helpQueryDefList.ClientID%>").empty();
-                 var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-                 $("#<%=_helpQueryDefList.ClientID%>").append(defaultOption);
-                 $("#_helpQueryDefList").attr("Disabled", true);
-                 $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', true);
+        function setSelectQuery(selectid, xmlpath, xmlnode) {
+            var loadingtext = '-- Loading --';
+            var loadinghtml = '<option value="">' + loadingtext + '</option>';
+            var randomno = Math.ceil(Math.random() * 999);
 
-             }
+            $(selectid).html(loadinghtml);
 
-             if (this.value == "W") 
-             {
-                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Wheelchair');
-             }
+            $.ajax({
+                url: xmlpath + '?=rn' + randomno,
+                success: function (xml) {
+                    parseSelectXML1(xml, selectid, xmlnode);
+                },
+                error: function (xhr, ajaxOptions, thrownError) {
+                    alert(xhr.status);
+                    alert(thrownError);
+                }
+            });
+        }
 
-             if (this.value == "M") 
-             {
-                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Mobility');
-             }
+        function parseSelectXML1(xml, selectid, xmlnode) {
+            var firstoption = '-- Please Select --';
+            var firsthtml = '<option value="">' + firstoption + '</option>';
+            var selecthtml = '';
 
-             if (this.value == "C") 
-             {
-                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Cognitive');
-             }
+            $(xml).find(xmlnode).each(function () {
+
+                var selecttext = $(this).find('ID').attr('value');
+                var selectvalue = $(this).find('RC').attr('value');
+                selecthtml += '<option value="' + selectvalue + '{' + selecttext + '">' + selecttext + '</option>';
+            });
+
+            $(selectid).html(firsthtml + selecthtml);
+
+            // This section of code sets the value of the second Request Disability Assistance dropdown when Mobility Device 
+            // has been selected. 
+            // The reason why it's placed here is to make sure that Ajax call has finished populating the dropdown with the values from the XML file
+            // Before setting the dropdown value.
+            //var requestType = $('#<%=_helpQueryTypeDropDownList.ClientID%>').val();
+            //if (requestType == "W") {
+            //    $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
+            //    $("#_helpQueryDefList2").attr("Disabled", false);
+            //    $("#_helpQueryDefList2").attr("Required", true);
+
+            //}
+
+
+        }
+
+        $("#_helpQueryTypeDropDownList").change(function () {
+            if (this.value != "Selected") {
+                $("#_helpQueryDefList").attr("Disabled", false);
+                $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', false);
+            } else {
+                $("#<%=_helpQueryDefList.ClientID%>").empty();
+                var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+                $("#<%=_helpQueryDefList.ClientID%>").append(defaultOption);
+                $("#_helpQueryDefList").attr("Disabled", true);
+                $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', true);
+
+            }
+
+            if (this.value == "W") 
+            {
+                setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Wheelchair');
+            }
+
+            if (this.value == "M") 
+            {
+                setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Mobility');
+            }
+
+            if (this.value == "C") 
+            {
+                setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Cognitive');
+            }
           
-             if(this.value == "X")
-             {
-                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Oxygen');
-             }
+            if(this.value == "X")
+            {
+                setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Oxygen');
+            }
 
-             if(this.value == "D")
-             {
-                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Medical');
-             }
+            if(this.value == "D")
+            {
+                setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Medical');
+            }
 
-             if(this.value == "S")
-             {
-                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Animal');
-             }
+            if(this.value == "S")
+            {
+                setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Animal');
+            }
 
-             if(this.value == "O")
-             {
-                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Other');
-             }
+            if(this.value == "O")
+            {
+                setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Other');
+            }
 
-         });
+        });
 
       
 
-         $("#_helpQueryTypeDropDownList2").change(function () {
-             if (this.value != "Selected") {
-                 $("#_helpQueryDefList2").attr("Disabled", false);
-                 $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
-                 $("#_helpQueryDefList2").attr("Required", true);
-             } else {
-                 $("#<%=_helpQueryDefList2.ClientID%>").empty();
-                 var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-                 $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
-                 $("#_helpQueryDefList2").attr("Disabled", true);
-                 $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', true);
-             }
+        $("#_helpQueryTypeDropDownList2").change(function () {
+            if (this.value != "Selected") {
+                $("#_helpQueryDefList2").attr("Disabled", false);
+                $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
+                $("#_helpQueryDefList2").attr("Required", true);
+            } else {
+                $("#<%=_helpQueryDefList2.ClientID%>").empty();
+                var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+                $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
+                $("#_helpQueryDefList2").attr("Disabled", true);
+                $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', true);
+            }
 
-             if (this.value == "W") {
-                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Wheelchair');
-             }
+            if (this.value == "W") {
+                setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Wheelchair');
+            }
 
-             if (this.value == "M") {
-                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Mobility');
-             }
+            if (this.value == "M") {
+                setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Mobility');
+            }
 
-             if (this.value == "C") {
-                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Cognitive');
-             }
+            if (this.value == "C") {
+                setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Cognitive');
+            }
 
-             if (this.value == "X") {
-                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Oxygen');
-             }
+            if (this.value == "X") {
+                setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Oxygen');
+            }
 
-             if (this.value == "D") {
-                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Medical');
-             }
+            if (this.value == "D") {
+                setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Medical');
+            }
 
-             if (this.value == "S") {
-                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Animal');
-             }
+            if (this.value == "S") {
+                setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Animal');
+            }
 
-             if (this.value == "O") {
-                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Other');
-             }
+            if (this.value == "O") {
+                setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Other');
+            }
 
-         });
-
-
-         $("#_helpQueryTypeDropDownList3").change(function () {
-             if (this.value != "Selected") {
-                 $("#_helpQueryDefList3").attr("Disabled", false);
-                 $("#_helpQueryDefList3").attr("Required", true);
-             } else {
-                 $("#<%=_helpQueryDefList3.ClientID%>").empty();
-                 var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-                 $("#<%=_helpQueryDefList3.ClientID%>").append(defaultOption);
-                 $("#_helpQueryDefList3").attr("Disabled", true);
-             }
-
-             if (this.value == "W") {
-                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Wheelchair');
-             }
-
-             if (this.value == "M") {
-                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Mobility');
-             }
-
-             if (this.value == "C") {
-                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Cognitive');
-             }
-
-             if (this.value == "X") {
-                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Oxygen');
-             }
-
-             if (this.value == "D") {
-                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Medical');
-             }
-
-             if (this.value == "S") {
-                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Animal');
-             }
-
-             if (this.value == "O") {
-                 setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Other');
-             }
-
-         });
-
-         $("#_helpQueryDefList").change(function() {
-             if (this.value != "-- Please Select --") {
-                 $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', false);
-             }
-
-         });
-
-         $("#_helpQueryDefList2").change(function () {
-             if (this.value != "-- Please Select --") {
-                 $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
-             }
-
-         });
+        });
 
 
-     </script>
+        $("#_helpQueryTypeDropDownList3").change(function () {
+            if (this.value != "Selected") {
+                $("#_helpQueryDefList3").attr("Disabled", false);
+                $("#_helpQueryDefList3").attr("Required", true);
+            } else {
+                $("#<%=_helpQueryDefList3.ClientID%>").empty();
+                var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+                $("#<%=_helpQueryDefList3.ClientID%>").append(defaultOption);
+                $("#_helpQueryDefList3").attr("Disabled", true);
+            }
+
+            if (this.value == "W") {
+                setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Wheelchair');
+            }
+
+            if (this.value == "M") {
+                setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Mobility');
+            }
+
+            if (this.value == "C") {
+                setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Cognitive');
+            }
+
+            if (this.value == "X") {
+                setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Oxygen');
+            }
+
+            if (this.value == "D") {
+                setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Medical');
+            }
+
+            if (this.value == "S") {
+                setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Animal');
+            }
+
+            if (this.value == "O") {
+                setSelectQuery('#_helpQueryDefList3', 'SpecialAssistance.xml', 'Other');
+            }
+
+        });
+
+        $("#_helpQueryDefList").change(function() {
+            if (this.value != "-- Please Select --") {
+                $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', false);
+            }
+
+        });
+
+        $("#_helpQueryDefList2").change(function () {
+            if (this.value != "-- Please Select --") {
+                $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
+            }
+
+        });
+
+
+    </script>
                         <script type="text/javascript">
                             var validFileSize = 5 * 1024 * 1024;
 
