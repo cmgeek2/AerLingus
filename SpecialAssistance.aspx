@@ -149,6 +149,7 @@
             <br/>
             <br/>
              <div><h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2></div>  
+             <div>To add more than one flight, simply click the '+' sign or '-' sign to remove it</div>
              <table>
                 <tr>
                     <td>
@@ -168,7 +169,7 @@
                         </div> 
                     </td>
                     <td>
-                        <button type="button" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional request">+</button>                    
+                        <button type="button" title="Add another flight" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional request">+</button>                    
                     </td>
                 </tr>
             </table>
