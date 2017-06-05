@@ -50,7 +50,19 @@
         window.onload=function()
         {
                document.getElementById("wrapper").scrollIntoView();
-        }
+        }        
+
+        // all content including images has been loaded
+        window.onload = function () {
+            // post our message to the parent
+            window.parent.postMessage(
+                // get height of the content
+                document.body.scrollHeight
+                // set target domain
+                ,
+                "*"
+            );
+        };
      </script>
 
     <script type="text/javascript">
