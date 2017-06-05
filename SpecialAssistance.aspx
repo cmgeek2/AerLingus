@@ -149,7 +149,17 @@
             <br/>
             <br/>
              <div><h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2></div>  
-             <div>To add more than one flight, simply click the '+' sign or '-' sign to remove it</div>
+             <div>To add more than one flight, simply click the '+' sign:</div>
+             <table>
+                 <tr>
+                    <td>
+                        <div class="input-container" >
+                            <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                            <label class="form-control-label">Booking Reference</label>
+                        </div> 
+                    </td>
+                 </tr>
+            </table>
              <table>
                 <tr>
                     <td>
@@ -161,12 +171,6 @@
                     <td>
                         <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date" title="Please enter your flight date, Day-Month-Year"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
-                    </td>
-                    <td>
-                        <div class="input-container" >
-                            <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
-                            <label class="form-control-label">Booking Reference</label>
-                        </div> 
                     </td>
                     <td>
                         <button type="button" title="Add another flight" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional request">+</button>                    
@@ -411,19 +415,6 @@
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script type="text/javascript">
-        
-
-        // all content including images has been loaded
-        window.onload = function () {
-            // post our message to the parent
-            window.parent.postMessage(
-                // get height of the content
-                document.body.scrollHeight
-                // set target domain
-                ,
-                "*"
-            );
-        };
          
         $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
         $("#dateOfFlight2").datepicker({ dateFormat: 'dd-M-yy' });
