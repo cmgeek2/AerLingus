@@ -157,29 +157,87 @@
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
-                </tr>
-                <tr>
                     <td>
-                         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-                         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-                         <script>
-                             $(function () {
-                                 $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
-                                 }
-                              );
-                            </script>
-                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date" title="Please enter your flight date, Day-Month-Year"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                        <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date" title="Please enter your flight date, Day-Month-Year"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                     </td>
-                </tr>
-                <tr>
                     <td>
                         <div class="input-container" >
                             <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
                             <label class="form-control-label">Booking Reference</label>
                         </div> 
                     </td>
+                    <td>
+                        <button type="button" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional request">+</button>                    
+                    </td>
                 </tr>
+            </table>
+            <div class="input-container" id="secondFlightInfoDiv" style="display: none">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input-container">
+                                        <input type="text" id="FlightNumber2" name="FlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Number</label> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="dateOfFlight2" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                </td>
+                                <td>
+                                    <button type="button" title="Add another flight" id="addFlightsButton2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
+                                </td>
+                                <td>
+                                    <button type="button" title="Remove this flight" id="removeFlightsButton2" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                                </td>  
+                            </tr>    
+                        </table>
+                    </div>
+                    <div class="input-container" id="thirdFlightInfoDiv" style="display: none">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input-container">
+                                        <input type="text" id="FlightNumber3" name="FlightNumber3" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Number</label> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="DateValidator3" ControlToValidate="dateOfFlight3" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                </td>
+                                
+                                <td>
+                                    <button type="button" title="Add another flight" id="addFlightsButton3" class="transparentBtn" aria-label="Click to add an additional request">+</button>
+                                </td>
+                                <td>
+                                    <button type="button" title="Remove this flight" id="removeFlightsButton3" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                                </td> 
+
+                            </tr>
+                        </table>
+                    </div>  
+                    <div class="input-container" id="fourthFlightInfoDiv" style="display: none">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input-container">
+                                        <input type="text" id="FlightNumber4" name="FlightNumber4" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Number</label> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <asp:TextBox  ID="dateOfFlight4" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="DateValidator4" ControlToValidate="dateOfFlight4" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                </td>
+                                <td>
+                                    <button type="button" title="Remove this flight" id="removeFlightsButton4" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                                </td> 
+                            </tr>
+                        </table>
+                    </div>  
+            <table>   
                 <tr>
                     <td>&nbsp</td>
                 </tr>
@@ -349,260 +407,338 @@
           
     </div>
    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-     <script type="text/javascript">
-     $("#_helpQueryCountryList").change(function () {
-          $("#_helpQueryTelephoneCode").val(this.value);
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript">
          
-      });
+        $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
+        $("#dateOfFlight2").datepicker({ dateFormat: 'dd-M-yy' });
+        $("#dateOfFlight3").datepicker({ dateFormat: 'dd-M-yy' });
+        $("#dateOfFlight4").datepicker({ dateFormat: 'dd-M-yy' });
+         
+         $("#_helpQueryCountryList").change(function () {
+             $("#_helpQueryTelephoneCode").val(this.value);
+         
+         });
 
-      $("#_helpQueryAerClubDropDown").change(function () {
-          if(this.value!="Selected" && this.value!="Not a Member")
-          {
-              $("#_helpQueryAerClubmembershipId").attr("disabled", false);
-              $("#_helpQueryAerClubmembershipId").show();
-              ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), true);
-          } else {
-              $("#_helpQueryAerClubmembershipId").attr("disabled", true);
-              $("#_helpQueryAerClubmembershipId").hide();
-              ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
-          }
-      });
+         $("#_helpQueryAerClubDropDown").change(function () {
+             if(this.value!="Selected" && this.value!="Not a Member")
+             {
+                 $("#_helpQueryAerClubmembershipId").attr("disabled", false);
+                 $("#_helpQueryAerClubmembershipId").show();
+                 ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), true);
+             } else {
+                 $("#_helpQueryAerClubmembershipId").attr("disabled", true);
+                 $("#_helpQueryAerClubmembershipId").hide();
+                 ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
+             }
+         });
 
-     $('#requestDisabilityPlusButton1').click(function() {
-         var disability2Div = document.getElementById('disability2');
-         disability2Div.style.display = 'block';
+         $('#requestDisabilityPlusButton1').click(function() {
+             var disability2Div = document.getElementById('disability2');
+             disability2Div.style.display = 'block';
 
-     });
-     $('#requestDisabilityPlusButton1').mouseup(function() { this.blur() });
+         });
+         $('#requestDisabilityPlusButton1').mouseup(function() { this.blur() });
 
-     $('#requestDisabilityPlusButton2').click(function () {
-         var disability2Div = document.getElementById('disability3');
-         disability2Div.style.display = 'block';
-     });
+         $('#requestDisabilityPlusButton2').click(function () {
+             var disability2Div = document.getElementById('disability3');
+             disability2Div.style.display = 'block';
+         });
 
      
-     $('#requestDisabilityPlusButton2').mouseup(function () { this.blur() });
+         $('#requestDisabilityPlusButton2').mouseup(function () { this.blur() });
 
-     $('#requestDisabilityMinusButton2').click(function () {
-         var dropdown = document.getElementById('_helpQueryTypeDropDownList2');
-         dropdown.selectedIndex = 0;
-         $("#<%=_helpQueryDefList2.ClientID%>").empty();
-         var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-         $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
-         $("#_helpQueryDefList2").attr("Disabled", false);
-         var disability3Div = document.getElementById('disability2');
-         disability3Div.style.display = 'none';
-     });
+         $('#requestDisabilityMinusButton2').click(function () {
+             var dropdown = document.getElementById('_helpQueryTypeDropDownList2');
+             dropdown.selectedIndex = 0;
+             $("#<%=_helpQueryDefList2.ClientID%>").empty();
+             var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+             $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
+             $("#_helpQueryDefList2").attr("Disabled", false);
+             var disability3Div = document.getElementById('disability2');
+             disability3Div.style.display = 'none';
+         });
     
-     $('#requestDisabilityMinusButton3').click(function () {
-         var dropdown = document.getElementById('_helpQueryTypeDropDownList3');
-         dropdown.selectedIndex = 0;
+         $('#requestDisabilityMinusButton3').click(function () {
+             var dropdown = document.getElementById('_helpQueryTypeDropDownList3');
+             dropdown.selectedIndex = 0;
 
-         $("#<%=_helpQueryDefList3.ClientID%>").empty();
-         var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-         $("#<%=_helpQueryDefList3.ClientID%>").append(defaultOption);
-         $("#_helpQueryDefList3").attr("Disabled", false);
+             $("#<%=_helpQueryDefList3.ClientID%>").empty();
+             var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+             $("#<%=_helpQueryDefList3.ClientID%>").append(defaultOption);
+             $("#_helpQueryDefList3").attr("Disabled", false);
 
 
-         var disability3Div = document.getElementById('disability3');
-         disability3Div.style.display = 'none';
-         var displayed = document.getElementById('disabilityDisplayed').value;
-         document.getElementById('disabilityDisplayed').value = Number(displayed) - 1;
-     });
+             var disability3Div = document.getElementById('disability3');
+             disability3Div.style.display = 'none';
+             var displayed = document.getElementById('disabilityDisplayed').value;
+             document.getElementById('disabilityDisplayed').value = Number(displayed) - 1;
+         });
 
+         $("#addFlightsButton1")
+             .click(function () {
+                 addButtonclicked(1, "flights");
+             });
+         $('#addFlightsButton1').mouseup(function () { this.blur() });
+
+
+         $('#addFlightsButton2')
+             .click(function () {
+                 addButtonclicked(2, "flights");
+             });
+         $('#removeFlightsButton2').click(function () {
+             removeButtonClicked(2, "flights");
+         });
+
+         $('#addFlightsButton2').mouseup(function () { this.blur() });
+
+
+         $('#addFlightsButton3').click(function () {
+             addButtonclicked(3, "flights");
+         });
+
+         $('#removeFlightsButton3').click(function () {
+             removeButtonClicked(3, "flights");
+         });
+         $('#addFlightsButton3').mouseup(function () { this.blur() });
+
+
+
+         $('#removeFlightsButton4').click(function () {
+             removeButtonClicked(4, "flights");
+         });
+
+         function addButtonclicked(guestNumber, option) {
+             var buttons = new Array();
+             if (option == "guest")
+                 buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
+             if (option == "refund")
+                 buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
+             if (option == "flights")
+                 buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
+             var currentIndex = guestNumber - 1;
+             if (currentIndex == 0 || currentIndex == 1) {
+                 var guestDiv = document.getElementById(buttons[currentIndex + 1]);
+                 guestDiv.style.display = "block";
+             } else {
+                 var guestDiv2 = document.getElementById(buttons[currentIndex - 1]);
+                 if (guestDiv2.style.display == "none")
+                     guestDiv2.style.display = "block";
+                 else {
+                     guestDiv2 = document.getElementById(buttons[currentIndex + 1]);
+                     guestDiv2.style.display = "block";
+                 }
+             }
+         }
+
+         function removeButtonClicked(guestNumber, option) {
+             var buttons = new Array();
+             if (option == "guest")
+                 buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
+             if (option == "refund")
+                 buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
+             if (option == "flights")
+                 buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
+             var currentIndex = guestNumber - 1;
+             var guestDiv = document.getElementById(buttons[currentIndex]);
+             guestDiv.style.display = "none";
+
+
+         }
 
     
-      setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
+         setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
 
-      function setSelect(selectid, xmlpath, xmlnode) {
-          var loadingtext = '-- Loading --';
-          var loadinghtml = '<option value="">' + loadingtext + '</option>';
-          var randomno = Math.ceil(Math.random() * 999);
+         function setSelect(selectid, xmlpath, xmlnode) {
+             var loadingtext = '-- Loading --';
+             var loadinghtml = '<option value="">' + loadingtext + '</option>';
+             var randomno = Math.ceil(Math.random() * 999);
 
-          $(selectid).html(loadinghtml);
+             $(selectid).html(loadinghtml);
 
-          $.ajax({
-              url: xmlpath + '?=rn' + randomno,
-              success: function (xml) {
-                  parseSelectXML(xml, selectid, xmlnode)
-              },
-              error: function (xhr, ajaxOptions, thrownError) {
-                  alert(xhr.status);
-                  alert(thrownError);
-              }
-          });
-      }
+             $.ajax({
+                 url: xmlpath + '?=rn' + randomno,
+                 success: function (xml) {
+                     parseSelectXML(xml, selectid, xmlnode)
+                 },
+                 error: function (xhr, ajaxOptions, thrownError) {
+                     alert(xhr.status);
+                     alert(thrownError);
+                 }
+             });
+         }
      
 
-      function parseSelectXML(xml, selectid, xmlnode) {
-          var firstoption = 'Select Country';
-          var firsthtml = '<option value="">' + firstoption + '</option>';
-          var selecthtml = '';
+         function parseSelectXML(xml, selectid, xmlnode) {
+             var firstoption = 'Select Country';
+             var firsthtml = '<option value="">' + firstoption + '</option>';
+             var selecthtml = '';
 
-          $(xml).find(xmlnode).each(function () {
+             $(xml).find(xmlnode).each(function () {
             
-              var selecttext = $(this).find('ID').attr('value');
-              var selectvalue = $(this).find('Name').attr('value');
-              selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
-          });
+                 var selecttext = $(this).find('ID').attr('value');
+                 var selectvalue = $(this).find('Name').attr('value');
+                 selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
+             });
 
-          $(selectid).html(firsthtml + selecthtml);
-      }
-
-
+             $(selectid).html(firsthtml + selecthtml);
+         }
 
 
-      function IsEmail(email) {
-          var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-          if (!regex.test(email)) {
-              return false;
-          } else {
-              return true;
-          }
-      }
-
-      function setSelectQuery(selectid, xmlpath, xmlnode) {
-          var loadingtext = '-- Loading --';
-          var loadinghtml = '<option value="">' + loadingtext + '</option>';
-          var randomno = Math.ceil(Math.random() * 999);
-
-          $(selectid).html(loadinghtml);
-
-          $.ajax({
-              url: xmlpath + '?=rn' + randomno,
-              success: function (xml) {
-                  parseSelectXML1(xml, selectid, xmlnode);
-              },
-              error: function (xhr, ajaxOptions, thrownError) {
-                  alert(xhr.status);
-                  alert(thrownError);
-              }
-          });
-      }
-
-      function parseSelectXML1(xml, selectid, xmlnode) {
-          var firstoption = '-- Please Select --';
-          var firsthtml = '<option value="">' + firstoption + '</option>';
-          var selecthtml = '';
-
-          $(xml).find(xmlnode).each(function () {
-
-              var selecttext = $(this).find('ID').attr('value');
-              var selectvalue = $(this).find('RC').attr('value');
-              selecthtml += '<option value="' + selectvalue + '{' + selecttext + '">' + selecttext + '</option>';
-          });
-
-          $(selectid).html(firsthtml + selecthtml);
-
-          // This section of code sets the value of the second Request Disability Assistance dropdown when Mobility Device 
-          // has been selected. 
-          // The reason why it's placed here is to make sure that Ajax call has finished populating the dropdown with the values from the XML file
-          // Before setting the dropdown value.
-          //var requestType = $('#<%=_helpQueryTypeDropDownList.ClientID%>').val();
-          //if (requestType == "W") {
-          //    $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
-          //    $("#_helpQueryDefList2").attr("Disabled", false);
-          //    $("#_helpQueryDefList2").attr("Required", true);
-
-          //}
 
 
-      }
+         function IsEmail(email) {
+             var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+             if (!regex.test(email)) {
+                 return false;
+             } else {
+                 return true;
+             }
+         }
 
-      $("#_helpQueryTypeDropDownList").change(function () {
-          if (this.value != "Selected") {
-              $("#_helpQueryDefList").attr("Disabled", false);
-              $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', false);
-          } else {
-              $("#<%=_helpQueryDefList.ClientID%>").empty();
-              var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-              $("#<%=_helpQueryDefList.ClientID%>").append(defaultOption);
-              $("#_helpQueryDefList").attr("Disabled", true);
-              $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', true);
+         function setSelectQuery(selectid, xmlpath, xmlnode) {
+             var loadingtext = '-- Loading --';
+             var loadinghtml = '<option value="">' + loadingtext + '</option>';
+             var randomno = Math.ceil(Math.random() * 999);
 
-          }
+             $(selectid).html(loadinghtml);
 
-          if (this.value == "W") 
-          {
-              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Wheelchair');
-          }
+             $.ajax({
+                 url: xmlpath + '?=rn' + randomno,
+                 success: function (xml) {
+                     parseSelectXML1(xml, selectid, xmlnode);
+                 },
+                 error: function (xhr, ajaxOptions, thrownError) {
+                     alert(xhr.status);
+                     alert(thrownError);
+                 }
+             });
+         }
 
-          if (this.value == "M") 
-          {
-              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Mobility');
-          }
+         function parseSelectXML1(xml, selectid, xmlnode) {
+             var firstoption = '-- Please Select --';
+             var firsthtml = '<option value="">' + firstoption + '</option>';
+             var selecthtml = '';
 
-          if (this.value == "C") 
-          {
-              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Cognitive');
-          }
+             $(xml).find(xmlnode).each(function () {
+
+                 var selecttext = $(this).find('ID').attr('value');
+                 var selectvalue = $(this).find('RC').attr('value');
+                 selecthtml += '<option value="' + selectvalue + '{' + selecttext + '">' + selecttext + '</option>';
+             });
+
+             $(selectid).html(firsthtml + selecthtml);
+
+             // This section of code sets the value of the second Request Disability Assistance dropdown when Mobility Device 
+             // has been selected. 
+             // The reason why it's placed here is to make sure that Ajax call has finished populating the dropdown with the values from the XML file
+             // Before setting the dropdown value.
+             //var requestType = $('#<%=_helpQueryTypeDropDownList.ClientID%>').val();
+             //if (requestType == "W") {
+             //    $('#<%=_helpQueryTypeDropDownList2.ClientID%> option:selected').text("Mobility Device");
+             //    $("#_helpQueryDefList2").attr("Disabled", false);
+             //    $("#_helpQueryDefList2").attr("Required", true);
+
+             //}
+
+
+         }
+
+         $("#_helpQueryTypeDropDownList").change(function () {
+             if (this.value != "Selected") {
+                 $("#_helpQueryDefList").attr("Disabled", false);
+                 $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', false);
+             } else {
+                 $("#<%=_helpQueryDefList.ClientID%>").empty();
+                 var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+                 $("#<%=_helpQueryDefList.ClientID%>").append(defaultOption);
+                 $("#_helpQueryDefList").attr("Disabled", true);
+                 $("#<%=_helpQueryTypeDropDownList2.ClientID %>").attr('disabled', true);
+
+             }
+
+             if (this.value == "W") 
+             {
+                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Wheelchair');
+             }
+
+             if (this.value == "M") 
+             {
+                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Mobility');
+             }
+
+             if (this.value == "C") 
+             {
+                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Cognitive');
+             }
           
-          if(this.value == "X")
-          {
-              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Oxygen');
-          }
+             if(this.value == "X")
+             {
+                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Oxygen');
+             }
 
-          if(this.value == "D")
-          {
-              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Medical');
-          }
+             if(this.value == "D")
+             {
+                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Medical');
+             }
 
-          if(this.value == "S")
-          {
-              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Animal');
-          }
+             if(this.value == "S")
+             {
+                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Animal');
+             }
 
-          if(this.value == "O")
-          {
-              setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Other');
-          }
+             if(this.value == "O")
+             {
+                 setSelectQuery('#_helpQueryDefList', 'SpecialAssistance.xml', 'Other');
+             }
 
-      });
+         });
 
       
 
-      $("#_helpQueryTypeDropDownList2").change(function () {
-          if (this.value != "Selected") {
-              $("#_helpQueryDefList2").attr("Disabled", false);
-              $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
-              $("#_helpQueryDefList2").attr("Required", true);
-          } else {
-              $("#<%=_helpQueryDefList2.ClientID%>").empty();
-              var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
-              $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
-              $("#_helpQueryDefList2").attr("Disabled", true);
-              $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', true);
-          }
+         $("#_helpQueryTypeDropDownList2").change(function () {
+             if (this.value != "Selected") {
+                 $("#_helpQueryDefList2").attr("Disabled", false);
+                 $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', false);
+                 $("#_helpQueryDefList2").attr("Required", true);
+             } else {
+                 $("#<%=_helpQueryDefList2.ClientID%>").empty();
+                 var defaultOption = "<option value='" + "Selected" + "'>-- Please Select --</option>";
+                 $("#<%=_helpQueryDefList2.ClientID%>").append(defaultOption);
+                 $("#_helpQueryDefList2").attr("Disabled", true);
+                 $("#<%=_helpQueryTypeDropDownList3.ClientID %>").attr('disabled', true);
+             }
 
-          if (this.value == "W") {
-              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Wheelchair');
-          }
+             if (this.value == "W") {
+                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Wheelchair');
+             }
 
-          if (this.value == "M") {
-              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Mobility');
-          }
+             if (this.value == "M") {
+                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Mobility');
+             }
 
-          if (this.value == "C") {
-              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Cognitive');
-          }
+             if (this.value == "C") {
+                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Cognitive');
+             }
 
-          if (this.value == "X") {
-              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Oxygen');
-          }
+             if (this.value == "X") {
+                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Oxygen');
+             }
 
-          if (this.value == "D") {
-              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Medical');
-          }
+             if (this.value == "D") {
+                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Medical');
+             }
 
-          if (this.value == "S") {
-              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Animal');
-          }
+             if (this.value == "S") {
+                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Animal');
+             }
 
-          if (this.value == "O") {
-              setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Other');
-          }
+             if (this.value == "O") {
+                 setSelectQuery('#_helpQueryDefList2', 'SpecialAssistance.xml', 'Other');
+             }
 
-      });
+         });
 
 
          $("#_helpQueryTypeDropDownList3").change(function () {
@@ -661,13 +797,7 @@
          });
 
 
-
-
-
-
-
-
-    </script>
+     </script>
                         <script type="text/javascript">
                             var validFileSize = 5 * 1024 * 1024;
 
@@ -686,29 +816,29 @@
                             }
                         </script>
                             <script type="text/javascript">
-                            function CheckFile(file) {
+                                function CheckFile(file) {
                                 
                                     isValidFile = CheckFileSize(file);
 
-                                return isValidFile;
-                            }
-                            function checkvalue(value)
-                            {
-                                var inputelement = document.getElementById(value.id);
-                                if (value.id == "email")
-                                {
-                                    var email = document.getElementById("_helpQueryEmail");
-                                    
-                                    if (inputelement.value != email.value)
-                                    {
-                                       
-                                        alert("Emails do not match");
-                                        $("#Submitbtn").attr("disabled", true);
-
-                                    } else {
-                                        $("#Submitbtn").attr("disabled", false);
-                                    }
+                                    return isValidFile;
                                 }
+                                function checkvalue(value)
+                                {
+                                    var inputelement = document.getElementById(value.id);
+                                    if (value.id == "email")
+                                    {
+                                        var email = document.getElementById("_helpQueryEmail");
+                                    
+                                        if (inputelement.value != email.value)
+                                        {
+                                       
+                                            alert("Emails do not match");
+                                            $("#Submitbtn").attr("disabled", true);
+
+                                        } else {
+                                            $("#Submitbtn").attr("disabled", false);
+                                        }
+                                    }
                                 
                                     if (inputelement.value != "") {
                                         inputelement.classList.add("filled");
@@ -716,39 +846,39 @@
                                         inputelement.classList.remove("filled");
                                     }
                                
-                            }
+                                }
                            
 
-                            $(function () {
-                                $("#_helpQueryForm").validate({
-                                    rules: {
+                                $(function () {
+                                    $("#_helpQueryForm").validate({
+                                        rules: {
                                         
-                                        _helpQueryEmail: {
-                                            required: true
+                                            _helpQueryEmail: {
+                                                required: true
+                                            },
+                                            email: {
+                                                required: true,
+                                                equalTo: "#_helpQueryEmail"
+                                            },                                       
+                                        
+                                            helpQueryFirstName: "required",
+                                            helpQueryLastName: "required"
                                         },
-                                        email: {
-                                        required: true,
-                                        equalTo: "#_helpQueryEmail"
-                                             },                                       
-                                        
-                                        helpQueryFirstName: "required",
-                                        helpQueryLastName: "required"
-                                         },
-                                    messages: {
-                                        helpQueryFirstName: "Please enter your firstname",
-                                        helpQueryLastName: "Please enter your lastname",
+                                        messages: {
+                                            helpQueryFirstName: "Please enter your firstname",
+                                            helpQueryLastName: "Please enter your lastname",
                                    
-                                    }
+                                        }
 
+                                    });
                                 });
-                            });
 
-                            $.validator.setDefaults({
-                                submitHandler: function () {
-                                    alert("submitted!");
-                                }
-                            });
-                        </script>
+                                $.validator.setDefaults({
+                                    submitHandler: function () {
+                                        alert("submitted!");
+                                    }
+                                });
+                            </script>
      
 </body>
 </html>

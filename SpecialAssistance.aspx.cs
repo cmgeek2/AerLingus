@@ -61,9 +61,25 @@ public partial class SpecialAssistance : System.Web.UI.Page
         //splitting this into 2. Pre-processing and when pulled from queue
         sbBodyTextString.AppendLine(sEmailFormId1);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
-        sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
-        sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
+        sbBodyTextString.AppendLine("Flight 1 Date: " + _helpQueryDateOfFlight.Text);
+        sbBodyTextString.AppendLine("Flight 1 Number: " + Request.Form["_helpQueryFlightNumber"]);
+        if (Request.Form["FlightNumber2"] != "")
+        {
+            sbBodyTextString.AppendLine("Flight 2 Date: " + dateOfFlight2.Text);
+            sbBodyTextString.AppendLine("Flight 2 Number: " + Request.Form["FlightNumber2"]);
+        }
+        if (Request.Form["FlightNumber3"] != "")
+        {
+            sbBodyTextString.AppendLine("Flight 3 Date: " + dateOfFlight3.Text);
+            sbBodyTextString.AppendLine("Flight 3 Number: " + Request.Form["FlightNumber3"]);
+        }
+        if (Request.Form["FlightNumber4"] != "")
+        {
+            sbBodyTextString.AppendLine("Flight 4 Date: " + dateOfFlight4.Text);
+            sbBodyTextString.AppendLine("Flight 4 Number: " + Request.Form["FlightNumber4"]);
+        }
+
         sbBodyTextString.AppendLine("Request Type: " + _helpQueryTypeDropDownList.SelectedItem);
         sbBodyTextString.AppendLine("Request Definition: " + Request.Form["_helpQueryDefList"]);
         if (Request.Form["_helpQueryTypeDropDownList2"] != "Selected")
