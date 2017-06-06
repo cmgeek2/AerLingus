@@ -614,17 +614,17 @@
          }
 
 
-         setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
-         setSelect('#Guest1MealDropDownList', 'Meals.xml', 'meal');
-         setSelect('#Guest2MealDropDownList', 'Meals.xml', 'meal');
-         setSelect('#Guest3MealDropDownList', 'Meals.xml', 'meal');
-         setSelect('#Guest4MealDropDownList', 'Meals.xml', 'meal');
-         setSelect('#Guest5MealDropDownList', 'Meals.xml', 'meal');
-         setSelect('#Guest6MealDropDownList', 'Meals.xml', 'meal');
+         setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries', 'Select Country');
+         setSelect('#Guest1MealDropDownList', 'Meals.xml', 'meal', 'Select your meal');
+         setSelect('#Guest2MealDropDownList', 'Meals.xml', 'meal', 'Select your meal');
+         setSelect('#Guest3MealDropDownList', 'Meals.xml', 'meal', 'Select your meal');
+         setSelect('#Guest4MealDropDownList', 'Meals.xml', 'meal', 'Select your meal');
+         setSelect('#Guest5MealDropDownList', 'Meals.xml', 'meal', 'Select your meal');
+         setSelect('#Guest6MealDropDownList', 'Meals.xml', 'meal', 'Select your meal');
 
 
 
-         function setSelect(selectid, xmlpath, xmlnode) {
+         function setSelect(selectid, xmlpath, xmlnode, firstOption) {
              var loadingtext = '-- Loading --';
              var loadinghtml = '<option value="">' + loadingtext + '</option>';
              var randomno = Math.ceil(Math.random() * 999);
@@ -634,7 +634,7 @@
              $.ajax({
                  url: xmlpath + '?=rn' + randomno,
                  success: function (xml) {
-                     parseSelectXML(xml, selectid, xmlnode);
+                     parseSelectXML(xml, selectid, xmlnode, firstOption);
                  },
                  error: function (xhr, ajaxOptions, thrownError) {
                      alert(xhr.status);
@@ -644,12 +644,8 @@
          }
      
 
-         function parseSelectXML(xml, selectid, xmlnode) {
-             var firstoption = '';
-             if (xmlnode == 'countries')
-                 firstoption = 'Select Country';
-             if (xmlnode == 'meal')
-                 firstoption = 'Select your meal';
+         function parseSelectXML(xml, selectid, xmlnode, firstOption) {
+             var firstoption = firstOption;
              var firsthtml = '<option value="">' + firstoption + '</option>';
              var selecthtml = '';
 
