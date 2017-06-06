@@ -159,6 +159,15 @@
 
                   </td>
         </tr>
+                 <tr>
+                   <td>
+                    <div class="input-container" >
+                        <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                        <label class="form-control-label">Booking Reference</label>
+                    </div>
+                     
+                    </td>
+                </tr>
                 <tr>
                     <td>
                     <div class="input-container" >
@@ -166,32 +175,81 @@
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
-                </tr>
-                <tr>
                     <td>
-                         <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-                         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-                         <script>
-                             $(function () {
-                                 $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
-                                 }
-                              );
-                            </script>
                         <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                     </td>
-                </tr>
-
-                <tr>
-                   <td>
-                    <div class="input-container" >
-                        <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
-
-                    <label class="form-control-label">Booking Reference</label>
-                    </div>
-                     
+                    <td>
+                        <button type="button" title="Add another flight" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional request">+</button>                    
                     </td>
                 </tr>
+            </table>
+                    <div class="input-container" id="secondFlightInfoDiv" style="display: none">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input-container">
+                                        <input type="text" id="FlightNumber2" name="FlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Number</label> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="dateOfFlight2" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                </td>
+                                <td>
+                                    <button type="button" title="Add another flight" id="addFlightsButton2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
+                                </td>
+                                <td>
+                                    <button type="button" title="Remove this flight" id="removeFlightsButton2" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                                </td>  
+                            </tr>    
+                        </table>
+                    </div>
+                    <div class="input-container" id="thirdFlightInfoDiv" style="display: none">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input-container">
+                                        <input type="text" id="FlightNumber3" name="FlightNumber3" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Number</label> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="DateValidator3" ControlToValidate="dateOfFlight3" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                </td>
+                                
+                                <td>
+                                    <button type="button" title="Add another flight" id="addFlightsButton3" class="transparentBtn" aria-label="Click to add an additional request">+</button>
+                                </td>
+                                <td>
+                                    <button type="button" title="Remove this flight" id="removeFlightsButton3" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                                </td> 
+
+                            </tr>
+                        </table>
+                    </div>  
+                    <div class="input-container" id="fourthFlightInfoDiv" style="display: none">
+                        <table>
+                            <tr>
+                                <td>
+                                    <div class="input-container">
+                                        <input type="text" id="FlightNumber4" name="FlightNumber4" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Number</label> 
+                                    </div>
+                                </td>
+                                <td>
+                                    <asp:TextBox  ID="dateOfFlight4" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:RequiredFieldValidator ID="DateValidator4" ControlToValidate="dateOfFlight4" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                </td>
+                                <td>
+                                    <button type="button" title="Remove this flight" id="removeFlightsButton4" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                                </td> 
+                            </tr>
+                        </table>
+                    </div>  
+            <table>
               <tr>
                  <td>&nbsp</td>
              </tr>
@@ -282,7 +340,14 @@
           
     </div>
    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css"/>
-     <script type="text/javascript">
+   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+   <script>
+        $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
+        $("#dateOfFlight2").datepicker({ dateFormat: 'dd-M-yy' });
+        $("#dateOfFlight3").datepicker({ dateFormat: 'dd-M-yy' });
+        $("#dateOfFlight4").datepicker({ dateFormat: 'dd-M-yy' });
+                            
      $("#_helpQueryCountryList").change(function () {
           $("#_helpQueryTelephoneCode").val(this.value);
          
@@ -301,7 +366,80 @@
           }
       });
 
-    
+      $("#addFlightsButton1")
+              .click(function () {
+                  addButtonclicked(1, "flights");
+              });
+      $('#addFlightsButton1').mouseup(function () { this.blur() });
+
+
+      $('#addFlightsButton2')
+          .click(function () {
+              addButtonclicked(2, "flights");
+          });
+      $('#removeFlightsButton2').click(function () {
+          removeButtonClicked(2, "flights");
+      });
+
+      $('#addFlightsButton2').mouseup(function () { this.blur() });
+
+
+      $('#addFlightsButton3').click(function () {
+          addButtonclicked(3, "flights");
+      });
+
+      $('#removeFlightsButton3').click(function () {
+          removeButtonClicked(3, "flights");
+      });
+      $('#addFlightsButton3').mouseup(function () { this.blur() });
+
+
+
+      $('#removeFlightsButton4').click(function () {
+          removeButtonClicked(4, "flights");
+      });
+
+      function addButtonclicked(guestNumber, option) {
+          var buttons = new Array();
+          if (option == "guest")
+              buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
+          if (option == "refund")
+              buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
+          if (option == "flights")
+              buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
+          var currentIndex = guestNumber - 1;
+          if (currentIndex == 0 || currentIndex == 1) {
+              var guestDiv = document.getElementById(buttons[currentIndex + 1]);
+              guestDiv.style.display = "block";
+          } else {
+              var guestDiv2 = document.getElementById(buttons[currentIndex - 1]);
+              if (guestDiv2.style.display == "none")
+                  guestDiv2.style.display = "block";
+              else {
+                  guestDiv2 = document.getElementById(buttons[currentIndex + 1]);
+                  guestDiv2.style.display = "block";
+              }
+          }
+      }
+
+      function removeButtonClicked(guestNumber, option) {
+          var buttons = new Array();
+          if (option == "guest")
+              buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
+          if (option == "refund")
+              buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
+          if (option == "flights")
+              buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
+          var currentIndex = guestNumber - 1;
+          var guestDiv = document.getElementById(buttons[currentIndex]);
+          guestDiv.style.display = "none";
+
+
+      }
+
+
+
+
       setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
 
       function setSelect(selectid, xmlpath, xmlnode) {
