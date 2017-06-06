@@ -114,11 +114,9 @@
                  <label class="visuallyhidden">Select your Country</label>
                   <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
                   <div class="input-container" >
-                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required>
-                        
-                        </select>
-                  
-                    </div>
+                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required="required" > 
+                        </select>                 
+                  </div>
              </td>
              </tr>
             <tr>
@@ -225,19 +223,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="Guest1MealDropDownList" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Select your meal" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Child's Meal" Value="Child's Meal" />
-                                        <asp:ListItem Text="Diabetic Meal" Value="Diabetic Meal." />
-                                        <asp:ListItem Text="Gluten Intolerant Meal" Value="Gluten Intolerant Meal" />
-                                        <asp:ListItem Text="Kosher Meal" Value="Kosher Meal" />
-                                        <asp:ListItem Text="Low Fat Meal" Value="Low Fat Meal" />
-                                        <asp:ListItem Text="Low Lactose Meal" Value="Low Lactose Meal" />
-                                        <asp:ListItem Text="Low Salt" Value="Low Salt" />
-                                        <asp:ListItem Text="Moslem Meal" Value="Moslem Meal" />
-                                        <asp:ListItem Text="Vegetarian Lacto-Ovo Meal" Value="Vegetarian Lacto-Ovo Meal" />
-                                        <asp:ListItem Text="Vegetarian Vegan Meal" Value="Vegetarian Vegan Meal" />
-                                    </asp:DropDownList>
+                                    <div class="input-container">
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest1MealDropDownList" style="width:260px;height:30px;text-align:left" > 
+                                        </select>      
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest1" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -272,19 +261,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="Guest2MealDropDownList" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Select your meal" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Child's Meal" Value="Child's Meal" />
-                                        <asp:ListItem Text="Diabetic Meal" Value="Diabetic Meal." />
-                                        <asp:ListItem Text="Gluten Intolerant Meal" Value="Gluten Intolerant Meal" />
-                                        <asp:ListItem Text="Kosher Meal" Value="Kosher Meal" />
-                                        <asp:ListItem Text="Low Fat Meal" Value="Low Fat Meal" />
-                                        <asp:ListItem Text="Low Lactose Meal" Value="Low Lactose Meal" />
-                                        <asp:ListItem Text="Low Salt" Value="Low Salt" />
-                                        <asp:ListItem Text="Moslem Meal" Value="Moslem Meal" />
-                                        <asp:ListItem Text="Vegetarian Lacto-Ovo Meal" Value="Vegetarian Lacto-Ovo Meal" />
-                                        <asp:ListItem Text="Vegetarian Vegan Meal" Value="Vegetarian Vegan Meal" />
-                                    </asp:DropDownList>
+                                    <div class="input-container">
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest2MealDropDownList" style="width:260px;height:30px;text-align:left" > 
+                                        </select>      
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -321,19 +301,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="Guest3MealDropDownList" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Select your meal" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Child's Meal" Value="Child's Meal" />
-                                        <asp:ListItem Text="Diabetic Meal" Value="Diabetic Meal." />
-                                        <asp:ListItem Text="Gluten Intolerant Meal" Value="Gluten Intolerant Meal" />
-                                        <asp:ListItem Text="Kosher Meal" Value="Kosher Meal" />
-                                        <asp:ListItem Text="Low Fat Meal" Value="Low Fat Meal" />
-                                        <asp:ListItem Text="Low Lactose Meal" Value="Low Lactose Meal" />
-                                        <asp:ListItem Text="Low Salt" Value="Low Salt" />
-                                        <asp:ListItem Text="Moslem Meal" Value="Moslem Meal" />
-                                        <asp:ListItem Text="Vegetarian Lacto-Ovo Meal" Value="Vegetarian Lacto-Ovo Meal" />
-                                        <asp:ListItem Text="Vegetarian Vegan Meal" Value="Vegetarian Vegan Meal" />
-                                    </asp:DropDownList>
+                                    <div class="input-container">
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest3MealDropDownList" style="width:260px;height:30px;text-align:left" > 
+                                        </select>      
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest3" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -371,19 +342,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="Guest4MealDropDownList" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Select your meal" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Child's Meal" Value="Child's Meal" />
-                                        <asp:ListItem Text="Diabetic Meal" Value="Diabetic Meal." />
-                                        <asp:ListItem Text="Gluten Intolerant Meal" Value="Gluten Intolerant Meal" />
-                                        <asp:ListItem Text="Kosher Meal" Value="Kosher Meal" />
-                                        <asp:ListItem Text="Low Fat Meal" Value="Low Fat Meal" />
-                                        <asp:ListItem Text="Low Lactose Meal" Value="Low Lactose Meal" />
-                                        <asp:ListItem Text="Low Salt" Value="Low Salt" />
-                                        <asp:ListItem Text="Moslem Meal" Value="Moslem Meal" />
-                                        <asp:ListItem Text="Vegetarian Lacto-Ovo Meal" Value="Vegetarian Lacto-Ovo Meal" />
-                                        <asp:ListItem Text="Vegetarian Vegan Meal" Value="Vegetarian Vegan Meal" />
-                                    </asp:DropDownList>
+                                    <div class="input-container">
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest4MealDropDownList" style="width:260px;height:30px;text-align:left" > 
+                                        </select>      
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest4" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -421,19 +383,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="Guest5MealDropDownList" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Select your meal" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Child's Meal" Value="Child's Meal" />
-                                        <asp:ListItem Text="Diabetic Meal" Value="Diabetic Meal." />
-                                        <asp:ListItem Text="Gluten Intolerant Meal" Value="Gluten Intolerant Meal" />
-                                        <asp:ListItem Text="Kosher Meal" Value="Kosher Meal" />
-                                        <asp:ListItem Text="Low Fat Meal" Value="Low Fat Meal" />
-                                        <asp:ListItem Text="Low Lactose Meal" Value="Low Lactose Meal" />
-                                        <asp:ListItem Text="Low Salt" Value="Low Salt" />
-                                        <asp:ListItem Text="Moslem Meal" Value="Moslem Meal" />
-                                        <asp:ListItem Text="Vegetarian Lacto-Ovo Meal" Value="Vegetarian Lacto-Ovo Meal" />
-                                        <asp:ListItem Text="Vegetarian Vegan Meal" Value="Vegetarian Vegan Meal" />
-                                    </asp:DropDownList>
+                                    <div class="input-container">
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest5MealDropDownList" style="width:260px;height:30px;text-align:left" > 
+                                        </select>      
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest5" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -470,19 +423,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="Guest6MealDropDownList" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Select your meal" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Child's Meal" Value="Child's Meal" />
-                                        <asp:ListItem Text="Diabetic Meal" Value="Diabetic Meal." />
-                                        <asp:ListItem Text="Gluten Intolerant Meal" Value="Gluten Intolerant Meal" />
-                                        <asp:ListItem Text="Kosher Meal" Value="Kosher Meal" />
-                                        <asp:ListItem Text="Low Fat Meal" Value="Low Fat Meal" />
-                                        <asp:ListItem Text="Low Lactose Meal" Value="Low Lactose Meal" />
-                                        <asp:ListItem Text="Low Salt" Value="Low Salt" />
-                                        <asp:ListItem Text="Moslem Meal" Value="Moslem Meal" />
-                                        <asp:ListItem Text="Vegetarian Lacto-Ovo Meal" Value="Vegetarian Lacto-Ovo Meal" />
-                                        <asp:ListItem Text="Vegetarian Vegan Meal" Value="Vegetarian Vegan Meal" />
-                                    </asp:DropDownList>
+                                    <div class="input-container">
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest6MealDropDownList" style="width:260px;height:30px;text-align:left" > 
+                                        </select>      
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Remove this guest" id="removeGuest6" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
@@ -490,15 +434,7 @@
                             </tr>
                         </table>
                     </div>
-
-                    <!------------------------------------------------- -->                
-
-            
-
-            
-            
-            
-              
+                    <!------------------------------------------------- -->                            
             <table>  
                 <tr>
                     <td>&nbsp</td>
@@ -679,6 +615,14 @@
 
 
          setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
+         setSelect('#Guest1MealDropDownList', 'Meals.xml', 'meal');
+         setSelect('#Guest2MealDropDownList', 'Meals.xml', 'meal');
+         setSelect('#Guest3MealDropDownList', 'Meals.xml', 'meal');
+         setSelect('#Guest4MealDropDownList', 'Meals.xml', 'meal');
+         setSelect('#Guest5MealDropDownList', 'Meals.xml', 'meal');
+         setSelect('#Guest6MealDropDownList', 'Meals.xml', 'meal');
+
+
 
          function setSelect(selectid, xmlpath, xmlnode) {
              var loadingtext = '-- Loading --';
@@ -690,7 +634,7 @@
              $.ajax({
                  url: xmlpath + '?=rn' + randomno,
                  success: function (xml) {
-                     parseSelectXML(xml, selectid, xmlnode)
+                     parseSelectXML(xml, selectid, xmlnode);
                  },
                  error: function (xhr, ajaxOptions, thrownError) {
                      alert(xhr.status);
@@ -701,7 +645,11 @@
      
 
          function parseSelectXML(xml, selectid, xmlnode) {
-             var firstoption = 'Select Country';
+             var firstoption = '';
+             if (xmlnode == 'countries')
+                 firstoption = 'Select Country';
+             if (xmlnode == 'meal')
+                 firstoption = 'Select your meal';
              var firsthtml = '<option value="">' + firstoption + '</option>';
              var selecthtml = '';
 
