@@ -123,7 +123,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
-        /*
+        
         if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
@@ -134,7 +134,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
             _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersNeedHelpToAddress"]);
             _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
         }
-        */
+        
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
         SmtpClient SMTPServer = new SmtpClient();
         AlternateView PlainText;
