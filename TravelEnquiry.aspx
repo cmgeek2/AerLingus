@@ -74,13 +74,13 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width:260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName"  class="form-control inline-label  " required="required" onblur="checkvalue(this)">
+                                    <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">First Name</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width:260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Family Name</label>
                                 </div>
                             </td>
@@ -90,11 +90,11 @@
                         <tr>
                             <td colspan="3">
                                 <div class="input-container" >
-                                    <input  type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width:360px"  class="form-control inline-label"  required="required" title="Please enter your email address" onblur="checkvalue(this)">
+                                    <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width: 360px" class="form-control inline-label" required="required" title="Please enter your email address" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Email Address</label>
                                 </div>
                                 <div class="input-container" >
-                                    <input type="email" name="email" id="email" style="width:360px"  title="Please confirm your email address" class="form-control inline-label" required="required" onblur="checkvalue(this)" >
+                                    <input type="email" name="email" id="email" style="width: 360px" title="Please confirm your email address" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Confirm Email Address</label>
                                 </div>
                             </td>
@@ -103,12 +103,11 @@
                         <!-- Third Row --> 
                         <tr>
                             <td>
+                                <label class="visuallyhidden">Select your Country</label>
                                 <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
                                 <div class="input-container" >
-                                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required>
-                        
-                                     </select>
-                  
+                                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required="required">                        
+                                    </select>
                                 </div>
                             </td>
                          </tr>
@@ -116,12 +115,13 @@
                         <!-- Fourth Row --> 
                         <tr>             
                             <td>
+                                <label class="visuallyhidden">Select your Telephone Country Code</label>
                                 <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
                                 <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
                              </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width:260px"  required pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)">
+                                    <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Telephone Number</label>
                                 </div>             
                             </td>
@@ -130,6 +130,7 @@
                         <!-- Fifth Row --> 
                          <tr>
                             <td class="auto-style1">
+                                <label class="visuallyhidden">Select AerClub Tier</label>
                                 <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server"    >
                                     <option value="Selected" selected="selected">AerClub Tier</option>
                                     <option value="Concierge" >Concierge</option>
@@ -141,7 +142,7 @@
                             </td>
                             <td class="auto-style1">
                                 <div class="input-container" >
-                                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display:none;width:260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit AerClub Membership Number"  disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)">
+                                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="display: none; width: 260px" pattern="[0-9]{16}" required title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">AerClub Membership Number</label>
                                 </div>
                             </td> 
@@ -161,7 +162,7 @@
                 <tr>
                     <td>
                     <div class="input-container" >
-                    <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width:260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number"  class="form-control inline-label" onblur="checkvalue(this)">
+                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
@@ -184,7 +185,7 @@
                 <tr>
                    <td>
                     <div class="input-container" >
-                     <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width:260px;text-transform:uppercase"  pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)">
+                        <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
 
                     <label class="form-control-label">Booking Reference</label>
                     </div>
@@ -195,12 +196,12 @@
                  <td>&nbsp</td>
              </tr>
              <tr>
-             <td> <h2 class="xl2 tealGreen"> How can we help? </h2</td>
+             <td> <h2 class="xl2 tealGreen"> How can we help? </h2></td>
             </tr>
             
                 <tr>
                     <td>
-                         
+                           <label class="visuallyhidden">Select a inquiry type</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
                             <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Need Information" Value="H"></asp:ListItem>
@@ -212,7 +213,7 @@
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
                     </td>
                     <td>
-                   
+                        <label class="visuallyhidden">Select a Specific Inquiry Type</label>
                         <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required>
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
@@ -234,10 +235,10 @@
        </table>
           <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
         <div>
-            <table width="100%">
+            <table style="width: 100%">
                   <tr>
                 <td>
-              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
+              <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server" aria-label="Please provide any additional information to assist us with your enquiry."></asp:TextBox>
 
                     <br />
                   <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
