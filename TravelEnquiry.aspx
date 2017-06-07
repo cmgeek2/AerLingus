@@ -62,6 +62,7 @@
                         <!-- First Row -->            
                         <tr>
                             <td>
+                                <label class="visuallyhidden">Select your title</label>
                                 <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
                                 <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
                                 <asp:ListItem Text="Mr" Value="Mr." />
@@ -121,7 +122,7 @@
                              </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please use area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please enter your phone number - area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Telephone Number</label>
                                 </div>             
                             </td>
@@ -162,7 +163,7 @@
                  <tr>
                    <td>
                     <div class="input-container" >
-                        <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                        <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
                         <label class="form-control-label">Booking Reference</label>
                     </div>
                      
@@ -171,16 +172,16 @@
                 <tr>
                     <td>
                     <div class="input-container" >
-                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Flight Number</label>
                     </div>
                     </td>
                     <td>
-                        <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                        <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"  title="Please enter your flight date, Day-Month-Year" Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                         <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                     </td>
                     <td>
-                        <button type="button" title="Add another flight" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional request">+</button>                    
+                        <button type="button" title="Add another flight" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional flight">+</button>                    
                     </td>
                 </tr>
             </table>
@@ -189,16 +190,16 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="FlightNumber2" name="FlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="FlightNumber2" name="FlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Number</label> 
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"  title="Please enter your flight date, Day-Month-Year" Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="dateOfFlight2" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <button type="button" title="Add another flight" id="addFlightsButton2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
+                                    <button type="button" title="Add another flight" id="addFlightsButton2" class="transparentBtn" aria-label="Click to add an additional flight">+</button>
                                 </td>
                                 <td>
                                     <button type="button" title="Remove this flight" id="removeFlightsButton2" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
@@ -216,15 +217,15 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date" title="Please enter your flight date, Day-Month-Year"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="DateValidator3" ControlToValidate="dateOfFlight3" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                                 </td>
                                 
                                 <td>
-                                    <button type="button" title="Add another flight" id="addFlightsButton3" class="transparentBtn" aria-label="Click to add an additional request">+</button>
+                                    <button type="button" title="Add another flight" id="addFlightsButton3" class="transparentBtn" aria-label="Click to add an additional flight">+</button>
                                 </td>
                                 <td>
-                                    <button type="button" title="Remove this flight" id="removeFlightsButton3" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                                    <button type="button" title="Remove this flight" id="removeFlightsButton3" class="transparentBtn" aria-label="Click to remove a flight">-</button>
                                 </td> 
 
                             </tr>
@@ -240,11 +241,11 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight4" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
+                                    <asp:TextBox  ID="dateOfFlight4" runat="server" Text="Flight Date"  title="Please enter your flight date, Day-Month-Year" Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
                                     <asp:RequiredFieldValidator ID="DateValidator4" ControlToValidate="dateOfFlight4" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
                                 </td>
                                 <td>
-                                    <button type="button" title="Remove this flight" id="removeFlightsButton4" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                                    <button type="button" title="Remove this flight" id="removeFlightsButton4" class="transparentBtn" aria-label="Click to remove a flight">-</button>
                                 </td> 
                             </tr>
                         </table>
@@ -259,9 +260,9 @@
             
                 <tr>
                     <td>
-                           <label class="visuallyhidden">Select a inquiry type</label>
+                           <label class="visuallyhidden">Select a Help Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
-                            <asp:ListItem Text="Select Query Type" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Select Help Request" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Need Information" Value="H"></asp:ListItem>
                             <asp:ListItem Text="Need Help with a Booking" Value="I"></asp:ListItem>
                             <asp:ListItem Text="Request a Receipt" Value="R"></asp:ListItem>
@@ -271,7 +272,7 @@
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
                     </td>
                     <td>
-                        <label class="visuallyhidden">Select a Specific Inquiry Type</label>
+                        <label class="visuallyhidden">Select a Specific Help Request</label>
                         <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required>
                              <option value="" selected="selected">-- Please Select --</option>
                         </select>
