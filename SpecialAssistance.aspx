@@ -88,27 +88,24 @@
                 <td colspan="3">
                     <div class="input-container" >
                         <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" title="Please enter your email address" style="width: 397px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
-                    <label class="form-control-label">Email Address</label>
+                        <label class="form-control-label">Email Address</label>
+                    </div>              
+                    <div class="input-container" >
+                        <input type="email" name="email" id="email" style="width: 398px" title="Please confirm your email address" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                        <label class="form-control-label">Confirm Email Address</label>
                     </div>
-              
-                  <div class="input-container" >
-                      <input type="email" name="email" id="email" style="width: 398px" title="Please confirm your email address" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
-                    <label class="form-control-label">Confirm Email Address</label>
-                    </div>
-            </td>
+                </td>
             </tr>
-             <tr>
-             <td>
-                 <label class="visuallyhidden">Select your Country</label>
-                  <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
-                  <div class="input-container" >
-                    <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required>
-                        
+            <tr>
+                <td>
+                    <label class="visuallyhidden">Select your Country</label>
+                    <asp:XmlDataSource ID="_helpQueryCountriesSource" runat="server" DataFile="Countries.xml" XPath="Countries/country" ></asp:XmlDataSource>
+                    <div class="input-container" >
+                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="_helpQueryCountryList" style="width:260px;height:30px;text-align:left" required>
                         </select>
-                  
                     </div>
-             </td>
-             </tr>
+                </td>
+            </tr>
             <tr>
               
             <td>
@@ -177,7 +174,7 @@
                     </td>
                 </tr>
             </table>
-            <div class="input-container" id="secondFlightInfoDiv" style="display: none">
+                <div class="input-container" id="secondFlightInfoDiv" style="display: none">
                         <table>
                             <tr>
                                 <td>
@@ -367,13 +364,13 @@
             </table>
             <p>Please provide any additional information to assist us with your request, <br>i.e. include device make and model; dimensions and weight; battery type and wattage</p>
             <div>
-            <table width="100%">
+            <table style="width: 100%">
                   <tr>
                 <td>
               <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server" aria-label="Please provide any additional information to assist us with your request."></asp:TextBox>
 
                     <br />
-                  <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
+                  <font  face="ARIAL" size="1" >Characters Remaining :1000 </font>
                 </td>
                 </tr>
                  <tr>
