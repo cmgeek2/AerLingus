@@ -134,10 +134,10 @@
                      <td>
                          <div>
                              <br/>
-                            <asp:RadioButtonList runat="server" ID="flightGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
-                                <asp:ListItem Text="Departure Flight" Value="Departure" Selected="True"/>
-                                <asp:ListItem Text="Return Flight" Value="Return" style="margin-left: 100px"/>
-                                <asp:ListItem Text="Both" Value="Both" style="margin-left: 100px"/>
+                            <asp:RadioButtonList runat="server" ID="flightGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" Class="radio-inline" onclick="radioButtonClicked()">
+                                <asp:ListItem Text="Departure Flight" Value="Departure" Selected="True" Class="radio-inline-button"/>
+                                <asp:ListItem Text="Return Flight" Value="Return" Class="radio-inline-button"/>
+                                <asp:ListItem Text="Both" Value="Both" Class="radio-inline-button"/>
                             </asp:RadioButtonList>
                             <br/>
                             <br/>
