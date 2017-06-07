@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<root>
+  <meals>
+    <meal>
+      <Name value="Child's Meal" />
+      <ID value="Child's Meal" />
+    </meal>
+    <meal>
+      <Name value="Diabetic Meal" />
+      <ID value="Diabetic Meal" />
+    </meal>
+    <meal>
+      <Name value="Gluten Intolerant Meal" />
+      <ID value="Gluten Intolerant Meal" />
+      </meal>
+    <meal>
+      <Name value="Kosher Meal" />
+      <ID value="Kosher Meal" />
+    </meal>
+    <meal>
+      <Name value="Low Fat Meal" />
+      <ID value="Low Fat Meal" />
+      </meal>
+    <meal>
+      <Name value="Low Lactose Meal" />
+      <ID value="Low Lactose Meal" />
+      </meal>
+    <meal>
+      <Name value="Low Salt" />
+      <ID value="Low Salt" />
+      </meal>
+    <meal>
+      <Name value="Moslem Meal" />
+      <ID value="Moslem Meal" />
+    </meal>
+    <meal>
+      <Name value="Vegetarian Lacto-Ovo Meal" />
+      <ID value="Vegetarian Lacto-Ovo Meal" />
+    </meal>
+    <meal>
+      <Name value="Vegetarian Vegan Meal" />
+      <ID value="Vegetarian Vegan Meal" />
+     </meal>
+  </meals>
+</root>
