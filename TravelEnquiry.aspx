@@ -91,11 +91,11 @@
                         <tr>
                             <td colspan="3">
                                 <div class="input-container" >
-                                    <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width: 360px" class="form-control inline-label" required="required" title="Please enter your email address" onblur="checkvalue(this)"/>
+                                    <input type="email" name="_helpQueryEmail" id="_helpQueryEmail" style="width: 397px" class="form-control inline-label" required="required" title="Please enter your email address" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Email Address</label>
                                 </div>
                                 <div class="input-container" >
-                                    <input type="email" name="email" id="email" style="width: 360px" title="Please confirm your email address" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <input type="email" name="email" id="email" style="width: 398px" title="Please confirm your email address" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Confirm Email Address</label>
                                 </div>
                             </td>
