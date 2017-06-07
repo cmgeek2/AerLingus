@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<root>
+  <titles>
+    <title>
+      <Name value="Mr." />
+      <ID value="Mr." />
+    </title>
+    <title>
+      <Name value="Mrs." />
+      <ID value="Mrs." />
+    </title>
+    <title>
+      <Name value="Ms." />
+      <ID value="Ms." />
+      </title>
+    <title>
+      <Name value="Miss." />
+      <ID value="Miss." />
+    </title>
+    <title>
+      <Name value="Dr." />
+      <ID value="Dr." />
+      </title>
+  </titles>
+</root>
