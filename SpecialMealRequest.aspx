@@ -61,12 +61,9 @@
     <form id="specialMealRequestForm"  runat="server" autocomplete="off" >
         <div>
     
-        <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
+        <div style="margin-left: 80px; width:1080px;height:auto;margin-top:10px"  class="gray-12-bg ">
             <div style="margin-left: 30px" >
-                 <br />
-              
-                
-      
+                 <br />     
                 <h2 class="xl2 tealGreen"> Contact Information</h2>
          <table >
              
@@ -74,12 +71,6 @@
             <td>
                 <label class="visuallyhidden">Select your title</label>
               <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
-                    <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                    <asp:ListItem Text="Mr" Value="Mr." />
-                    <asp:ListItem Text="Mrs" Value="Mrs." />
-                    <asp:ListItem Text="Ms" Value="Ms." />
-                    <asp:ListItem Text="Miss" Value="Miss." />
-                    <asp:ListItem Text="Dr" Value="Dr." />
               </asp:DropDownList>
                
               </td>
@@ -201,13 +192,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest1" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
+                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest1" Height="30px"  runat="server" Width="80px"  >
                                     </asp:DropDownList>
                                 </td>
                                 <td>
@@ -222,11 +207,8 @@
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
-                                <td>
-                                    <div class="input-container">
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest1MealDropDownList" style="width:260px;height:30px;text-align:left" > 
-                                        </select>      
-                                    </div>
+                                <td>                                    
+                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest1MealDropDownList" Height="30px" runat="server" Width="260px"/>                                      
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest1" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -238,13 +220,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest2" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
+                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest2" Height="30px"  runat="server" Width="80px"  >
                                     </asp:DropDownList>
                
                                 </td>
@@ -261,10 +237,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-container">
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest2MealDropDownList" style="width:260px;height:30px;text-align:left" > 
-                                        </select>      
-                                    </div>
+                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest2MealDropDownList" Height="30px" runat="server" Width="260px"/>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -279,13 +252,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest3" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
+                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest3" Height="30px"  runat="server" Width="80px"  >
                                     </asp:DropDownList>               
                                 </td>
                                 <td>
@@ -301,10 +268,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-container">
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest3MealDropDownList" style="width:260px;height:30px;text-align:left" > 
-                                        </select>      
-                                    </div>
+                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest3MealDropDownList" Height="30px" runat="server" Width="260px"/>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest3" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -319,13 +283,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest4" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
+                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest4" Height="30px"  runat="server" Width="80px"  >
                                     </asp:DropDownList>
                
                                 </td>
@@ -342,10 +300,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-container">
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest4MealDropDownList" style="width:260px;height:30px;text-align:left" > 
-                                        </select>      
-                                    </div>
+                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest4MealDropDownList" Height="30px" runat="server" Width="260px"/>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest4" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -360,13 +315,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest5" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
+                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest5" Height="30px"  runat="server" Width="80px"  >
                                     </asp:DropDownList>
                
                                 </td>
@@ -383,10 +332,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-container">
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest5MealDropDownList" style="width:260px;height:30px;text-align:left" > 
-                                        </select>      
-                                    </div>
+                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest5MealDropDownList" Height="30px" runat="server" Width="260px"/>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest5" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -401,13 +347,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest6" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
+                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest6" Height="30px"  runat="server" Width="80px"  >
                                     </asp:DropDownList>               
                                 </td>
                                 <td>
@@ -423,10 +363,7 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <div class="input-container">
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="Guest6MealDropDownList" style="width:260px;height:30px;text-align:left" > 
-                                        </select>      
-                                    </div>
+                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest6MealDropDownList" Height="30px" runat="server" Width="260px"/>
                                 </td>
                                 <td>
                                     <button type="button" title="Remove this guest" id="removeGuest6" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
@@ -613,7 +550,14 @@
 
          }
 
-
+         //Populate drop downs
+         setSelect('#_helpQuerySalutation', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest1', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest2', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest3', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest4', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest5', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest6', 'Titles.xml', 'title', 'Title');
          setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries', 'Select Country');
          setSelect('#Guest1MealDropDownList', 'Meals.xml', 'meal', 'Select your meal');
          setSelect('#Guest2MealDropDownList', 'Meals.xml', 'meal', 'Select your meal');
