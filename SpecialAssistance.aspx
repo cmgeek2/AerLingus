@@ -627,7 +627,7 @@
 
                 var selecttext = $(this).find('ID').attr('value');
                 var selectvalue = $(this).find('RC').attr('value');
-                selecthtml += '<option value="' + selectvalue + '{' + selecttext + '">' + selecttext + '</option>';
+                selecthtml += '<option value="' + selectvalue + '-' + selecttext + '">' + selecttext + '</option>';
             });
 
             $(selectid).html(firsthtml + selecthtml);
