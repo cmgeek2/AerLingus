@@ -36,7 +36,7 @@
       }
 
       function validateForm() {
-          var x = document.forms["specialMealRequestForm"]["_helpQueryFirstName"].value
+          var x = document.forms["specialMealRequestForm"]["helpQueryFirstName"].value
           if (x == null || x == "") {
               alert("First name must be filled out");
               return false;
@@ -59,9 +59,8 @@
     <input type="hidden" id="disabilityDisplayed" value="1"/>
     <div id="page1" data-role="page">
     <form id="specialMealRequestForm"  runat="server" autocomplete="off" >
-        <div>
-    
-        <div style="margin-left: 80px; width:1080px;height:auto;margin-top:10px"  class="gray-12-bg ">
+        <div>   
+        <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
             <div style="margin-left: 30px" >
                  <br />     
                 <h2 class="xl2 tealGreen"> Contact Information</h2>
@@ -70,19 +69,21 @@
             <tr>
             <td>
                 <label class="visuallyhidden">Select your title</label>
-              <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
-              </asp:DropDownList>
-               
+                <div class="input-container" >
+                    <select class=" dropdown-toggle" name="_helpQuerySalutation" id="_helpQuerySalutation" style="width:260px;height:30px;text-align:left" >                        
+                    </select>
+                </div>
+              
               </td>
                 <td>
                  <div class="input-container" >
-                     <input type="text" style="width: 260px" id="helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
+                    <input type="text" style="width: 260px" id="_helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">First Name</label>
-                    </div>
+                 </div>
               </td>
                 <td>
                 <div class="input-container" >
-                    <input type="text" style="width: 260px" id="helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                    <input type="text" style="width: 260px" id="_helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                  <label class="form-control-label">Family Name</label>
                 </div>
             </td>
@@ -132,7 +133,7 @@
              <table style="width: 100%">
                  <tr>
                      <td>
-                         <div>
+                         <div class="input-container" style="margin-left: 20px;">
                              <br/>
                             <asp:RadioButtonList runat="server" ID="flightGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" Class="radio-inline" onclick="radioButtonClicked()">
                                 <asp:ListItem Text="Departure Flight" Value="Departure" Selected="True" Class="radio-inline-button"/>
@@ -150,17 +151,17 @@
                     <tr>
                         <td>
                             <div class="input-container" >
-                                <input type="text" name="departFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                <input type="text" name="departFlightNumber" id="departureFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                 <label id="departFlightNumberLabel"  class="form-control-label">Departure Flight Number</label>
                             </div>
                         </td>
                         <td>
                             <asp:TextBox  ID="departFlightDate" runat="server" Text="Departure Flight Date" title="Please enter your flight date, Day-Month-Year"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="departFlightDate" InitialValue="Departure Flight Date" runat="server"></asp:RequiredFieldValidator>
+                            <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="departFlightDate" ValidationGroup="Submit" InitialValue="Departure Flight Date" runat="server"></asp:RequiredFieldValidator>
                         </td>
                         <td>
                             <div class="input-container" >
-                                <input type="text" id="_helpQuerybookingReferenceNumber" name="_helpQuerybookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                <input type="text" id="bookingReferenceNumber" name="bookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
                                 <label id="bookingReferenceLabel" class="form-control-label">Booking Reference</label>
                             </div> 
                         </td>                
@@ -178,7 +179,7 @@
                                 </td>
                                 <td>
                                     <asp:TextBox  ID="returnFlightDate" runat="server" Text="Return Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="returnFlightDate" InitialValue="Return Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="returnFlightDate" ValidationGroup="Submit" InitialValue="Return Flight Date" runat="server"></asp:RequiredFieldValidator>
                                 </td>
                             </tr>    
                         </table>
@@ -192,8 +193,12 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest1" Height="30px"  runat="server" Width="80px"  >
-                                    </asp:DropDownList>
+                                    <label class="visuallyhidden">Select your title</label>
+                                    <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest1" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        </select>
+                                    </div>
+                                    
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -220,8 +225,11 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest2" Height="30px"  runat="server" Width="80px"  >
-                                    </asp:DropDownList>
+                                    <label class="visuallyhidden">Select your title</label>
+                                    <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest2" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        </select>
+                                    </div>
                
                                 </td>
                                 <td>
@@ -252,8 +260,11 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest3" Height="30px"  runat="server" Width="80px"  >
-                                    </asp:DropDownList>               
+                                   <label class="visuallyhidden">Select your title</label>
+                                    <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest3" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        </select>
+                                    </div>              
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -283,8 +294,11 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest4" Height="30px"  runat="server" Width="80px"  >
-                                    </asp:DropDownList>
+                                    <label class="visuallyhidden">Select your title</label>
+                                    <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest4" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        </select>
+                                    </div>
                
                                 </td>
                                 <td>
@@ -315,8 +329,11 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest5" Height="30px"  runat="server" Width="80px"  >
-                                    </asp:DropDownList>
+                                    <label class="visuallyhidden">Select your title</label>
+                                    <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest5" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        </select>
+                                    </div>
                
                                 </td>
                                 <td>
@@ -347,8 +364,11 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest6" Height="30px"  runat="server" Width="80px"  >
-                                    </asp:DropDownList>               
+                                    <label class="visuallyhidden">Select your title</label>
+                                    <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest6" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        </select>
+                                    </div>             
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -377,14 +397,14 @@
                     <td>&nbsp</td>
                 </tr>
                 <tr>
-                    <td> 
-                        <h2 class="xl2 tealGreen"> Comments</h2>  
+                    <td style="width: 100%"> 
+                        <h2 class="xl2 tealGreen"> Additional Requests</h2>  
                     </td>
                 </tr>            
             </table>
             <p>Any additional requests?</p>
             <div>
-            <table width="100%">
+            <table style="width: 100%">
                 <tr>
                     <td>
                         <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server" aria-label="Please provide any additional information to assist us with your request."></asp:TextBox>
@@ -736,8 +756,8 @@
                                                 equalTo: "#_helpQueryEmail"
                                             },                                       
                                         
-                                            helpQueryFirstName: "required",
-                                            helpQueryLastName: "required"
+                                            _helpQueryFirstName: "required",
+                                            _helpQueryLastName: "required"
                                         },
                                         messages: {
                                             helpQueryFirstName: "Please enter your firstname",

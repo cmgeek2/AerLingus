@@ -57,15 +57,27 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         //splitting this into 2. Pre-processing and when pulled from queue
         sbBodyTextString.AppendLine(sEmailFormId1);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
-
-        sbBodyTextString.AppendLine("Flight Date: " + flightGroup.SelectedValue);
-        sbBodyTextString.AppendLine("Flight Date: " + departFlightDate.Text.ToString());
-        sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
-        sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
+        sbBodyTextString.AppendLine("Flight Type: " + flightGroup.SelectedValue);
+        sbBodyTextString.AppendLine("Booking Reference Number: " + Request.Form["bookingReferenceNumber"]);
+        if (flightGroup.SelectedValue == "Departure Flight" || flightGroup.SelectedValue == "Both")
+        { 
+            sbBodyTextString.AppendLine("Departure Flight Number: " + Request.Form["departureFlightNumber"]);
+            sbBodyTextString.AppendLine("Departure Flight Date: " + departFlightDate.Text);
+            if (flightGroup.SelectedValue == "Both")
+            {
+                sbBodyTextString.AppendLine("Return Flight Number: " + Request.Form["ReturnFlightNumber"]);
+                sbBodyTextString.AppendLine("Return Flight Date: " + returnFlightDate.Text);
+            }
+        }
+        else
+        {       
+            sbBodyTextString.AppendLine("Return Flight Number: " + Request.Form["departureFlightNumber"]);
+            sbBodyTextString.AppendLine("Return Flight Date: " + departFlightDate.Text);
+        }
         
         //starting part 2
         sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
-        sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue.ToString());
+        sbBodyTextString.AppendLine("GuestTitle: " + Request.Form["_helpQuerySalutation"]);
         sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["helpQueryFirstName"]);
         sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
@@ -74,8 +86,10 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         char[] delimiterChars = { '(', ')' };
         string[] code = _helpQueryTelephoneCode.SelectedItem.ToString().Split(delimiterChars);
         sbBodyTextString.AppendLine("Telephone: " + code[1].ToString() + " " + Request.Form["_helpQueryTelephoneNumber"]);
+
         
-        sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text.ToString());
+        
+        sbBodyTextString.AppendLine("Additional Requests: " + _helpQueryAdditionInformation.Text);
 
 
         return sbBodyTextString.ToString();
