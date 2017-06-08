@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SpecialMealRequest.aspx.cs" Inherits="SpecialMealRequest" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeFile="SpecialMealRequest.aspx.cs" Inherits="SpecialMealRequest" EnableEventValidation="false" %>
 
 <!DOCTYPE html>
 
@@ -195,7 +195,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest1" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        <select class=" dropdown-toggle" name="salutationGuest1" id="salutationGuest1" style="width:260px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>
                                     
@@ -227,7 +227,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest2" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        <select class=" dropdown-toggle" name="salutationGuest2" id="salutationGuest2" style="width:260px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>
                
@@ -262,7 +262,7 @@
                                 <td>
                                    <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest3" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        <select class=" dropdown-toggle" name="salutationGuest3" id="salutationGuest3" style="width:260px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>              
                                 </td>
@@ -296,7 +296,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest4" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        <select class=" dropdown-toggle" name="salutationGuest4" id="salutationGuest4" style="width:260px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>
                
@@ -331,7 +331,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest5" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        <select class=" dropdown-toggle" name="salutationGuest5" id="salutationGuest5" style="width:260px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>
                
@@ -366,7 +366,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="_helpQueryCountryList" id="salutationGuest6" style="width:260px;height:30px;text-align:left" required="required">                        
+                                        <select class=" dropdown-toggle" name="salutationGuest6" id="salutationGuest6" style="width:260px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>             
                                 </td>
