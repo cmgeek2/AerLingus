@@ -62,17 +62,17 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         if (flightGroup.SelectedValue == "Departure Flight" || flightGroup.SelectedValue == "Both")
         { 
             sbBodyTextString.AppendLine("Departure Flight Number: " + Request.Form["departureFlightNumber"]);
-            sbBodyTextString.AppendLine("Departure Flight Date: " + departFlightDate.Text);
+            sbBodyTextString.AppendLine("Departure Flight Date: " + Request.Form["departFlightDate"]);
             if (flightGroup.SelectedValue == "Both")
             {
                 sbBodyTextString.AppendLine("Return Flight Number: " + Request.Form["ReturnFlightNumber"]);
-                sbBodyTextString.AppendLine("Return Flight Date: " + returnFlightDate.Text);
+                sbBodyTextString.AppendLine("Return Flight Date: " + Request.Form["returnFlightDate"]);
             }
         }
         else
         {       
             sbBodyTextString.AppendLine("Return Flight Number: " + Request.Form["departureFlightNumber"]);
-            sbBodyTextString.AppendLine("Return Flight Date: " + departFlightDate.Text);
+            sbBodyTextString.AppendLine("Return Flight Date: " + Request.Form["departFlightDate"]);
         }
         
         //starting part 2
@@ -130,7 +130,7 @@ public partial class SpecialMealRequest : System.Web.UI.Page
 
         try
         {
-            SMTPServer.Send(_helpMessage);
+            //SMTPServer.Send(_helpMessage);
             Response.Redirect("ThankYou.aspx?sender=SpecialAssistance.aspx&message=" + Server.UrlEncode("Special Assistance"));
 
 

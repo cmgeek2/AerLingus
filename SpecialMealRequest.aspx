@@ -121,7 +121,7 @@
                </td>
                 <td>
                    <div class="input-container" >
-                       <input type="text" style="width: 260px" required="required" pattern="[0-9]{5,12}" maxlength="12" title="Please enter your phone number - area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                       <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please enter your phone number - area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Telephone Number</label>
                     </div>
             </td>
@@ -152,12 +152,14 @@
                         <td>
                             <div class="input-container" >
                                 <input type="text" name="departFlightNumber" id="departureFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                <label id="departFlightNumberLabel"  class="form-control-label">Departure Flight Number</label>
+                                <label  id="departureFlightNumberLabel"  class="form-control-label">Departure Flight Number</label>
                             </div>
                         </td>
                         <td>
-                            <asp:TextBox  ID="departFlightDate" runat="server" Text="Departure Flight Date" title="Please enter your flight date, Day-Month-Year"  Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                            <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="departFlightDate" ValidationGroup="Submit" InitialValue="Departure Flight Date" runat="server"></asp:RequiredFieldValidator>
+                            <div class="input-container">
+                                <input type="text" id="departFlightDate" name="departFlightDate" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                <label id="departureFlightDateLabel" class="form-control-label">Departure Flight Date</label> 
+                            </div>
                         </td>
                         <td>
                             <div class="input-container" >
@@ -178,8 +180,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="returnFlightDate" runat="server" Text="Return Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="returnFlightDate" ValidationGroup="Submit" InitialValue="Return Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <div class="input-container">
+                                        <input type="text" id="returnFlightDate" name="returnFlightDate" title="" style="width: 260px;" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label id="returnFlightDateLabel" class="form-control-label">Return Flight Date</label>
+                                    </div>     
                                 </td>
                             </tr>    
                         </table>
@@ -450,6 +454,26 @@
          
          });
 
+         $('#returnFlightDate').change(function() {
+             var textBox = document.getElementById('returnFlightDate');
+             if (textBox.value != "") {
+                 textBox.className += "filled";
+                 checkvalue(textBox);
+             } else {
+                 textBox.className.remove("filled");
+             }
+         });
+
+         $('#departFlightDate').change(function () {
+             var textBox = document.getElementById('departFlightDate');
+             if (textBox.value != "") {
+                 textBox.className += "filled";
+                 checkvalue(textBox);
+             } else {
+                 textBox.className.remove("filled");
+             }
+         });
+
          //------------------------------------------------------------------------------------------------
          // Guests section
          //------------------------------------------------------------------------------------------------
@@ -497,38 +521,6 @@
          $('#removeGuest6')
              .click(function () {
                  removeButtonClicked(6, "guest");
-             });
-         //------------------------------------------------------------------------------------------------
-         // Refund section
-         $("#addRefundReason1")
-             .click(function () {
-                 addButtonclicked(1, "refund");
-             });
-         $('#addRefundReason1').mouseup(function () { this.blur() });
-         $("#addRefundReason2")
-             .click(function () {
-                 addButtonclicked(2, "refund");
-             });
-         $('#addRefundReason2').mouseup(function () { this.blur() });
-         $("#addRefundReason3")
-             .click(function () {
-                 addButtonclicked(3, "refund");
-             });
-         $('#addRefundReason3').mouseup(function () { this.blur() });
-
-         $("#removeRefundReason2")
-             .click(function () {
-                 removeButtonClicked(2, "refund");
-             });
-
-         $("#removeRefundReason3")
-             .click(function () {
-                 removeButtonClicked(3, "refund");
-             });
-
-         $("#removeRefundReason4")
-             .click(function () {
-                 removeButtonClicked(4, "refund");
              });
          //------------------------------------------------------------------------------------------------
     
@@ -674,106 +666,78 @@
              if (radioSelected != 'Both') {
                  document.getElementById('returningFlightdiv').style.display = "none";
                  changeFlightLabels(radioSelected);
+                 $('#ReturnFlightNumber').removeAttr("required");
+                 $('#returnFlightDate').removeAttr("required");
              }
                  
              else {
                  changeFlightLabels("Departure");
                  document.getElementById('returningFlightdiv').style.display = "block";
+                 $('#ReturnFlightNumber').attr("required", "true");
+                 $('#returnFlightDate').attr("required", "true");
              }
          }
 
          function changeFlightLabels(msg) {
              var flightNumberText = msg + ' Flight Number';
-             document.getElementById('departFlightNumberLabel').textContent = flightNumberText;
+             var label = document.getElementById('departureFlightNumberLabel');
+             label.innerHTML = flightNumberText;
              var flightDateText = msg + ' Flight Date';
-             $('#<%=departFlightDate.ClientID%>').val(flightDateText);
+             var label2 = document.getElementById('departureFlightDateLabel');
+             label2.innerHTML = flightDateText;
 
 
          }
 
+         function checkvalue(value) {
+             var inputelement = document.getElementById(value.id);
+             if (value.id == "email") {
+                 var email = document.getElementById("_helpQueryEmail");
 
-     </script>
-                        <script type="text/javascript">
-                            var validFileSize = 5 * 1024 * 1024;
+                 if (inputelement.value != email.value) {
 
-                            function CheckFileSize(file) {
-                                /*global document: false */
-                                var fileSize = file.files[0].size;
-                                var isValidFile = false;
-                                if (fileSize !== 0 && fileSize <= validFileSize) {
-                                    isValidFile = true;
-                                }
-                                else {
-                                    file.value = null;
-                                    alert("File Size Should be Greater than 0 and less than 5 MB.");
-                                }
-                                return isValidFile;
-                            }
-                        </script>
-                            <script type="text/javascript">
-                                function CheckFile(file) {
-                                
-                                    isValidFile = CheckFileSize(file);
+                     alert("Emails do not match");
+                     $("#Submitbtn").attr("disabled", true);
 
-                                    return isValidFile;
-                                }
-                                function checkvalue(value)
-                                {
-                                    var inputelement = document.getElementById(value.id);
-                                    if (value.id == "email")
-                                    {
-                                        var email = document.getElementById("_helpQueryEmail");
-                                    
-                                        if (inputelement.value != email.value)
-                                        {
-                                       
-                                            alert("Emails do not match");
-                                            $("#Submitbtn").attr("disabled", true);
+                 } else {
+                     $("#Submitbtn").attr("disabled", false);
+                 }
+             }
 
-                                        } else {
-                                            $("#Submitbtn").attr("disabled", false);
-                                        }
-                                    }
-                                
-                                    if (inputelement.value != "") {
-                                        inputelement.classList.add("filled");
-                                    } else if (inputelement.value == "") {
-                                        inputelement.classList.remove("filled");
-                                    }
-                               
-                                }
-                           
+             if (inputelement.value != "") {
+                 inputelement.classList.add("filled");
+             } else if (inputelement.value == "") {
+                 inputelement.classList.remove("filled");
+             }
 
-                                $(function () {
-                                    $("#specialMealRequestForm").validate({
-                                        rules: {
-                                        
-                                            _helpQueryEmail: {
-                                                required: true
-                                            },
-                                            email: {
-                                                required: true,
-                                                equalTo: "#_helpQueryEmail"
-                                            },                                       
-                                        
-                                            _helpQueryFirstName: "required",
-                                            _helpQueryLastName: "required"
-                                        },
-                                        messages: {
-                                            helpQueryFirstName: "Please enter your firstname",
-                                            helpQueryLastName: "Please enter your lastname",
-                                   
-                                        }
+         }
 
-                                    });
-                                });
 
-                                $.validator.setDefaults({
-                                    submitHandler: function () {
-                                        alert("submitted!");
-                                    }
-                                });
-                            </script>
+         (function ($) {
+             $("#specialMealRequestForm").validate({
+                 rules: {
+
+                     _helpQueryEmail: {
+                         required: true
+                     },
+                     email: {
+                         required: true,
+                         equalTo: "#_helpQueryEmail"
+                     },
+
+                     _helpQueryFirstName: "required",
+                     _helpQueryLastName: "required"
+                 },
+                 messages: {
+                     helpQueryFirstName: "Please enter your firstname",
+                     helpQueryLastName: "Please enter your lastname"
+
+                 }
+
+             });
+         });
+     
+    </script>
      
 </body>
 </html>
