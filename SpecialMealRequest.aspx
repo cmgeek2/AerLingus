@@ -151,19 +151,19 @@
                     <tr>
                         <td>
                             <div class="input-container" >
-                                <input type="text" name="departFlightNumber" id="departureFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                <input type="text" name="departFlightNumber" id="departureFlightNumber" maxlength="4" style="width: 260px" required="required" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                 <label  id="departureFlightNumberLabel"  class="form-control-label">Departure Flight Number</label>
                             </div>
                         </td>
                         <td>
                             <div class="input-container">
-                                <input type="text" id="departFlightDate" name="departFlightDate" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                <input type="text"  id="departFlightDate" name="departFlightDate" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label" onblur="checkvalue(this)"/>
                                 <label id="departureFlightDateLabel" class="form-control-label">Departure Flight Date</label> 
                             </div>
                         </td>
                         <td>
                             <div class="input-container" >
-                                <input type="text" id="bookingReferenceNumber" name="bookingReferenceNumber" style="width: 260px; text-transform: uppercase" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                <input type="text" id="bookingReferenceNumber" name="bookingReferenceNumber" style="width: 260px; text-transform: uppercase" required="required" pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
                                 <label id="bookingReferenceLabel" class="form-control-label">Booking Reference</label>
                             </div> 
                         </td>                
@@ -175,7 +175,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="ReturnFlightNumber" name="QueryFlightNumber2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="ReturnFlightNumber" name="ReturnFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Return Flight Number</label> 
                                     </div>
                                 </td>

@@ -143,45 +143,4 @@ public partial class SpecialMealRequest : System.Web.UI.Page
 
     }
 
-    protected void Submitbtn_OnClick(object sender, EventArgs e)
-    {
-        Page.Validate();
-
-        string sendingPage = "SpecialAssistance.aspx";
-        string selectedCountry = Request.Form["_helpQueryCountryList"];
-        MailMessage _helpMessage = new MailMessage();
-        _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
-
-        if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
-        {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["USASAToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["USASASubject"];
-        }
-        else
-        {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersSAToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersSASubject"];
-        }
-
-        string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
-        SmtpClient SMTPServer = new SmtpClient();
-        AlternateView PlainText;
-        PlainText = AlternateView.CreateAlternateViewFromString(_messgebody, null, "text/plain");
-        _helpMessage.AlternateViews.Add(PlainText);
-        _helpMessage.BodyEncoding = Encoding.UTF8;
-        _helpMessage.SubjectEncoding = Encoding.UTF8;
-
-        try
-        {
-            SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx?sender=SpecialAssistance.aspx&message=" + Server.UrlEncode("Special Assistance"));
-
-
-            _helpMessage.Dispose();
-        }
-        catch (SmtpException smtpEx)
-        {
-
-        }
-    }
 }
