@@ -36,7 +36,7 @@
       }
 
       function validateForm() {
-          var x = document.forms["specialMealRequestForm"]["helpQueryFirstName"].value
+          var x = document.forms["specialMealRequestForm"]["FirstName"].value;
           if (x == null || x == "") {
               alert("First name must be filled out");
               return false;
@@ -77,13 +77,13 @@
               </td>
                 <td>
                  <div class="input-container" >
-                    <input type="text" style="width: 260px" id="_helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
+                    <input type="text" style="width: 260px" id="FirstName" title="Please enter your first name" name="FirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
                     <label class="form-control-label">First Name</label>
                  </div>
               </td>
                 <td>
                 <div class="input-container" >
-                    <input type="text" style="width: 260px" id="_helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName();"/>
+                    <input type="text" style="width: 260px" id="LastName" title="Please enter your family name" name="LastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName();"/>
                  <label class="form-control-label">Family Name</label>
                 </div>
             </td>
@@ -382,7 +382,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryLastName6"  name="helpQueryLastName" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="LastName6"  name="LastName6" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -725,11 +725,11 @@
                          equalTo: "#_helpQueryEmail"
                      },
 
-                     _helpQueryFirstName: "required",
-                     _helpQueryLastName: "required"
+                     FirstName: "required",
+                     LastName: "required"
                  },
                  messages: {
-                     helpQueryFirstName: "Please enter your firstname",
+                     FirstName: "Please enter your firstname",
                      helpQueryLastName: "Please enter your lastname"
 
                  }
@@ -747,14 +747,14 @@
          });
 
          function autoPopulateFirstGuestName() {
-             var firstName = document.getElementById('helpQueryFirstName').value;
+             var firstName = document.getElementById('FirstName').value;
              document.getElementById('firstGuestFirstName').classList.add('filled');
              var firstGuestName = document.getElementById('firstGuestFirstName');
              firstGuestName.value = firstName;
          }
 
          function autoPopulateFirstGuestLastName() {
-             var lastName = document.getElementById('helpQueryLastName').value;
+             var lastName = document.getElementById('LastName').value;
              document.getElementById('firstGuestLastName').classList.add('filled');
              var firstGuestLastName = document.getElementById('firstGuestLastName');
              firstGuestLastName.value = lastName;
