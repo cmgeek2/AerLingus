@@ -77,8 +77,8 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         //starting part 2
         sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
         sbBodyTextString.AppendLine("GuestTitle: " + Request.Form["_helpQuerySalutation"]);
-        sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["helpQueryFirstName"]);
-        sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
+        sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["FirstName"]);
+        sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["LastName"]);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
         string countrycode = _helpQueryTelephoneCode.SelectedValue;
         sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
@@ -88,7 +88,7 @@ public partial class SpecialMealRequest : System.Web.UI.Page
 
         
         
-        sbBodyTextString.AppendLine("Additional Requests: " + _helpQueryAdditionInformation.Text);
+        sbBodyTextString.AppendLine("Additional Requests: " + AdditionalRequests.Text);
 
 
         return sbBodyTextString.ToString();
@@ -130,7 +130,7 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         try
         {
             //SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx?sender=SpecialAssistance.aspx&message=" + Server.UrlEncode("Special Assistance"));
+            Response.Redirect("ThankYou.aspx?sender=SpecialMealRequest.aspx&message=" + Server.UrlEncode("Special Meal"));
 
 
             _helpMessage.Dispose();

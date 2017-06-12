@@ -30,8 +30,8 @@
   <script type="text/javascript">
       function Count() {  
   
-          var i = document.getElementById("_helpQueryAdditionInformation").value.length;
-          document.getElementById("_helpQueryCharCount").innerHTML ="Characters Remaining : "+( 1000 - i);
+          var i = document.getElementById("AdditionalRequests").value.length;
+          document.getElementById("CharCount").innerHTML ="Characters Remaining : "+( 1000 - i);
 
       }
 
@@ -231,7 +231,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest2" id="salutationGuest2" style="width:260px;height:30px;text-align:left" >                        
+                                        <select class=" dropdown-toggle" name="salutationGuest2" id="salutationGuest2" style="width:80px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>
                
@@ -266,13 +266,13 @@
                                 <td>
                                    <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest3" id="salutationGuest3" style="width:260px;height:30px;text-align:left" >                        
+                                        <select class=" dropdown-toggle" name="salutationGuest3" id="salutationGuest3" style="width:80px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>              
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestFirstName2" name="thirdGuestFirstName2" class="form-control inline-label"  onblur="checkvalue(this)"/>
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestFirstName" name="thirdGuestFirstName" class="form-control inline-label"  onblur="checkvalue(this)"/>
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
@@ -300,7 +300,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest4" id="salutationGuest4" style="width:260px;height:30px;text-align:left" >                        
+                                        <select class=" dropdown-toggle" name="salutationGuest4" id="salutationGuest4" style="width:80px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>
                
@@ -335,7 +335,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest5" id="salutationGuest5" style="width:260px;height:30px;text-align:left" >                        
+                                        <select class=" dropdown-toggle" name="salutationGuest5" id="salutationGuest5" style="width:80px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>
                
@@ -348,7 +348,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="fifthGuestLastName"  name="fifthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this) "/>
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="fifthGuestLastName"  name="fifthGuestLastName" class="form-control inline-label" onblur="checkvalue(this) "/>
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -370,19 +370,19 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest6" id="salutationGuest6" style="width:260px;height:30px;text-align:left" >                        
+                                        <select class=" dropdown-toggle" name="salutationGuest6" id="salutationGuest6" style="width:80px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>             
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryFirstName6" name="helpQueryFirstName2" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="SixthGuestFirstName" name="SixthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="LastName6"  name="LastName6" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="SixthGuestLastName"  name="SixthGuestLastName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -411,9 +411,9 @@
             <table style="width: 100%">
                 <tr>
                     <td>
-                        <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server" aria-label="Please provide any additional information to assist us with your request."></asp:TextBox>
+                        <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="AdditionalRequests" maxlength="1000" runat="server" aria-label="Please provide any additional information to assist us with your request."></asp:TextBox>
                         <br />
-                        <font size="2">  <label id="_helpQueryCharCount" runat="server"  >Characters Remaining :1000</label> </font>
+                        <font size="2">  <label id="CharCount" runat="server"  >Characters Remaining :1000</label> </font>
                     </td>
                 </tr>
                 <tr>
