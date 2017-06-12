@@ -77,13 +77,13 @@
               </td>
                 <td>
                  <div class="input-container" >
-                    <input type="text" style="width: 260px" id="_helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this)"/>
+                    <input type="text" style="width: 260px" id="_helpQueryFirstName" title="Please enter your first name" name="helpQueryFirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
                     <label class="form-control-label">First Name</label>
                  </div>
               </td>
                 <td>
                 <div class="input-container" >
-                    <input type="text" style="width: 260px" id="_helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                    <input type="text" style="width: 260px" id="_helpQueryLastName" title="Please enter your family name" name="helpQueryLastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName();"/>
                  <label class="form-control-label">Family Name</label>
                 </div>
             </td>
@@ -736,6 +736,29 @@
 
              });
          });
+
+         $('#_helpQuerySalutation')
+             .change(function () {
+                 var salutation = this.selectedIndex;
+                 var target = document.getElementById("salutationGuest1");
+                 target.selectedIndex = salutation;
+
+
+         });
+
+         function autoPopulateFirstGuestName() {
+             var firstName = document.getElementById('helpQueryFirstName').value;
+             document.getElementById('firstGuestFirstName').classList.add('filled');
+             var firstGuestName = document.getElementById('firstGuestFirstName');
+             firstGuestName.value = firstName;
+         }
+
+         function autoPopulateFirstGuestLastName() {
+             var lastName = document.getElementById('helpQueryLastName').value;
+             document.getElementById('firstGuestLastName').classList.add('filled');
+             var firstGuestLastName = document.getElementById('firstGuestLastName');
+             firstGuestLastName.value = lastName;
+         }
      
     </script>
      
