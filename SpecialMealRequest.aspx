@@ -216,8 +216,11 @@
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
-                                <td>                                    
-                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest1MealDropDownList" Height="30px" runat="server" Width="260px"/>                                      
+                                <td>  
+                                     <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="Guest1MealDropDownList" id="Guest1MealDropDownList" style="width:260px;height:30px;text-align:left" >                        
+                                        </select>
+                                    </div>                                                                        
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest1" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -249,7 +252,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest2MealDropDownList" Height="30px" runat="server" Width="260px"/>
+                                    <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="Guest2MealDropDownList" id="Guest2MealDropDownList" style="width:260px;height:30px;text-align:left" >                        
+                                        </select>
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -283,7 +289,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest3MealDropDownList" Height="30px" runat="server" Width="260px"/>
+                                    <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="Guest3MealDropDownList" id="Guest3MealDropDownList" style="width:260px;height:30px;text-align:left" >                        
+                                        </select>
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest3" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -318,7 +327,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest4MealDropDownList" Height="30px" runat="server" Width="260px"/>
+                                     <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="Guest4MealDropDownList" id="Guest4MealDropDownList" style="width:260px;height:30px;text-align:left" >                        
+                                        </select>
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest4" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -353,7 +365,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest5MealDropDownList" Height="30px" runat="server" Width="260px"/>
+                                     <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="Guest5MealDropDownList" id="Guest5MealDropDownList" style="width:260px;height:30px;text-align:left" >                        
+                                        </select>
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another guest" id="addGuest5" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -376,18 +391,21 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="SixthGuestFirstName" name="SixthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="sixthGuestFirstName" name="sixthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="SixthGuestLastName"  name="SixthGuestLastName" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="sixthGuestLastName"  name="sixthGuestLastName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:DropDownList CssClass="dropdown-toggle" ID="Guest6MealDropDownList" Height="30px" runat="server" Width="260px"/>
+                                     <div class="input-container" >
+                                        <select class=" dropdown-toggle" name="Guest6MealDropDownList" id="Guest6MealDropDownList" style="width:260px;height:30px;text-align:left" >                        
+                                        </select>
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Remove this guest" id="removeGuest6" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
