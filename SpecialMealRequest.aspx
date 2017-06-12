@@ -151,7 +151,7 @@
                     <tr>
                         <td>
                             <div class="input-container" >
-                                <input type="text" name="departFlightNumber" id="departureFlightNumber" maxlength="4" style="width: 260px" required="required" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                <input type="text" name="departureFlightNumber" id="departureFlightNumber" maxlength="4" style="width: 260px" required="required" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                 <label  id="departureFlightNumberLabel"  class="form-control-label">Departure Flight Number</label>
                             </div>
                         </td>
@@ -199,7 +199,7 @@
                                 <td>
                                     <label class="visuallyhidden">Select your title</label>
                                     <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest1" id="salutationGuest1" style="width:260px;height:30px;text-align:left" >                        
+                                        <select class=" dropdown-toggle" name="salutationGuest1" id="salutationGuest1" style="width:80px;height:30px;text-align:left" >                        
                                         </select>
                                     </div>
                                     

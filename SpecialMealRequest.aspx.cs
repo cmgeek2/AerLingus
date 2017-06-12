@@ -27,8 +27,7 @@ public partial class SpecialMealRequest : System.Web.UI.Page
     /// </summary>
     /// <param name="_FormID"></param>
     /// <returns></returns>
-
-    protected string BuildMessageBody(string _FormID)
+    private string BuildMessageBody(string _FormID)
     {
 
         string sEmailFormId1;
@@ -59,7 +58,7 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
         sbBodyTextString.AppendLine("Flight Type: " + flightGroup.SelectedValue);
         sbBodyTextString.AppendLine("Booking Reference Number: " + Request.Form["bookingReferenceNumber"]);
-        if (flightGroup.SelectedValue == "Departure Flight" || flightGroup.SelectedValue == "Both")
+        if (flightGroup.SelectedValue == "Departure" || flightGroup.SelectedValue == "Both")
         { 
             sbBodyTextString.AppendLine("Departure Flight Number: " + Request.Form["departureFlightNumber"]);
             sbBodyTextString.AppendLine("Departure Flight Date: " + Request.Form["departFlightDate"]);
