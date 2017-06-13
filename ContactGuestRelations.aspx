@@ -575,7 +575,7 @@
                         <table style="width: 100%">
                             <tr>
                                 <td>
-                                    <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="2000" runat="server"></asp:TextBox>
+                                    <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="comments" maxlength="2000" runat="server"></asp:TextBox>
                                     <br />
                                     <label id="charCount" runat="server" style="font-size: 12px" >Characters Remaining :1000</label>
                                 </td>
@@ -632,8 +632,8 @@
 
          function Count() {
 
-             var i = document.getElementById("_helpQueryAdditionInformation").value.length;
-             document.getElementById("_helpQueryCharCount").innerHTML = "Characters Remaining : " + (1000 - i);
+             var i = document.getElementById("comments").value.length;
+             document.getElementById("charCount").innerHTML = "Characters Remaining : " + (1000 - i);
 
          }
 
