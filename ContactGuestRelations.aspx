@@ -695,7 +695,7 @@
          }
 
          function countrySelected() {
-             var country = $('#_helpQueryCountryList').find(":selected").text();
+             var country = $('#countriesList').find(":selected").text();
              if (country == "United States of America") {
                  $('#countryState').attr('maxlength', 2);
                  $('#countryState').css({ 'text-transform': "uppercase" });
@@ -824,9 +824,12 @@
              var currentIndex = guestNumber - 1;
              var guestDiv = document.getElementById(buttons[currentIndex]);
              guestDiv.style.display = "none";
-
-
          }
+
+         $("#countriesList").change(function () {
+             $("#CountryCode").val(this.value);
+
+         });
 
     </script>
      
