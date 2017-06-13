@@ -585,7 +585,7 @@
                                 <td>
                                     <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="comments" maxlength="2000" runat="server"></asp:TextBox>
                                     <br />
-                                    <label id="charCount" runat="server" style="font-size: 12px" >Characters Remaining :1000</label>
+                                    <label id="charCount" runat="server" style="font-size: 12px" >Characters Remaining :2000</label>
                                 </td>
                             </tr>
                             <tr>
