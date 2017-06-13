@@ -18,7 +18,7 @@ namespace ContactUs
             string sSiteTitle = ConfigurationManager.AppSettings["SiteTitle"];
             Page.Title = sSiteTitle;
             string messageHeading = " Request Sent Successfully";
-            string messageFooter = "Your " + Server.UrlDecode(Request.QueryString["message"]) + " Request has been Sent Successfully";
+            //var messageFooter = "Your " + Server.UrlDecode(Request.QueryString["message"]) + " Request has been Sent Successfully";
             headingTD.InnerHtml = "<h1 id=\"idHeading\" class=\"tealGreen xxl\"> " + messageHeading + "</h1>";
             fromLink.NavigateUrl = Server.UrlDecode(Request.QueryString["sender"]);
             //idFooter.Text = messageFooter;

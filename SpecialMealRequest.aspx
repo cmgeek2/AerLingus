@@ -75,13 +75,13 @@
                 </div>
               
               </td>
-                <td>
+              <td>
                  <div class="input-container" >
                     <input type="text" style="width: 260px" id="FirstName" title="Please enter your first name" name="FirstName" class="form-control inline-label  " required="required" onblur="checkvalue(this); autoPopulateFirstGuestName();"/>
                     <label class="form-control-label">First Name</label>
                  </div>
               </td>
-                <td>
+              <td>
                 <div class="input-container" >
                     <input type="text" style="width: 260px" id="LastName" title="Please enter your family name" name="LastName" class="form-control inline-label" required="required" onblur="checkvalue(this); autoPopulateFirstGuestLastName();"/>
                  <label class="form-control-label">Family Name</label>

@@ -732,7 +732,7 @@
                             </td>
                             <td colspan="2">
                                 <div class="input-container">   
-                                    <asp:RadioButtonList runat="server" ID="insuranceGroup" runat="server" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
+                                    <asp:RadioButtonList runat="server" ID="insuranceGroup"  RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
                                         <asp:ListItem Text="Yes" Value="Yes" />
                                         <asp:ListItem Text="No" Value="No" Selected="True"/>
                                     </asp:RadioButtonList>
