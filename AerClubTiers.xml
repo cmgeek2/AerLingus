@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <tiers>
+    <tier>
+      <Name value="Concierge" />
+      <ID value="Concierge" />
+    </tier>
+    <tier>
+      <Name value="Platinum" />
+      <ID value="Platinum" />
+    </tier>
+    <tier>
+      <Name value="Silver" />
+      <ID value="Silver" />
+    </tier>
+    <tier>
+      <Name value="Green" />
+      <ID value="Green" />
+    </tier>
+    <tier>
+      <Name value="Not a Member" />
+      <ID value="Not a Member" />
+    </tier>
+  </tiers>
+</root>

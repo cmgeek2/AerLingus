@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <issues>
+    <issue>
+      <Name value="EC 261/2004" />
+      <ID value="EC 261/2004" />
+    </issue>
+    <issue>
+      <Name value="Insufficient Information" />
+      <ID value="Insufficient Information" />
+    </issue>
+    <issue>
+      <Name value="Missed Connection" />
+      <ID value="Missed Connection" />
+    </issue>
+    <issue>
+      <Name value="Multiple Changes" />
+      <ID value="Multiple Changes" />
+    </issue>
+    <issue>
+      <Name value="No Care Provided" />
+      <ID value="No Care Provided" />
+    </issue>
+    <issue>
+      <Name value="No Suitable Alternate Flight" />
+      <ID value="No Suitable Alternate Flight" />
+    </issue>
+    <issue>
+      <Name value="Short Notice" />
+      <ID value="Short Notice" />
+    </issue>
+  </issues>
+</root>
