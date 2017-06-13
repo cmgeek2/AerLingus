@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <relationships>
+    <relationship>
+      <Name value="Travel Agent"/>
+      <ID value="Travel Agent" />          
+    </relationship>
+    <relationship>
+      <Name value="Consumer Group" />
+      <ID value="Consumer Group" />
+    </relationship>
+    <relationship>
+      <Name value="Family"/>
+      <ID value="Family" />
+    </relationship>
+    <relationship>
+      <Name value="Friend Assistant/Collegue" />
+      <ID value="Friend Assistant/Collegue" />
+    </relationship>
+  </relationships>
+</root>
