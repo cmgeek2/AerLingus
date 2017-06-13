@@ -570,6 +570,9 @@
                         <tr>
                             <td style="font-size: 12px; font-weight: bolder">Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes</td>
                         </tr>
+                        <tr>
+                            <td style="font-size: 12px" >Please provide additional information</td>
+                        </tr>
                     </table>
                     <div>
                         <table style="width: 100%">
