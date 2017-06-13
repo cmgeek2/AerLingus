@@ -19,7 +19,12 @@
      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     	<script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
-         
+     <style>
+         .gray-wide-bg {
+                width: 1024px;
+                background-color: #f9f9f9; 
+            }
+     </style>    
      
  <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
     
@@ -58,7 +63,7 @@
 <body>
     <div id="page1" data-role="page">
         <form id="contactGuestRelationsForm" runat="server" autocomplete="off">
-            <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
+            <div style="margin-left: 80px; margin-right: 172px;height:auto;margin-top:10px"  class="gray-wide-bg ">
                 <div style="margin-left: 30px" >
                     <br/>
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
