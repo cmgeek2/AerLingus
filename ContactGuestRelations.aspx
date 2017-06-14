@@ -178,7 +178,7 @@
                         <tr>
                             <td >
                                 <div class="input-container" >
-                                    <input type="text" name="addres1" id="address1" style="width: 260px" class="form-control inline-label" required="required" pattern="^\s*\S+(?:\s+\S+){2}" onblur="checkvalue(this)"/>
+                                    <input type="text" name="address1" id="address1" style="width: 260px" class="form-control inline-label" required="required" title="Please enter a valid address" pattern="^\s*\S+(?:\s+\S+){2}" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 1</label>
                                 </div> 
                             </td>
@@ -278,7 +278,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text"  id="dateOfFlight2" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date"  class="form-control inline-label"/>
+                                        <input type="text"  id="dateOfFlight2" name="dateOfFlight2" style="width: 260px"  title="Please enter a valid date"  class="form-control inline-label"/>
                                         <label id="departureFlightDateLabel2" class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -302,7 +302,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text"  id="dateOfFlight3" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" class="form-control inline-label"/>
+                                        <input type="text"  id="dateOfFlight3" name="dateOfFlight3" style="width: 260px"  title="Please enter a valid date" class="form-control inline-label"/>
                                         <label id="departureFlightDateLabel3" class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -328,7 +328,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text"  id="dateOfFlight4" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" class="form-control inline-label"/>
+                                        <input type="text"  id="dateOfFlight4" name="dateOfFlight4" style="width: 260px"  title="Please enter a valid date" class="form-control inline-label"/>
                                         <label id="departureFlightDateLabel4" class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -371,7 +371,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <select class="dropdown-toggle" name="guestSalutation" id="salutationGuest2" style="width: 260px; height: 30px; text-align: left"></select>
+                                        <select class="dropdown-toggle" name="salutationGuest2" id="salutationGuest2" style="width: 260px; height: 30px; text-align: left"></select>
                                     </div>
                
                                 </td>
@@ -401,7 +401,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <select class="dropdown-toggle" name="guestSalutation" id="salutationGuest3" style="width: 260px; height: 30px; text-align: left"></select>
+                                        <select class="dropdown-toggle" name="salutationGuest3" id="salutationGuest3" style="width: 260px; height: 30px; text-align: left"></select>
                                     </div>              
                                 </td>
                                 <td>
@@ -430,7 +430,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <select class="dropdown-toggle" name="guestSalutation" id="salutationGuest4" style="width: 260px; height: 30px; text-align: left"></select>
+                                        <select class="dropdown-toggle" name="salutationGuest4" id="salutationGuest4" style="width: 260px; height: 30px; text-align: left"></select>
                                     </div>
                
                                 </td>
@@ -460,7 +460,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <select class="dropdown-toggle" name="guestSalutation" id="salutationGuest5" style="width: 260px; height: 30px; text-align: left"></select>
+                                        <select class="dropdown-toggle" name="salutationGuest5" id="salutationGuest5" style="width: 260px; height: 30px; text-align: left"></select>
                                     </div>
                
                                 </td>
@@ -490,7 +490,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <select class="dropdown-toggle" name="guestSalutation" id="salutationGuest6" style="width: 260px; height: 30px; text-align: left"></select>
+                                        <select class="dropdown-toggle" name="salutationGuest6" id="salutationGuest6" style="width: 260px; height: 30px; text-align: left"></select>
                                     </div>             
                                 </td>
                                 <td>
