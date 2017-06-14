@@ -96,6 +96,14 @@ public partial class RefundRequest : System.Web.UI.Page
 
         }
 
+        // Address information
+        sbBodyTextString.AppendLine("Address 1: " + Request.Form["address1"]);
+        sbBodyTextString.AppendLine("Address 2: " + Request.Form["address2"]);
+        sbBodyTextString.AppendLine("Town/City: " + Request.Form["townCity"]);
+        sbBodyTextString.AppendLine("Country/State: " + Request.Form["countryState"]);
+        sbBodyTextString.AppendLine("Posta/Zip Code: " + Request.Form["zipCode"]);
+
+
         // Get additional flights information
         if (Request.Form["QueryFlightNumber2"] != "")
         {
@@ -187,6 +195,7 @@ public partial class RefundRequest : System.Web.UI.Page
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
         
+        /*
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
@@ -198,6 +207,7 @@ public partial class RefundRequest : System.Web.UI.Page
             _helpMessage.Subject = ConfigurationManager.AppSettings["OthersNeedHelpFormId"];
         }
         
+        */
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
         SmtpClient SMTPServer = new SmtpClient();
         AlternateView PlainText;
