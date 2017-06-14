@@ -160,7 +160,7 @@ public partial class SpecialMealRequest : System.Web.UI.Page
 
         try
         {
-            //SMTPServer.Send(_helpMessage);
+            SMTPServer.Send(_helpMessage);
             Response.Redirect("ThankYou.aspx?sender=SpecialMealRequest.aspx&message=" + Server.UrlEncode("Special Meal"));
 
 
