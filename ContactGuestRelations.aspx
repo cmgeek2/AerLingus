@@ -278,7 +278,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text"  id="dateOfFlight2" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label"/>
+                                        <input type="text"  id="dateOfFlight2" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date"  class="form-control inline-label"/>
                                         <label id="departureFlightDateLabel2" class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -302,7 +302,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text"  id="dateOfFlight3" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label"/>
+                                        <input type="text"  id="dateOfFlight3" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" class="form-control inline-label"/>
                                         <label id="departureFlightDateLabel3" class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -328,7 +328,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text"  id="dateOfFlight4" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label"/>
+                                        <input type="text"  id="dateOfFlight4" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" class="form-control inline-label"/>
                                         <label id="departureFlightDateLabel4" class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -345,7 +345,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container">
-                                        <select class="dropdown-toggle" name="guestSalutation" id="salutationGuest1" style="width: 260px; height: 30px; text-align: left"></select>
+                                        <select class="dropdown-toggle" name="salutationGuest1" id="salutationGuest1" style="width: 260px; height: 30px; text-align: left"></select>
                                     </div>
                                 </td>
                                 <td>
@@ -609,7 +609,7 @@
                     <br />
                     <br />
                     <div style="margin-left: 200px;padding:20px" >      
-                        <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" ></asp:Button>
+                        <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click" ></asp:Button>
                     </div>
                 </div>    
             </div>
@@ -899,6 +899,29 @@
                  div2.style.display = "none";
              }
          });
+
+         $('#guestSalutation')
+              .change(function () {
+                  var salutation = this.selectedIndex;
+                  var target = document.getElementById("salutationGuest1");
+                  target.selectedIndex = salutation;
+
+
+              });
+
+         function autoPopulateFirstGuestName() {
+             var firstName = document.getElementById('FirstName').value;
+             document.getElementById('firstGuestFirstName').classList.add('filled');
+             var firstGuestName = document.getElementById('firstGuestFirstName');
+             firstGuestName.value = firstName;
+         }
+
+         function autoPopulateFirstGuestLastName() {
+             var lastName = document.getElementById('LastName').value;
+             document.getElementById('firstGuestLastName').classList.add('filled');
+             var firstGuestLastName = document.getElementById('firstGuestLastName');
+             firstGuestLastName.value = lastName;
+         }
 
     </script>
      
