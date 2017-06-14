@@ -60,7 +60,6 @@ public partial class ContactGuestRelations : System.Web.UI.Page
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
             sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
             sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationsipToGuestDropDown"]);
-            string countrycode = CountryCode.SelectedValue;
         }
         else
         {
