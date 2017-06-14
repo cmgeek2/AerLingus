@@ -244,13 +244,13 @@
                             <tr>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" name="flightNumber" id="flightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" name="flightNumber" id="flightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" required="required" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Number</label>
                                     </div>
                                 </td>
                                 <td> 
                                     <div class="input-container">
-                                        <input type="text"  id="dateOfFlight" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text"  id="dateOfFlight" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label"/>
                                         <label id="departureFlightDateLabel" class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>  
@@ -277,8 +277,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="dateOfFlight2" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <div class="input-container">
+                                        <input type="text"  id="dateOfFlight2" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label"/>
+                                        <label id="departureFlightDateLabel2" class="form-control-label">Flight Date</label> 
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another flight" id="addFlightsButton2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -299,8 +301,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator3" ControlToValidate="dateOfFlight3" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <div class="input-container">
+                                        <input type="text"  id="dateOfFlight3" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label"/>
+                                        <label id="departureFlightDateLabel3" class="form-control-label">Flight Date</label> 
+                                    </div>
                                 </td>
                                 
                                 <td>
@@ -323,8 +327,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight4" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator4" ControlToValidate="dateOfFlight4" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <div class="input-container">
+                                        <input type="text"  id="dateOfFlight4" name="dateOfFlight" style="width: 260px"  title="Please enter a valid date" required="required" class="form-control inline-label"/>
+                                        <label id="departureFlightDateLabel4" class="form-control-label">Flight Date</label> 
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Remove this flight" id="removeFlightsButton4" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
@@ -837,6 +843,46 @@
          $("#countriesList").change(function () {
              $("#CountryCode").val(this.value);
 
+         });
+
+         $('#dateOfFlight').change(function () {
+             var textBox = document.getElementById('dateOfFlight');
+             if (textBox.value != "") {
+                 textBox.className += "filled";
+                 checkvalue(textBox);
+             } else {
+                 textBox.className.remove("filled");
+             }
+         });
+
+         $('#dateOfFlight2').change(function () {
+             var textBox = document.getElementById('dateOfFlight2');
+             if (textBox.value != "") {
+                 textBox.className += "filled";
+                 checkvalue(textBox);
+             } else {
+                 textBox.className.remove("filled");
+             }
+         });
+
+         $('#dateOfFlight3').change(function () {
+             var textBox = document.getElementById('dateOfFlight3');
+             if (textBox.value != "") {
+                 textBox.className += "filled";
+                 checkvalue(textBox);
+             } else {
+                 textBox.className.remove("filled");
+             }
+         });
+
+         $('#dateOfFlight4').change(function () {
+             var textBox = document.getElementById('dateOfFlight4');
+             if (textBox.value != "") {
+                 textBox.className += "filled";
+                 checkvalue(textBox);
+             } else {
+                 textBox.className.remove("filled");
+             }
          });
 
     </script>
