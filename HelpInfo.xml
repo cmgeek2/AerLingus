@@ -2,26 +2,30 @@
 <HelpType>
   
   <Description>
-    <ID value="Add a special meal"></ID>
-    <RC value="MB ML RQ SDM"></RC>
-  </Description>
-  <Description>
     <ID value="Add a frequent flyer number"></ID>
     <RC value="MB OT G FF"></RC>
+  </Description>
+  <Description>
+    <ID value="Add a special meal"></ID>
+    <RC value="MB ML RQ SDM"></RC>
   </Description>  
   <Description >
     <ID value="Assign, change or confirm a seat"></ID>
     <RC value="MB ST AS AP"></RC>
   </Description>
   <Description >
-    <ID value="Resend confirmation email"></ID>
-    <RC value="MB RC RQ RE"></RC>
-  </Description>
-  <Description >
     <ID value="Request help with a flight schedule change"></ID>
     <RC value="MB CIV IS O"></RC>
   </Description>
+  <Description >
+    <ID value="Resend confirmation email"></ID>
+    <RC value="MB RC RQ RE"></RC>
+  </Description>
 
+  <Receipt >
+    <ID value="Cancellation invoice"></ID>
+    <RC value="CANINVRC"></RC>
+  </Receipt>
   <Receipt >
     <ID value="Information for insurance"></ID>
     <RC value="INSINFO"></RC>
@@ -31,15 +35,15 @@
     <RC value="PROPREP"></RC>
   </Receipt>
   <Receipt >
-    <ID value="Cancellation invoice"></ID>
-    <RC value="CANINVRC"></RC>
-  </Receipt>
-  <Receipt >
     <ID value="Summary invoice"></ID>
     <RC value="SUMINVRC"></RC>
   </Receipt>
 
   
+  <Info>
+    <ID value="Airports"></ID>
+    <RC value="MB OT LG LI"></RC>
+  </Info>
   <Info >
     <ID value="Baggage allowance"></ID>
     <RC value="MB BG PC IN"></RC>
@@ -54,10 +58,6 @@
   </Info>
   <Info>
     <ID value="Lounges"></ID>
-    <RC value="MB OT LG LI"></RC>
-  </Info>
-  <Info>
-    <ID value="Airports"></ID>
     <RC value="MB OT LG LI"></RC>
   </Info>
   <Info >
