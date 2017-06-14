@@ -692,7 +692,7 @@
              // show company name input row
              var repCompanyNameDiv = document.getElementById('repCompanyNameDiv');
              repCompanyNameDiv.style.display = "block";
-             // make necessary fields required
+             // make necessary fields requiredF
              document.getElementById('representativeFirstName').required = true;
              document.getElementById('representativeLastName').required = true;
              document.getElementById('relationshipToGuestDropDown').required = true;
@@ -882,6 +882,21 @@
                  checkvalue(textBox);
              } else {
                  textBox.className.remove("filled");
+             }
+         });
+
+         $("#aerClubDropDown").change(function () {
+             if (this.value != "" && this.value != "Not a Member") {
+                 $("#_helpQueryAerClubmembershipId").attr("disabled", false);
+                 var div1 = document.getElementById('ClubMembershipDiv');
+                 document.getElementById('_helpQueryAerClubmembershipId').required = true;
+                 div1.style.display = "block";
+             } else {
+                 $("#aerClubmembershipId").attr("disabled", true);
+                 document.getElementById('_helpQueryAerClubmembershipId').required = false;
+                 $("#ClubMembershipDiv").hide();
+                 var div2 = document.getElementById('ClubMembershipDiv');
+                 div2.style.display = "none";
              }
          });
 
