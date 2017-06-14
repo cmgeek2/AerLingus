@@ -58,6 +58,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
             sbBodyTextString.AppendLine("Representative Given Name: " + (Request.Form["representativeFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Last Name: " + (Request.Form["representativeLastName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
+            sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
             sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationsipToGuestDropDown"]);
             string countrycode = CountryCode.SelectedValue;
         }
@@ -204,7 +205,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         }
         try
         {
-            SMTPServer.Send(_helpMessage);
+            //SMTPServer.Send(_helpMessage);
             Response.Redirect("ThankYou.aspx?sender=RefundRequest.aspx&message=" + Server.UrlEncode("Refund"));
 
             _helpMessage.Dispose();
