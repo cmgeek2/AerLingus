@@ -679,7 +679,7 @@
              document.getElementById('relationshipToGuestDropDown').required = false;
              document.getElementById('repCompanyName').required = false;
              repCompanyNameDiv.style.display = "none";
-             var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
+             var aerClubDropDown = document.getElementById('aerClubDropDown');
              aerClubDropDown.style.display = "block";
              var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
              relationshipToGuestDiv.style.display = 'none';
@@ -702,7 +702,7 @@
              var divRepName = document.getElementById('representativeName');
              divRepName.style.display = "block";
 
-             var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
+             var aerClubDropDown = document.getElementById('aerClubDropDown');
              aerClubDropDown.style.display = "none";
              var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
              relationshipToGuestDiv.style.display = 'block';
