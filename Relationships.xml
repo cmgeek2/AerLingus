@@ -1,10 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <root>
-  <relationships>
-    <relationship>
-      <Name value="Travel Agent"/>
-      <ID value="Travel Agent" />          
-    </relationship>
+  <relationships>   
     <relationship>
       <Name value="Consumer Group" />
       <ID value="Consumer Group" />
@@ -17,5 +13,18 @@
       <Name value="Friend Assistant/Collegue" />
       <ID value="Friend Assistant/Collegue" />
     </relationship>
+    <relationship>
+      <Name value="Legal Representative" />
+      <ID value="Legal Representative" />
+    </relationship>
+    <relationship>
+      <Name value="Travel Agent"/>
+      <ID value="Travel Agent" />
+    </relationship>
+    <relationship>
+      <Name value="Travel Management Company" />
+      <ID value="Travel Management Company" />
+    </relationship>
+    
   </relationships>
 </root>
