@@ -299,7 +299,7 @@
        </tr>     
        </table>
           <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
-          <label style="width: 100%">Please use the comments section below to provide additional information that can assists us with your request for example if you
+          <label style="width: 100%; font-size: 12px">Please use the comments section below to provide additional information that can assists us with your request for example if you
                                        need help with a booking adding such as adding a frequent flyer number include the airline, or if a transatlantic seat selection    
                                        include your preference and we will accommodate where possible.</label> 
         <div>
