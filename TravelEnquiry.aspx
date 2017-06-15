@@ -16,7 +16,12 @@
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     	<script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
-    
+    <style>
+         .gray-wide-bg {
+                width: 900px;
+                background-color: #f9f9f9; 
+            }
+     </style>    
          
     
  <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
@@ -54,7 +59,7 @@
         <!-- 
         <div>
         -->
-            <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
+            <div style="margin-left: 80px; margin-right: 172px;height:auto;margin-top:10px"  class="gray-wide-bg ">
                 <div style="margin-left: 30px" >
                     <br />
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
@@ -291,8 +296,8 @@
         </tr>
         
        </table>
-        <label style="width: 100%"> Please use the comments section below to provide additional information that can assists us with your request for example if you
-                                       need help with a booking adding such as adding a frequent flyer number include the airline, or if a transatlantic seat selection    
+        <label style="width: 100%"> Please use the comments section below to provide additional information that can assist us with your request, for example if you
+                                       need help with a booking such as adding a frequent flyer number, include the airline, or if a transatlantic seat selection    
                                        include your preference and we will accommodate where possible.
         </label>
         <table>
