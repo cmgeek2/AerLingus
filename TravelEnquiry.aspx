@@ -289,12 +289,13 @@
        <tr>
                        <td>&nbsp</td>
         </tr>
-        <tr>
-        <td colspan="3"> Please use the comments section below to provide additional information that can assists us with your request for example if you
+        
+       </table>
+        <label style="width: 100%"> Please use the comments section below to provide additional information that can assists us with your request for example if you
                                        need help with a booking adding such as adding a frequent flyer number include the airline, or if a transatlantic seat selection    
                                        include your preference and we will accommodate where possible.
-        </td>
-        </tr>
+        </label>
+        <table>
         <tr>
             <td> 
                              <h2 class="xl2 tealGreen"> Comments</h2>  
