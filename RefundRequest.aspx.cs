@@ -47,13 +47,13 @@ public partial class RefundRequest : System.Web.UI.Page
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text);
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
-        
-        sbBodyTextString.AppendLine("Refund Reason Type 1: " + refundReasonDropDownList1.SelectedItem);
+
+        sbBodyTextString.AppendLine("Refund Reason Type 1: " + Request.Form["refundReasonDropDownList1"]);
         sbBodyTextString.AppendLine("Refund Reason 1: " + Request.Form["refundReason1"]);
 
         // Guest Information
         sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
-        sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue);
+        sbBodyTextString.AppendLine("GuestTitle: " + Request.Form["_helpQuerySalutation"]);
         sbBodyTextString.AppendLine("Guest Given Name: " + (Request.Form["helpQueryFirstName"]).ToUpper());
         sbBodyTextString.AppendLine("Guest Last Name: " + (Request.Form["helpQueryLastName"]).ToUpper());
 
@@ -62,7 +62,7 @@ public partial class RefundRequest : System.Web.UI.Page
         {
             // Representative information
             sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
-            sbBodyTextString.AppendLine("RepresentativeTitle: " + RepresentativeDropDownList.SelectedValue);
+            sbBodyTextString.AppendLine("RepresentativeTitle: " + Request.Form["RepresentativeDropDownList"]);
             sbBodyTextString.AppendLine("Representative Given Name: " + (Request.Form["representativeFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Last Name: " + (Request.Form["representativeLastName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
@@ -125,37 +125,37 @@ public partial class RefundRequest : System.Web.UI.Page
         }
 
         // Additional guests information
-        if (Request.Form["salutationGuest2"] != "Selected")
+        if (Request.Form["salutationGuest2"] != "")
         {
-            sbBodyTextString.AppendLine("Guest 2 Title: " + salutationGuest2.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 2 Title: " + Request.Form["salutationGuest2"]);
             sbBodyTextString.AppendLine("Guest 2 Given Name: " + (Request.Form["secondGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 2 Last Name: " + (Request.Form["secondGuestLastName"]).ToUpper());
         }
 
-        if (Request.Form["salutationGuest3"] != "Selected")
+        if (Request.Form["salutationGuest3"] != "")
         {
-            sbBodyTextString.AppendLine("Guest 3 Title: " + salutationGuest3.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 3 Title: " + Request.Form["salutationGuest3"]);
             sbBodyTextString.AppendLine("Guest 3 Given Name: " + (Request.Form["thirdGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 3 Last Name: " + (Request.Form["thirdGuestLastName"]).ToUpper());
         }
 
-        if (Request.Form["salutationGuest4"] != "Selected")
+        if (Request.Form["salutationGuest4"] != "")
         {
-            sbBodyTextString.AppendLine("Guest 4 Title: " + salutationGuest4.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 4 Title: " + Request.Form["salutationGuest4"]);
             sbBodyTextString.AppendLine("Guest 4 Given Name: " + (Request.Form["fourthGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 4 Last Name: " + Request.Form["fourthGuestLastName"]);
         }
 
-        if (Request.Form["salutationGuest5"] != "Selected")
+        if (Request.Form["salutationGuest5"] != "")
         {
-            sbBodyTextString.AppendLine("Guest 5 Title: " + salutationGuest5.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 5 Title: " + Request.Form["salutationGuest5"]);
             sbBodyTextString.AppendLine("Guest 5 Given Name: " + (Request.Form["fifthGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 5 Last Name: " + (Request.Form["fifthGuestLastName"]).ToUpper());
         }
 
-        if (Request.Form["salutationGuest6"] != "Selected")
+        if (Request.Form["salutationGuest6"] != "")
         {
-            sbBodyTextString.AppendLine("Guest 6 Title: " + salutationGuest6.SelectedValue);
+            sbBodyTextString.AppendLine("Guest 6 Title: " + Request.Form["salutationGuest6"]);
             sbBodyTextString.AppendLine("Guest 6 Given Name: " + (Request.Form["sixthGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 6 Last Name: " + (Request.Form["sixthGuestLastName"]).ToUpper());
         }
@@ -163,19 +163,19 @@ public partial class RefundRequest : System.Web.UI.Page
         // Additional refund reasons info.
         if (refundReasonDropDownList2.SelectedIndex > 0)
         {
-            sbBodyTextString.AppendLine("Refund Reason Type 2: " + refundReasonDropDownList2.SelectedItem);
+            sbBodyTextString.AppendLine("Refund Reason Type 2: " + Request.Form["refundReasonDropDownList2"]);
             sbBodyTextString.AppendLine("Refund Reason 2: " + Request.Form["refundReason2"]);
         }
 
         if (refundReasonDropDownList3.SelectedIndex > 0)
         {
-            sbBodyTextString.AppendLine("Refund Reason Type 3: " + refundReasonDropDownList3.SelectedItem);
+            sbBodyTextString.AppendLine("Refund Reason Type 3: " + Request.Form["refundReasonDropDownList3"]);
             sbBodyTextString.AppendLine("Refund Reason 3: " + Request.Form["refundReason3"]);
         }
 
         if (refundReasonDropDownList4.SelectedIndex > 0)
         {
-            sbBodyTextString.AppendLine("Refund Reason Type 3: " + refundReasonDropDownList4.SelectedItem);
+            sbBodyTextString.AppendLine("Refund Reason Type 3: " + Request.Form["refundReasonDropDownList4"]);
             sbBodyTextString.AppendLine("Refund Reason 3: " + Request.Form["refundReason4"]);
         }
 
@@ -223,7 +223,7 @@ public partial class RefundRequest : System.Web.UI.Page
         }
         try
         {
-            SMTPServer.Send(_helpMessage);
+            //SMTPServer.Send(_helpMessage);
             Response.Redirect("ThankYou.aspx?sender=RefundRequest.aspx&message=" + Server.UrlEncode("Refund"));
 
             _helpMessage.Dispose();

@@ -17,6 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
+    <script src="js/common.js"></script>
     
 </head>
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
@@ -102,6 +103,7 @@
             }
             
         }
+        
 
     </script>  
     
@@ -135,15 +137,7 @@
                         <!-- First Row -->            
                         <tr>
                             <td>
-                                <asp:DropDownList  CssClass="dropdown-toggle"  ID="_helpQuerySalutation" Height="30px"  runat="server" Width="260px"  >
-                                <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                <asp:ListItem Text="Mr" Value="Mr." />
-                                <asp:ListItem Text="Mrs" Value="Mrs." />
-                                <asp:ListItem Text="Ms" Value="Ms." />
-                                <asp:ListItem Text="Miss" Value="Miss." />
-                                <asp:ListItem Text="Dr" Value="Dr." />
-                                </asp:DropDownList>
-               
+                                <select class="dropdown-toggle" runat="server" id="_helpQuerySalutation" style="height: 30px; width: 260px"></select>
                             </td>
                             <td>
                                 <div class="input-container" >
@@ -166,14 +160,7 @@
                         <table>
                             <tr>
                                 <td>
-                                        <asp:DropDownList  CssClass="dropdown-toggle"  ID="RepresentativeDropDownList" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
-                                    </asp:DropDownList>
+                                    <select class="dropdown-toggle" runat="server" id="Select1" style="height: 30px; width: 260px"></select>
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -242,13 +229,13 @@
                         <tr>
                             <td >
                                 <div class="input-container" >
-                                    <input type="text" name="address1" id="address1" style="width: 260px" class="form-control inline-label" required="required" pattern="^\s*\S+(?:\s+\S+){2}" onblur="checkvalue(this)"/>
+                                    <input type="text" name="address1" id="address1" style="width: 395px" class="form-control inline-label" required="required" pattern="^\s*\S+(?:\s+\S+){2}" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 1</label>
                                 </div> 
                             </td>
                             <td>
                                 <div class="input-container">  
-                                    <input type="text" name="address2" id="address2" style="width: 260px" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <input type="text" name="address2" id="address2" style="width: 395px" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 2</label>
                                 </div>
                             </td>
@@ -265,37 +252,25 @@
                             <td>
                                 <div class="input-container" >
                                     <input type="text" name="countryState" id="countryState" maxlength="20" style="width: 260px;" title="country or state" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Country/State</label>
+                                    <label class="form-control-label">County/State</label>
                                 </div>
                             </td>
                             <td>
                                 <div class="input-container" >
                                     <input type="text" name="zipCode" id="zipCode" maxlength="20" style="width: 260px" title="postal zip code" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Postaly/Zip Code</label>
+                                    <label class="form-control-label">Postal/Zip Code</label>
                                 </div>
                             </td>
                         </tr>
                     </table>
                         <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
-                            <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
-                                <option value="Selected" selected="selected">Relationship to the guest</option>
-                                <option value="Travel Agent">Travel Agent</option>
-                                <option value="Consumer Group">Consumer Group</option>
-                                <option value="Family">Family</option>
-                                <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
-                            </select>
+                            <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server"></select>
                         </div>
                     <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
                          <tr>
                             <td class="auto-style1">
                                 <select  class=" dropdown-toggle" style="height:30px;width:260px" name="_helpQueryAerClubDropDown" id="_helpQueryAerClubDropDown" runat="server">
-                                    <option value="Selected" selected="selected">AerClub Tier</option>
-                                    <option value="Concierge" >Concierge</option>
-                                    <option value="Platinum">Platinum</option>
-                                    <option value="Silver" >Silver</option>
-                                    <option value="Green" >Green</option>
-                                    <option value="Not a Member">Not a member</option>
                                 </select>
                             </td>
                             <td class="auto-style1" id="ClubMembership">
@@ -415,14 +390,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest1" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
-                                    </asp:DropDownList>
+                                    <select class="dropdown-toggle" runat="server" id="salutationGuest1" style="height: 30px; width: 260px"></select>
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -446,15 +414,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest2" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
-                                    </asp:DropDownList>
-               
+                                    <select class="dropdown-toggle" runat="server" id="salutationGuest2" style="height: 30px; width: 260px"></select>
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -481,18 +441,11 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest3" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
-                                    </asp:DropDownList>               
+                                    <select class="dropdown-toggle" runat="server" id="salutationGuest3" style="height: 30px; width: 260px"></select>              
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestFirstName2" name="thirdGuestFirstName2" class="form-control inline-label"  onblur="checkvalue(this)"/>
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestFirstName" name="thirdGuestFirstName" class="form-control inline-label"  onblur="checkvalue(this)"/>
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
@@ -515,15 +468,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest4" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
-                                    </asp:DropDownList>
-               
+                                    <select class="dropdown-toggle" runat="server" id="salutationGuest4" style="height: 30px; width: 260px"></select>
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -550,15 +495,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest5" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
-                                    </asp:DropDownList>
-               
+                                    <select class="dropdown-toggle" runat="server" id="salutationGuest5" style="height: 30px; width: 260px"></select>               
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -585,14 +522,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <asp:DropDownList  CssClass="dropdown-toggle"  ID="salutationGuest6" Height="30px"  runat="server" Width="260px"  >
-                                        <asp:ListItem Text="Title" Value="Selected"  Selected="True" />
-                                        <asp:ListItem Text="Mr" Value="Mr." />
-                                        <asp:ListItem Text="Mrs" Value="Mrs." />
-                                        <asp:ListItem Text="Ms" Value="Ms." />
-                                        <asp:ListItem Text="Miss" Value="Miss." />
-                                        <asp:ListItem Text="Dr" Value="Dr." />
-                                    </asp:DropDownList>               
+                                    <select class="dropdown-toggle" runat="server" id="salutationGuest6" style="height: 30px; width: 260px"></select>             
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -635,12 +565,7 @@
                         <table>
                             <tr>
                             <td>
-                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList1"  runat="server"  Height="30px" Width="260px">
-                                    <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
-                                    <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
-                                    <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
-                                </asp:DropDownList>
-                                <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="refundReasonDropDownList1" InitialValue="Selected" runat="server"/>
+                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList1" style="height: 30px; width: 260px"></select>
                             </td>
                             <td>
                                 <select class=" dropdown-toggle" id="refundReason1" name="refundReason1"  runat="server" style="height:30px;width:260px" required>
@@ -658,12 +583,7 @@
                         <table>
                             <tr>
                             <td>
-                                 <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList2" Enabled="False"  runat="server"  Height="30px" Width="260px">
-                                    <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
-                                    <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
-                                    <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
-                                </asp:DropDownList>
-                 
+                                 <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList2" style="height: 30px; width: 260px"></select>                 
                             </td>
                             <td>
                                 <select class=" dropdown-toggle" id="refundReason2" name="refundReason2" disabled="True" runat="server" style="height:30px;width:260px" >
@@ -683,11 +603,7 @@
                         <table>
                             <tr>
                             <td>
-                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList3" Enabled="False" runat="server"  Height="30px" Width="260px">
-                                    <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
-                                    <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
-                                    <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
-                                </asp:DropDownList>
+                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList3" style="height: 30px; width: 260px"></select> 
                             </td>
                             <td>
                                 <select class=" dropdown-toggle" id="refundReason3" name="refundReason3" disabled="True"  runat="server" style="height:30px;width:260px" >
@@ -707,11 +623,7 @@
                         <table>
                             <tr>
                             <td>
-                                <asp:DropDownList CssClass="dropdown-toggle" ID="refundReasonDropDownList4" Enabled="False"  runat="server"  Height="30px" Width="260px">
-                                    <asp:ListItem Text="-- Please Select --" Value="select"></asp:ListItem>
-                                    <asp:ListItem Text="Flight Related" Value="flight"></asp:ListItem>
-                                    <asp:ListItem Text="Fee Related" Value="fee"></asp:ListItem>
-                                </asp:DropDownList>
+                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList4" style="height: 30px; width: 260px"></select>
                             </td>
                             <td>
                                 <select class=" dropdown-toggle" id="refundReason4" name="refundReason4" disabled="True"  runat="server" style="height:30px;width:260px" >
@@ -796,11 +708,28 @@
      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
      <script type="text/javascript">
          
+         setSelect('#_helpQuerySalutation', 'Titles.xml', 'title', 'Title');
+         setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries', 'Select Country');
+         setSelect('#relationshipToGuestDropDown', 'Relationships.xml', 'relationship', 'Relationship to the guest');
+         setSelect('#_helpQueryAerClubDropDown', 'AerClubTiers.xml', 'tier', 'AerClub Tier');
+         setSelect('#salutationGuest1', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest2', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest3', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest4', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest5', 'Titles.xml', 'title', 'Title');
+         setSelect('#salutationGuest6', 'Titles.xml', 'title', 'Title');
+         setSelect('#refundReasonDropDownList1', 'RefundReasons.xml', 'reason', 'Refund Reason');
+         setSelect('#refundReasonDropDownList2', 'RefundReasons.xml', 'reason', 'Refund Reason');
+         setSelect('#refundReasonDropDownList3', 'RefundReasons.xml', 'reason', 'Refund Reason');
+         setSelect('#refundReasonDropDownList4', 'RefundReasons.xml', 'reason', 'Refund Reason');
+         
+
          $(function () {
              $("#_helpQueryDateOfFlight").datepicker({ dateFormat: 'dd-M-yy' });
              $("#dateOfFlight2").datepicker({ dateFormat: 'dd-M-yy' });
              $("#dateOfFlight3").datepicker({ dateFormat: 'dd-M-yy' });
              $("#dateOfFlight4").datepicker({ dateFormat: 'dd-M-yy' });
+             
          });
 
          $("#_helpQueryCountryList").change(function () {
@@ -826,7 +755,7 @@
              }
          });
 
-
+         
          //------------------------------------------------------------------------------------------------
          // Flights section
          //------------------------------------------------------------------------------------------------
@@ -943,7 +872,7 @@
                  removeButtonClicked(4, "refund");
              });
          //------------------------------------------------------------------------------------------------
-         setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries');
+         
          
          function addButtonclicked(guestNumber, option) {
              var buttons = new Array();
@@ -985,103 +914,19 @@
 
 
 
-
-
-         function setSelect(selectid, xmlpath, xmlnode) {
-             var loadingtext = '-- Loading --';
-             var loadinghtml = '<option value="">' + loadingtext + '</option>';
-             var randomno = Math.ceil(Math.random() * 999);
-
-             $(selectid).html(loadinghtml);
-
-             $.ajax({
-                 url: xmlpath + '?=rn' + randomno,
-                 success: function (xml) {
-                     parseSelectXML(xml, selectid, xmlnode)
-                 },
-                 error: function (xhr, ajaxOptions, thrownError) {
-                     alert(xhr.status);
-                     alert(thrownError);
-                 }
-             });
-         }
-
-
-         function parseSelectXML(xml, selectid, xmlnode) {
-             var firstoption = 'Select Country';
-             var firsthtml = '<option value="">' + firstoption + '</option>';
-             var selecthtml = '';
-
-             $(xml).find(xmlnode).each(function () {
-
-                 var selecttext = $(this).find('ID').attr('value');
-                 var selectvalue = $(this).find('Name').attr('value');
-                 selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
-             });
-
-             $(selectid).html(firsthtml + selecthtml);
-         }
-
-
-
-
-         function IsEmail(email) {
-             var regex = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
-             if (!regex.test(email)) {
-                 return false;
-             } else {
-                 return true;
-             }
-         }
-
-         function setSelectQuery(selectid, xmlpath, xmlnode) {
-             var loadingtext = '-- Loading --';
-             var loadinghtml = '<option value="">' + loadingtext + '</option>';
-             var randomno = Math.ceil(Math.random() * 999);
-
-             $(selectid).html(loadinghtml);
-
-             $.ajax({
-                 url: xmlpath + '?=rn' + randomno,
-                 success: function (xml) {
-                     parseSelectXML1(xml, selectid, xmlnode)
-                 },
-                 error: function (xhr, ajaxOptions, thrownError) {
-                     alert(xhr.status);
-                     alert(thrownError);
-                 }
-             });
-         }
-
-         
-         function parseSelectXML1(xml, selectid, xmlnode) {
-             var firstoption = '-- Please Select --';
-             var firsthtml = '<option value="">' + firstoption + '</option>';
-             var selecthtml = '';
-
-             $(xml).find(xmlnode).each(function () {
-
-                 var selecttext = $(this).find('ID').attr('value');
-                 var selectvalue = $(this).find('ID').attr('value');
-                 selecthtml += '<option value="' + selectvalue + '">' + selecttext + '</option>';
-             });
-
-             $(selectid).html(firsthtml + selecthtml);
-         }
-
          $("#refundReasonDropDownList1").change(function () {
-             if (this.value != "select") {
-                 $("#_refundReason1").attr("Disabled", false);
+             if (this.value != "") {
+                 $("#refundReason1").attr("Disabled", false);
              } else {
                  $("#refundReason1").attr("Disabled", true);
              }
 
-             if (this.value == "flight") {
+             if (this.value == "Flight Related") {
                  setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
-             if (this.value == "fee") {
+             if (this.value == "Fee Related") {
                  setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
@@ -1093,16 +938,16 @@
                      $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', false);
                  } else {
                      //Reset the other drop downs
-                     $("#<%=refundReasonDropDownList2.ClientID %>").prop('selectedIndex', 0);
-                     $("#<%=refundReasonDropDownList3.ClientID %>").prop('selectedIndex', 0);
-                     $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                     $("#refundReasonDropDownList2").prop('selectedIndex', 0);
+                     $("#refundReasonDropDownList3").prop('selectedIndex', 0);
+                     $("#refundReasonDropDownList4").prop('selectedIndex', 0);
                      $('#refundReason2').prop('selectedIndex', 0);
                      $('#refundReason3').prop('selectedIndex', 0);
                      $('#refundReason4').prop('selectedIndex', 0);
                      //Disable the other drop downs
-                     $("#<%=refundReasonDropDownList2.ClientID %>").attr('disabled', true);
-                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', true);
-                     $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+                     $("#refundReasonDropDownList2").attr('disabled', true);
+                     $("#refundReasonDropDownList3").attr('disabled', true);
+                     $("#refundReasonDropDownList4").attr('disabled', true);
                     
                      $("#refundReason2").attr('disabled', true);
                      $("#refundReason3").attr('disabled', true);
@@ -1113,18 +958,18 @@
 
 
          $("#refundReasonDropDownList2").change(function () {
-             if (this.value != "select") {
+             if (this.value != "") {
                  $("#refundReason2").attr("Disabled", false);
              } else {
                  $("#refundReason2").attr("Disabled", true);
              }
 
-             if (this.value == "flight") {
+             if (this.value == "Flight Related") {
                  setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
-             if (this.value == "fee") {
+             if (this.value == "Fee Related") {
                  setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
@@ -1134,36 +979,35 @@
          $("#refundReason2")
              .change(function () {
                  if (this.selectedIndex != 0) {
-                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', false);
+                     $("#refundReasonDropDownList3").attr('disabled', false);
                  } else {
                      //Reset the other drop downs
-                     $("#<%=refundReasonDropDownList3.ClientID %>").prop('selectedIndex', 0);
-                     $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                     $("#refundReasonDropDownList3").prop('selectedIndex', 0);
+                     $("#refundReasonDropDownList4").prop('selectedIndex', 0);
                      $('#refundReason2').prop('selectedIndex', 0);
                      $('#refundReason3').prop('selectedIndex', 0);
                      $('#refundReason4').prop('selectedIndex', 0);
                      //Disable the other drop downs
-                     $("#<%=refundReasonDropDownList3.ClientID %>").attr('disabled', true);
-                     $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+                     $("#refundReasonDropDownList3").attr('disabled', true);
+                     $("#refundReasonDropDownList4").attr('disabled', true);
                      $("#refundReason3").attr('disabled', true);
                      $("#refundReason4").attr('disabled', true);
                  }
              });
 
          $("#refundReasonDropDownList3").change(function () {
-             if (this.value != "Selected") {
+             if (this.value != "") {
                  $("#refundReason3").attr("Disabled", false);
-                 //$("#_requestRefundReasonInfo2").empty();
              } else {
                  $("#refundReason3").attr("Disabled", true);
              }
 
-             if (this.value == "flight") {
+             if (this.value == "Flight Related") {
                  setSelectQuery('#refundReason3', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
-             if (this.value == "fee") {
+             if (this.value == "Fee Related") {
                  setSelectQuery('#refundReason3', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              } else {
@@ -1174,12 +1018,12 @@
 
          $("#refundReason3").change(function() {
              if (this.selectedIndex != 0) {
-                 $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', false);
+                 $("#refundReasonDropDownList4").attr('disabled', false);
              } else {
-                 $("#<%=refundReasonDropDownList4.ClientID %>").prop('selectedIndex', 0);
+                 $("#refundReasonDropDownList4").prop('selectedIndex', 0);
                  $('#refundReason4').prop('selectedIndex', 0);
                  $("#refundReason4").attr('disabled', true);
-                 $("#<%=refundReasonDropDownList4.ClientID %>").attr('disabled', true);
+                 $("#refundReasonDropDownList4").attr('disabled', true);
              }
          });
 
@@ -1190,12 +1034,12 @@
                  $("#refundReason4").attr("Disabled", true);
              }
 
-             if (this.value == "flight") {
+             if (this.value == "Flight Related") {
                  setSelectQuery('#refundReason4', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
-             if (this.value == "fee") {
+             if (this.value == "Fee Related") {
                  setSelectQuery('#refundReason4', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
@@ -1205,7 +1049,7 @@
          $('#_helpQuerySalutation')
              .change(function() {
                  var salutation = this.selectedIndex;
-                 var target = document.getElementById("<%=salutationGuest1.ClientID%>");
+                 var target = document.getElementById("salutationGuest1");
                  target.selectedIndex = salutation;
 
 
@@ -1226,8 +1070,8 @@
          }
 
 
-     </script>
-                        <script type="text/javascript">
+     
+                        
                             var validFileSize = 5 * 1024 * 1024;
 
                             function CheckFileSize(file) {
@@ -1243,37 +1087,15 @@
                                 }
                                 return isValidFile;
                             }
-                        </script>
-                            <script type="text/javascript">
+                        
+                            
+                            
                                 function CheckFile(file) {
 
                                     isValidFile = CheckFileSize(file);
 
                                     return isValidFile;
                                 }
-                                function checkvalue(value) {
-                                    var inputelement = document.getElementById(value.id);
-                                    if (value.id == "email") {
-                                        var email = document.getElementById("_helpQueryEmail");
-
-                                        if (inputelement.value != email.value) {
-
-                                            alert("Emails do not match");
-                                            $("#Submitbtn").attr("disabled", true);
-
-                                        } else {
-                                            $("#Submitbtn").attr("disabled", false);
-                                        }
-                                    }
-
-                                    if (inputelement.value != "") {
-                                        inputelement.classList.add("filled");
-                                    } else if (inputelement.value == "") {
-                                        inputelement.classList.remove("filled");
-                                    }
-
-                                }
-
 
                                 $(function () {
                                     $("#_helpQueryForm").validate({
@@ -1304,6 +1126,8 @@
                                         alert("submitted!");
                                     }
                                 });
+
+
                             </script>
      
 </body>
