@@ -111,10 +111,6 @@
                                     </select>
                                 </div>
                             </td>
-                         </tr>
-                        <!-- End of Third Row --> 
-                        <!-- Fourth Row --> 
-                        <tr>             
                             <td>
                                 <label class="visuallyhidden">Select your Telephone Country Code</label>
                                 <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
@@ -126,6 +122,11 @@
                                     <label class="form-control-label">Telephone Number</label>
                                 </div>             
                             </td>
+                         </tr>
+                        <!-- End of Third Row --> 
+                        <!-- Fourth Row --> 
+                        <tr>             
+                            
                         </tr>
                         <!-- End of Fourth Row --> 
                         <!-- Fifth Row --> 
@@ -157,7 +158,7 @@
           <tr>
               <td colspan="2">
                          <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
-
+                         <div>To add more than one flight, simply click the '+' sign:</div>
                   </td>
         </tr>
                  <tr>
@@ -168,9 +169,7 @@
                     </div>
                      
                     </td>
-                </tr>
-                <tr>
-                    <td>
+                     <td>
                     <div class="input-container" >
                         <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Flight Number</label>
@@ -183,6 +182,9 @@
                     <td>
                         <button type="button" title="Add another flight" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional flight">+</button>                    
                     </td>
+                </tr>
+                <tr>
+                    
                 </tr>
             </table>
                     <div class="input-container" id="secondFlightInfoDiv" style="display: none">
