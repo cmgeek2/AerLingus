@@ -31,6 +31,10 @@
     <RC value="INSINFO"></RC>
   </Receipt>
   <Receipt >
+    <ID value="Proof of travel"></ID>
+    <RC value="INSINFO"></RC>
+  </Receipt>
+  <Receipt >
     <ID value="Property irregularity report"></ID>
     <RC value="PROPREP"></RC>
   </Receipt>
