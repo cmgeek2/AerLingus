@@ -14,6 +14,12 @@
     
     	<script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
+    <style>
+         .gray-wide-bg {
+                width: 900px;
+                background-color: #f9f9f9; 
+            }
+     </style> 
          
      
  <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
@@ -49,7 +55,7 @@
     <form id="_helpQueryForm"  runat="server" autocomplete="off" >
         <div>
     
-        <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
+        <div style="margin-left: 80px; margin-right: 172px;height:auto;margin-top:10px"  class="gray-wide-bg ">
             <div style="margin-left: 30px" >
                  <br />
               
@@ -105,10 +111,7 @@
                         </select>
                     </div>
                 </td>
-            </tr>
-            <tr>
-              
-            <td>
+                <td>
                 <label class="visuallyhidden">Select your Telephone Country Code</label>
                 <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
                 <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
@@ -155,11 +158,7 @@
                             <label class="form-control-label">Booking Reference</label>
                         </div> 
                     </td>
-                 </tr>
-            </table>
-             <table>
-                <tr>
-                    <td>
+                     <td>
                     <div class="input-container" >
                         <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="Please enter your 3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
                     <label class="form-control-label">Flight Number</label>
@@ -172,7 +171,7 @@
                     <td>
                         <button type="button" title="Add another flight" id="addFlightsButton1" class="transparentBtn" aria-label="Click to add an additional request">+</button>                    
                     </td>
-                </tr>
+                 </tr>
             </table>
                 <div class="input-container" id="secondFlightInfoDiv" style="display: none">
                         <table>
