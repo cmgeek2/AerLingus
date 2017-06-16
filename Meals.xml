@@ -15,7 +15,7 @@
       </meal>
     <meal>
       <Name value="Kosher Meal" />
-      <ID value="Kosher Meal" />
+      <ID value="Kosher Meal *" />
     </meal>
     <meal>
       <Name value="Low Fat Meal" />
