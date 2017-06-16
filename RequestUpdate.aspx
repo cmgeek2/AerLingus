@@ -219,13 +219,13 @@
                         
                     </div>
                     <!-------------------------------------------------------------------------------------------------------------------- -->
-                    <table>
+                    <table style="width: 100%">
                         <tr>
                             <td>&nbsp</td>
                         </tr>
                         <tr>
                             <td> 
-                                <h2 class="xl2 tealGreen"> Comments</h2>  
+                                <h2 class="xl2 tealGreen"> Additional Information</h2>  
                             </td>
                          </tr>
         
@@ -248,7 +248,7 @@
                     <div id="bankDiv">
                         <br/>
                         <br/>
-                        <div style="margin-left: 20px; display: none" >
+                        <div style="margin-left: 20px;" >
                             <asp:CheckBox runat="server" ID="bankCheckBox" Text="Click here to add bank details"  CssClass="checkbox"/>
                         </div> 
                         <div id="bankInfoDiv" style="display: none;">
