@@ -18,94 +18,100 @@
     <script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
     <script src="js/common.js"></script>
+    <style>
+         .gray-wide-bg {
+                width: 900px;
+                background-color: #f9f9f9; 
+            }
+     </style>
     
 </head>
   <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
   <script src = "https://cdn.jsdelivr.net/jquery/1.12.4/jquery.min.js" type="text/javascript"></script>
   <script src="/js/jquery.js"></script>
   <script type="text/javascript">
-        function Count() {
+      function Count() {
 
-            var i = document.getElementById("_helpQueryAdditionInformation").value.length;
-            document.getElementById("_helpQueryCharCount").innerHTML = "Characters Remaining : " + (1000 - i);
+          var i = document.getElementById("_helpQueryAdditionInformation").value.length;
+          document.getElementById("_helpQueryCharCount").innerHTML = "Characters Remaining : " + (1000 - i);
 
-        }
+      }
 
-        function validateForm() {
-            var x = document.forms["_helpQueryForm"]["_helpQueryFirstName"].value;
-            if (x == null || x == "") {
-                alert("First name must be filled out");
-                return false;
-            }
-        }
+      function validateForm() {
+          var x = document.forms["_helpQueryForm"]["_helpQueryFirstName"].value;
+          if (x == null || x == "") {
+              alert("First name must be filled out");
+              return false;
+          }
+      }
 
-        function radioButtonClicked() {
-            var radioSelected = $('#<%= guestGroup.ClientID %> input:checked').val();
-            if (radioSelected == 'guest') {
-                guestRadioBtnSelected();
-            } else {
-                repRadioBtnSelected();
-            }
-        }
+      function radioButtonClicked() {
+          var radioSelected = $('#<%= guestGroup.ClientID %> input:checked').val();
+          if (radioSelected == 'guest') {
+              guestRadioBtnSelected();
+          } else {
+              repRadioBtnSelected();
+          }
+      }
 
-        function guestRadioBtnSelected() {
-            // hide representative name input row
-            var divRepName = document.getElementById('representativeName');
-            // hide company name input row
-            divRepName.style.display = "none";
-            var repCompanyNameDiv = document.getElementById('repCompanyNameDiv');
-            document.getElementById('representativeFirstName').required = false;
-            document.getElementById('representativeLastName').required = false;
-            document.getElementById('relationshipToGuestDropDown').required = false;
-            document.getElementById('repCompanyName').required = false;
-            repCompanyNameDiv.style.display = "none";
-            var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
-            aerClubDropDown.style.display = "block";
-            var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
-            relationshipToGuestDiv.style.display = 'none';
-        }
+      function guestRadioBtnSelected() {
+          // hide representative name input row
+          var divRepName = document.getElementById('representativeName');
+          // hide company name input row
+          divRepName.style.display = "none";
+          var repCompanyNameDiv = document.getElementById('repCompanyNameDiv');
+          document.getElementById('representativeFirstName').required = false;
+          document.getElementById('representativeLastName').required = false;
+          document.getElementById('relationshipToGuestDropDown').required = false;
+          document.getElementById('repCompanyName').required = false;
+          repCompanyNameDiv.style.display = "none";
+          var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
+          aerClubDropDown.style.display = "block";
+          var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
+          relationshipToGuestDiv.style.display = 'none';
+      }
 
-        function repRadioBtnSelected() {
-            // show representative name input row
-            var divRepName = document.getElementById('representativeName');
-            divRepName.style.display = "block";
-            // show company name input row
-            var repCompanyNameDiv = document.getElementById('repCompanyNameDiv');
-            repCompanyNameDiv.style.display = "block";
-            // make necessary fields required
-            document.getElementById('representativeFirstName').required = true;
-            document.getElementById('representativeLastName').required = true;
-            document.getElementById('relationshipToGuestDropDown').required = true;
-            document.getElementById('repCompanyName').required = true;
-            var relationshipDropDown = document.getElementById('relationshipToGuestDropDownDiv');
-            relationshipDropDown.style.display = "block";
-            var divRepName = document.getElementById('representativeName');
-            divRepName.style.display = "block";
+      function repRadioBtnSelected() {
+          // show representative name input row
+          var divRepName = document.getElementById('representativeName');
+          divRepName.style.display = "block";
+          // show company name input row
+          var repCompanyNameDiv = document.getElementById('repCompanyNameDiv');
+          repCompanyNameDiv.style.display = "block";
+          // make necessary fields required
+          document.getElementById('representativeFirstName').required = true;
+          document.getElementById('representativeLastName').required = true;
+          document.getElementById('relationshipToGuestDropDown').required = true;
+          document.getElementById('repCompanyName').required = true;
+          var relationshipDropDown = document.getElementById('relationshipToGuestDropDownDiv');
+          relationshipDropDown.style.display = "block";
+          var divRepName = document.getElementById('representativeName');
+          divRepName.style.display = "block";
             
-            var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
-            aerClubDropDown.style.display = "none";
-            var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
-            relationshipToGuestDiv.style.display = 'block';
-        }
+          var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
+          aerClubDropDown.style.display = "none";
+          var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
+          relationshipToGuestDiv.style.display = 'block';
+      }
 
-        function countrySelected()
-        {
-            var country = $('#_helpQueryCountryList').find(":selected").text();
-            if (country == "United States of America")
-            {
-                $('#countryState').attr('maxlength', 2);
-                $('#countryState').css({ 'text-transform': "uppercase" });
+      function countrySelected()
+      {
+          var country = $('#_helpQueryCountryList').find(":selected").text();
+          if (country == "United States of America")
+          {
+              $('#countryState').attr('maxlength', 2);
+              $('#countryState').css({ 'text-transform': "uppercase" });
 
-            }
-            else
-            {
-                $('#countryState').attr('maxlength', 4);
-            }
+          }
+          else
+          {
+              $('#countryState').attr('maxlength', 4);
+          }
             
-        }
-        
+      }
 
-    </script>  
+
+  </script>  
     
    
   
@@ -117,7 +123,7 @@
         <!-- 
         <div>
         -->
-            <div style="margin-left: 80px; margin-right: 172px;width:824px;height:auto;margin-top:10px"  class="gray-12-bg ">
+            <div style="margin-left: 80px; margin-right: 172px;height:auto;margin-top:10px"  class="gray-wide-bg ">
                 <div style="margin-left: 30px" >
                     <br />
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
@@ -304,8 +310,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="_helpQueryDateOfFlight" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator" ControlToValidate="_helpQueryDateOfFlight" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <div class="input-container">
+                                        <input type="text" id="_helpQueryDateOfFlight" name="_helpQueryDateOfFlight" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" required="required" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Number</label> 
+                                    </div>
                                 </td>  
                                 <td>
                                     <div class="input-container" >
@@ -329,8 +337,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight2" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator2" ControlToValidate="dateOfFlight2" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <div class="input-container">
+                                        <input type="text" id="dateOfFlight2" name="dateOfFlight2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Date</label> 
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Add another flight" id="addFlightsButton2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
@@ -351,8 +361,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight3" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator3" ControlToValidate="dateOfFlight3" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <div class="input-container">
+                                        <input type="text" id="dateOfFlight3" name="dateOfFlight3" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Date</label> 
+                                    </div>
                                 </td>
                                 
                                 <td>
@@ -375,8 +387,10 @@
                                     </div>
                                 </td>
                                 <td>
-                                    <asp:TextBox  ID="dateOfFlight4" runat="server" Text="Flight Date"   Width="260px" Height="30px"  CssClass="textboxborder" required="required" ></asp:TextBox>
-                                    <asp:RequiredFieldValidator ID="DateValidator4" ControlToValidate="dateOfFlight4" InitialValue="Flight Date" runat="server"></asp:RequiredFieldValidator>
+                                    <div class="input-container">
+                                        <input type="text" id="dateOfFlight4" name="dateOfFlight4" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Date</label> 
+                                    </div>
                                 </td>
                                 <td>
                                     <button type="button" title="Remove this flight" id="removeFlightsButton4" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
@@ -505,7 +519,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="fifthGuestLastName"  name="fifthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this) "/>
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="fifthGuestLastName"  name="fifthGuestLastName" class="form-control inline-label" onblur="checkvalue(this) "/>
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -526,13 +540,13 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryFirstName6" name="helpQueryFirstName2" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="sixthGuestFirstName" name="sixthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryLastName6"  name="helpQueryLastName" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="sixthGuestLastName"  name="sixthGuestLastName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
@@ -877,7 +891,7 @@
          function addButtonclicked(guestNumber, option) {
              var buttons = new Array();
              if (option == "guest")
-                buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
+                 buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
              if (option == "refund")
                  buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
              if (option == "flights")
@@ -897,15 +911,63 @@
              }
          }
 
-         function removeButtonClicked(guestNumber, option) {
+         function removeButtonClicked(buttonNumber, option) {
+             var currentIndex = buttonNumber - 1;
+             var controlNumber = String(buttonNumber);
+             var controlName = "";
              var buttons = new Array();
-             if (option == "guest")
+             if (option == "guest") {
                  buttons = ["guest1div", "guest2div", "guest3div", "guest4div", "guest5div", "guest6div"];
-             if (option == "refund")
+                 if (buttonNumber == 2) {
+                     document.getElementById('salutationGuest2').selectedIndex = 0;
+                     document.getElementById('secondGuestFirstName').value = "";
+                     renoveFilledClassForElement('secondGuestFirstName');
+                     document.getElementById('secondGuestLastName').value = "";
+                     renoveFilledClassForElement('secondGuestLastName');
+                 }else if (buttonNumber == 3) {
+                     document.getElementById('salutationGuest3').selectedIndex = 0;
+                     document.getElementById('thirdGuestFirstName').value = "";
+                     renoveFilledClassForElement('thirdGuestFirstName');
+                     document.getElementById('thirdGuestLastName').value = "";
+                     renoveFilledClassForElement('thirdGuestLastName');
+                 }else if (buttonNumber == 4) {
+                     document.getElementById('salutationGuest4').selectedIndex = 0;
+                     document.getElementById('fourthGuestFirstName').value = "";
+                     renoveFilledClassForElement('fourthGuestFirstName');
+                     document.getElementById('fourthGuestLastName').value = "";
+                     renoveFilledClassForElement('fourthGuestLastName');
+                 }else if (buttonNumber == 5) {
+                     document.getElementById('salutationGuest5').selectedIndex = 0;
+                     document.getElementById('fifthGuestFirstName').value = "";
+                     renoveFilledClassForElement('fifthGuestFirstName');
+                     document.getElementById('fifthGuestLastName').value = "";
+                     renoveFilledClassForElement('fifthGuestLastName');
+                 }else if (buttonNumber == 6) {
+                     document.getElementById('salutationGuest6').selectedIndex = 0;
+                     document.getElementById('sixthGuestFirstName').value = "";
+                     renoveFilledClassForElement('sixthGuestFirstName');
+                     document.getElementById('sixthGuestLastName').value = "";
+                     renoveFilledClassForElement('sixthGuestLastName');
+                 }
+             }
+                 
+             if (option == "refund") {
                  buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
-             if (option == "flights")
+                 controlName = "refundReasonDropDownList" + controlNumber;
+                 document.getElementById(controlName).selectedIndex = 0;
+                 controlName = "refundReason" + controlNumber;
+                 document.getElementById(controlName).selectedIndex = 0;
+             }
+                 
+             if (option == "flights") {
                  buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
-             var currentIndex = guestNumber - 1;
+                 controlName = "QueryFlightNumber" + controlNumber;
+                 document.getElementById(controlName).value = "";
+                 renoveFilledClassForElement(controlName);
+                 controlName = "dateOfFlight" + controlNumber;
+                 document.getElementById(controlName).value = "";
+             }
+                            
              var guestDiv = document.getElementById(buttons[currentIndex]);
              guestDiv.style.display = "none";
 
@@ -1069,66 +1131,106 @@
              firstGuestLastName.value = lastName;
          }
 
+         function renoveFilledClassForElement(elementName) {
+             var element = document.getElementById(elementName);
+             element.classList.remove('filled');
+         }
 
+         $('#_helpQueryDateOfFlight').change(function () {
+             var newValue = this.value;
+             if (newValue != "") {
+                 document.getElementById('_helpQueryDateOfFlight').classList.add('filled');
+             } else {
+                 document.getElementById('_helpQueryDateOfFlight').classList.remove('filled');
+             }
+
+         });
+
+         $('#dateOfFlight2').change(function () {
+             var newValue = this.value;             
+             if (newValue != "") {
+                 document.getElementById('dateOfFlight2').classList.add('filled');
+             } else {
+                 document.getElementById('dateOfFlight2').classList.remove('filled');
+             }
+         });
+
+         $('#dateOfFlight3').change(function () {
+             var newValue = this.value;
+             if (newValue != "") {
+                 document.getElementById('dateOfFlight3').classList.add('filled');
+             } else {
+                 document.getElementById('dateOfFlight3').classList.remove('filled');
+             }
+         });
+
+         $('#dateOfFlight4').change(function () {
+             var newValue = this.value;
+             if (newValue != "") {
+                 document.getElementById('dateOfFlight4').classList.add('filled');
+             } else {
+                 document.getElementById('dateOfFlight4').classList.remove('filled');
+             }
+         });
      
                         
-                            var validFileSize = 5 * 1024 * 1024;
+         var validFileSize = 5 * 1024 * 1024;
 
-                            function CheckFileSize(file) {
-                                /*global document: false */
-                                var fileSize = file.files[0].size;
-                                var isValidFile = false;
-                                if (fileSize !== 0 && fileSize <= validFileSize) {
-                                    isValidFile = true;
-                                }
-                                else {
-                                    file.value = null;
-                                    alert("File Size Should be Greater than 0 and less than 5 MB.");
-                                }
-                                return isValidFile;
-                            }
+         function CheckFileSize(file) {
+             /*global document: false */
+             var fileSize = file.files[0].size;
+             var isValidFile = false;
+             if (fileSize !== 0 && fileSize <= validFileSize) {
+                 isValidFile = true;
+             }
+             else {
+                 file.value = null;
+                 alert("File Size Should be Greater than 0 and less than 5 MB.");
+             }
+             return isValidFile;
+         }
                         
                             
                             
-                                function CheckFile(file) {
+         function CheckFile(file) {
 
-                                    isValidFile = CheckFileSize(file);
+             isValidFile = CheckFileSize(file);
 
-                                    return isValidFile;
-                                }
+             return isValidFile;
+         }
 
-                                $(function () {
-                                    $("#_helpQueryForm").validate({
-                                        rules: {
+         $(function () {
+             $("#_helpQueryForm").validate({
+                 rules: {
 
-                                            _helpQueryEmail: {
-                                                required: true
-                                            },
-                                            email: {
-                                                required: true,
-                                                equalTo: "#_helpQueryEmail"
-                                            },
+                     _helpQueryEmail: {
+                         required: true
+                     },
+                     email: {
+                         required: true,
+                         equalTo: "#_helpQueryEmail"
+                     },
 
-                                            helpQueryFirstName: "required",
-                                            helpQueryLastName: "required"
-                                        },
-                                        messages: {
-                                            helpQueryFirstName: "Please enter your firstname",
-                                            helpQueryLastName: "Please enter your lastname",
+                     helpQueryFirstName: "required",
+                     helpQueryLastName: "required"
+                 },
+                 messages: {
+                     helpQueryFirstName: "Please enter your firstname",
+                     helpQueryLastName: "Please enter your lastname",
 
-                                        }
+                 }
 
-                                    });
-                                });
+             });
+         });
 
-                                $.validator.setDefaults({
-                                    submitHandler: function () {
-                                        alert("submitted!");
-                                    }
-                                });
+         $.validator.setDefaults({
+             submitHandler: function () {
+                 alert("submitted!");
+             }
+         });
 
-
-                            </script>
+        
+     </script>
      
 </body>
 </html>
