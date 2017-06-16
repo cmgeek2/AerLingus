@@ -19,10 +19,11 @@
     <script src="/js/jquery-1.8.2.js"></script>
     <script src="js/common.js"></script>
     <style>
-         .gray-wide-bg {
-                width: 900px;
-                background-color: #f9f9f9; 
-            }
+        .gray-wide-bg {
+            width: 900px;
+            background-color: #f9f9f9;
+        } 
+
      </style>
     
 </head>
@@ -269,7 +270,7 @@
                             </td>
                         </tr>
                     </table>
-                    <div id="relationshipToGuestDiv">
+                    <div id="relationshipToGuestDiv" style="display: none">
                         <table>
                         <tr>
                             <td>
@@ -314,21 +315,22 @@
                             </td>
                         </tr>
                     </table>
-                    <br/><br/>
+                    <br/>
+                    <div>To add more than one flight, simply click the '+' sign:</div>
                     <!------------- Flight Section ------------------- -->
                     <div class="input-container" id="mainFlightInfoDiv">
                         <table>
                             <tr>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Number</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="_helpQueryDateOfFlight" name="_helpQueryDateOfFlight" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" required="required" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                        <label class="form-control-label">Flight Number</label> 
+                                        <input type="text" id="_helpQueryDateOfFlight" name="_helpQueryDateOfFlight" style="width: 260px" title="Please select a date" required="required" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label class="form-control-label">Flight Date </label> 
                                     </div>
                                 </td>  
                                 <td>
@@ -354,7 +356,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="dateOfFlight2" name="dateOfFlight2" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="dateOfFlight2" name="dateOfFlight2" maxlength="4" style="width: 260px"  title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -378,7 +380,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="dateOfFlight3" name="dateOfFlight3" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="dateOfFlight3" name="dateOfFlight3" maxlength="4" style="width: 260px"title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -404,7 +406,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="dateOfFlight4" name="dateOfFlight4" maxlength="4" style="width: 260px" pattern="[0-9]{3,4}" title="3 or 4 digit flight number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="dateOfFlight4" name="dateOfFlight4" maxlength="4" style="width: 260px" title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -415,7 +417,18 @@
                         </table>
                     </div>  
                     <!------------------------------------------------- -->
-                    <br/><br/><br/>
+                    <br/>
+                    <table style="width: 100%">
+                        <tr>
+                            <td>&nbsp</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                                <h2 class="xl2 tealGreen"> Additional Guests (if applicable)</h2>
+                            </td>
+                        </tr>
+                    </table>
+                    <div>To add more than one guest, simply click the '+' sign:</div>
                     <div class="input-container" id="guest1div">
                         <table>
                             <tr>
@@ -591,14 +604,15 @@
                     </table>
                     <!-------------------------------------------------------------------------------------------------------------- -->
                     <!------ Refund Section ------------- -->
+                    <div>To add more than one reason, simply click the '+' sign:</div>
                     <div class="input-container" id="refundReason1Div">
                         <table>
                             <tr>
                             <td>
-                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList1" style="height: 30px; width: 260px"></select>
+                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList1" style="height: 30px; width: 396px"></select>
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason1" name="refundReason1"  runat="server" style="height:30px;width:260px" required>
+                                <select class=" dropdown-toggle" id="refundReason1" name="refundReason1"  runat="server" style="height:30px;width:396px" required>
                                     <option value="" selected="selected">-- Please Select --</option>
                                 </select>
                                 <asp:RequiredFieldValidator ID="refundReason1Validator" ControlToValidate="refundReason1" InitialValue="Default" runat="server" Enabled="false"/>
@@ -613,10 +627,10 @@
                         <table>
                             <tr>
                             <td>
-                                 <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList2" style="height: 30px; width: 260px"></select>                 
+                                 <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList2" style="height: 30px; width: 396px"></select>                 
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason2" name="refundReason2" disabled="True" runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason2" name="refundReason2" disabled="True" runat="server" style="height:30px;width:396px" >
                                     <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
@@ -633,10 +647,10 @@
                         <table>
                             <tr>
                             <td>
-                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList3" style="height: 30px; width: 260px"></select> 
+                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList3" style="height: 30px; width: 396px"></select> 
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason3" name="refundReason3" disabled="True"  runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason3" name="refundReason3" disabled="True"  runat="server" style="height:30px;width:396px" >
                                     <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
@@ -653,10 +667,10 @@
                         <table>
                             <tr>
                             <td>
-                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList4" style="height: 30px; width: 260px"></select>
+                                <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList4" style="height: 30px; width: 396px"></select>
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason4" name="refundReason4" disabled="True"  runat="server" style="height:30px;width:260px" >
+                                <select class=" dropdown-toggle" id="refundReason4" name="refundReason4" disabled="True"  runat="server" style="height:30px;width:396px" >
                                     <option value="selected" selected="selected">-- Please Select --</option>
                                 </select>
                             </td>
@@ -692,7 +706,7 @@
                             </td>
                          </tr>           
                     </table>
-                    <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
+                    <p>  Please use the comments section below to provide additional information that can assist us with your request. </p>
                     <div>
                         <table width="100%">
                             <tr>
@@ -994,7 +1008,7 @@
 
 
          $("#refundReasonDropDownList1").change(function () {
-             if (this.value != "") {
+             if (this.value != "" && this.value != "Other") {
                  $("#refundReason1").attr("Disabled", false);
              } else {
                  $("#refundReason1").attr("Disabled", true);
@@ -1009,6 +1023,7 @@
                  setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
+
          });
 
          $("#refundReason1")
@@ -1037,7 +1052,7 @@
 
 
          $("#refundReasonDropDownList2").change(function () {
-             if (this.value != "") {
+             if (this.value != "" && this.value != "Other") {
                  $("#refundReason2").attr("Disabled", false);
              } else {
                  $("#refundReason2").attr("Disabled", true);
@@ -1075,7 +1090,7 @@
              });
 
          $("#refundReasonDropDownList3").change(function () {
-             if (this.value != "") {
+             if (this.value != "" && this.value != "Other") {
                  $("#refundReason3").attr("Disabled", false);
              } else {
                  $("#refundReason3").attr("Disabled", true);
@@ -1107,7 +1122,7 @@
          });
 
          $("#refundReasonDropDownList4").change(function () {
-             if (this.value != "Selected") {
+             if (this.value != "" && this.value != "Other") {
                  $("#refundReason4").attr("Disabled", false);
              } else {
                  $("#refundReason4").attr("Disabled", true);
@@ -1240,11 +1255,6 @@
              });
          });
 
-         $.validator.setDefaults({
-             submitHandler: function () {
-                 alert("submitted!");
-             }
-         });
 
         
      </script>
