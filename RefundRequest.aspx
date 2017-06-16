@@ -67,7 +67,7 @@
           repCompanyNameDiv.style.display = "none";
           var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
           aerClubDropDown.style.display = "block";
-          var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
+          var relationshipToGuestDiv = document.getElementById('relationshipToGuestDiv');
           relationshipToGuestDiv.style.display = 'none';
       }
 
@@ -83,14 +83,14 @@
           document.getElementById('representativeLastName').required = true;
           document.getElementById('relationshipToGuestDropDown').required = true;
           document.getElementById('repCompanyName').required = true;
-          var relationshipDropDown = document.getElementById('relationshipToGuestDropDownDiv');
+          var relationshipDropDown = document.getElementById('relationshipToGuestDiv');
           relationshipDropDown.style.display = "block";
           var divRepName = document.getElementById('representativeName');
           divRepName.style.display = "block";
             
           var aerClubDropDown = document.getElementById('_helpQueryAerClubDropDown');
           aerClubDropDown.style.display = "none";
-          var relationshipToGuestDiv = document.getElementById('relationshipToGuestDropDownDiv');
+          var relationshipToGuestDiv = document.getElementById('relationshipToGuestDiv');
           relationshipToGuestDiv.style.display = 'block';
       }
 
@@ -166,7 +166,7 @@
                         <table>
                             <tr>
                                 <td>
-                                    <select class="dropdown-toggle" runat="server" id="Select1" style="height: 30px; width: 260px"></select>
+                                    <select class="dropdown-toggle" runat="server" id="representativeSalutation" style="height: 30px; width: 260px"></select>
                                 </td>
                                 <td>
                                     <div class="input-container" >
@@ -269,9 +269,25 @@
                             </td>
                         </tr>
                     </table>
-                        <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
-                            <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server"></select>
-                        </div>
+                    <div id="relationshipToGuestDiv">
+                        <table>
+                        <tr>
+                            <td>
+                                <div class="input-container" >
+                                    <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server"></select>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" name="internalCaseNumber" id="internalCaseNumber" maxlength="20" style="width: 260px" title="postal zip code" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">Internal Case Number</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                    </div>
+                    
+                        
                     <!-------------------------------------------------------------------------------------------------------------------- -->
                     <table>
                          <tr>
@@ -706,7 +722,7 @@
             </div>
             </div>
         <!--
-            </div>
+            </div>Internal 
             -->
     </form>
    
@@ -726,6 +742,7 @@
          setSelect('#_helpQueryCountryList', 'Countries.xml', 'countries', 'Select Country');
          setSelect('#relationshipToGuestDropDown', 'Relationships.xml', 'relationship', 'Relationship to the guest');
          setSelect('#_helpQueryAerClubDropDown', 'AerClubTiers.xml', 'tier', 'AerClub Tier');
+         setSelect('#representativeSalutation', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest1', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest2', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest3', 'Titles.xml', 'title', 'Title');

@@ -62,12 +62,13 @@ public partial class RefundRequest : System.Web.UI.Page
         {
             // Representative information
             sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
-            sbBodyTextString.AppendLine("RepresentativeTitle: " + Request.Form["RepresentativeDropDownList"]);
+            sbBodyTextString.AppendLine("RepresentativeTitle: " + Request.Form["representativeSalutation"]);
             sbBodyTextString.AppendLine("Representative Given Name: " + (Request.Form["representativeFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Last Name: " + (Request.Form["representativeLastName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
             sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
             sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationsipToGuestDropDown"]);
+            sbBodyTextString.AppendLine("Internal Case Number: " + Request.Form["internalCaseNumber"]);
         }
         else
         {
@@ -77,7 +78,7 @@ public partial class RefundRequest : System.Web.UI.Page
             sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
             char[] delimiterChars = { '(', ')' };
             string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
-            sbBodyTextString.AppendLine("Telephone: " + code[1].ToString() + " " + Request.Form["_helpQueryTelephoneNumber"]);
+            sbBodyTextString.AppendLine("Telephone: " + code[1] + " " + Request.Form["_helpQueryTelephoneNumber"]);
             
   
         }
