@@ -115,26 +115,24 @@
                         </select>                 
                   </div>
              </td>
-             </tr>
-            <tr>
-              
-            <td>
+             <td>
                 <label class="visuallyhidden">Select your Telephone Country Code</label>
                 <asp:XmlDataSource ID="_helpQueryCountryCode" runat="server" DataFile="CountryCodes.xml" XPath="CountryCode/AreaCode"></asp:XmlDataSource>
                 <asp:DropDownList  CssClass=" dropdown-toggle"  ID="_helpQueryTelephoneCode" Height="30px"  runat="server" Width="260px"  DataSourceID="_helpQueryCountryCode" DataTextField="name" DataValueField="value"></asp:DropDownList>
                 
-               </td>
-                <td>
-                   <div class="input-container" >
-                       <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please enter your phone number - area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
-                    <label class="form-control-label">Telephone Number</label>
-                    </div>
             </td>
-            </tr>
+            <td>
+                <div class="input-container" >
+                    <input type="text" style="width: 260px" pattern="[0-9]{5,12}" maxlength="12" title="Please enter your phone number - area code and local number" name="_helpQueryTelephoneNumber" id="_helpQueryTelephoneNumber" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                    <label class="form-control-label">Telephone Number</label>
+                </div>
+            </td>    
+
+             </tr>
              </table>
             <br/>
             <br/>
-             <div><h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2></div>  
+             <div><h2 class="xl2 tealGreen"> Flight Information</h2></div>  
              <table style="width: 100%">
                  <tr>
                      <td>
@@ -145,8 +143,6 @@
                                 <asp:ListItem Text="Return Flight" Value="Return" Class="radio-inline-button"/>
                                 <asp:ListItem Text="Both" Value="Both" Class="radio-inline-button"/>
                             </asp:RadioButtonList>
-                            <br/>
-                            <br/>
                          </div>
                      </td>                     
                  </tr>
@@ -196,7 +192,10 @@
             <!------------------------------------------------- -->
                     <br/><br/><br/>
             <div class="input-container" style="width: 100%"> <h2 class="xl2 tealGreen"> Meal Request</h2></div>
-            <div>To add more than one request, simply click the '+' sign:</div>
+            <div>
+                <label>Please select your meal below. To add additional Guests on the same booking please click the '+' sign. If you have any additional requests such as seat assignments on transatlantic flights please include in the Additional Requests Section
+                </label>
+            </div>
                 
                     <div class="input-container" id="guest1div">
                         <table>
