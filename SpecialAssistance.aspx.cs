@@ -62,23 +62,51 @@ public partial class SpecialAssistance : System.Web.UI.Page
         sbBodyTextString.AppendLine(sEmailFormId1);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
-        sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text);
+        if (_helpQueryDateOfFlight.Text != "Flight Date")
+        {
+            sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
+        }
+        else
+        {
+            sbBodyTextString.AppendLine("Flight Date: ");
+        }
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
         if (Request.Form["FlightNumber2"] != "")
         {
-            sbBodyTextString.AppendLine("Flight Date 2: " + dateOfFlight2.Text);
+            if (dateOfFlight2.Text != "Flight Date")
+            {
+                sbBodyTextString.AppendLine("Flight 2 Date: " + dateOfFlight2.Text);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Flight 2 Date: ");
+            }
             sbBodyTextString.AppendLine("Flight Number 2 : " + Request.Form["FlightNumber2"]);
             sbBodyTextString.AppendLine("Reference Number 2: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         }
         if (Request.Form["FlightNumber3"] != "")
         {
-            sbBodyTextString.AppendLine("Flight Date 3: " + dateOfFlight3.Text);
+            if (dateOfFlight3.Text != "Flight Date")
+            {
+                sbBodyTextString.AppendLine("Flight 3 Date: " + dateOfFlight3.Text);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Flight 3 Date: ");
+            }
             sbBodyTextString.AppendLine("Flight Number 3: " + Request.Form["FlightNumber3"]);
             sbBodyTextString.AppendLine("Reference Number 3: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         }
         if (Request.Form["FlightNumber4"] != "")
         {
-            sbBodyTextString.AppendLine("Flight Date 4: " + dateOfFlight4.Text);
+            if (dateOfFlight4.Text != "Flight Date")
+            {
+                sbBodyTextString.AppendLine("Flight 4 Date: " + dateOfFlight4.Text);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Flight 4 Date: ");
+            }
             sbBodyTextString.AppendLine("Flight Number 4: " + Request.Form["FlightNumber4"]);
             sbBodyTextString.AppendLine("Reference Number 4: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         }

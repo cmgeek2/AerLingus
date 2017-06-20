@@ -57,21 +57,49 @@ public partial class TravelEnquiry : System.Web.UI.Page
         //splitting this into 2. Pre-processing and when pulled from queue
         sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
-        sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString());
+        if (_helpQueryDateOfFlight.Text != "Flight Date")
+        {
+            sbBodyTextString.AppendLine("Flight Date: " + _helpQueryDateOfFlight.Text.ToString()); 
+        }    
+        else
+        {
+            sbBodyTextString.AppendLine("Flight Date: " );
+        }
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
         if (Request.Form["FlightNumber2"] != "")
         {
-            sbBodyTextString.AppendLine("Flight 2 Date: " + dateOfFlight2.Text);
+            if (dateOfFlight2.Text != "Flight Date")
+            {
+                sbBodyTextString.AppendLine("Flight 2 Date: " + dateOfFlight2.Text);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Flight 2 Date: ");
+            }
             sbBodyTextString.AppendLine("Flight 2 Number: " + Request.Form["FlightNumber2"]);
         }
         if (Request.Form["FlightNumber3"] != "")
         {
-            sbBodyTextString.AppendLine("Flight 3 Date: " + dateOfFlight3.Text);
+            if (dateOfFlight3.Text != "Flight Date")
+            {
+                sbBodyTextString.AppendLine("Flight 2 Date: " + dateOfFlight3.Text);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Flight 2 Date: ");
+            }
             sbBodyTextString.AppendLine("Flight 3 Number: " + Request.Form["FlightNumber3"]);
         }
         if (Request.Form["FlightNumber4"] != "")
         {
-            sbBodyTextString.AppendLine("Flight 4 Date: " + dateOfFlight4.Text);
+            if (dateOfFlight4.Text != "Flight Date")
+            {
+                sbBodyTextString.AppendLine("Flight 4 Date: " + dateOfFlight4.Text);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Flight 4 Date: ");
+            }
             sbBodyTextString.AppendLine("Flight 4 Number: " + Request.Form["FlightNumber4"]);
         }
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
@@ -123,7 +151,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
         string selectedCountry = Request.Form["_helpQueryCountryList"];
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
-        
+        /*
         if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
@@ -134,7 +162,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
             _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersNeedHelpToAddress"]);
             _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
         }
-        
+         * */
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
         SmtpClient SMTPServer = new SmtpClient();
         AlternateView PlainText;
