@@ -30,9 +30,6 @@
                     </div>
                     <div class="input-container" >
                          <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" MaxLength="7" Title="Please enter your case number" CssClass="form-control inline-label  " required="required"  runat="server" onblur="checkvalue(this)"/>
-                         <!--
-                         <label class="form-control-label">Case/Request Number</label>
-                         -->
                          <asp:RangeValidator runat="server" id="rangeValidator1"
                              style="color:red;"
                              ValidationGroup="Submit" 
@@ -43,16 +40,12 @@
                              Type="Integer">                             
                          </asp:RangeValidator>
                     </div>
-                    <br/><br/>
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
-                    <br/>
                     <div class="input-container" id="radioButtonContainer">
                         <asp:RadioButtonList runat="server" ID="guestGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
                             <asp:ListItem Text="I am the guest" Value="guest" Selected="True"/>
                             <asp:ListItem Text="I am the representative of the guest" Value="representative" style="margin-left: 100px"/>
                         </asp:RadioButtonList>
-                        <br/>
-                        <br/>
                     </div>
                     
                     <h4 id="header2" class="xl2 tealGreen" style="font-size: 1em">Guest Information</h4>                            
@@ -219,10 +212,7 @@
                         
                     </div>
                     <!-------------------------------------------------------------------------------------------------------------------- -->
-                    <table style="width: 100%">
-                        <tr>
-                            <td>&nbsp</td>
-                        </tr>
+                    <table style="width: 100%">                        
                         <tr>
                             <td> 
                                 <h2 class="xl2 tealGreen"> Additional Information</h2>  
@@ -232,7 +222,7 @@
                     </table>
                     <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
                     <div>
-                        <table width="100%">
+                        <table style="width: 100%">
                             <tr>
                                 <td>
                                     <asp:TextBox TextMode="MultiLine" onkeyup="Count()" Height="100" Width="525" id="_helpQueryAdditionInformation" maxlength="1000" runat="server"></asp:TextBox>
