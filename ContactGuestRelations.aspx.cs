@@ -153,10 +153,8 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         }
 
         //Issues selected
-        sbBodyTextString.AppendLine("Prior to travel: " + Request.Form["priorTravelDropdown"]);
-        sbBodyTextString.AppendLine("Prior to travel: " + Request.Form["baggageIssueDropdown"]);
-        sbBodyTextString.AppendLine("Prior to travel: " + Request.Form["airportFlightExperienceDropdown"]);
-        sbBodyTextString.AppendLine("Prior to travel: " + Request.Form["delaysDropdown"]);
+        sbBodyTextString.AppendLine("General Issue: " + Request.Form["generalIssuesDropdown"]);
+        sbBodyTextString.AppendLine("Specific Issue: " + Request.Form["specificIssueDropdown"]);
 
         sbBodyTextString.AppendLine("Need a Property Irregularity Report from insurance: " + propertyIrregularityGroup.SelectedValue);
         sbBodyTextString.AppendLine("Need a letter from insurance: " + insuranceGroup.SelectedValue);

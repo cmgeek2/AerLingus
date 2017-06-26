@@ -306,7 +306,6 @@
                                         <label id="departureFlightDateLabel3" class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
-                                
                                 <td>
                                     <button type="button" title="Add another flight" id="addFlightsButton3" class="transparentBtn" aria-label="Click to add an additional request">+</button>
                                 </td>
@@ -521,18 +520,12 @@
                     <table >
                         <tr>
                             <td>
-                                <select class="dropdown-toggle" name="priorTravelDropdown" id="priorTravelDropdown" style="width: 260px; height: 30px; text-align: left"></select>
+                                <select class="dropdown-toggle" name="generalIssuesDropdown" id="generalIssuesDropdown" style="width: 260px; height: 30px; text-align: left"></select>
                             </td>
                             <td>
-                                <select class="dropdown-toggle" name="baggageIssueDropdown" id="baggageIssueDropdown" style="width: 260px; height: 30px; text-align: left"></select>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <select class="dropdown-toggle" name="airportFlightExperienceDropdown" id="airportFlightExperienceDropdown" style="width: 260px; height: 30px; text-align: left"></select>
-                            </td>
-                            <td>
-                                <select class="dropdown-toggle" name="delaysDropdown" id="delaysDropdown" style="width: 260px; height: 30px; text-align: left"></select>
+                                <select class="dropdown-toggle" name="specificIssueDropdown" id="specificIssueDropdown" style="width: 260px; height: 30px; text-align: left">
+                                    <option value="">Please Select</option>
+                                </select>
                             </td>
                         </tr>
                     </table>
@@ -637,10 +630,47 @@
          setSelect('#countriesList', 'Countries.xml', 'countries', 'Select Country');
          setSelect('#relationshipToGuestDropDown', 'Relationships.xml', 'relationship', 'Relationship to the guest');
          setSelect('#aerClubDropDown', 'AerClubTiers.xml', 'tier', 'AerClub Tier');
-         setSelect('#priorTravelDropdown', 'PriorToTravel.xml', 'option', 'Prior To Travel');
-         setSelect('#baggageIssueDropdown', 'BaggageIssues.xml', 'issue', 'Baggage Issue');
-         setSelect('#airportFlightExperienceDropdown', 'AirportFlightExperience.xml', 'option', 'Airport/Flight Experience');
-         setSelect('#delaysDropdown', 'Delays.xml', 'issue', 'Delays');
+         setSelect('#generalIssuesDropdown', 'ContactGuestIssues.xml', 'issue', 'Please Select');
+
+         $('#generalIssuesDropdown')
+             .change(function() {
+                 switch(this.selectedIndex) {
+                     case 0:
+                     {
+                         $("#specificIssueDropdown").empty();
+                         $("#specificIssueDropdown").append($('<option>', {
+                             value: '',
+                             text: 'Please Select'
+                         }));
+                         break;
+                     }
+                     case 1:
+                     {
+                         $("#specificIssueDropdown").empty();
+                         setSelect('#specificIssueDropdown', 'AirportFlightExperience.xml', 'option', 'Please Select');
+                         break;
+                     }
+                     case 2:
+                     {
+                         $("#specificIssueDropdown").empty();
+                         setSelect('#specificIssueDropdown', 'BaggageIssues.xml', 'issue', 'Please Select');
+                         break;
+                     }
+                     case 3:
+                         {
+                             $("#specificIssueDropdown").empty();
+                             setSelect('#specificIssueDropdown', 'Delays.xml', 'issue', 'Please Select');
+                             break;
+                     }
+                     case 4:
+                     {
+                         $("#specificIssueDropdown").empty();
+                         setSelect('#specificIssueDropdown', 'PriorToTravel.xml', 'option', 'Please Select');
+                         break;
+                     }
+
+                 }
+             });
 
          function Count() {
 
