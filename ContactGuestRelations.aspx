@@ -511,7 +511,6 @@
                             </tr>
                         </table>
                     </div>
-                    <br/><br/><br/>
                     <table style="width: 100%">
                         <tr>
                             <td colspan="2">
@@ -519,7 +518,7 @@
                             </td>
                         </tr>
                     </table>
-                    <table style="width: 100%">
+                    <table >
                         <tr>
                             <td>
                                 <select class="dropdown-toggle" name="priorTravelDropdown" id="priorTravelDropdown" style="width: 260px; height: 30px; text-align: left"></select>
@@ -527,6 +526,8 @@
                             <td>
                                 <select class="dropdown-toggle" name="baggageIssueDropdown" id="baggageIssueDropdown" style="width: 260px; height: 30px; text-align: left"></select>
                             </td>
+                        </tr>
+                        <tr>
                             <td>
                                 <select class="dropdown-toggle" name="airportFlightExperienceDropdown" id="airportFlightExperienceDropdown" style="width: 260px; height: 30px; text-align: left"></select>
                             </td>
@@ -535,7 +536,6 @@
                             </td>
                         </tr>
                     </table>
-                    <br/><br/>
                     <table style="width: 100%">
                         <tr>
                             <td style="width: 40%">Do you need a letter or a Property Irregularity Report from your insurance company?</td>
@@ -606,9 +606,7 @@
                             <tr><td><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
                         </table>
                     </div>        
-                    <br />
-                    <br />
-                    <div style="margin-left: 200px;padding:20px" >      
+                    <div style="margin-left: 350px;padding:20px" >      
                         <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click" ></asp:Button>
                     </div>
                 </div>    

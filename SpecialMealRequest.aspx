@@ -130,8 +130,6 @@
 
              </tr>
              </table>
-            <br/>
-            <br/>
              <div><h2 class="xl2 tealGreen"> Flight Information</h2></div>  
              <table style="width: 100%">
                  <tr>
@@ -190,7 +188,6 @@
                         </table>
             </div> 
             <!------------------------------------------------- -->
-                    <br/><br/><br/>
             <div class="input-container" style="width: 100%"> <h2 class="xl2 tealGreen"> Meal Request</h2></div>
             <div>
                 <label>Please select your meal below. To add additional Guests on the same booking please click the '+' sign. If you have any additional requests such as seat assignments on transatlantic flights please include in the Additional Requests Section
@@ -420,9 +417,6 @@
                     <!------------------------------------------------- -->                            
             <table>  
                 <tr>
-                    <td>&nbsp</td>
-                </tr>
-                <tr>
                     <td style="width: 100%"> 
                         <h2 class="xl2 tealGreen"> Additional Requests</h2>  
                     </td>
@@ -443,11 +437,7 @@
 		        </tr>
             </table>
         </div>
-        
-        <br />
-        <br />
-      
-       <div style="margin-left: 320px;padding:20px" >
+       <div style="margin-left: 375px;padding:20px" >
       
            <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
         </div>

@@ -61,7 +61,6 @@
         -->
             <div style="margin-left: 80px; margin-right: 172px;height:auto;margin-top:10px"  class="gray-wide-bg ">
                 <div style="margin-left: 30px" >
-                    <br />
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <table >   
                         <!-- First Row -->            
@@ -157,9 +156,6 @@
                     </table>
                
              <table>
-             <tr>
-                 <td>&nbsp</td>
-             </tr>
           <tr>
               <td colspan="2">
                          <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
@@ -258,19 +254,12 @@
                         </table>
                     </div>  
             <table style="width: 100%">
-              <tr>
-                 <td>&nbsp</td>
-             </tr>
             </table>
             <table>
-             <tr><p></p></tr>
-             <tr><p></p></tr>
-
              <tr>    
-             <td> <h2 class="xl2 tealGreen"> How can we help? </h2></td>
-            </tr>
-            
-                <tr>
+                <td> <h2 class="xl2 tealGreen"> How can we help? </h2></td>
+             </tr>            
+             <tr>
                     <td>
                            <label class="visuallyhidden">Select a Help Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
@@ -290,26 +279,23 @@
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
-                </tr>
-       <tr>
-                       <td>&nbsp</td>
-        </tr>
+           </tr>
+       
         
        </table>
+        <br/>
         <label style="width: 100%"> Please use the comments section below to provide additional information that can assist us with your request, for example if you
                                        need help with a booking such as adding a frequent flyer number, include the airline, or if a transatlantic seat selection    
                                        include your preference and we will accommodate where possible.
         </label>
         <table>
-        <tr>
-            <td> 
-                             <h2 class="xl2 tealGreen"> Comments</h2>  
-
-
-            </td>
-       </tr>     
+            <tr>
+                <td> 
+                    <h2 class="xl2 tealGreen"> Comments</h2>  
+                </td>
+            </tr>     
        </table>
-          <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p> 
+         <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p> 
         <div>
             <table style="width: 100%">
                   <tr>
@@ -323,7 +309,6 @@
                  <tr>
 			<td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
 		</tr>
-
                 <tr>
                     <td colspan="3">
 
@@ -336,9 +321,6 @@
             </table>
         </div>
         
-        <br />
-        <br />
-      
        <div style="margin-left: 200px;padding:20px" >
       
            <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>

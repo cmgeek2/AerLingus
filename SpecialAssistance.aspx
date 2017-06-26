@@ -146,8 +146,6 @@
                  </td> 
              </tr>
              </table>
-            <br/>
-            <br/>
              <div><h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2></div>  
              <div>To add more than one flight, simply click the '+' sign:</div>
              <table>
@@ -238,11 +236,6 @@
                             </tr>
                         </table>
                     </div>  
-            <table>   
-                <tr>
-                    <td>&nbsp</td>
-                </tr>
-            </table>
             <div class="input-container"> <h2 class="xl2 tealGreen"> Type of Disability Assistance needed</h2></div>
             <div>To add more than one request, simply click the '+' sign:</div>    
             <table>
@@ -353,9 +346,6 @@
               
             <table>  
                 <tr>
-                    <td>&nbsp</td>
-                </tr>
-                <tr>
                     <td> 
                         <h2 class="xl2 tealGreen"> Comments</h2>  
                     </td>
@@ -387,11 +377,7 @@
                 <tr><td><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
             </table>
         </div>
-        
-        <br />
-        <br />
-      
-       <div style="margin-left: 600px;padding:20px" >
+       <div style="margin-left: 350px;padding:20px" >
       
            <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
         </div>

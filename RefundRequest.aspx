@@ -126,7 +126,6 @@
         -->
             <div style="margin-left: 80px; margin-right: 172px;height:auto;margin-top:10px"  class="gray-wide-bg ">
                 <div style="margin-left: 30px" >
-                    <br />
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <br/>
                     <div class="input-container" id="radioButtonContainer">
@@ -135,8 +134,6 @@
                             <asp:ListItem Text="I am the guest" Value="guest" Selected="True"/>
                             <asp:ListItem Text="I am the representative of the guest" Value="representative" />
                         </asp:RadioButtonList>
-                        <br/>
-                        <br/>
                     </div>
                     
                     <h4 id="header2" class="xl2 tealGreen" style="font-size: 1em">Guest Information</h4>                            
@@ -307,15 +304,11 @@
                
                     <table style="width: 100%">
                         <tr>
-                            <td>&nbsp</td>
-                        </tr>
-                        <tr>
                             <td colspan="2">
                                 <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
                             </td>
                         </tr>
                     </table>
-                    <br/>
                     <div>To add more than one flight, simply click the '+' sign:</div>
                     <!------------- Flight Section ------------------- -->
                     <div class="input-container" id="mainFlightInfoDiv">
@@ -419,9 +412,6 @@
                     <!------------------------------------------------- -->
                     <br/>
                     <table style="width: 100%">
-                        <tr>
-                            <td>&nbsp</td>
-                        </tr>
                         <tr>
                             <td colspan="2">
                                 <h2 class="xl2 tealGreen"> Additional Guests (if applicable)</h2>
@@ -589,9 +579,6 @@
                     <!------------------------------------------------- -->                           
                     <table style="width: 100%">
                         <tr>
-                            <td>&nbsp</td>
-                        </tr>
-                        <tr>
                             <td> <h2 class="xl2 tealGreen"> Reason for Refund </h2></td>
                         </tr>
                         <tr>
@@ -692,13 +679,8 @@
                                         <asp:ListItem Text="Yes" Value="Yes" />
                                         <asp:ListItem Text="No" Value="No" Selected="True"/>
                                     </asp:RadioButtonList>
-                                    <br/>
-                                    <br/>
                                 </div>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>&nbsp</td>
                         </tr>
                         <tr>
                             <td> 
@@ -728,9 +710,7 @@
                             <tr><td><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
                         </table>
                     </div>        
-                    <br />
-                    <br />
-                    <div style="margin-left: 200px;padding:20px" >      
+                    <div style="margin-left: 350px;padding:20px" >      
                         <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
                 </div>
             </div>
