@@ -68,6 +68,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
         if (Request.Form["FlightNumber2"] != "")
         {
+            sbBodyTextString.AppendLine("Reference Number 2: " + Request.Form["_helpQuerybookingReferenceNumber"]);
             if (dateOfFlight2.Text != "Flight Date")
             {
                 sbBodyTextString.AppendLine("Flight 2 Date: " + dateOfFlight2.Text);
@@ -80,6 +81,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
         }
         if (Request.Form["FlightNumber3"] != "")
         {
+            sbBodyTextString.AppendLine("Reference Number 3: " + Request.Form["_helpQuerybookingReferenceNumber"]);
             if (dateOfFlight3.Text != "Flight Date")
             {
                 sbBodyTextString.AppendLine("Flight 2 Date: " + dateOfFlight3.Text);
@@ -92,6 +94,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
         }
         if (Request.Form["FlightNumber4"] != "")
         {
+            sbBodyTextString.AppendLine("Reference Number 4: " + Request.Form["_helpQuerybookingReferenceNumber"]);
             if (dateOfFlight4.Text != "Flight Date")
             {
                 sbBodyTextString.AppendLine("Flight 4 Date: " + dateOfFlight4.Text);
