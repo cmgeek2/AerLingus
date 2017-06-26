@@ -207,7 +207,7 @@
                             <td>
                                 <div class="input-container" >
                                     <input type="text" name="zipCode" id="zipCode" maxlength="20" style="width: 260px" title="postal zip code" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Postaly/Zip Code</label>
+                                    <label class="form-control-label">Postal/Zip Code</label>
                                 </div>
                             </td>
                         </tr>
