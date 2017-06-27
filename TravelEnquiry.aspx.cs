@@ -66,6 +66,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
             sbBodyTextString.AppendLine("Flight Date: " );
         }
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
+        sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
         if (Request.Form["FlightNumber2"] != "")
         {
             sbBodyTextString.AppendLine("Reference Number 2: " + Request.Form["_helpQuerybookingReferenceNumber"]);
@@ -78,19 +79,21 @@ public partial class TravelEnquiry : System.Web.UI.Page
                 sbBodyTextString.AppendLine("Flight 2 Date: ");
             }
             sbBodyTextString.AppendLine("Flight 2 Number: " + Request.Form["FlightNumber2"]);
+            sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
         }
         if (Request.Form["FlightNumber3"] != "")
         {
             sbBodyTextString.AppendLine("Reference Number 3: " + Request.Form["_helpQuerybookingReferenceNumber"]);
             if (dateOfFlight3.Text != "Flight Date")
             {
-                sbBodyTextString.AppendLine("Flight 2 Date: " + dateOfFlight3.Text);
+                sbBodyTextString.AppendLine("Flight 3 Date: " + dateOfFlight3.Text);
             }
             else
             {
-                sbBodyTextString.AppendLine("Flight 2 Date: ");
+                sbBodyTextString.AppendLine("Flight 3 Date: ");
             }
             sbBodyTextString.AppendLine("Flight 3 Number: " + Request.Form["FlightNumber3"]);
+            sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
         }
         if (Request.Form["FlightNumber4"] != "")
         {
@@ -104,6 +107,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
                 sbBodyTextString.AppendLine("Flight 4 Date: ");
             }
             sbBodyTextString.AppendLine("Flight 4 Number: " + Request.Form["FlightNumber4"]);
+            sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
         }
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         sbBodyTextString.AppendLine("Query Type: " + _helpQueryTypeDropDownList.SelectedItem.ToString());
