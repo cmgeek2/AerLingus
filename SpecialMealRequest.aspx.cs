@@ -73,6 +73,8 @@ public partial class SpecialMealRequest : System.Web.UI.Page
             sbBodyTextString.AppendLine("Return Flight Number: " + Request.Form["departureFlightNumber"]);
             sbBodyTextString.AppendLine("Return Flight Date: " + Request.Form["departFlightDate"]);
         }
+
+        
         
         //starting part 2
         sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
@@ -81,6 +83,21 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["FirstName"]);
         sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["LastName"]);
         sbBodyTextString.AppendLine("Guest Meal Requested: " + Request.Form["Guest1MealDropDownList"]);
+
+        // AerClub Info
+        if (Request.Form["aerClubDropDown"] != "AerClub Tier")
+        {
+            sbBodyTextString.AppendLine("AerClub Tier: " + Request.Form["aerClubDropDown"]);
+            sbBodyTextString.AppendLine("AerClub Member ID: " + Request.Form["_helpQueryAerClubmembershipId"]);
+            sbBodyTextString.AppendLine("CountryACStatus: " + sUSAorOther + Request.Form["aerClubDropDown"]);
+        }
+        else
+        {
+            sbBodyTextString.AppendLine("AerClub Tier: " + "");
+            sbBodyTextString.AppendLine("AerClub Member ID: " + "");
+            sbBodyTextString.AppendLine("CountryACStatus: " + "");
+
+        }
         
         // Get additional guests info
         sbBodyTextString.AppendLine("Second Guest Title: " + Request.Form["salutationGuest2"]);

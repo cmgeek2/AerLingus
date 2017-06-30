@@ -130,6 +130,26 @@
 
              </tr>
              </table>
+                <table>
+                         <tr>
+                            <td class="auto-style1">
+                                <select  class=" dropdown-toggle" style="height:30px;width:260px" name="aerClubDropDown" id="aerClubDropDown" runat="server"></select>
+                            </td>
+                            <td class="auto-style1" id="ClubMembership">
+                                <div class="input-container" id="ClubMembershipDiv" style="display:none;">
+                                    <input type="text" maxlength="16" name="_helpQueryAerClubmembershipId" id="_helpQueryAerClubmembershipId" style="width: 260px" pattern="[0-9]{16}" title="Please Enter your 16 Digit AerClub Membership Number" disabled="disabled" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">AerClub Membership Number</label>
+                                </div>
+                            </td> 
+                        </tr>
+                    </table>
+                    <table style="width: 100%">
+                        <tr>
+                            <td colspan="2">
+                                <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
+                            </td>
+                        </tr>
+                    </table>
              <div><h2 class="xl2 tealGreen"> Flight Information</h2></div>  
              <table style="width: 100%">
                  <tr>
@@ -574,8 +594,24 @@
 
          }
 
+         $("#aerClubDropDown").change(function () {
+             if (this.value != "" && this.value != "Not a Member") {
+                 $("#_helpQueryAerClubmembershipId").attr("disabled", false);
+                 var div1 = document.getElementById('ClubMembershipDiv');
+                 document.getElementById('_helpQueryAerClubmembershipId').required = true;
+                 div1.style.display = "block";
+             } else {
+                 $("#aerClubmembershipId").attr("disabled", true);
+                 document.getElementById('_helpQueryAerClubmembershipId').required = false;
+                 $("#ClubMembershipDiv").hide();
+                 var div2 = document.getElementById('ClubMembershipDiv');
+                 div2.style.display = "none";
+             }
+         });
+
          //Populate drop downs
          setSelect('#_helpQuerySalutation', 'Titles.xml', 'title', 'Title');
+         setSelect('#aerClubDropDown', 'AerClubTiers.xml', 'tier', 'AerClub Tier');
          setSelect('#salutationGuest1', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest2', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest3', 'Titles.xml', 'title', 'Title');
