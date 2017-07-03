@@ -38,15 +38,15 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         //form IDs are identical for both on deploy 3/29/2017
         if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["USASAFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["USASAFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["USAMealFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["USAMealFormId2"];
             sUSAorOther = "NA";
 
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["OthersSAFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["OthersSAFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["OthersMealFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["OthersMealFormId2"];
             sUSAorOther = "Other";
 
         }
@@ -158,13 +158,13 @@ public partial class SpecialMealRequest : System.Web.UI.Page
 
         if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["USASAToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["USASASubject"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["USAMealToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["USAMealSubject"];
         }
         else
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersSAToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersSASubject"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersMealToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersMealSubject"];
         }
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
