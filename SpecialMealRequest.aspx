@@ -143,13 +143,6 @@
                             </td> 
                         </tr>
                     </table>
-                    <table style="width: 100%">
-                        <tr>
-                            <td colspan="2">
-                                <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
-                            </td>
-                        </tr>
-                    </table>
              <div><h2 class="xl2 tealGreen"> Flight Information</h2></div>  
              <table style="width: 100%">
                  <tr>
