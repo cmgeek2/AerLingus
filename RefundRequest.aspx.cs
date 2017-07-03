@@ -180,8 +180,6 @@ public partial class RefundRequest : System.Web.UI.Page
             sbBodyTextString.AppendLine("Refund Reason 3: " + Request.Form["refundReason4"]);
         }
 
-        sbBodyTextString.AppendLine("Need a letter from insurance: " + insuranceGroup.SelectedValue);
-
         sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text);
 
         return sbBodyTextString.ToString(); 

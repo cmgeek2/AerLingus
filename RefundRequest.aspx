@@ -305,7 +305,7 @@
                     <table style="width: 100%">
                         <tr>
                             <td colspan="2">
-                                <h2 class="xl2 tealGreen"> Flight Information (if applicable)</h2>
+                                <h2 class="xl2 tealGreen"> Flight Information</h2>
                             </td>
                         </tr>
                     </table>
@@ -671,17 +671,8 @@
                     <table style="width: 100%">    
                         <tr >
                             <td style="width: 275px">
-                                <p>Do you need a letter from your insurance?</p>
+                                <p>Do you need a letter from your insurance? Please indicate in the comments section below.</p>
                             </td>
-                            <td colspan="2">
-                                <div class="input-container">   
-                                    <asp:RadioButtonList runat="server" ID="insuranceGroup"  RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" onclick="radioButtonClicked()">
-                                        <asp:ListItem Text="Yes" Value="Yes" />
-                                        <asp:ListItem Text="No" Value="No" Selected="True"/>
-                                    </asp:RadioButtonList>
-                                </div>
-                            </td>
-                        </tr>
                         <tr>
                             <td> 
                                 <h2 class="xl2 tealGreen"> Comments</h2>  
