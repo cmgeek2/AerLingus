@@ -25,15 +25,15 @@ public partial class RefundRequest : System.Web.UI.Page
         //form IDs are identical for both on deploy 3/29/2017
         if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["USANeedHelpFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["USARefundFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["USARefundFormId2"];
             sUSAorOther = "NA";
 
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["OthersNeedHelpFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["OthersNeedHelpFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["OthersRefundFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["OthersRefundFormId2"];
             sUSAorOther = "Other";
 
         }
@@ -194,19 +194,19 @@ public partial class RefundRequest : System.Web.UI.Page
         MailMessage _helpMessage = new MailMessage();
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
         
-        /*
+        
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["USARefundToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["USARefundSubject"];
         }
         else
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersNeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersNeedHelpFormId"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersRefundToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersRefundFormId"];
         }
         
-        */
+        
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
         SmtpClient SMTPServer = new SmtpClient();
         AlternateView PlainText;
