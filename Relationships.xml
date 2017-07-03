@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <root>
   <relationships>   
     <relationship>
@@ -10,8 +10,8 @@
       <ID value="Family" />
     </relationship>
     <relationship>
-      <Name value="Friend Assistant/Collegue" />
-      <ID value="Friend Assistant/Collegue" />
+      <Name value="Friend Assistant/Colleague" />
+      <ID value="Friend Assistant/Colleague" />
     </relationship>
     <relationship>
       <Name value="Legal Representative" />
