@@ -100,30 +100,45 @@ public partial class SpecialMealRequest : System.Web.UI.Page
         }
         
         // Get additional guests info
-        sbBodyTextString.AppendLine("Second Guest Title: " + Request.Form["salutationGuest2"]);
-        sbBodyTextString.AppendLine("Second Guest First Name: " + Request.Form["secondGuestFirstName"]);
-        sbBodyTextString.AppendLine("Second Guest First Name: " + Request.Form["secondGuestLastName"]);
-        sbBodyTextString.AppendLine("Second Guest Meal Requested: " + Request.Form["Guest2MealDropDownList"]);
+        if (Request.Form["Guest2MealDropDownList"] != "")
+        {
+            sbBodyTextString.AppendLine("Second Guest Title: " + Request.Form["salutationGuest2"]);
+            sbBodyTextString.AppendLine("Second Guest First Name: " + Request.Form["secondGuestFirstName"]);
+            sbBodyTextString.AppendLine("Second Guest First Name: " + Request.Form["secondGuestLastName"]);
+            sbBodyTextString.AppendLine("Second Guest Meal Requested: " + Request.Form["Guest2MealDropDownList"]);
+        }
 
-        sbBodyTextString.AppendLine("Third Guest Title: " + Request.Form["salutationGuest3"]);
-        sbBodyTextString.AppendLine("Third Guest First Name: " + Request.Form["thirdGuestFirstName"]);
-        sbBodyTextString.AppendLine("Third Guest First Name: " + Request.Form["thirdGuestLastName"]);
-        sbBodyTextString.AppendLine("Third Guest Meal Requested: " + Request.Form["Guest3MealDropDownList"]);
+        if (Request.Form["Guest3MealDropDownList"] != "")
+        {
+            sbBodyTextString.AppendLine("Third Guest Title: " + Request.Form["salutationGuest3"]);
+            sbBodyTextString.AppendLine("Third Guest First Name: " + Request.Form["thirdGuestFirstName"]);
+            sbBodyTextString.AppendLine("Third Guest First Name: " + Request.Form["thirdGuestLastName"]);
+            sbBodyTextString.AppendLine("Third Guest Meal Requested: " + Request.Form["Guest3MealDropDownList"]);
+        }
 
-        sbBodyTextString.AppendLine("Fourth Guest Title: " + Request.Form["salutationGuest4"]);
-        sbBodyTextString.AppendLine("Fourth Guest First Name: " + Request.Form["fourthGuestFirstName"]);
-        sbBodyTextString.AppendLine("Fourth Guest First Name: " + Request.Form["fourthGuestLastName"]);
-        sbBodyTextString.AppendLine("Fourth Guest Meal Requested: " + Request.Form["Guest4MealDropDownList"]);
+        if (Request.Form["Guest4MealDropDownList"] != "")
+        {
+            sbBodyTextString.AppendLine("Fourth Guest Title: " + Request.Form["salutationGuest4"]);
+            sbBodyTextString.AppendLine("Fourth Guest First Name: " + Request.Form["fourthGuestFirstName"]);
+            sbBodyTextString.AppendLine("Fourth Guest First Name: " + Request.Form["fourthGuestLastName"]);
+            sbBodyTextString.AppendLine("Fourth Guest Meal Requested: " + Request.Form["Guest4MealDropDownList"]);
+        }
 
-        sbBodyTextString.AppendLine("Fifth Guest Title: " + Request.Form["salutationGuest5"]);
-        sbBodyTextString.AppendLine("Fifth Guest First Name: " + Request.Form["fifthGuestFirstName"]);
-        sbBodyTextString.AppendLine("Fifth Guest First Name: " + Request.Form["fifthGuestLastName"]);
-        sbBodyTextString.AppendLine("Fifth Guest Meal Requested: " + Request.Form["Guest5MealDropDownList"]);
+        if (Request.Form["Guest5MealDropDownList"] != "")
+        {
+            sbBodyTextString.AppendLine("Fifth Guest Title: " + Request.Form["salutationGuest5"]);
+            sbBodyTextString.AppendLine("Fifth Guest First Name: " + Request.Form["fifthGuestFirstName"]);
+            sbBodyTextString.AppendLine("Fifth Guest First Name: " + Request.Form["fifthGuestLastName"]);
+            sbBodyTextString.AppendLine("Fifth Guest Meal Requested: " + Request.Form["Guest5MealDropDownList"]);
+        }
 
-        sbBodyTextString.AppendLine("Sixth Guest Title: " + Request.Form["salutationGuest6"]);
-        sbBodyTextString.AppendLine("Sixth Guest First Name: " + Request.Form["sixthGuestFirstName"]);
-        sbBodyTextString.AppendLine("Sixth Guest First Name: " + Request.Form["sixthGuestLastName"]);
-        sbBodyTextString.AppendLine("Sixth Guest Meal Requested: " + Request.Form["Guest6MealDropDownList"]);
+        if (Request.Form["Guest6MealDropDownList"] != "")
+        {
+            sbBodyTextString.AppendLine("Sixth Guest Title: " + Request.Form["salutationGuest6"]);
+            sbBodyTextString.AppendLine("Sixth Guest First Name: " + Request.Form["sixthGuestFirstName"]);
+            sbBodyTextString.AppendLine("Sixth Guest First Name: " + Request.Form["sixthGuestLastName"]);
+            sbBodyTextString.AppendLine("Sixth Guest Meal Requested: " + Request.Form["Guest6MealDropDownList"]);
+        }
 
 
 
