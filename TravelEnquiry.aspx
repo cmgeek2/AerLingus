@@ -284,9 +284,9 @@
         
        </table>
         <br/>
-        <label style="width: 100%"> Please use the comments section below to provide additional information that can assist us with your request, for example if you
-                                       need help with a booking such as adding a frequent flyer number, include the airline, or if a transatlantic seat selection    
-                                       include your preference and we will accommodate where possible.
+        <label style="width: 100%"> Please use the comments section below to provide additional information that can assist us with your request. 
+                                    For example, if adding a frequent flyer number to your booking, include the airline and number; if requesting a transatlantic seat, 
+                                    include your preference and we will accommodate where possible.
         </label>
         <table>
             <tr>
