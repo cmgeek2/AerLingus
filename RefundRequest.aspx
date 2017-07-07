@@ -599,8 +599,8 @@
                                 <select class="dropdown-toggle" runat="server" id="refundReasonDropDownList1" style="height: 30px; width: 396px"></select>
                             </td>
                             <td>
-                                <select class=" dropdown-toggle" id="refundReason1" name="refundReason1"  runat="server" style="height:30px;width:396px" required>
-                                    <option value="" selected="selected">-- Please Select --</option>
+                                <select class=" dropdown-toggle" id="refundReason1" name="refundReason1"  runat="server" style="height:30px;width:396px" required="required">
+                                    <option value="">-- Please Select --</option>
                                 </select>
                                 <asp:RequiredFieldValidator ID="refundReason1Validator" ControlToValidate="refundReason1" InitialValue="Default" runat="server" Enabled="false"/>
                             </td>
@@ -979,7 +979,7 @@
 
 
          $("#refundReasonDropDownList1").change(function () {
-             if (this.value != "" && this.value != "Other") {
+             if (this.value != "") {
                  $("#refundReason1").attr("Disabled", false);
              } else {
                  $("#refundReason1").attr("Disabled", true);
@@ -992,6 +992,18 @@
 
              if (this.value == "Fee Related") {
                  setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated');
+                 return;
+             }
+
+             if (this.value == "Other")
+             {
+                 $('#refundReason1').append($('<option>',
+                 {
+                     value: "Please Use Comments Section",
+                     text: "Please Use Comments Section"
+                 }));
+                 document.getElementById('refundReason1').selectedIndex = 1;
+                 $('#refundReason1').attr("Disabled", true);
                  return;
              }
 
@@ -1023,7 +1035,7 @@
 
 
          $("#refundReasonDropDownList2").change(function () {
-             if (this.value != "" && this.value != "Other") {
+             if (this.value != "") {
                  $("#refundReason2").attr("Disabled", false);
              } else {
                  $("#refundReason2").attr("Disabled", true);
@@ -1039,7 +1051,21 @@
                  return;
              }
 
+             if (this.value == "Other") {
+                 $('#refundReason2').append($('<option>',
+                 {
+                     value: "Please Use Comments Section",
+                     text: "Please Use Comments Section"
+                 }));
+                 document.getElementById('refundReason2').selectedIndex = 1;
+                 $('#refundReason2').attr("Disabled", true);
+                 return;
+             }
+
          });
+
+
+
 
          $("#refundReason2")
              .change(function () {
@@ -1061,7 +1087,7 @@
              });
 
          $("#refundReasonDropDownList3").change(function () {
-             if (this.value != "" && this.value != "Other") {
+             if (this.value != "") {
                  $("#refundReason3").attr("Disabled", false);
              } else {
                  $("#refundReason3").attr("Disabled", true);
@@ -1075,8 +1101,17 @@
              if (this.value == "Fee Related") {
                  setSelectQuery('#refundReason3', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
-             } else {
-                 
+             }
+
+             if (this.value == "Other") {
+                 $('#refundReason3').append($('<option>',
+                 {
+                     value: "Please Use Comments Section",
+                     text: "Please Use Comments Section"
+                 }));
+                 document.getElementById('refundReason3').selectedIndex = 1;
+                 $('#refundReason3').attr("Disabled", true);
+                 return;
              }
 
          });
@@ -1093,7 +1128,7 @@
          });
 
          $("#refundReasonDropDownList4").change(function () {
-             if (this.value != "" && this.value != "Other") {
+             if (this.value != "") {
                  $("#refundReason4").attr("Disabled", false);
              } else {
                  $("#refundReason4").attr("Disabled", true);
@@ -1109,6 +1144,17 @@
                  return;
              }
 
+             if (this.value == "Other") {
+                 $('#refundReason4').append($('<option>',
+                 {
+                     value: "Please Use Comments Section",
+                     text: "Please Use Comments Section"
+                 }));
+                 document.getElementById('refundReason4').selectedIndex = 1;
+                 $('#refundReason4').attr("Disabled", true);
+                 return;
+             }
+
          });
 
          $('#_helpQuerySalutation')
@@ -1119,6 +1165,7 @@
 
 
              });
+
 
          function autoPopulateFirstGuestName() {
              var firstName = document.getElementById('helpQueryFirstName').value;
