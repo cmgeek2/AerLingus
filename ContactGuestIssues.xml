@@ -2,20 +2,36 @@
 <root>
   <issues>
     <issue>
-      <Name value="Airport/Flight Experience" />
-      <ID value="Airport/Flight Experience" />
+      <Name value="Airport Experience" />
+      <ID value="Airport Experience" />
     </issue>
     <issue>
-      <Name value="Baggage Issue" />
-      <ID value="Baggage Issue" />
+      <Name value="Baggage Irregularities" />
+      <ID value="Baggage Irregularities" />
     </issue>
     <issue>
-      <Name value="Delays" />
-      <ID value="Delays" />
+      <Name value="Booking/Website Issue" />
+      <ID value="Booking/Website Issue" />
     </issue>
     <issue>
-      <Name value="Prior To Travel" />
-      <ID value="Prior To Travel" />
+      <Name value="Compliment" />
+      <ID value="Compliment" />
+    </issue>
+    <issue>
+      <Name value="EC261/2004 Etitlement" />
+      <ID value="EC261/2004 Etitlement" />
+    </issue>
+    <issue>
+      <Name value="Flight/Delay Disruption" />
+      <ID value="Flight/Delay Disruption" />
+    </issue>
+    <issue>
+      <Name value="In-flight Experience" />
+      <ID value="In-flight Experience" />
+    </issue>
+    <issue>
+      <Name value="Other" />
+      <ID value="Other" />
     </issue>
   </issues>
 </root>
