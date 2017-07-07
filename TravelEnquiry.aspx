@@ -263,11 +263,11 @@
                     <td>
                            <label class="visuallyhidden">Select a Help Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
-                            <asp:ListItem Text="Select Help Request" Value="Selected"></asp:ListItem>
-                            <asp:ListItem Text="Need Information" Value="H"></asp:ListItem>
-                            <asp:ListItem Text="Need Help with a Booking" Value="I"></asp:ListItem>
-                            <asp:ListItem Text="Request a Receipt" Value="R"></asp:ListItem>
-                            <asp:ListItem Text="Website Issue" Value="W"></asp:ListItem>
+                            <asp:ListItem Text="Select help request" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Need information" Value="H"></asp:ListItem>
+                            <asp:ListItem Text="Need help with a booking" Value="I"></asp:ListItem>
+                            <asp:ListItem Text="Request a receipt" Value="R"></asp:ListItem>
+                            <asp:ListItem Text="Website issue" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Other" Value="O"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
