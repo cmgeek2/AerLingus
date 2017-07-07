@@ -10,8 +10,8 @@
       <ID value="Flight Related" />
     </reason>
     <reason>
-      <Name value="Other - Please Use Comments Section" />
-      <ID value="Other - Please Use Comments Section" />
+      <Name value="Other" />
+      <ID value="Other" />
     </reason>
   </reasons>
 </root>
