@@ -148,7 +148,6 @@
                  <tr>
                      <td>
                          <div class="input-container" style="margin-left: 20px;">
-                             <br/>
                             <asp:RadioButtonList runat="server" ID="flightGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" Class="radio-inline" onclick="radioButtonClicked()">
                                 <asp:ListItem Text="Departure Flight" Value="Departure" Selected="True" Class="radio-inline-button"/>
                                 <asp:ListItem Text="Return Flight" Value="Return" Class="radio-inline-button"/>
