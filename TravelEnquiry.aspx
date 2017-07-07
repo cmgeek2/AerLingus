@@ -275,7 +275,7 @@
                     <td>
                         <label class="visuallyhidden">Select a Specific Help Request</label>
                         <select class=" dropdown-toggle" id="_helpQueryDefList" name="_helpQueryDefList"  runat="server" style="height:30px;width:260px" required>
-                             <option value="" selected="selected">-- Please Select --</option>
+                             <option value="" selected="selected">-- Please select --</option>
                         </select>
                        <asp:RequiredFieldValidator ID="_helpQueryDefListValidator" ControlToValidate="_helpQueryDefList" InitialValue="Default" runat="server" Enabled="false"/>
                     </td>
@@ -509,7 +509,7 @@
       }
 
       function parseSelectXML1(xml, selectid, xmlnode) {
-          var firstoption = '-- Please Select --';
+          var firstoption = '-- Please select --';
           var firsthtml = '<option value="">' + firstoption + '</option>';
           var selecthtml = '';
 
