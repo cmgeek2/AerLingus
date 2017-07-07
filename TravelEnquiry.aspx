@@ -266,7 +266,7 @@
                             <asp:ListItem Text="Select help request" Value="Selected"></asp:ListItem>
                             <asp:ListItem Text="Need information" Value="H"></asp:ListItem>
                             <asp:ListItem Text="Need help with a booking" Value="I"></asp:ListItem>
-                            <asp:ListItem Text="Request a receipt" Value="R"></asp:ListItem>
+                            <asp:ListItem Text="Request a document" Value="R"></asp:ListItem>
                             <asp:ListItem Text="Website issue" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Other" Value="O"></asp:ListItem>
                         </asp:DropDownList>
@@ -284,7 +284,7 @@
         
        </table>
         <br/>
-        <label style="width: 100%"> Please use the comments section below to provide additional information that can assist us with your request. 
+        <label style="width: 90%"> Please use the comments section below to provide additional information that can assist us with your request. 
                                     For example, if adding a frequent flyer number to your booking, include the airline and number; if requesting a transatlantic seat, 
                                     include your preference and we will accommodate where possible.
         </label>
