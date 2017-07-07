@@ -2,24 +2,20 @@
 <root>
   <titles>
     <title>
-      <Name value="Mr" />
-      <ID value="Mr" />
+      <Name value="Mr." />
+      <ID value="Mr." />
     </title>
     <title>
-      <Name value="Mrs" />
-      <ID value="Mrs" />
+      <Name value="Mrs." />
+      <ID value="Mrs." />
     </title>
     <title>
-      <Name value="Ms" />
-      <ID value="Ms" />
+      <Name value="Ms." />
+      <ID value="Ms." />
       </title>
     <title>
-      <Name value="Miss" />
-      <ID value="Miss" />
-    </title>
-    <title>
-      <Name value="Dr" />
-      <ID value="Dr" />
+      <Name value="Dr." />
+      <ID value="Dr." />
       </title>
   </titles>
 </root>
