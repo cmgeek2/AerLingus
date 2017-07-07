@@ -263,11 +263,11 @@
                     <td>
                            <label class="visuallyhidden">Select a Help Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
-                            <asp:ListItem Text="Select Help Request" Value="Selected"></asp:ListItem>
-                            <asp:ListItem Text="Need Information" Value="H"></asp:ListItem>
-                            <asp:ListItem Text="Need Help with a Booking" Value="I"></asp:ListItem>
-                            <asp:ListItem Text="Request a Receipt" Value="R"></asp:ListItem>
-                            <asp:ListItem Text="Website Issue" Value="W"></asp:ListItem>
+                            <asp:ListItem Text="Select help request" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="Need information" Value="H"></asp:ListItem>
+                            <asp:ListItem Text="Need help with a booking" Value="I"></asp:ListItem>
+                            <asp:ListItem Text="Request a document" Value="R"></asp:ListItem>
+                            <asp:ListItem Text="Website issue" Value="W"></asp:ListItem>
                             <asp:ListItem Text="Other" Value="O"></asp:ListItem>
                         </asp:DropDownList>
                         <asp:RequiredFieldValidator ID="QuerytypeValidator" ControlToValidate="_helpQueryTypeDropDownList" InitialValue="Selected" runat="server"/>
@@ -284,9 +284,9 @@
         
        </table>
         <br/>
-        <label style="width: 100%"> Please use the comments section below to provide additional information that can assist us with your request, for example if you
-                                       need help with a booking such as adding a frequent flyer number, include the airline, or if a transatlantic seat selection    
-                                       include your preference and we will accommodate where possible.
+        <label style="width: 90%"> Please use the comments section below to provide additional information that can assist us with your request. 
+                                    For example, if adding a frequent flyer number to your booking, include the airline and number; if requesting a transatlantic seat, 
+                                    include your preference and we will accommodate where possible.
         </label>
         <table>
             <tr>
