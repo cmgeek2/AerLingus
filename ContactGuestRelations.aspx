@@ -647,27 +647,69 @@
                      case 1:
                      {
                          $("#specificIssueDropdown").empty();
-                         setSelect('#specificIssueDropdown', 'AirportFlightExperience.xml', 'option', 'Please Select');
+                         setSelect('#specificIssueDropdown', 'AirportExperience.xml', 'option', 'Please Select');
                          break;
                      }
                      case 2:
                      {
                          $("#specificIssueDropdown").empty();
-                         setSelect('#specificIssueDropdown', 'BaggageIssues.xml', 'issue', 'Please Select');
+                         setSelect('#specificIssueDropdown', 'BaggageIrregularities.xml', 'issue', 'Please Select');
                          break;
                      }
                      case 3:
                          {
                              $("#specificIssueDropdown").empty();
-                             setSelect('#specificIssueDropdown', 'Delays.xml', 'issue', 'Please Select');
+                             setSelect('#specificIssueDropdown', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
                              break;
                      }
                      case 4:
                      {
                          $("#specificIssueDropdown").empty();
-                         setSelect('#specificIssueDropdown', 'PriorToTravel.xml', 'option', 'Please Select');
+                         $("#specificIssueDropdown").append($('<option>',
+                         {
+                             value: "Please use comments section",
+                             text: "Please use comments section"
+                         }));
+                         $('#specificIssueDropdown').attr("Disabled", false);
                          break;
                      }
+
+                     case 5:
+                         {
+                             $("#specificIssueDropdown").empty();
+                             $("#specificIssueDropdown").append($('<option>',
+                             {
+                                 value: "EC 261/2004",
+                                 text: "EC 261/2004"
+                             }));
+                             break;
+                         }
+
+                     case 6:
+                         {
+                             $("#specificIssueDropdown").empty();
+                             setSelect('#specificIssueDropdown', 'FlightDelayDisruption.xml', 'issue', 'Please Select');
+                             break;
+                         }
+
+                     case 7:
+                         {
+                             $("#specificIssueDropdown").empty();
+                             setSelect('#specificIssueDropdown', 'InFlightExperience.xml', 'option', 'Please Select');
+                             break;
+                         }
+
+                     case 8:
+                         {
+                             $("#specificIssueDropdown").empty();
+                             $("#specificIssueDropdown").append($('<option>',
+                             {
+                                 value: "Please use comments section",
+                                 text: "Please Use comments section"
+                             }));
+                             $('#specificIssueDropdown').attr("Disabled", false);
+                             break;
+                         }
 
                  }
              });
