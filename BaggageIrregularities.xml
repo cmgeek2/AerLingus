@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <issues>
+    <issue>
+      <Name value="Damaged" />
+      <ID value="Damaged" />
+    </issue>
+    <issue>
+      <Name value="Delayed/interim expenses" />
+      <ID value="Delayed/interim expenses" />
+    </issue>
+    <issue>
+      <Name value="Lost item on aircraft" />
+      <ID value="Lost item on aircraft" />
+    </issue>
+    <issue>
+      <Name value="Lost bag" />
+      <ID value="Lost bag" />
+    </issue>
+    <issue>
+      <Name value="Excess Charges" />
+      <ID value="Excess Charges" />
+    </issue>
+  </issues>
+</root>

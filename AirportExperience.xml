@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<root>
+  <options>
+    <option>
+      <Name value="Boarding Process" />
+      <ID value="Boarding Process" />
+      </option>
+    <option>
+      <Name value="Check-In Process" />
+      <ID value="Check-In Process" />
+    </option>
+    <option>
+      <Name value="Lounge Access" />
+      <ID value="Lounge Access" />
+      </option>
+    <option>
+      <Name value="Wheel Chair" />
+      <ID value="Wheel Chair" />
+      </option>
+    <option>
+      <Name value="Staff" />
+      <ID value="Staff" />
+    </option>
+  </options>
+</root>

@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <issues>
+    <issue>
+      <Name value="Delayed Flight" />
+      <ID value="Delayed Flight" />
+    </issue>
+    <issue>
+      <Name value="Cancelled flight" />
+      <ID value="Cancelled flight" />
+    </issue>
+    <issue>
+      <Name value="Denied boarding" />
+      <ID value="Denied boarding" />
+    </issue>
+    <issue>
+      <Name value="Missed connection" />
+      <ID value="Missed connection" />
+    </issue>
+  </issues>
+</root>

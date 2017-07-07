@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<root>
+  <issues>
+    <issue>
+      <Name value="Fares and fees" />
+      <ID value="Fares and fees" />
+    </issue>
+    <issue>
+      <Name value="Website/mobile app funtionality" />
+      <ID value="Website/mobile app funtionality" />
+    </issue>
+    <issue>
+      <Name value="Policy" />
+      <ID value="Policy" />
+    </issue>
+    <issue>
+      <Name value="Staff" />
+      <ID value="Staff" />
+    </issue>
+  </issues>
+</root>
