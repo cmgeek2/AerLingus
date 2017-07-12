@@ -445,7 +445,7 @@
                     </td>
                 </tr>
                 <tr>
-			        <td colspan="3">* if travelling in our Business Class cabin your request for (KSML) must be done at least 48 hours prior to flight departure.</td>
+			        <td colspan="3">* if travelling in our Business Class cabin your request for a Kosher meal (KSML) must be done at least 48 hours prior to flight departure.</td>
 		        </tr>
             </table>
         </div>
