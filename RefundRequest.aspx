@@ -669,10 +669,6 @@
                     </div>  
                     <!-------------------------------------------------------------------------------------------------------------- -->  
                     <table style="width: 100%">    
-                        <tr >
-                            <td style="width: 275px">
-                                <p>Do you need a letter for your insurance company? Please indicate in the comments section below.</p>
-                            </td>
                         <tr>
                             <td> 
                                 <h2 class="xl2 tealGreen"> Comments</h2>  

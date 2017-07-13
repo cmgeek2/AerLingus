@@ -531,7 +531,7 @@
                     </table>
                     <table style="width: 100%">
                         <tr>
-                            <td style="width: 40%">Do you need a letter or a Property Irregularity Report from your insurance company?</td>
+                            <td style="width: 40%">Do you need a letter or a Property Irregularity Report for your insurance company?</td>
                             <td>
                                 <div class="input-container" id="propertyIrregularityButtonContainer">
                                     <asp:RadioButtonList runat="server" ID="propertyIrregularityGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline " >
@@ -546,7 +546,7 @@
                     <table style="width: 100%">
                         <tr >
                             <td style="width: 40%">
-                                <p>Do you need a letter from your insurance?</p>
+                                <p>Do you need a letter for your insurance?</p>
                             </td>
                             <td colspan="2">
                                 <div class="input-container">   
