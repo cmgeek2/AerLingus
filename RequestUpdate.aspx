@@ -232,7 +232,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div id="bankDiv">
+                    <div id="bankDiv" style="display: none;">
                         <div style="margin-left: 20px;" >
                             <asp:CheckBox runat="server" ID="bankCheckBox" Text="Click here to add bank details"  CssClass="checkbox"/>
                         </div> 
@@ -297,8 +297,6 @@
                         <tr><td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
                     </table>
                 </div>
-                <br />
-                <br />
                 <div style="margin-left: 200px;padding:20px" >
                     <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
                 </div>
@@ -339,6 +337,17 @@
                  var div2 = document.getElementById('ClubMembershipDiv');
                  div2.style.display = "none";
                  ValidatorEnable(document.getElementById("_helpQueryDefListValidator"), false);
+             }
+         });
+
+            $("#_helpQueryCountryList").change(function () {
+             if(this.value!="USA" && this.value!="IRL") 
+             {
+                 var div1 = document.getElementById('bankDiv');
+                 div1.style.display = "block";
+             } else {
+                 var div1 = document.getElementById('bankDiv');
+                 div1.style.display = "none";
              }
          });
 
