@@ -236,8 +236,6 @@
                         </table>
                     </div>
                     <div id="bankDiv">
-                        <br/>
-                        <br/>
                         <div style="margin-left: 20px;" >
                             <asp:CheckBox runat="server" ID="bankCheckBox" Text="Click here to add bank details"  CssClass="checkbox"/>
                         </div> 
@@ -296,7 +294,7 @@
                                 <asp:FileUpload ID="_helpQueryFileUploader"  onchange="return CheckFile(this);" runat="server" />
                             </td>
                         </tr>
-                        <tr><td><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
+                        <tr><td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
                     </table>
                 </div>
                 <br />

@@ -596,7 +596,7 @@
                                     <asp:FileUpload ID="fileUploader" onchange="return CheckFile(this);" runat="server" />
                                 </td>
                             </tr>
-                            <tr><td><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
+                            <tr><td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
                         </table>
                     </div>        
                     <div style="margin-left: 350px;padding:20px" >      
