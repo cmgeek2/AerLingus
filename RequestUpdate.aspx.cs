@@ -112,6 +112,8 @@ public partial class RequestUpdate: System.Web.UI.Page
             }
                 
         }
+        sbBodyTextString.AppendLine("Booking Reference: " + Request.Form["bookingReferenceNumber"]);
+        sbBodyTextString.AppendLine("Baggage Reference: " + Request.Form["baggageReferenceNumber"]);
 
         // Capture bank information
         if (bankCheckBox.Checked)

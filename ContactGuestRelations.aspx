@@ -527,6 +527,12 @@
                                     <option value="">Please Select</option>
                                 </select>
                             </td>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" id="baggageReferenceNumber" name="baggageReferenceNumber" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label id="baggageReferenceLabel" class="form-control-label">Baggage Reference</label>
+                                </div> 
+                            </td>
                         </tr>
                     </table>
                     <table style="width: 100%">

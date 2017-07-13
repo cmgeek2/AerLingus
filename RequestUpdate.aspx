@@ -212,14 +212,28 @@
                         
                     </div>
                     <!-------------------------------------------------------------------------------------------------------------------- -->
-                    <table style="width: 100%">                        
+                    <table>                        
                         <tr>
                             <td> 
                                 <h2 class="xl2 tealGreen"> Additional Information</h2>  
                             </td>
                          </tr>
-        
+                        <tr>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" id="bookingReferenceNumber" name="bookingReferenceNumber" style="width: 260px; text-transform: uppercase"  pattern="^[2][0-9a-zA-Z]{5}" maxlength="6" title="Enter your booking reference. Must start with a 2, contain letters and numbers" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label id="bookingReferenceLabel" class="form-control-label">Booking Reference</label>
+                                </div> 
+                            </td>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" id="baggageReferenceNumber" name="baggageReferenceNumber" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label id="baggageReferenceLabel" class="form-control-label">Baggage Reference</label>
+                                </div> 
+                            </td>
+                        </tr>
                     </table>
+                    <br/>
                     <p>  Please do not enter any payment card details into any data fields such as credit/debit card numbers and/or security codes. </p>
                     <div>
                         <table style="width: 100%">
@@ -284,7 +298,7 @@
                         <br/>
                         <br/>
                     </div>
-                    <table>
+                    <table style="width: 100%">
                         <tr>
 			                <td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
 		                </tr>   
@@ -341,7 +355,7 @@
          });
 
             $("#_helpQueryCountryList").change(function () {
-             if(this.value!="USA" && this.value!="IRL") 
+             if(this.value!="USA" && this.value!="IRL" && this.value!="CAN" && this.value!="GBR" ) 
              {
                  var div1 = document.getElementById('bankDiv');
                  div1.style.display = "block";

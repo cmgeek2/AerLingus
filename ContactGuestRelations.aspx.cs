@@ -155,6 +155,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         //Issues selected
         sbBodyTextString.AppendLine("General Issue: " + Request.Form["generalIssuesDropdown"]);
         sbBodyTextString.AppendLine("Specific Issue: " + Request.Form["specificIssueDropdown"]);
+        sbBodyTextString.AppendLine("Baggage Reference: " + Request.Form["baggageReferenceNumber"]);
 
         sbBodyTextString.AppendLine("Need a Property Irregularity Report from insurance: " + propertyIrregularityGroup.SelectedValue);
         sbBodyTextString.AppendLine("Need a letter from insurance: " + insuranceGroup.SelectedValue);
