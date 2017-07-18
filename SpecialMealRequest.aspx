@@ -202,21 +202,14 @@
             <!------------------------------------------------- -->
             <div class="input-container" style="width: 100%"> <h2 class="xl2 tealGreen"> Meal Request</h2></div>
             <div>
-                <label>Please select your meal below. To add additional Guests on the same booking please click the '+' sign. If you have any additional requests such as seat assignments on transatlantic flights please include in the Additional Requests Section
+                <label style="width: 85%">Please select your meal below. To add additional Guests on the same booking please click the '+' sign. If you have any additional requests such as seat assignments on transatlantic flights please include in the Additional Requests Section
                 </label>
             </div>
                 
                     <div class="input-container" id="guest1div">
                         <table>
                             <tr>
-                                <td>
-                                    <label class="visuallyhidden">Select your title</label>
-                                    <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest1" id="salutationGuest1" style="width:80px;height:30px;text-align:left" >                        
-                                        </select>
-                                    </div>
-                                    
-                                </td>
+
                                 <td>
                                     <div class="input-container" >
                                         <input type="text" style="width: 260px; text-transform: capitalize" id="firstGuestFirstName" name="firstGuestFirstName" class="form-control inline-label"  />
@@ -244,14 +237,6 @@
                     <div class="input-container" id="guest2div" style="display: none">
                         <table>
                             <tr>
-                                <td>
-                                    <label class="visuallyhidden">Select your title</label>
-                                    <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest2" id="salutationGuest2" style="width:80px;height:30px;text-align:left" >                        
-                                        </select>
-                                    </div>
-               
-                                </td>
                                 <td>
                                     <div class="input-container" >
                                         <input type="text" style="width: 260px; text-transform: capitalize" id="secondGuestFirstName" name="secondGuestFirstName" class="form-control inline-label"  onblur="checkvalue(this)"/>
@@ -282,14 +267,7 @@
                     <div class="input-container" id="guest3div" style="display: none">
                         <table>
                             <tr>
-                                <td>
-                                   <label class="visuallyhidden">Select your title</label>
-                                    <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest3" id="salutationGuest3" style="width:80px;height:30px;text-align:left" >                        
-                                        </select>
-                                    </div>              
-                                </td>
-                                <td>
+                               <td>
                                     <div class="input-container" >
                                         <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestFirstName" name="thirdGuestFirstName" class="form-control inline-label"  onblur="checkvalue(this)"/>
                                         <label class="form-control-label">First Name</label>
@@ -319,14 +297,7 @@
                     <div class="input-container" id="guest4div" style="display: none">
                         <table>
                             <tr>
-                                <td>
-                                    <label class="visuallyhidden">Select your title</label>
-                                    <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest4" id="salutationGuest4" style="width:80px;height:30px;text-align:left" >                        
-                                        </select>
-                                    </div>
-               
-                                </td>
+                               
                                 <td>
                                     <div class="input-container" >
                                         <input type="text" style="width: 260px; text-transform: capitalize" id="fourthGuestFirstName" name="fourthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
@@ -357,14 +328,7 @@
                     <div class="input-container" id="guest5div" style="display: none">
                         <table>
                             <tr>
-                                <td>
-                                    <label class="visuallyhidden">Select your title</label>
-                                    <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest5" id="salutationGuest5" style="width:80px;height:30px;text-align:left" >                        
-                                        </select>
-                                    </div>
-               
-                                </td>
+                                
                                 <td>
                                     <div class="input-container" >
                                         <input type="text" style="width: 260px; text-transform: capitalize" id="fifthGuestFirstName" name="fifthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
@@ -395,13 +359,7 @@
                     <div class="input-container" id="guest6div" style="display: none">
                         <table>
                             <tr>
-                                <td>
-                                    <label class="visuallyhidden">Select your title</label>
-                                    <div class="input-container" >
-                                        <select class=" dropdown-toggle" name="salutationGuest6" id="salutationGuest6" style="width:80px;height:30px;text-align:left" >                        
-                                        </select>
-                                    </div>             
-                                </td>
+                               
                                 <td>
                                     <div class="input-container" >
                                         <input type="text" style="width: 260px; text-transform: capitalize" id="sixthGuestFirstName" name="sixthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
