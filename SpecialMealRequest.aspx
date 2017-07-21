@@ -202,7 +202,7 @@
             <!------------------------------------------------- -->
             <div class="input-container" style="width: 100%"> <h2 class="xl2 tealGreen"> Meal Request</h2></div>
             <div>
-                <label style="width: 85%">Please select your meal below. To add additional Guests on the same booking please click the '+' sign. If you have any additional requests such as seat assignments on transatlantic flights please include in the Additional Requests Section
+                <label style="width: 85%">Please select your meal below. To add additional guests on the same booking please click the '+' sign. If you have any additional requests such as seat assignments, please include in the Additional Requests section.
                 </label>
             </div>
                 
