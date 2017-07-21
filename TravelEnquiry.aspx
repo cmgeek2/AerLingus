@@ -285,7 +285,7 @@
        </table>
         <br/>
         <label style="width: 90%"> Please use the comments section below to provide additional information that can assist us with your request. 
-                                    For example, if adding a frequent flyer number to your booking, include the airline and number; if requesting a transatlantic seat, 
+                                    For example, if adding a frequent flyer number to your booking, include the airline and number; if requesting a seat, 
                                     include your preference and we will accommodate where possible.
         </label>
         <table>
@@ -321,8 +321,7 @@
             </table>
         </div>
         
-       <div style="margin-left: 200px;padding:20px" >
-      
+       <div style="margin-left: 350px;padding:20px" >
            <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
         </div>
             </div>
