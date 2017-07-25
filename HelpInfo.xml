@@ -4,10 +4,6 @@
   <Description>
     <ID value="Add a frequent flyer number"></ID>
     <RC value="MB OT G FF"></RC>
-  </Description>
-  <Description>
-    <ID value="Add a special meal"></ID>
-    <RC value="MB ML RQ SDM"></RC>
   </Description>  
   <Description >
     <ID value="Assign, change or confirm a seat"></ID>
