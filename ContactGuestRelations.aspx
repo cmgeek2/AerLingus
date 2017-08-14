@@ -216,7 +216,7 @@
                     <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
                         <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server"></select>
                     </div>
-                    <!-- --------------------------------->
+                    <!-- ---------------------------------->
                     <table>
                          <tr>
                             <td class="auto-style1">
@@ -338,7 +338,15 @@
                         </table>
                     </div>  
                     <!------------------------------------------------- -->
-                    <br/><br/><br/>
+                    <table style="width: 100%">
+                        <tr>
+                            <td colspan="2">
+                                <h2 class="xl2 tealGreen"> Passenger Information </h2>
+                                Please list all passengers that pertain to this flight. Click the '+' to add additional passengers.
+                            </td>
+                        </tr>
+                    </table>
+                    <br/>
                     <div class="input-container" id="guest1div">
                         <table>
                             <tr>
