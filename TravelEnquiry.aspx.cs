@@ -69,6 +69,7 @@ public partial class TravelEnquiry : System.Web.UI.Page
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         sbBodyTextString.AppendLine("Query Type: " + _helpQueryTypeDropDownList.SelectedItem.ToString());
         sbBodyTextString.AppendLine("Query Definition: " + Request.Form["_helpQueryDefList"]);
+        sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
         if (Request.Form["FlightNumber2"] != "")
         {
             sbBodyTextString.AppendLine("Reference Number 2: " + Request.Form["_helpQuerybookingReferenceNumber"]);
@@ -114,7 +115,6 @@ public partial class TravelEnquiry : System.Web.UI.Page
 
 
         //starting part 2
-        sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
         sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue.ToString());
         sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["helpQueryFirstName"]);
         sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
