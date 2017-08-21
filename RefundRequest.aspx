@@ -233,7 +233,7 @@
                         <tr>
                             <td >
                                 <div class="input-container" >
-                                    <input type="text" name="address1" id="address1" style="width: 395px" class="form-control inline-label" required="required" pattern="^\s*\S+(?:\s+\S+){2}" onblur="checkvalue(this)"/>
+                                    <input type="text" name="address1" id="address1" style="width: 395px" class="form-control inline-label" required="required" pattern="\d+(\s\S+)+" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 1</label>
                                 </div> 
                             </td>
