@@ -101,8 +101,9 @@ public partial class RefundRequest : System.Web.UI.Page
         sbBodyTextString.AppendLine("Address 1: " + Request.Form["address1"]);
         sbBodyTextString.AppendLine("Address 2: " + Request.Form["address2"]);
         sbBodyTextString.AppendLine("Town/City: " + Request.Form["townCity"]);
-        sbBodyTextString.AppendLine("Country/State: " + Request.Form["countryState"]);
-        sbBodyTextString.AppendLine("Posta/Zip Code: " + Request.Form["zipCode"]);
+        sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
+        sbBodyTextString.AppendLine("County/State: " + Request.Form["countryState"]);
+        sbBodyTextString.AppendLine("Postal/Zip Code: " + Request.Form["zipCode"]);
 
 
         // Get additional flights information
