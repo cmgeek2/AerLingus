@@ -41,44 +41,60 @@ public partial class RefundRequest : System.Web.UI.Page
         StringBuilder sbBodyTextString = new StringBuilder();
 
         //splitting this into 2
-        sbBodyTextString.AppendLine("Guest Type: " + guestGroup.SelectedValue);
         sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
+        sbBodyTextString.AppendLine("Guest Type: " + guestGroup.SelectedValue);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
-        sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
-        sbBodyTextString.AppendLine("Flight Date: " + Request.Form["_helpQueryDateOfFlight"]);
-        sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
-
-        sbBodyTextString.AppendLine("Refund Reason Type 1: " + Request.Form["refundReasonDropDownList1"]);
-        sbBodyTextString.AppendLine("Refund Reason 1: " + Request.Form["refundReason1"]);
 
         // Guest Information
         sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
-        sbBodyTextString.AppendLine("GuestTitle: " + Request.Form["_helpQuerySalutation"]);
-        sbBodyTextString.AppendLine("Guest Given Name: " + (Request.Form["helpQueryFirstName"]).ToUpper());
-        sbBodyTextString.AppendLine("Guest Last Name: " + (Request.Form["helpQueryLastName"]).ToUpper());
+
 
         // if the user is a representative of the guest, collect representative information.
         if (guestGroup.SelectedValue != "guest")
         {
+            // Guest Information
+            sbBodyTextString.AppendLine("Guest Title: " + Request.Form["_helpQuerySalutation"]);
+            sbBodyTextString.AppendLine("Guest Given Name: " + (Request.Form["helpQueryFirstName"]).ToUpper());
+            sbBodyTextString.AppendLine("Guest Last Name: " + (Request.Form["helpQueryLastName"]).ToUpper());
+            
             // Representative information
-            sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
-            sbBodyTextString.AppendLine("RepresentativeTitle: " + Request.Form["representativeSalutation"]);
+            sbBodyTextString.AppendLine("Representative Title: " + Request.Form["representativeSalutation"]);
             sbBodyTextString.AppendLine("Representative Given Name: " + (Request.Form["representativeFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Last Name: " + (Request.Form["representativeLastName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
             sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
             sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationsipToGuestDropDown"]);
             sbBodyTextString.AppendLine("Internal Case Number: " + Request.Form["internalCaseNumber"]);
+            // Address information
+            sbBodyTextString.AppendLine("Representative Address 1: " + Request.Form["address1"]);
+            sbBodyTextString.AppendLine("Representative Address 2: " + Request.Form["address2"]);
+            sbBodyTextString.AppendLine("Representative Town/City: " + Request.Form["townCity"]);
+            sbBodyTextString.AppendLine("Representative Country: " + Request.Form["_helpQueryCountryList"]);
+            sbBodyTextString.AppendLine("Representative County/State: " + Request.Form["countryState"]);
+            sbBodyTextString.AppendLine("Representative Postal/Zip Code: " + Request.Form["zipCode"]);
+            string countrycode = CountryCode.SelectedValue;
+            char[] delimiterChars = { '(', ')' };
+            string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
+            sbBodyTextString.AppendLine("Representative Telephone: " + code[1] + " " + Request.Form["_helpQueryTelephoneNumber"]);
         }
         else
         {
-            //starting part 2
-            sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
+            // Guest Only Information
+            sbBodyTextString.AppendLine("Guest Title: " + Request.Form["_helpQuerySalutation"]);
+            sbBodyTextString.AppendLine("Guest Given Name: " + (Request.Form["helpQueryFirstName"]).ToUpper());
+            sbBodyTextString.AppendLine("Guest Last Name: " + (Request.Form["helpQueryLastName"]).ToUpper());
+            sbBodyTextString.AppendLine("Guest Email: " + Request.Form["_helpQueryEmail"]);
+            // Address information
+            sbBodyTextString.AppendLine("Guest Address 1: " + Request.Form["address1"]);
+            sbBodyTextString.AppendLine("Guest Address 2: " + Request.Form["address2"]);
+            sbBodyTextString.AppendLine("Guest Town/City: " + Request.Form["townCity"]);
+            sbBodyTextString.AppendLine("Guest Country: " + Request.Form["_helpQueryCountryList"]);
+            sbBodyTextString.AppendLine("Guest County/State: " + Request.Form["countryState"]);
+            sbBodyTextString.AppendLine("Guest Postal/Zip Code: " + Request.Form["zipCode"]);
             string countrycode = CountryCode.SelectedValue;
-            sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
             char[] delimiterChars = { '(', ')' };
             string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
-            sbBodyTextString.AppendLine("Telephone: " + code[1] + " " + Request.Form["_helpQueryTelephoneNumber"]);
+            sbBodyTextString.AppendLine("Guest Telephone: " + code[1] + " " + Request.Form["_helpQueryTelephoneNumber"]);
             
   
         }
@@ -97,14 +113,12 @@ public partial class RefundRequest : System.Web.UI.Page
 
         }
 
-        // Address information
-        sbBodyTextString.AppendLine("Address 1: " + Request.Form["address1"]);
-        sbBodyTextString.AppendLine("Address 2: " + Request.Form["address2"]);
-        sbBodyTextString.AppendLine("Town/City: " + Request.Form["townCity"]);
-        sbBodyTextString.AppendLine("Country: " + Request.Form["_helpQueryCountryList"]);
-        sbBodyTextString.AppendLine("County/State: " + Request.Form["countryState"]);
-        sbBodyTextString.AppendLine("Postal/Zip Code: " + Request.Form["zipCode"]);
+        sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
+        sbBodyTextString.AppendLine("Flight Date: " + Request.Form["_helpQueryDateOfFlight"]);
+        sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
 
+        sbBodyTextString.AppendLine("Refund Reason Type 1: " + Request.Form["refundReasonDropDownList1"]);
+        sbBodyTextString.AppendLine("Refund Reason 1: " + Request.Form["refundReason1"]);
 
         // Get additional flights information
         if (Request.Form["QueryFlightNumber2"] != "")
