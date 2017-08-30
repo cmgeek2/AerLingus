@@ -177,22 +177,22 @@ public partial class RefundRequest : System.Web.UI.Page
         }
 
         // Additional refund reasons info.
-        if (refundReasonDropDownList2.SelectedIndex > 0)
+        if (Request.Form["refundReasonDropDownList2"] != "")
         {
             sbBodyTextString.AppendLine("Refund Reason Type 2: " + Request.Form["refundReasonDropDownList2"]);
             sbBodyTextString.AppendLine("Refund Reason 2: " + Request.Form["refundReason2"]);
         }
 
-        if (refundReasonDropDownList3.SelectedIndex > 0)
+        if (Request.Form["refundReasonDropDownList3"] != "")
         {
             sbBodyTextString.AppendLine("Refund Reason Type 3: " + Request.Form["refundReasonDropDownList3"]);
             sbBodyTextString.AppendLine("Refund Reason 3: " + Request.Form["refundReason3"]);
         }
 
-        if (refundReasonDropDownList4.SelectedIndex > 0)
+        if (Request.Form["refundReasonDropDownList4"] != "")
         {
-            sbBodyTextString.AppendLine("Refund Reason Type 3: " + Request.Form["refundReasonDropDownList4"]);
-            sbBodyTextString.AppendLine("Refund Reason 3: " + Request.Form["refundReason4"]);
+            sbBodyTextString.AppendLine("Refund Reason Type 4: " + Request.Form["refundReasonDropDownList4"]);
+            sbBodyTextString.AppendLine("Refund Reason 4: " + Request.Form["refundReason4"]);
         }
 
         sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text);
