@@ -427,7 +427,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestFirstName2" name="thirdGuestFirstName2" class="form-control inline-label"  onblur="checkvalue(this)"/>
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="thirdGuestFirstName" name="thirdGuestFirstName" class="form-control inline-label"  onblur="checkvalue(this)"/>
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
