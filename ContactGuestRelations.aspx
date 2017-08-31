@@ -63,7 +63,7 @@
 <body>
     <div id="page1" data-role="page">
         <form id="contactGuestRelationsForm" runat="server" autocomplete="off">
-            <div style="margin-left: 80px; margin-right: 172px;height:auto;margin-top:10px"  class="gray-wide-bg ">
+            <div style="margin-left: 80px; margin-right: 172px;height:auto;"  class="gray-wide-bg ">
                 <div style="margin-left: 30px" >
                     <br/>
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
@@ -127,7 +127,7 @@
                             </tr>
                         </table>
                         <div class="input-container" id="repCompanyNameDiv" style="display: none">
-                        <input type="text" name="repCompanyName" id="repCompanyName" style="width: 360px" class="form-control inline-label" onblur="checkvalue(this)"/>
+                        <input type="text" name="repCompanyName" id="repCompanyName" style="width: 395px" class="form-control inline-label" onblur="checkvalue(this)"/>
                         <label class="form-control-label">Company Name</label>
                     </div> 
                     </div>  

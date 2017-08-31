@@ -20,15 +20,15 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         //form IDs are identical for both on deploy 3/29/2017
         if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["USANeedHelpFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["USANeedHelpFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["USAContactUsFormID"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["USAContactUsFormID"];
             sUSAorOther = "NA";
 
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["OthersNeedHelpFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["OthersNeedHelpFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["OtherContactUsFormID"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["OtherContactUsFormID"];
             sUSAorOther = "Other";
 
         }
@@ -59,7 +59,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
             sbBodyTextString.AppendLine("Representative Last Name: " + (Request.Form["representativeLastName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
             sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
-            sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationsipToGuestDropDown"]);
+            sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationshipToGuestDropDown"]);
         }
         else
         {
@@ -203,7 +203,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         }
         try
         {
-            //SMTPServer.Send(_helpMessage);
+            SMTPServer.Send(_helpMessage);
             Response.Redirect("ThankYou.aspx?sender=RefundRequest.aspx&message=" + Server.UrlEncode("Refund"));
 
             _helpMessage.Dispose();
