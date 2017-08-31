@@ -63,7 +63,7 @@ public partial class RefundRequest : System.Web.UI.Page
             sbBodyTextString.AppendLine("Representative Last Name: " + (Request.Form["representativeLastName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
             sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
-            sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationsipToGuestDropDown"]);
+            sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationshipToGuestDropDown"]);
             sbBodyTextString.AppendLine("Internal Case Number: " + Request.Form["internalCaseNumber"]);
             // Address information
             sbBodyTextString.AppendLine("Representative Address 1: " + Request.Form["address1"]);
