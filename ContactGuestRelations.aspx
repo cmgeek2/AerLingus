@@ -212,11 +212,15 @@
                             </td>
                         </tr>
                     </table>
-                    <!-- --------------------------------->
+                    <!-- ---------------------------------->
                     <div class="input-container" id="relationshipToGuestDropDownDiv" style="display:none;">
                         <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server"></select>
                     </div>
-                    <!-- ---------------------------------->
+                    <div class="input-container" >
+                        <input type="text" name="internalCaseNumber" id="internalCaseNumber" maxlength="20" style="width: 260px" title="postal zip code" class="form-control inline-label" onblur="checkvalue(this)"/>
+                        <label class="form-control-label">Internal Case Number</label>
+                    </div>
+                    <!-- ------------------------------------>
                     <table>
                          <tr>
                             <td class="auto-style1">
