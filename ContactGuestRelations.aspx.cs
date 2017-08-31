@@ -101,12 +101,14 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         {
             sbBodyTextString.AppendLine("Flight Date 2: " + Request.Form["dateOfFlight2"]);
             sbBodyTextString.AppendLine("Flight Number 2: " + Request.Form["QueryFlightNumber2"]);
+            sbBodyTextString.AppendLine("Reference Number 2: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         }
 
         if (Request.Form["QueryFlightNumber3"] != "")
         {
             sbBodyTextString.AppendLine("Flight Date 3: " + Request.Form["dateOfFlight3"]);
             sbBodyTextString.AppendLine("Flight Number 3: " + Request.Form["QueryFlightNumber3"]);
+            sbBodyTextString.AppendLine("Reference Number 3: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         }
 
 
@@ -114,6 +116,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         {
             sbBodyTextString.AppendLine("Flight Date 4: " + Request.Form["dateOfFlight4"]);
             sbBodyTextString.AppendLine("Flight Number 4: " + Request.Form["QueryFlightNumber4"]);
+            sbBodyTextString.AppendLine("Reference Number 4: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         }
 
         // Additional guests information
@@ -179,13 +182,13 @@ public partial class ContactGuestRelations : System.Web.UI.Page
 
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["USANeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["USANeedHelpSubject"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["USAContactUsToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["USAContactUsSubject"];
         }
         else
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["OthersNeedHelpToAddress"]);
-            _helpMessage.Subject = ConfigurationManager.AppSettings["OthersNeedHelpFormId"];
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["OtherContactUsToAddress"]);
+            _helpMessage.Subject = ConfigurationManager.AppSettings["OtherContactUsSubject"];
         }
 
         string _messgebody = BuildMessageBody(Request.Form["_helpQueryCountryList"]);
