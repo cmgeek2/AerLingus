@@ -178,13 +178,13 @@
                         <tr>
                             <td >
                                 <div class="input-container" >
-                                    <input type="text" name="address1" id="address1" style="width: 260px" class="form-control inline-label" required="required" title="Please enter a valid address" pattern="\d+(\s\S+)+" onblur="checkvalue(this)"/>
+                                    <input type="text" name="address1" id="address1" style="width: 395px" class="form-control inline-label" required="required" title="Please enter a valid address" pattern="\d+(\s\S+)+" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 1</label>
                                 </div> 
                             </td>
                             <td>
                                 <div class="input-container">  
-                                    <input type="text" name="address2" id="address2" style="width: 260px" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <input type="text" name="address2" id="address2" style="width: 395px" class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 2</label>
                                 </div>
                             </td>
