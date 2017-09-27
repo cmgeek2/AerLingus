@@ -49,23 +49,23 @@ public partial class RequestUpdate: System.Web.UI.Page
         }
 
         StringBuilder sbBodyTextString = new StringBuilder();
-        sbBodyTextString.AppendLine("Reference Number: " + Request.Form["updateCaseID"]);
+        sbBodyTextString.AppendLine("Case Reference: " + Request.Form["updateCaseID"]);
         sbBodyTextString.AppendLine("Guest Type: " + guestGroup.SelectedValue);
         // if the user is a representative of the guest, collect representative information.
         if (guestGroup.SelectedValue != "guest")
         {
             //splitting this into 2
-            sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
+            //sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
             sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
             
 
             // Guest Information
-            sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
+            //sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
             sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue);
             sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["helpQueryFirstName"]);
             sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
             // Representative information
-            sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
+            //sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
             sbBodyTextString.AppendLine("Internal Case Number: " + Request.Form["companyCaseNumber"]);
             sbBodyTextString.AppendLine("RepresentativeTitle: " + RepresentativeDropDownList.SelectedValue);
             sbBodyTextString.AppendLine("Representative Given Name: " + Request.Form["representativeFirstName"]);
@@ -83,11 +83,11 @@ public partial class RequestUpdate: System.Web.UI.Page
         else
         {
             //splitting this into 2. Pre-processing and when pulled from queue
-            sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
+            //sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
             sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
             
             //starting part 2
-            sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
+            //sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
             sbBodyTextString.AppendLine("GuestTitle: " + _helpQuerySalutation.SelectedValue);
             sbBodyTextString.AppendLine("Guest Given Name: " + Request.Form["helpQueryFirstName"]);
             sbBodyTextString.AppendLine("Guest Last Name: " + Request.Form["helpQueryLastName"]);
