@@ -311,7 +311,7 @@
                         <tr><td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
                     </table>
                 </div>
-                <div style="margin-left: 200px;padding:20px" >
+                <div style="margin-left: 350px" >
                     <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click"></asp:Button>
                 </div>
             </div>
