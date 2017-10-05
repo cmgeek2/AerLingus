@@ -200,13 +200,6 @@
                                         <option value="Legal Representative">Legal Representative</option>
                                         <option value="Travel Agent/Tour Operator">Travel Agent/Tour Operator</option>
                                         <option value="Travel Management Company">Travel Management Company</option>
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        
                                     </select>
                                 </td>
                                 <td>
