@@ -198,6 +198,21 @@
                                         <option value="Consumer Group">Consumer Group</option>
                                         <option value="Family">Family</option>
                                         <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
+
+                                        <option value="Assistant/Colleague">Assistant/Colleague</option>
+                                        <option value="Consumer Group">Consumer Group</option>
+                                        <option value="Family/Friend">Family/Friend</option>
+                                        <option value="GSA/GHA">GSA/GHA</option>
+                                        <option value="Legal Representative">Legal Representative</option>
+                                        <option value="Travel Agent/Tour Operator">Travel Agent/Tour Operator</option>
+                                        <option value="Travel Management Company">Travel Management Company</option>
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
+                                        
                                     </select>
                                 </td>
                                 <td>
