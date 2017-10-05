@@ -2,24 +2,28 @@
 <root>
   <relationships>   
     <relationship>
-      <Name value="Consumer Group" />
+      <Name value="Assistant/Colleague" />
+      <ID value="Assistant/Colleague" />
+    </relationship>
+    <relationship>
+      <Name value="Consumer Group"/>
       <ID value="Consumer Group" />
     </relationship>
     <relationship>
-      <Name value="Family"/>
-      <ID value="Family" />
+      <Name value="Family/Friend" />
+      <ID value="Family/Friend" />
     </relationship>
     <relationship>
-      <Name value="Friend Assistant/Colleague" />
-      <ID value="Friend Assistant/Colleague" />
+      <Name value=" GSA/GHA" />
+      <ID value=" GSA/GHA" />
     </relationship>
     <relationship>
       <Name value="Legal Representative" />
       <ID value="Legal Representative" />
     </relationship>
     <relationship>
-      <Name value="Travel Agent"/>
-      <ID value="Travel Agent" />
+      <Name value="Travel Agent/Tour Operator"/>
+      <ID value="Travel Agent/Tour Operator" />
     </relationship>
     <relationship>
       <Name value="Travel Management Company" />
@@ -28,3 +32,6 @@
     
   </relationships>
 </root>
+
+Travel Agent/Tour Operator
+Travel Management Company
