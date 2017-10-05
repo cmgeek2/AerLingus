@@ -193,12 +193,6 @@
                             <tr>
                                 <td>
                                     <select class=" dropdown-toggle" style="height:30px;width:260px" name="relationshipToGuestDropDown" id="relationshipToGuestDropDown" runat="server">
-                                        <option value="Selected" selected="selected">Relationship to the guest</option>
-                                        <option value="Travel Agent">Travel Agent</option>
-                                        <option value="Consumer Group">Consumer Group</option>
-                                        <option value="Family">Family</option>
-                                        <option value="Friend Assistant/Collegue">Friend Assistant/Collegue</option>
-
                                         <option value="Assistant/Colleague">Assistant/Colleague</option>
                                         <option value="Consumer Group">Consumer Group</option>
                                         <option value="Family/Friend">Family/Friend</option>
