@@ -43,7 +43,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         }
 
         StringBuilder sbBodyTextString = new StringBuilder();
-
+        sbBodyTextString.AppendLine("Case Reference: " + Request.Form["updateCaseID"]);
         //splitting this into 2
         sbBodyTextString.AppendLine("Guest Type: " + guestGroup.SelectedValue);
         sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
