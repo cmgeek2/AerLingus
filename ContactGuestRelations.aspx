@@ -373,8 +373,8 @@
                     <table style="width: 100%">
                         <tr>
                             <td colspan="2">
-                                <h2 class="xl2 tealGreen"> Passenger Information </h2>
-                                Please list all passengers that pertain to this flight. Click the '+' to add additional passengers.
+                                <h2 class="xl2 tealGreen"> Traveler Information </h2>
+                                Please list all travelers that pertain to this flight. Click the '+' to add additional travelers.
                             </td>
                         </tr>
                     </table>
@@ -575,20 +575,44 @@
                             </td>
                         </tr>
                     </table>
-                    <table style="width: 100%">
-                        <tr>
-                            <td style="width: 40%">Do you need a letter or a Property Irregularity Report for your insurance company?</td>
-                            <td>
-                                <div class="input-container" id="propertyIrregularityButtonContainer">
-                                    <asp:RadioButtonList runat="server" ID="propertyIrregularityGroup" RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline " >
-                                        <asp:ListItem Text="Yes" Value="Yes"  Class="radio-inline-button"/>
-                                        <asp:ListItem Text="No" Value="No" Selected="True" Class="radio-inline-button"/>
-                                    </asp:RadioButtonList>
-                                    <br/><br/>
-                                </div> 
-                            </td>
-                        </tr>
-                    </table>
+                    <div id ="claimTypeGroup" style="display: none">
+                        <br/>
+                        <table>
+                            <tr>
+                                <td style="width: 20%">
+                                    <table>
+                                        <tr>
+                                            <p>What type of expenses are you claiming for?</p>
+                                        </tr>
+                                    </table>    
+                                </td>
+                                <td>
+                                    <table>
+                                        <tr>
+                                            <asp:CheckBox runat="server" Text ="Hotels / accomodations" ID="Hotels"/>
+                                        </tr>
+                                    </table> 
+                                    <table>
+                                        <tr>
+                                            <asp:CheckBox runat="server" Text ="Meals / refreshments" ID ="Meals"/>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <asp:CheckBox runat="server" Text="Transport" ID="Transport"/>
+                                        </tr>
+                                    </table>
+                                    <table>
+                                        <tr>
+                                            <asp:CheckBox runat="server" Text="Other" ID="Other"/>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                    
                     <table style="width: 100%">
                         <tr >
                             <td style="width: 40%">
@@ -688,24 +712,28 @@
                              value: '',
                              text: 'Please Select'
                          }));
+                         $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 1:
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'AirportExperience.xml', 'option', 'Please Select');
+                         $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 2:
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'BaggageIrregularities.xml', 'issue', 'Please Select');
+                         $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 3:
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
+                             $("#claimTypeGroup").css("display", "none");
                              break;
                      }
                      case 4:
@@ -717,6 +745,7 @@
                              text: "Please use comments section"
                          }));
                          $('#specificIssueDropdown').attr("Disabled", false);
+                         $("#claimTypeGroup").css("display", "none");
                          break;
                      }
 
@@ -728,6 +757,7 @@
                                  value: "EC 261/2004",
                                  text: "EC 261/2004"
                              }));
+                             $("#claimTypeGroup").css("display", "none");
                              break;
                          }
 
@@ -735,6 +765,7 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'FlightDelayDisruption.xml', 'issue', 'Please Select');
+                             $("#claimTypeGroup").css("display",  "block");
                              break;
                          }
 
@@ -742,6 +773,7 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'InFlightExperience.xml', 'option', 'Please Select');
+                             $("#claimTypeGroup").css("display", "none");
                              break;
                          }
 
@@ -754,6 +786,7 @@
                                  text: "Please Use comments section"
                              }));
                              $('#specificIssueDropdown').attr("Disabled", false);
+                             $("#claimTypeGroup").css("display", "none");
                              break;
                          }
 

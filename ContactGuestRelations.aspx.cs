@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Configuration;
 using System.Net.Mail;
 using System.Text;
@@ -25,6 +26,8 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         string sEmailFormId2;
         string sUSAorOther;
         string lsFormIdBuild = _FormID;
+        List<string> expenses = new List<string>();
+
         //use this if we need to split mailboxes or IDs for processing.
         //form IDs are identical for both on deploy 3/29/2017
         if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
@@ -169,7 +172,25 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         sbBodyTextString.AppendLine("Specific Issue: " + Request.Form["specificIssueDropdown"]);
         sbBodyTextString.AppendLine("Baggage Reference: " + Request.Form["baggageReferenceNumber"]);
 
-        sbBodyTextString.AppendLine("Need a Property Irregularity Report from insurance: " + propertyIrregularityGroup.SelectedValue);
+         
+        if (Hotels.Checked)
+        {
+            expenses.Add("Hotels");
+        }
+        if (Meals.Checked)
+        {
+            expenses.Add(expenses.Count > 0 ? "| Meals" : "Meals");
+        }
+        if (Transport.Checked)
+        {
+            expenses.Add(expenses.Count > 0 ? "| Transport" : "Transport");
+        }
+        if (Other.Checked)
+        {
+            expenses.Add(expenses.Count > 0 ? "| Other" : "Other");
+        }
+
+        sbBodyTextString.AppendLine(" Expenses Type: " + String.Join(" ", expenses.ToArray()));
         sbBodyTextString.AppendLine("Need a letter from insurance: " + insuranceGroup.SelectedValue);
 
 
@@ -186,8 +207,9 @@ public partial class ContactGuestRelations : System.Web.UI.Page
 
 
         string selectedCountry = Request.Form["_helpQueryCountryList"];
+
         MailMessage _helpMessage = new MailMessage();
-        _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
+        //_helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
 
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
@@ -196,7 +218,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         }
         else
         {
-            _helpMessage.To.Add(ConfigurationManager.AppSettings["OtherContactUsToAddress"]);
+            //_helpMessage.To.Add(ConfigurationManager.AppSettings["OtherContactUsToAddress"]);
             _helpMessage.Subject = ConfigurationManager.AppSettings["OtherContactUsSubject"];
         }
 
