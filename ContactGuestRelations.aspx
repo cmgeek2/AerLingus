@@ -64,8 +64,26 @@
     <div id="page1" data-role="page">
         <form id="contactGuestRelationsForm" runat="server" autocomplete="off">
             <div style="margin-left: 80px; margin-right: 172px;height:auto;"  class="gray-wide-bg ">
-                <div style="margin-left: 30px" >
+                <div style="margin-left: 30px">
                     <br/>
+                    <div>
+                        <h2 style="margin-top: 30px" id="RefNumberheader" class="xl2 tealGreen">Case/Reference Number</h2>
+                        <p>Please enter your case/reference number</p>
+                    </div>
+                    <div class="input-container" >
+                        <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" MaxLength="7" Title="Please enter your case number" CssClass="form-control inline-label  " required="required"  runat="server" onblur="checkvalue(this)"/>
+                        <asp:RangeValidator runat="server" id="rangeValidator1"
+                                            style="color:red;"
+                                            ValidationGroup="Submit" 
+                                            ErrorMessage="Please enter a number between 500000 and 9999999"
+                                            ControlToValidate="updateCaseID"
+                                            MaximumValue="9999999"
+                                            MinimumValue="500000"
+                                            Type="Integer">                             
+                        </asp:RangeValidator>
+                    </div>
+                </div>
+                <div style="margin-left: 30px" >
                     <h2 class="xl2 tealGreen"> Contact Information</h2>
                     <br/>
                     <div class="input-container" id="radioButtonContainer">

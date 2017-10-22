@@ -7,7 +7,16 @@ public partial class ContactGuestRelations : System.Web.UI.Page
 {
     protected void Page_Load(object sender, EventArgs e)
     {
-
+        string caseNumberSent = Request.QueryString["caseid"];
+        if (caseNumberSent != null)
+        {
+            updateCaseID.Text = caseNumberSent;
+            updateCaseID.Enabled = false;
+        }
+        else
+        {
+            updateCaseID.Enabled = true;
+        }
     }
 
     private string BuildMessageBody(string _FormID)
