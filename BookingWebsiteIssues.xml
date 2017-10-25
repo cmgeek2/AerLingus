@@ -2,20 +2,36 @@
 <root>
   <issues>
     <issue>
-      <Name value="Fares and fees" />
-      <ID value="Fares and fees" />
+      <Name value="TBA" />
+      <ID value="Booking process" />
     </issue>
     <issue>
-      <Name value="Website/mobile app funtionality" />
-      <ID value="Website/mobile app funtionality" />
+      <Name value="TBA" />
+      <ID value="Call center staff" />
     </issue>
     <issue>
-      <Name value="Policy" />
+      <Name value="TBA" />
+      <ID value="Future travel" />
+    </issue>
+    <issue>
+      <Name value="TBA" />
       <ID value="Policy" />
+    </issue> 
+    <issue>
+      <Name value="TBA" />
+      <ID value="Terms &amp; conditions" />
     </issue>
     <issue>
-      <Name value="Staff" />
-      <ID value="Staff" />
+      <Name value="TBA" />
+      <ID value="Voucher redemption online" />
+    </issue>
+    <issue>
+      <Name value="TBA" />
+      <ID value="Unable to check-in online" />
+    </issue>
+    <issue>
+      <Name value="TBA" />
+      <ID value="Website/mobile app funtionality" />
     </issue>
   </issues>
 </root>

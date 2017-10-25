@@ -2,8 +2,8 @@
 <root>
   <options>
     <option>
-      <Name value="Aircraft Cleanliness" />
-      <ID value="Aircraft Cleanliness" />
+      <Name value="Aircraft" />
+      <ID value="Aircraft" />
     </option>
     <option>
       <Name value="Food/Meals" />
@@ -18,8 +18,8 @@
       <ID value="Seating" />
     </option>
     <option>
-      <Name value="Staff" />
-      <ID value="Staff" />
+      <Name value="Crew" />
+      <ID value="Crew" />
       </option>
   </options>
 </root>

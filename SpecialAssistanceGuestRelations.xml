@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <options>
+    <option>
+      <Name value="TBA"/>
+      <ID value="Bereavement"/>
+    </option>
+    <option>
+      <Name value="TBA"/>
+      <ID value="Disability related"/>
+    </option>
+    <option>
+      <Name value="TBA"/>
+      <ID value="Medical condition"/>
+    </option>
+  </options>
+</root>

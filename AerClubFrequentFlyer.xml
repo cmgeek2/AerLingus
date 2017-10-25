@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<root>
+  <options>
+    <option>
+      <Name value="FFP OP IN AO"/>
+      <ID value="Add a frequent flyer number to a booking"/>
+    </option>
+    <option>
+      <Name value="FFP OP IN GE"/>
+      <ID value="AerClub tier benefits"/>
+    </option>
+    <option>
+      <Name value="FFP AC IS CL"/>
+      <ID value="Claiming points"/>
+    </option>
+    <option>
+      <Name value="FFP AC IS MIS"/>
+      <ID value="Missing Points"/>
+    </option>
+    <option>
+      <Name value="FFP AC IS IT"/>
+      <ID value="Trouble accessing my account"/>
+    </option>
+    <option>
+      <Name value="FFP AC IS ACC"/>
+      <ID value="Update my profile "/>
+    </option>
+    <option>
+      <Name value="FFP OP IN RE"/>
+      <ID value="General questions about the program"/>
+    </option>
+    <option>
+      <Name value="FFP AC IN RE"/>
+      <ID value="Other issues with my account"/>
+    </option>
+  </options>
+</root>

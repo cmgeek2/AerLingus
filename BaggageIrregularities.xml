@@ -2,24 +2,24 @@
 <root>
   <issues>
     <issue>
-      <Name value="Damaged" />
-      <ID value="Damaged" />
+      <Name value="TBA" />
+      <ID value="Damaged Luggage" />
     </issue>
     <issue>
-      <Name value="Delayed/interim expenses" />
-      <ID value="Delayed/interim expenses" />
+      <Name value="TBA" />
+      <ID value="Delayed Bag/interim expenses" />
     </issue>
     <issue>
-      <Name value="Lost item on aircraft" />
-      <ID value="Lost item on aircraft" />
+      <Name value="TBA" />
+      <ID value="Excess Charges" />
     </issue>
     <issue>
-      <Name value="Lost bag" />
+      <Name value="TBA" />
       <ID value="Lost bag" />
     </issue>
     <issue>
-      <Name value="Excess Charges" />
-      <ID value="Excess Charges" />
-    </issue>
+      <Name value="TBA" />
+      <ID value="Lost item on aircraft/lounge" />
+    </issue>    
   </issues>
 </root>

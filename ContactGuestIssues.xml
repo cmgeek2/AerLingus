@@ -2,6 +2,10 @@
 <root>
   <issues>
     <issue>
+      <Name value="AerClub/Frequent Flyer"/>
+      <ID value="AerClub/Frequent Flyer"/>
+    </issue>
+    <issue>
       <Name value="Airport Experience" />
       <ID value="Airport Experience" />
     </issue>
@@ -22,16 +26,16 @@
       <ID value="EC261/2004 Etitlement" />
     </issue>
     <issue>
-      <Name value="Flight/Delay Disruption" />
-      <ID value="Flight/Delay Disruption" />
+      <Name value="Flight disruption" />
+      <ID value="Flight disruption" />
     </issue>
     <issue>
-      <Name value="In-flight Experience" />
-      <ID value="In-flight Experience" />
+      <Name value="In-Flight Experience" />
+      <ID value="In-Flight Experience" />
     </issue>
     <issue>
-      <Name value="Other" />
-      <ID value="Other" />
+      <Name value="Special Assistance" />
+      <ID value="Special Assistance" />
     </issue>
   </issues>
 </root>

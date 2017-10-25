@@ -2,24 +2,20 @@
 <root>
   <options>
     <option>
-      <Name value="Boarding Process" />
-      <ID value="Boarding Process" />
-      </option>
-    <option>
-      <Name value="Check-In Process" />
-      <ID value="Check-In Process" />
+      <Name value="TBA" />
+      <ID value="Boarding" />
     </option>
     <option>
-      <Name value="Lounge Access" />
-      <ID value="Lounge Access" />
-      </option>
+      <Name value="TBA" />
+      <ID value="Check-In" />
+    </option>
     <option>
-      <Name value="Wheel Chair" />
-      <ID value="Wheel Chair" />
-      </option>
+      <Name value="TBA" />
+      <ID value="Ground Staff" />
+    </option>
     <option>
-      <Name value="Staff" />
-      <ID value="Staff" />
+      <Name value="TBA" />
+      <ID value="Lounge" />
     </option>
   </options>
 </root>

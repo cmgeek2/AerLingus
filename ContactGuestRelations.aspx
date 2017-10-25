@@ -718,50 +718,49 @@
                      case 1:
                      {
                          $("#specificIssueDropdown").empty();
-                         setSelect('#specificIssueDropdown', 'AirportExperience.xml', 'option', 'Please Select');
+                         setSelect('#specificIssueDropdown', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
                          $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 2:
                      {
                          $("#specificIssueDropdown").empty();
-                         setSelect('#specificIssueDropdown', 'BaggageIrregularities.xml', 'issue', 'Please Select');
+                         setSelect('#specificIssueDropdown', 'AirportExperience.xml', 'option', 'Please Select');
                          $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 3:
                          {
                              $("#specificIssueDropdown").empty();
-                             setSelect('#specificIssueDropdown', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
+                             setSelect('#specificIssueDropdown', 'BaggageIrregularities.xml', 'issue', 'Please Select');
                              $("#claimTypeGroup").css("display", "none");
                              break;
                      }
                      case 4:
                      {
                          $("#specificIssueDropdown").empty();
-                         $("#specificIssueDropdown").append($('<option>',
-                         {
-                             value: "Please use comments section",
-                             text: "Please use comments section"
-                         }));
-                         $('#specificIssueDropdown').attr("Disabled", false);
+                         setSelect('#specificIssueDropdown', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
                          $("#claimTypeGroup").css("display", "none");
                          break;
                      }
 
                      case 5:
+                     {
+                         $("#specificIssueDropdown").empty();
+                         setSelect('#specificIssueDropdown', 'Compliment.xml', 'option', 'Please Select');
+                         $("#claimTypeGroup").css("display", "none");
+                         break;
+                     }
+
+                     case 6:
                          {
                              $("#specificIssueDropdown").empty();
-                             $("#specificIssueDropdown").append($('<option>',
-                             {
-                                 value: "EC 261/2004",
-                                 text: "EC 261/2004"
-                             }));
+                             setSelect('#specificIssueDropdown', 'Ec261.xml', 'option', 'Please Select');
                              $("#claimTypeGroup").css("display", "none");
                              break;
                          }
 
-                     case 6:
+                     case 7:
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'FlightDelayDisruption.xml', 'issue', 'Please Select');
@@ -769,7 +768,7 @@
                              break;
                          }
 
-                     case 7:
+                     case 8:
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'InFlightExperience.xml', 'option', 'Please Select');
@@ -777,18 +776,14 @@
                              break;
                          }
 
-                     case 8:
+                     case 9:
                          {
                              $("#specificIssueDropdown").empty();
-                             $("#specificIssueDropdown").append($('<option>',
-                             {
-                                 value: "Please use comments section",
-                                 text: "Please Use comments section"
-                             }));
-                             $('#specificIssueDropdown').attr("Disabled", false);
+                             setSelect('#specificIssueDropdown', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
                              $("#claimTypeGroup").css("display", "none");
                              break;
                          }
+                     
 
                  }
              });

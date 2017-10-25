@@ -2,12 +2,12 @@
 <root>
   <issues>
     <issue>
-      <Name value="Delayed Flight" />
-      <ID value="Delayed Flight" />
+      <Name value="Cancellation" />
+      <ID value="Cancellation" />
     </issue>
     <issue>
-      <Name value="Cancelled flight" />
-      <ID value="Cancelled flight" />
+      <Name value="Delay" />
+      <ID value="Delay" />
     </issue>
     <issue>
       <Name value="Denied boarding" />
@@ -16,6 +16,10 @@
     <issue>
       <Name value="Missed connection" />
       <ID value="Missed connection" />
+    </issue>
+    <issue>
+      <Name value="Schedule change" />
+      <ID value="Schedule change" />
     </issue>
   </issues>
 </root>
