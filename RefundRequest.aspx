@@ -588,7 +588,7 @@
                     </table>
                         
                     <div class="input-container" >
-                         <asp:RadioButtonList runat="server" ID="propertyIrregularityGroup" RepeatLayout="Flow"  style="display:inline">
+                         <asp:RadioButtonList runat="server" ID="RefundReasonList" RepeatLayout="Flow"  style="display:inline">
                             <asp:ListItem Text="I am requesting a refund for all flights in my booking" Selected="True" Value="FULL" />
                             <asp:ListItem Text="I am requesting a partial refund for specific flights in my booking" Value="PARTIAL" />
                          </asp:RadioButtonList>
