@@ -582,13 +582,13 @@
                             <td> <h2 class="xl2 tealGreen"> Reason for Refund </h2></td>
                         </tr>
                         <tr>
-                            <td colspan="3">*Please select the reason you are requesting a refund.</td>
+                            <td colspan="3">*Please select the reason you are requesting a refund:</td>
                             
                         </tr>
                     </table>
                         
                     <div class="input-container" >
-                         <asp:RadioButtonList runat="server" ID="RefundReasonList" RepeatLayout="Flow"  style="display:inline">
+                         <asp:RadioButtonList runat="server" ID="RefundReasonList" style="display:inline" CssClass="radio-inline" RepeatDirection="Vertical">
                             <asp:ListItem Text="I am requesting a refund for all flights in my booking" Selected="True" Value="FULL" />
                             <asp:ListItem Text="I am requesting a partial refund for specific flights in my booking" Value="PARTIAL" />
                          </asp:RadioButtonList>
