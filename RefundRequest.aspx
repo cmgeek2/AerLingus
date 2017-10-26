@@ -585,10 +585,16 @@
                             <td colspan="3">*Please select the reason you are requesting a refund.</td>
                             
                         </tr>
-                        <tr>
-                            <td colspan="3">If you have more than one reason please choose the additional reasons </td>              
-                        </tr>
                     </table>
+                        
+                    <div class="input-container" >
+                         <asp:RadioButtonList runat="server" ID="propertyIrregularityGroup" RepeatLayout="Flow"  style="display:inline">
+                            <asp:ListItem Text="I am requesting a refund for all flights in my booking" Selected="True" Value="FULL" />
+                            <asp:ListItem Text="I am requesting a partial refund for specific flights in my booking" Value="PARTIAL" />
+                         </asp:RadioButtonList>
+                         <br/><br/>
+                   </div> 
+
                     <!-------------------------------------------------------------------------------------------------------------- -->
                     <!------ Refund Section ------------- -->
                     <div>To add more than one reason, simply click the '+' sign:</div>
@@ -982,24 +988,20 @@
              }
 
              if (this.value == "Flight Related") {
-                 setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated');
+                 setSelect('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
+                 //setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
              if (this.value == "Fee Related") {
-                 setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated');
+                 setSelect('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated', 'Please Select');
+                 //setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
 
              if (this.value == "Other")
              {
-                 $('#refundReason1').append($('<option>',
-                 {
-                     value: "Please Use Comments Section",
-                     text: "Please Use Comments Section"
-                 }));
-                 document.getElementById('refundReason1').selectedIndex = 1;
-                 $('#refundReason1').attr("Disabled", true);
+                 setSelect('#refundReason1', 'RefundRequestInfo.xml', 'Other', 'Please Select');
                  return;
              }
 
