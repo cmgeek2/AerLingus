@@ -579,7 +579,7 @@
                         <br/>
                         <table>
                             <tr>
-                                <td style="width: 20%">
+                                <td style="width: 20%" valign="top">
                                     <table>
                                         <tr>
                                             <p>What type of expenses are you claiming for?</p>
