@@ -209,7 +209,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         string selectedCountry = Request.Form["_helpQueryCountryList"];
 
         MailMessage _helpMessage = new MailMessage();
-        //_helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
+        _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
 
         if (Request.Form["_helpQueryCountryList"] == "USA")
         {
