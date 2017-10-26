@@ -9,64 +9,98 @@
   -->
 
   <FlightRelated>
+    <Name value="RF CU RQ BV"/>
     <ID value="Bereavement"> </ID>
   </FlightRelated>
   <FlightRelated>
-    <ID value="Cancelled Flight"></ID>
+    <Name value="RF CU RQ "/>
+    <ID value="Cancel my booking"> </ID>
   </FlightRelated>
   <FlightRelated>
-    <ID value="Delayed Flight"></ID>
+    <Name value="RF CU RQ DU"/>
+    <ID value="Duplicate booking"></ID>
+  </FlightRelated>
+  <FlightRelated>
+    <Name value="RF CU RQ FX"/>
+    <ID value="Flex/Business class booking"></ID>
    </FlightRelated>
   <FlightRelated>
-    <ID value="Disrupted Flight"></ID>
+    <Name value="RF CU RQ CX"/>
+    <ID value="Flight Cancelled"></ID>
   </FlightRelated>
   <FlightRelated>
-    <ID value="Duplicate Booking"></ID>   
+    <Name value="RF CU RQ 2HR"/>
+    <ID value="Request within 24 hours of purchase (travel to/from US only)"></ID>   
   </FlightRelated>
   <FlightRelated>
-    <ID value="Flex/Business Class Booking"></ID>   
+    <Name value="RF CU RQ SC"/>
+    <ID value="Aer Lingus changed my flight (Schedule Change)"></ID>   
   </FlightRelated>
   <FlightRelated>
-    <ID value="Schedule Change"></ID>  
+    <Name value="TE DD PDE UC"/>
+    <ID value="Unable to fly due to medical reasons"></ID>  
   </FlightRelated>
   <FlightRelated>
+    <Name value="RF CU RQ TO"/>
     <ID value="Tax Refund"></ID>   
   </FlightRelated>
 
 
   <FeeRelated>
+    <Name value="RF CU RQ FR"/>
     <ID value="Bag Fee"></ID> 
   </FeeRelated>
   <FeeRelated>
+    <Name value="RF CU RQ FR"/>
     <ID value="PreOrder Meal"></ID>   
   </FeeRelated>
   <FeeRelated>
-    <ID value="Seat Fee (Choice/Exit/Premium)"></ID>   
+    <Name value="RF CU RQ PB"/>
+    <ID value="Priority Boarding"></ID>   
   </FeeRelated>
+
   <FeeRelated>
+    <Name value="RF CU RQ FR"/>
+    <ID value="Seat fee (Choice/Exit/Premium)"></ID>
+  </FeeRelated>
+  
+  <FeeRelated>
+    <Name value="TE UY IS O"/>
     <ID value="Upgrade Yourself"></ID>   
   </FeeRelated>
   <FeeRelated>
-    <ID value="Other - Please Use Comments Section"></ID>  
+    <Name value="RF CU RQ FR"/>
+    <ID value="Other fee"></ID>  
   </FeeRelated>
 
+  <Other>
+    <Name value="RF CU RQ OTH"/>
+    <ID value="Please use comments section"></ID>
+  </Other>
+
   <CompRelated>
+    <Name value=""/>
     <ID value="Accommodation"></ID> 
   </CompRelated>
   <CompRelated>
+    <Name value=""/>
     <ID value="Cancelled Flight"></ID>  
   </CompRelated>
   <CompRelated>
+    <Name value=""/>
     <ID value="Delayed Flight"></ID>  
   </CompRelated>
   <CompRelated>
+    <Name value=""/>
     <ID value="Voucher"></ID>  
   </CompRelated>
 
   <SecondaryReason>
+    <Name value=""/>
     <ID value="Fee Related"></ID>  
   </SecondaryReason>
   <SecondaryReason>
+    <Name value=""/>
     <ID value="Compensation Related"></ID> 
   </SecondaryReason>
 
