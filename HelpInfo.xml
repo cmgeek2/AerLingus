@@ -1,45 +1,85 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <HelpType>
-  
+
+  <AerClub>
+    <ID value="Add a frequent flyer number to a booking"></ID>
+    <RC value="FFP OP IN AO"></RC>
+  </AerClub>
+  <AerClub>
+    <ID value="AerClub tier benefits"></ID>
+    <RC value="FFP OP IN GE"></RC>
+  </AerClub>
+  <AerClub>
+    <ID value="Claiming points"></ID>
+    <RC value="FFP AC IS CL"></RC>
+  </AerClub>
+  <AerClub>
+    <ID value="Missing Points"></ID>
+    <RC value="FFP AC IS MIS"></RC>
+  </AerClub>
+  <AerClub>
+    <ID value="Trouble accessing my account"></ID>
+    <RC value="FFP AC IS IT"></RC>
+  </AerClub>
+  <AerClub>
+    <ID value="Update my profile"></ID>
+    <RC value="FFP AC IS ACC"></RC>
+  </AerClub>
+  <AerClub>
+    <ID value="General questions about the programme"></ID>
+    <RC value="FFP OP IN RE"></RC>
+  </AerClub>
+  <AerClub>
+    <ID value="Other issues with my account"></ID>
+    <RC value="FFP AC IN RE"></RC>
+  </AerClub>
+   
   <Description>
-    <ID value="Add a frequent flyer number"></ID>
-    <RC value="MB OT G FF"></RC>
+    <ID value="Aer Lingus Changed My Flight (Schedule Change)"></ID>
+    <RC value="MB CIV IS O"></RC>
   </Description>  
   <Description >
     <ID value="Assign, change or confirm a seat"></ID>
     <RC value="MB ST AS AP"></RC>
   </Description>
   <Description >
-    <ID value="Request help with a flight schedule change"></ID>
-    <RC value="MB CIV IS O"></RC>
+    <ID value="The name on my booking is misspelt"></ID>
+    <RC value="MB CV CH NM"></RC>
+  </Description>
+  <Description >
+    <ID value="Reconfirm the Details of my Itinerary"></ID>
+    <RC value="MB RC BK IT"></RC>
   </Description>
   <Description >
     <ID value="Resend confirmation email"></ID>
     <RC value="MB RC RQ RE"></RC>
   </Description>
-
+  <Description >
+    <ID value="Terms and Conditions of Fare Purchased"></ID>
+    <RC value="MB CV RL RL"></RC>
+  </Description>
+  <Description >
+    <ID value="Unable to Fly Due to Medical Reasons"></ID>
+    <RC value="TE DD PDE UC"></RC>
+  </Description>
+  
   <Receipt >
-    <ID value="Cancellation invoice"></ID>
+    <ID value="Flight Cancellation Information for Insurance"></ID>
     <RC value="CANINVRC"></RC>
   </Receipt>
   <Receipt >
-    <ID value="Information for insurance"></ID>
-    <RC value="INSINFO"></RC>
-  </Receipt>
-  <Receipt >
     <ID value="Proof of travel"></ID>
-    <RC value="INSINFO"></RC>
+    <RC value="PRFINVRC"></RC>
   </Receipt>
   <Receipt >
     <ID value="Property irregularity report"></ID>
-    <RC value="PROPREP"></RC>
+    <RC value="UBMPIR"></RC>
   </Receipt>
   <Receipt >
     <ID value="Summary invoice"></ID>
     <RC value="SUMINVRC"></RC>
   </Receipt>
 
-  
   <Info>
     <ID value="Airports"></ID>
     <RC value="MB OT LG LI"></RC>
@@ -49,13 +89,13 @@
     <RC value="MB BG PC IN"></RC>
   </Info>
   <Info >
-    <ID value="Fare rules"></ID>
-    <RC value="MB CV RL RL"></RC>
-  </Info>
-  <Info >
     <ID value="In-flight services"></ID>
     <RC value="MB OT G IF"></RC>
   </Info>
+  <Info >
+    <ID value="Items Permitted in Cabin/Checked Baggage"></ID>
+    <RC value="MB BG PC IN"></RC>
+  </Info> 
   <Info>
     <ID value="Lounges"></ID>
     <RC value="MB OT LG LI"></RC>
@@ -66,9 +106,8 @@
   </Info>
     <Info >
     <ID value="Other: Please use comments below"></ID>
-    <RC value="MB OT G GQ"></RC>
+    <RC value="MB OT G OTH"></RC>
   </Info>
-
 
   <WebIssue >
     <ID value="Adding meals"></ID>
@@ -76,27 +115,35 @@
   </WebIssue>
   <WebIssue >
     <ID value="Adding seats"></ID>
-    <RC value="MB ML RQ ML"></RC>
+    <RC value="MB ST AS AP"></RC>
   </WebIssue>
   <WebIssue>
     <ID value="Availability of fares"></ID>
-    <RC value="PB MB IS UCB"></RC>
+    <RC value="PB MB IS FS"></RC>
   </WebIssue>
   <WebIssue >
     <ID value="Changing itinerary"></ID>
-    <RC value="MB CV CH IT"></RC>
+    <RC value="TE IPT IF UMBO"></RC>
   </WebIssue>
   <WebIssue >
     <ID value="Check in"></ID>
-    <RC value="MB OI CI UCI"></RC>
+    <RC value="TE IPT IF UCO"></RC>
+  </WebIssue>
+  <WebIssue >
+    <ID value="Confirm my booking due flight schedule change"></ID>
+    <RC value="PB MB IS UC"></RC>
   </WebIssue>
   <WebIssue >
     <ID value="Unable to complete booking"></ID>
-    <RC value="PB MB IS UC"></RC>
+    <RC value="PB MB IS DT"></RC>
   </WebIssue>
-
+  <WebIssue >
+    <ID value="Voucher issue"></ID>
+    <RC value="PB MB VC EXP"></RC>
+  </WebIssue>
+  
   <Other >
-    <ID value="General travel query"></ID>
+    <ID value="Other Item not listed above"></ID>
     <RC value="MB OT G GQ"></RC>
   </Other>
   

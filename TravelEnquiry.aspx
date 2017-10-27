@@ -264,6 +264,7 @@
                            <label class="visuallyhidden">Select a Help Request</label>
                            <asp:DropDownList CssClass="dropdown-toggle" ID="_helpQueryTypeDropDownList"  runat="server"  Height="30px" Width="260px">
                             <asp:ListItem Text="Select help request" Value="Selected"></asp:ListItem>
+                            <asp:ListItem Text="AerClub/Frequent Fluer" Value="A"></asp:ListItem>
                             <asp:ListItem Text="Need information" Value="H"></asp:ListItem>
                             <asp:ListItem Text="Need help with a booking" Value="I"></asp:ListItem>
                             <asp:ListItem Text="Request a document" Value="R"></asp:ListItem>
@@ -528,6 +529,10 @@
               $("#_requestRefundReasonInfo2").empty();
           } else {
               $("#_helpQueryDefList").attr("Disabled", true);
+          }
+
+          if (this.value == "A") {
+              setSelectQuery('#_helpQueryDefList', 'HelpInfo.xml', 'AerClub');
           }
 
           if (this.value == "H") 

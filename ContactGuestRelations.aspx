@@ -557,24 +557,51 @@
                             </td>
                         </tr>
                     </table>
+
+                    <div id="issue1">
+                        <table >
+                            <tr>
+                                <td>
+                                    <select class="dropdown-toggle" name="generalIssuesDropdown" id="generalIssuesDropdown" style="width: 260px; height: 30px; text-align: left"></select>
+                                </td>
+                                <td>
+                                    <select class="dropdown-toggle" name="specificIssueDropdown" id="specificIssueDropdown" style="width: 260px; height: 30px; text-align: left">
+                                        <option value="">Please Select</option>
+                                    </select>
+                                </td>
+                                <td>
+                                    <div class="input-container" >
+                                        <input type="text" id="baggageReferenceNumber" name="baggageReferenceNumber" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <label id="baggageReferenceLabel" class="form-control-label">Baggage Reference</label>
+                                    </div> 
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    
+                <div id="issue2">
                     <table >
                         <tr>
                             <td>
-                                <select class="dropdown-toggle" name="generalIssuesDropdown" id="generalIssuesDropdown" style="width: 260px; height: 30px; text-align: left"></select>
+                                <select class="dropdown-toggle" name="generalIssuesDropdown2" id="generalIssuesDropdown2" style="width: 260px; height: 30px; text-align: left"></select>
                             </td>
                             <td>
-                                <select class="dropdown-toggle" name="specificIssueDropdown" id="specificIssueDropdown" style="width: 260px; height: 30px; text-align: left">
+                                <select class="dropdown-toggle" name="specificIssueDropdown2" id="specificIssueDropdown2" style="width: 260px; height: 30px; text-align: left">
                                     <option value="">Please Select</option>
                                 </select>
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" id="baggageReferenceNumber" name="baggageReferenceNumber" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label id="baggageReferenceLabel" class="form-control-label">Baggage Reference</label>
+                                    <input type="text" id="baggageReferenceNumber2" name="baggageReferenceNumber2" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label id="baggageReferenceLabel2" class="form-control-label">Baggage Reference</label>
                                 </div> 
                             </td>
                         </tr>
                     </table>
+                </div>
+                    
+
+                    
                     <div id ="claimTypeGroup" style="display: none">
                         <br/>
                         <table>
