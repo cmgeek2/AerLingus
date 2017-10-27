@@ -575,11 +575,14 @@
                                         <label id="baggageReferenceLabel" class="form-control-label">Baggage Reference</label>
                                     </div> 
                                 </td>
+                                <td>
+                                    <button type="button" title="Add another guest" id="addIssue1" class="transparentBtn" aria-label="Click to add an additional request">+</button>
+                                </td>
                             </tr>
                         </table>
                     </div>
                     
-                <div id="issue2">
+                <div id="issue2" style="display: none">
                     <table >
                         <tr>
                             <td>
@@ -596,6 +599,37 @@
                                     <label id="baggageReferenceLabel2" class="form-control-label">Baggage Reference</label>
                                 </div> 
                             </td>
+                            <td>
+                                <button type="button" title="Add another guest" id="addIssue2" class="transparentBtn" aria-label="Click to add an additional request">+</button>
+                            </td>
+                            <td>
+                                <button type="button" title="Remove this guest" id="removeIssue2" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                            </td>
+
+                        </tr>
+                    </table>
+                </div>
+
+                <div id="issue3" style="display: none">
+                    <table >
+                        <tr>
+                            <td>
+                                <select class="dropdown-toggle" name="generalIssuesDropdown2" id="generalIssuesDropdown3" style="width: 260px; height: 30px; text-align: left"></select>
+                            </td>
+                            <td>
+                                <select class="dropdown-toggle" name="specificIssueDropdown2" id="specificIssueDropdown3" style="width: 260px; height: 30px; text-align: left">
+                                    <option value="">Please Select</option>
+                                </select>
+                            </td>
+                            <td>
+                                <div class="input-container" >
+                                    <input type="text" id="baggageReferenceNumber3" name="baggageReferenceNumber2" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label id="baggageReferenceLabel2" class="form-control-label">Baggage Reference</label>
+                                </div> 
+                            </td>
+                            <td>
+                                <button type="button" title="Remove this guest" id="removeIssue3" class="transparentBtn" aria-label="Click to remove an additional request">-</button>
+                            </td> 
                         </tr>
                     </table>
                 </div>
@@ -728,6 +762,8 @@
          setSelect('#relationshipToGuestDropDown', 'Relationships.xml', 'relationship', 'Relationship to the guest');
          setSelect('#aerClubDropDown', 'AerClubTiers.xml', 'tier', 'AerClub Tier');
          setSelect('#generalIssuesDropdown', 'ContactGuestIssues.xml', 'issue', 'Please Select');
+         setSelect('#generalIssuesDropdown2', 'ContactGuestIssues.xml', 'issue', 'Please Select');
+         setSelect('#generalIssuesDropdown3', 'ContactGuestIssues.xml', 'issue', 'Please Select');
 
          $('#generalIssuesDropdown')
              .change(function() {
@@ -814,6 +850,183 @@
 
                  }
              });
+
+
+         $('#generalIssuesDropdown2')
+              .change(function () {
+                  switch (this.selectedIndex) {
+                      case 0:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              $("#specificIssueDropdown2").append($('<option>', {
+                                  value: '',
+                                  text: 'Please Select'
+                              }));
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+                      case 1:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+                      case 2:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'AirportExperience.xml', 'option', 'Please Select');
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+                      case 3:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'BaggageIrregularities.xml', 'issue', 'Please Select');
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+                      case 4:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+
+                      case 5:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'Compliment.xml', 'option', 'Please Select');
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+
+                      case 6:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'Ec261.xml', 'option', 'Please Select');
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+
+                      case 7:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'FlightDelayDisruption.xml', 'issue', 'Please Select');
+                              $("#claimTypeGroup").css("display", "block");
+                              break;
+                          }
+
+                      case 8:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'InFlightExperience.xml', 'option', 'Please Select');
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+
+                      case 9:
+                          {
+                              $("#specificIssueDropdown2").empty();
+                              setSelect('#specificIssueDropdown2', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
+                              $("#claimTypeGroup").css("display", "none");
+                              break;
+                          }
+
+
+                  }
+              });
+
+
+         $('#generalIssuesDropdown3')
+               .change(function () {
+                   switch (this.selectedIndex) {
+                       case 0:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               $("#specificIssueDropdown3").append($('<option>', {
+                                   value: '',
+                                   text: 'Please Select'
+                               }));
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+                       case 1:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+                       case 2:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'AirportExperience.xml', 'option', 'Please Select');
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+                       case 3:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'BaggageIrregularities.xml', 'issue', 'Please Select');
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+                       case 4:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+
+                       case 5:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'Compliment.xml', 'option', 'Please Select');
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+
+                       case 6:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'Ec261.xml', 'option', 'Please Select');
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+
+                       case 7:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'FlightDelayDisruption.xml', 'issue', 'Please Select');
+                               $("#claimTypeGroup").css("display", "block");
+                               break;
+                           }
+
+                       case 8:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'InFlightExperience.xml', 'option', 'Please Select');
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+
+                       case 9:
+                           {
+                               $("#specificIssueDropdown3").empty();
+                               setSelect('#specificIssueDropdown3', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
+                               $("#claimTypeGroup").css("display", "none");
+                               break;
+                           }
+
+
+                   }
+               });
+
+
+
 
          function Count() {
 
@@ -927,6 +1140,33 @@
          $('#removeFlightsButton4').click(function () {
              removeButtonClicked(4, "flights");
          });
+        
+          //-----------------------------------------------------------------------------------------------
+          // Issue section
+          //-----------------------------------------------------------------------------------------------
+         $('#addIssue1').click(function () {
+             addButtonclicked(1, "issue");
+         });
+         $('#addIssue1').mouseup(function () { this.blur() });
+         // Guest 2
+         $('#addIssue2').click(function () {
+             addButtonclicked(2, "issue");
+         });
+         $('#removeIssue2').click(function () {
+             removeButtonClicked(2, "issue");
+
+         });
+         $('#addIssue2').mouseup(function () { this.blur() });
+         $('#removeIssue3')
+             .click(function () {
+                 removeButtonClicked(3, "issue");
+         });
+         $('#removeIssue3').mouseup(function () { this.blur() });
+         $('#removeIssue3')
+             .click(function () {
+                 removeButtonClicked(3, "issue");
+             });
+
          //------------------------------------------------------------------------------------------------
          // Guests section
          //------------------------------------------------------------------------------------------------
@@ -974,7 +1214,8 @@
          $('#removeGuest6')
              .click(function () {
                  removeButtonClicked(6, "guest");
-             });
+         });
+
          function addButtonclicked(guestNumber, option) {
              var buttons = new Array();
              if (option == "guest")
@@ -983,6 +1224,8 @@
                  buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
              if (option == "flights")
                  buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
+             if (option == "issue")
+                 buttons = ["issue1", "issue2", "issue3"];
              var currentIndex = guestNumber - 1;
              if (currentIndex == 0 || currentIndex == 1) {
                  var guestDiv = document.getElementById(buttons[currentIndex + 1]);
@@ -1006,6 +1249,8 @@
                  buttons = ["refundReason1Div", "refundReason2Div", "refundReason3Div", "refundReason4Div"];
              if (option == "flights")
                  buttons = ["firstFlightInfoDiv", "secondFlightInfoDiv", "thirdFlightInfoDiv", "fourthFlightInfoDiv"];
+             if (option == "issue")
+                 buttons = ["issue1", "issue2", "issue3"];
              var currentIndex = guestNumber - 1;
              var guestDiv = document.getElementById(buttons[currentIndex]);
              guestDiv.style.display = "none";

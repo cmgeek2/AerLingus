@@ -172,7 +172,21 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         sbBodyTextString.AppendLine("Specific Issue: " + Request.Form["specificIssueDropdown"]);
         sbBodyTextString.AppendLine("Baggage Reference: " + Request.Form["baggageReferenceNumber"]);
 
-         
+        if (Request.Form["generalIssuesDropdown2"] != "")
+        {
+            sbBodyTextString.AppendLine("General Issue 2: " + Request.Form["generalIssuesDropdown2"]);
+            sbBodyTextString.AppendLine("Specific Issue 2: " + Request.Form["specificIssueDropdown2"]);
+            sbBodyTextString.AppendLine("Baggage Reference 2: " + Request.Form["baggageReferenceNumber2"]);
+        }
+
+        if (Request.Form["generalIssuesDropdown3"] != "")
+        {
+            sbBodyTextString.AppendLine("General Issue 3: " + Request.Form["generalIssuesDropdown3"]);
+            sbBodyTextString.AppendLine("Specific Issue 3: " + Request.Form["specificIssueDropdown3"]);
+            sbBodyTextString.AppendLine("Baggage Reference 3: " + Request.Form["baggageReferenceNumber3"]);
+        }
+
+
         if (Hotels.Checked)
         {
             expenses.Add("Hotels");
