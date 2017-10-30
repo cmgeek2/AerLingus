@@ -162,7 +162,7 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="email" name="email" id="email" style="width: 395px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <input type="email" name="email" id="email" style="width:Do you need a letter for your insurance? 395px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Confirm Email Address</label>
                                 </div>
                             </td>
@@ -636,7 +636,7 @@
                     
 
                     
-                    <div id ="claimTypeGroup" style="display: none">
+                    <div id ="claimTypeGroup">
                         <br/>
                         <table>
                             <tr>
