@@ -1040,23 +1040,19 @@
              }
 
              if (this.value == "Flight Related") {
-                 setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
+                 setSelect('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
+                 //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
              if (this.value == "Fee Related") {
-                 setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
+                 setSelect('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated', 'Please Select');
+                 //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
 
              if (this.value == "Other") {
-                 $('#refundReason2').append($('<option>',
-                 {
-                     value: "Please Use Comments Section",
-                     text: "Please Use Comments Section"
-                 }));
-                 document.getElementById('refundReason2').selectedIndex = 1;
-                 $('#refundReason2').attr("Disabled", true);
+                 setSelect('#refundReason2', 'RefundRequestInfo.xml', 'Other', 'Please Select');
                  return;
              }
 
@@ -1092,23 +1088,19 @@
              }
 
              if (this.value == "Flight Related") {
-                 setSelectQuery('#refundReason3', 'RefundRequestInfo.xml', 'FlightRelated');
+                 setSelect('#refundReason3', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
+                 //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
              if (this.value == "Fee Related") {
-                 setSelectQuery('#refundReason3', 'RefundRequestInfo.xml', 'FeeRelated');
+                 setSelect('#refundReason3', 'RefundRequestInfo.xml', 'FeeRelated', 'Please Select');
+                 //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
 
              if (this.value == "Other") {
-                 $('#refundReason3').append($('<option>',
-                 {
-                     value: "Please Use Comments Section",
-                     text: "Please Use Comments Section"
-                 }));
-                 document.getElementById('refundReason3').selectedIndex = 1;
-                 $('#refundReason3').attr("Disabled", true);
+                 setSelect('#refundReason3', 'RefundRequestInfo.xml', 'Other', 'Please Select');
                  return;
              }
 
@@ -1133,23 +1125,19 @@
              }
 
              if (this.value == "Flight Related") {
-                 setSelectQuery('#refundReason4', 'RefundRequestInfo.xml', 'FlightRelated');
+                 setSelect('#refundReason4', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
+                 //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
              if (this.value == "Fee Related") {
-                 setSelectQuery('#refundReason4', 'RefundRequestInfo.xml', 'FeeRelated');
+                 setSelect('#refundReason4', 'RefundRequestInfo.xml', 'FeeRelated', 'Please Select');
+                 //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
              }
 
              if (this.value == "Other") {
-                 $('#refundReason4').append($('<option>',
-                 {
-                     value: "Please Use Comments Section",
-                     text: "Please Use Comments Section"
-                 }));
-                 document.getElementById('refundReason4').selectedIndex = 1;
-                 $('#refundReason4').attr("Disabled", true);
+                 setSelect('#refundReason4', 'RefundRequestInfo.xml', 'Other', 'Please Select');
                  return;
              }
 
