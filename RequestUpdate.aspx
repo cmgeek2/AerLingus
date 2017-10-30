@@ -258,19 +258,19 @@
                                 <tr>
                                     <td colspan="3">
                                         <div class="input-container" >
-                                            <input type="text" id="bankName" maxlength="40" style="width: 260px" title="Bank Name" class="form-control inline-label  " onblur="checkvalue(this)" />
+                                            <input type="text" id="bankName" name="bankName" maxlength="40" style="width: 260px" title="Bank Name" class="form-control inline-label  " onblur="checkvalue(this)" />
                                             <label class="form-control-label">Bank Name</label>
                                         </div>
                                     </td>
                                     <td>
                                     <div class="input-container" >
-                                        <input type="text" id="accountHolderName" maxlength="40" style="width: 260px" title="Account Holder Name" class="form-control inline-label  " onblur="checkvalue(this)" />
+                                        <input type="text" id="accountHolderName" name="accountHolderName" maxlength="40" style="width: 260px" title="Account Holder Name" class="form-control inline-label  " onblur="checkvalue(this)" />
                                         <label class="form-control-label">Account Holder Name</label>
                                     </div>
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text" id="accountNumber" maxlength="25" style="width: 260px" title="Account Number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                            <input type="text" id="accountNumber" name="accountNumber" maxlength="25" style="width: 260px" title="Account Number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                             <label class="form-control-label">Account Number</label>
                                         </div>
                                     </td>
@@ -279,19 +279,19 @@
                                 <tr>
                                     <td colspan="3">
                                         <div class="input-container" >
-                                            <input type="text"  id="swiftCode" maxlength="15" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label  " onblur="checkvalue(this)" />
+                                            <input type="text"  id="swiftCode" name="swiftCode" maxlength="15" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label  " onblur="checkvalue(this)" />
                                             <label class="form-control-label">Swift (BIC) Code</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text"  id="ibanNumber" maxlength="25" style="width: 260px" title="IBAN Number" class="form-control inline-label  "  onblur="checkvalue(this)" />
+                                            <input type="text"  id="ibanNumber" name="ibanNumber" maxlength="25" style="width: 260px" title="IBAN Number" class="form-control inline-label  "  onblur="checkvalue(this)" />
                                             <label class="form-control-label">IBAN Number</label>
                                         </div>
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text"  id="codeNumber" maxlength="15" style="width: 260px" title="Code Number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                            <input type="text"  id="codeNumber" name="codeNumber" maxlength="15" style="width: 260px" title="Code Number" class="form-control inline-label" onblur="checkvalue(this)"/>
                                             <label class="form-control-label">Code Number</label>
                                         </div>
                                     </td>
