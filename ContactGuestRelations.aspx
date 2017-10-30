@@ -534,13 +534,13 @@
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryFirstName6" name="helpQueryFirstName2" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="sixthGuestFirstName" name="sixthGuestFirstName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">First Name</label>
                                     </div>
                                 </td>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" style="width: 260px; text-transform: capitalize" id="helpQueryLastName6"  name="helpQueryLastName" class="form-control inline-label" onblur="checkvalue(this)" />
+                                        <input type="text" style="width: 260px; text-transform: capitalize" id="sixthGuestLastName"  name="sixthGuestLastName" class="form-control inline-label" onblur="checkvalue(this)" />
                                         <label class="form-control-label">Family Name</label>
                                     </div>
                                 </td>
