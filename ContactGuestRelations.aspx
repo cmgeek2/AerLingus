@@ -218,8 +218,8 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="text" name="countryState" id="countryState" maxlength="20" style="width: 260px;" title="country or state" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                    <label class="form-control-label">Country/State</label>
+                                    <input type="text" name="countryState" id="countryState" maxlength="20" style="width: 260px;" title="county or state" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                    <label class="form-control-label">County/State</label>
                                 </div>
                             </td>
                             <td>
