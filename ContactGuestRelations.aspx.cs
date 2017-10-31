@@ -232,7 +232,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         }
         else
         {
-            //_helpMessage.To.Add(ConfigurationManager.AppSettings["OtherContactUsToAddress"]);
+            _helpMessage.To.Add(ConfigurationManager.AppSettings["OtherContactUsToAddress"]);
             _helpMessage.Subject = ConfigurationManager.AppSettings["OtherContactUsSubject"];
         }
 
