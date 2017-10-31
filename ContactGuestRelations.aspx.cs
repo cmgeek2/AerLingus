@@ -252,7 +252,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         try
         {
             SMTPServer.Send(_helpMessage);
-            Response.Redirect("ThankYou.aspx?sender=RefundRequest.aspx&message=" + Server.UrlEncode("Refund"));
+            Response.Redirect("ThankYou.aspx?sender=RefundRequest.aspx&message=" + Server.UrlEncode("Guest Relations"));
 
             _helpMessage.Dispose();
         }
