@@ -162,7 +162,7 @@
                             </td>
                             <td>
                                 <div class="input-container" >
-                                    <input type="email" name="email" id="email" style="width:Do you need a letter for your insurance? 395px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
+                                    <input type="email" name="email" id="email" style="width:395px" class="form-control inline-label" required="required" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Confirm Email Address</label>
                                 </div>
                             </td>
@@ -614,10 +614,10 @@
                     <table >
                         <tr>
                             <td>
-                                <select class="dropdown-toggle" name="generalIssuesDropdown2" id="generalIssuesDropdown3" style="width: 260px; height: 30px; text-align: left"></select>
+                                <select class="dropdown-toggle" name="generalIssuesDropdown3" id="generalIssuesDropdown3" style="width: 260px; height: 30px; text-align: left"></select>
                             </td>
                             <td>
-                                <select class="dropdown-toggle" name="specificIssueDropdown2" id="specificIssueDropdown3" style="width: 260px; height: 30px; text-align: left">
+                                <select class="dropdown-toggle" name="specificIssueDropdown3" id="specificIssueDropdown3" style="width: 260px; height: 30px; text-align: left">
                                     <option value="">Please Select</option>
                                 </select>
                             </td>
@@ -636,7 +636,7 @@
                     
 
                     
-                    <div id ="claimTypeGroup">
+                    <div id ="claimTypeGroup" style="display: none">
                         <br/>
                         <table>
                             <tr>
@@ -766,7 +766,9 @@
          setSelect('#generalIssuesDropdown3', 'ContactGuestIssues.xml', 'issue', 'Please Select');
 
          $('#generalIssuesDropdown')
-             .change(function() {
+             .change(function () {
+                 var dropdown2Option = document.getElementById('generalIssuesDropdown2').selectedIndex;
+                 var dropdown3Option = document.getElementById('generalIssuesDropdown3').selectedIndex;
                  switch(this.selectedIndex) {
                      case 0:
                      {
@@ -775,35 +777,40 @@
                              value: '',
                              text: 'Please Select'
                          }));
-                         $("#claimTypeGroup").css("display", "none");
+                         if (dropdown2Option != 7 && dropdown3Option != 7)
+                            $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 1:
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
-                         $("#claimTypeGroup").css("display", "none");
+                         if (dropdown2Option != 7 && dropdown3Option != 7)
+                            $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 2:
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'AirportExperience.xml', 'option', 'Please Select');
-                         $("#claimTypeGroup").css("display", "none");
+                         if (dropdown2Option != 7 && dropdown3Option != 7)
+                            $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 3:
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'BaggageIrregularities.xml', 'issue', 'Please Select');
-                             $("#claimTypeGroup").css("display", "none");
+                             if (dropdown2Option != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                              break;
                      }
                      case 4:
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
-                         $("#claimTypeGroup").css("display", "none");
+                         if (dropdown2Option != 7 && dropdown3Option != 7)
+                            $("#claimTypeGroup").css("display", "none");
                          break;
                      }
 
@@ -811,7 +818,8 @@
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'Compliment.xml', 'option', 'Please Select');
-                         $("#claimTypeGroup").css("display", "none");
+                         if (dropdown2Option != 7 && dropdown3Option != 7)
+                            $("#claimTypeGroup").css("display", "none");
                          break;
                      }
 
@@ -819,7 +827,8 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'Ec261.xml', 'option', 'Please Select');
-                             $("#claimTypeGroup").css("display", "none");
+                             if (dropdown2Option != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                              break;
                          }
 
@@ -835,7 +844,8 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'InFlightExperience.xml', 'option', 'Please Select');
-                             $("#claimTypeGroup").css("display", "none");
+                             if (dropdown2Option != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                              break;
                          }
 
@@ -843,7 +853,8 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
-                             $("#claimTypeGroup").css("display", "none");
+                             if (dropdown2Option != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                              break;
                          }
                      
@@ -854,6 +865,8 @@
 
          $('#generalIssuesDropdown2')
               .change(function () {
+                 var dropdownOption = document.getElementById('generalIssuesDropdown').selectedIndex;
+                 var dropdown3Option =document.getElementById('generalIssuesDropdown3').selectedIndex;
                   switch (this.selectedIndex) {
                       case 0:
                           {
@@ -862,35 +875,40 @@
                                   value: '',
                                   text: 'Please Select'
                               }));
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
                       case 1:
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
                       case 2:
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'AirportExperience.xml', 'option', 'Please Select');
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
                       case 3:
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'BaggageIrregularities.xml', 'issue', 'Please Select');
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
                       case 4:
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
 
@@ -898,7 +916,8 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'Compliment.xml', 'option', 'Please Select');
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
 
@@ -906,7 +925,8 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'Ec261.xml', 'option', 'Please Select');
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
 
@@ -922,7 +942,8 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'InFlightExperience.xml', 'option', 'Please Select');
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
 
@@ -930,7 +951,8 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
-                              $("#claimTypeGroup").css("display", "none");
+                              if (dropdownOption != 7 && dropdown3Option != 7)
+                                $("#claimTypeGroup").css("display", "none");
                               break;
                           }
 
@@ -941,6 +963,8 @@
 
          $('#generalIssuesDropdown3')
                .change(function () {
+                   var dropdownOption = document.getElementById('generalIssuesDropdown').selectedIndex;
+                   var dropdown2Option = document.getElementById('generalIssuesDropdown2').selectedIndex;
                    switch (this.selectedIndex) {
                        case 0:
                            {
@@ -949,35 +973,40 @@
                                    value: '',
                                    text: 'Please Select'
                                }));
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
                        case 1:
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
                        case 2:
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'AirportExperience.xml', 'option', 'Please Select');
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
                        case 3:
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'BaggageIrregularities.xml', 'issue', 'Please Select');
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
                        case 4:
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
 
@@ -985,7 +1014,8 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'Compliment.xml', 'option', 'Please Select');
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
 
@@ -993,7 +1023,8 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'Ec261.xml', 'option', 'Please Select');
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
 
@@ -1009,7 +1040,8 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'InFlightExperience.xml', 'option', 'Please Select');
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
 
@@ -1017,7 +1049,8 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
-                               $("#claimTypeGroup").css("display", "none");
+                               if (dropdownOption != 7 && dropdown2Option != 7)
+                                    $("#claimTypeGroup").css("display", "none");
                                break;
                            }
 
