@@ -49,7 +49,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         sbBodyTextString.AppendLine("Case Reference: " + Request.Form["updateCaseID"]);
         //splitting this into 2
         sbBodyTextString.AppendLine("Guest Type: " + guestGroup.SelectedValue);
-        sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
+        sbBodyTextString.AppendLine(sEmailFormId1);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
         sbBodyTextString.AppendLine("Reference Number: " + Request.Form["_helpQuerybookingReferenceNumber"]);
         sbBodyTextString.AppendLine("Flight Date: " + Request.Form["dateOfFlight"]);
