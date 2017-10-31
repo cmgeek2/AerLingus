@@ -118,7 +118,8 @@ public partial class RefundRequest : System.Web.UI.Page
         sbBodyTextString.AppendLine("Flight Number: " + Request.Form["_helpQueryFlightNumber"]);
 
         sbBodyTextString.AppendLine("Refund Reason Type 1: " + Request.Form["refundReasonDropDownList1"]);
-        sbBodyTextString.AppendLine("Refund Reason 1: " + RefundReasonList.SelectedValue + " " + Request.Form["refundReason1"]);
+        sbBodyTextString.AppendLine("Refund Reason 1 Route: " + RefundReasonList.SelectedValue + " " + Request.Form["refundReason1"]);
+        sbBodyTextString.AppendLine("Refund Reason 1: " + Request.Form["refundReason1"]);
 
         // Get additional flights information
         if (Request.Form["QueryFlightNumber2"] != "")
@@ -183,19 +184,19 @@ public partial class RefundRequest : System.Web.UI.Page
         if (Request.Form["refundReasonDropDownList2"] != "")
         {
             sbBodyTextString.AppendLine("Refund Reason Type 2: " + Request.Form["refundReasonDropDownList2"]);
-            sbBodyTextString.AppendLine("Refund Reason 2: " + RefundReasonList.SelectedValue + " " + Request.Form["refundReason2"]);
+            sbBodyTextString.AppendLine("Refund Reason 2: " + Request.Form["refundReason2"]);
         }
 
         if (Request.Form["refundReasonDropDownList3"] != "")
         {
             sbBodyTextString.AppendLine("Refund Reason Type 3: " + Request.Form["refundReasonDropDownList3"]);
-            sbBodyTextString.AppendLine("Refund Reason 3: " + RefundReasonList.SelectedValue + " " + Request.Form["refundReason3"]);
+            sbBodyTextString.AppendLine("Refund Reason 3: " + Request.Form["refundReason3"]);
         }
 
         if (Request.Form["refundReasonDropDownList4"] != "")
         {
             sbBodyTextString.AppendLine("Refund Reason Type 4: " + Request.Form["refundReasonDropDownList4"]);
-            sbBodyTextString.AppendLine("Refund Reason 4: " + RefundReasonList.SelectedValue + " " + Request.Form["refundReason4"]);
+            sbBodyTextString.AppendLine("Refund Reason 4: " + Request.Form["refundReason4"]);
         }
 
         sbBodyTextString.AppendLine("Comments: " + _helpQueryAdditionInformation.Text);
