@@ -41,7 +41,7 @@ public partial class RefundRequest : System.Web.UI.Page
         StringBuilder sbBodyTextString = new StringBuilder();
 
         //splitting this into 2
-        sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
+        sbBodyTextString.AppendLine(sEmailFormId1);
         sbBodyTextString.AppendLine("Guest Type: " + guestGroup.SelectedValue);
         sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
 
