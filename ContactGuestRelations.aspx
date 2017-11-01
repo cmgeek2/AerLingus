@@ -677,6 +677,21 @@
                     <table style="width: 100%">
                         <tr >
                             <td style="width: 40%">
+                                <p>Is your issue related to travel on Aer Lingus Regional services?</p>
+                            </td>
+                            <td colspan="2">
+                                <div class="input-container">   
+                                    <asp:RadioButtonList runat="server" ID="regionalFlight"  RepeatLayout="Flow" RepeatDirection="Horizontal" CssClass="radio-inline" >
+                                        <asp:ListItem Text="Yes" Value="Yes" Class="radio-inline-button"/>
+                                        <asp:ListItem Text="No" Value="No" Selected="True" Class="radio-inline-button"/>
+                                    </asp:RadioButtonList>
+                                    <br/>
+                                    <br/>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr >
+                            <td style="width: 40%">
                                 <p>Do you need a letter for your insurance?</p>
                             </td>
                             <td colspan="2">
