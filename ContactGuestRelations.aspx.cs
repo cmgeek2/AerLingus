@@ -169,7 +169,16 @@ public partial class ContactGuestRelations : System.Web.UI.Page
 
         //Issues selected
         sbBodyTextString.AppendLine("General Issue: " + Request.Form["generalIssuesDropdown"]);
-        sbBodyTextString.AppendLine("Specific Issue: " + Request.Form["specificIssueDropdown"]);
+
+        if (Request.Form["specificIssueDropdown"] != "AerClub/Frequent Flyer")
+        {
+            sbBodyTextString.AppendLine("Specific Issue: " + Request.Form["specificIssueDropdown"]);
+        }
+        else
+        { 
+            sbBodyTextString.AppendLine("AerClub Reason: " + Request.Form["specificIssueDropdown"]);
+        }
+
         sbBodyTextString.AppendLine("Baggage Reference: " + Request.Form["baggageReferenceNumber"]);
         sbBodyTextString.AppendLine("Reason Route: " + Request.Form["regionalFlight"] + " " + Request.Form["specificIssueDropdown"]);
 
