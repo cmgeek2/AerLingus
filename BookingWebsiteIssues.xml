@@ -18,7 +18,7 @@
       <ID value="Policy" />
     </issue> 
     <issue>
-      <Name value="BWI T&C" />
+      <Name value="BWI T&amp;C" />
       <ID value="Terms &amp; conditions" />
     </issue>
     <issue>
