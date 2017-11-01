@@ -2,19 +2,19 @@
 <root>
   <options>
     <option>
-      <Name value="TBA" />
+      <Name value="AEX BRD" />
       <ID value="Boarding" />
     </option>
     <option>
-      <Name value="TBA" />
+      <Name value="AEX CHK" />
       <ID value="Check-In" />
     </option>
     <option>
-      <Name value="TBA" />
+      <Name value="AEX GRS" />
       <ID value="Ground Staff" />
     </option>
     <option>
-      <Name value="TBA" />
+      <Name value="AEX LOU" />
       <ID value="Lounge" />
     </option>
   </options>

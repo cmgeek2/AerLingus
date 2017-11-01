@@ -2,23 +2,23 @@
 <root>
   <issues>
     <issue>
-      <Name value="TBA" />
+      <Name value="FDR CANX" />
       <ID value="Cancellation" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="FDR DLY" />
       <ID value="Delay" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="FDR DB" />
       <ID value="Denied boarding" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="FDR MC" />
       <ID value="Missed connection" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="FDR SC" />
       <ID value="Schedule change" />
     </issue>
   </issues>

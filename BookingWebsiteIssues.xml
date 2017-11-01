@@ -2,35 +2,35 @@
 <root>
   <issues>
     <issue>
-      <Name value="TBA" />
+      <Name value="BWI BP" />
       <ID value="Booking process" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="BWI GSS" />
       <ID value="Call center staff" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="BWI FUT" />
       <ID value="Future travel" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="BWI POL" />
       <ID value="Policy" />
     </issue> 
     <issue>
-      <Name value="TBA" />
+      <Name value="BWI T&C" />
       <ID value="Terms &amp; conditions" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="BWI VRO" />
       <ID value="Voucher redemption online" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="BWI CKO" />
       <ID value="Unable to check-in online" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="BWI WMA" />
       <ID value="Website/mobile app funtionality" />
     </issue>
   </issues>

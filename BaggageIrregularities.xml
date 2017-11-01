@@ -2,23 +2,23 @@
 <root>
   <issues>
     <issue>
-      <Name value="TBA" />
+      <Name value="UBD GEN" />
       <ID value="Damaged Luggage" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="UBM INT" />
       <ID value="Delayed Bag/interim expenses" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="UBX NEW" />
       <ID value="Excess Charges" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="UBM LST" />
       <ID value="Lost bag" />
     </issue>
     <issue>
-      <Name value="TBA" />
+      <Name value="UBM LPR" />
       <ID value="Lost item on aircraft/lounge" />
     </issue>    
   </issues>

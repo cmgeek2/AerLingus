@@ -2,23 +2,23 @@
 <root>
   <options>
     <option>
-      <Name value="TBA" />
+      <Name value="IFE ACT" />
       <ID value="Aircraft" />
     </option>
     <option>
-      <Name value="TBA" />
+      <Name value="IFE FM" />
       <ID value="Food/Meals" />
     </option>
     <option>
-      <Name value="TBA" />
+      <Name value="IFE ENT" />
       <ID value="Entertainment/Wifi system" />
       </option>
     <option>
-      <Name value="TBA" />
+      <Name value="IFE SEA" />
       <ID value="Seating" />
     </option>
     <option>
-      <Name value="TBA" />
+      <Name value="IFE CRE" />
       <ID value="Crew" />
       </option>
   </options>

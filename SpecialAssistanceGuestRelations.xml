@@ -2,15 +2,15 @@
 <root>
   <options>
     <option>
-      <Name value="TBA"/>
+      <Name value="SA BER"/>
       <ID value="Bereavement"/>
     </option>
     <option>
-      <Name value="TBA"/>
+      <Name value="SA DIS"/>
       <ID value="Disability related"/>
     </option>
     <option>
-      <Name value="TBA"/>
+      <Name value="SA MED"/>
       <ID value="Medical condition"/>
     </option>
   </options>
