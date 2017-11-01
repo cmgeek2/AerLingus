@@ -171,7 +171,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         sbBodyTextString.AppendLine("General Issue: " + Request.Form["generalIssuesDropdown"]);
         sbBodyTextString.AppendLine("Specific Issue: " + Request.Form["specificIssueDropdown"]);
         sbBodyTextString.AppendLine("Baggage Reference: " + Request.Form["baggageReferenceNumber"]);
-        sbBodyTextString.AppendLine("Reason Rout: " + Request.Form["regionalFlight"] + " " + Request.Form["specificIssueDropdown"]);
+        sbBodyTextString.AppendLine("Reason Route: " + Request.Form["regionalFlight"] + " " + Request.Form["specificIssueDropdown"]);
 
         if (Request.Form["generalIssuesDropdown2"] != "")
         {
