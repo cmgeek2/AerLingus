@@ -71,7 +71,7 @@
                         <p>Please enter your case/reference number</p>
                     </div>
                     <div class="input-container" >
-                        <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" MaxLength="7" Title="Please enter your case number" CssClass="form-control inline-label  " required="required"  runat="server" onblur="checkvalue(this)"/>
+                        <asp:TextBox type="text" style="width: 260px" ID="updateCaseID" MaxLength="7" Title="Please enter your case number" CssClass="form-control inline-label  "  runat="server" onblur="checkvalue(this)"/>
                         <asp:RangeValidator runat="server" id="rangeValidator1"
                                             style="color:red;"
                                             ValidationGroup="Submit" 
