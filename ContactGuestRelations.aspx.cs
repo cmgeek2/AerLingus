@@ -65,33 +65,41 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         if (guestGroup.SelectedValue != "guest")
         {
             // Representative information
-            sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
+            //sbBodyTextString.AppendLine("EmailFormId2: " + sEmailFormId2);
             sbBodyTextString.AppendLine("RepresentativeTitle: " + Request.Form["representativeSalutation"]);
             sbBodyTextString.AppendLine("Representative Given Name: " + (Request.Form["representativeFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Last Name: " + (Request.Form["representativeLastName"]).ToUpper());
             sbBodyTextString.AppendLine("Representative Email: " + Request.Form["_helpQueryEmail"]);
             sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
             sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationshipToGuestDropDown"]);
+            // Get address information
+            sbBodyTextString.AppendLine("Representative Address 1: " + Request.Form["address1"]);
+            sbBodyTextString.AppendLine("Representative Address 2: " + Request.Form["address2"]);
+            sbBodyTextString.AppendLine("Representative Town/City: " + Request.Form["townCity"]);
+            sbBodyTextString.AppendLine("Representative Country/State: " + Request.Form["countryState"]);
+            sbBodyTextString.AppendLine("Representative Postal/Zip Code: " + Request.Form["zipCode"]);
+            char[] delimiterChars = { '(', ')' };
+            string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
+            sbBodyTextString.AppendLine("Representative Telephone: " + code[1] + " " + Request.Form["_helpQueryTelephoneNumber"]);
         }
         else
         {
             //starting part 2
-            sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
+            sbBodyTextString.AppendLine("Guest Email: " + Request.Form["_helpQueryEmail"]);
             string countrycode = CountryCode.SelectedValue;
-            sbBodyTextString.AppendLine("Country: " + Request.Form["countriesList"]);
+            sbBodyTextString.AppendLine("Guest Country: " + Request.Form["countriesList"]);
             char[] delimiterChars = { '(', ')' };
             string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
-            sbBodyTextString.AppendLine("Telephone: " + code[1] + " " + Request.Form["_helpQueryTelephoneNumber"]);
-
+            sbBodyTextString.AppendLine("Guest Telephone: " + code[1] + " " + Request.Form["_helpQueryTelephoneNumber"]);
+            // Get address information
+            sbBodyTextString.AppendLine("Guest Address 1: " + Request.Form["address1"]);
+            sbBodyTextString.AppendLine("Guest Address 2: " + Request.Form["address2"]);
+            sbBodyTextString.AppendLine("Guest Town/City: " + Request.Form["townCity"]);
+            sbBodyTextString.AppendLine("Guest Country/State: " + Request.Form["countryState"]);
+            sbBodyTextString.AppendLine("Guest Postal/Zip Code: " + Request.Form["zipCode"]);
 
         }
 
-        // Get address information
-        sbBodyTextString.AppendLine("Address 1: " + Request.Form["address1"]);
-        sbBodyTextString.AppendLine("Address 2: " + Request.Form["address2"]);
-        sbBodyTextString.AppendLine("Town/City: " + Request.Form["townCity"]);
-        sbBodyTextString.AppendLine("Country/State: " + Request.Form["countryState"]);
-        sbBodyTextString.AppendLine("Posta/Zip Code: " + Request.Form["zipCode"]);
 
         // AerClub Info
         if (Request.Form["aerClubDropDown"] != "AerClub Tier")
