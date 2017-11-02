@@ -55,7 +55,7 @@ public partial class RequestUpdate: System.Web.UI.Page
         if (guestGroup.SelectedValue != "guest")
         {
             //splitting this into 2
-            //sbBodyTextString.AppendLine("EmailFormId1: " + sEmailFormId1);
+            sbBodyTextString.AppendLine(sEmailFormId1);
             sbBodyTextString.AppendLine("Email: " + Request.Form["_helpQueryEmail"]);
             
 
