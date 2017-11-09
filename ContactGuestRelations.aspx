@@ -676,7 +676,7 @@
                     
                     <table style="width: 100%">
                         <tr >
-                            <td style="width: 40%">
+                            <td style="width: 45%">
                                 <p>Is your issue related to travel on Aer Lingus Regional services?</p>
                             </td>
                             <td colspan="2">
@@ -1148,7 +1148,7 @@
 
              }
              else {
-                 $('#countryState').attr('maxlength', 4);
+                 $('#countryState').attr('maxlength', 6);
              }
 
          }
