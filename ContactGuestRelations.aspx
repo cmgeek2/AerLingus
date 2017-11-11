@@ -570,7 +570,7 @@
                                     </select>
                                 </td>
                                 <td>
-                                    <div class="input-container" >
+                                    <div class="input-container" id="BaggageReferenceNumber" style="display: none">
                                         <input type="text" id="baggageReferenceNumber" name="baggageReferenceNumber" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label id="baggageReferenceLabel" class="form-control-label">Baggage Reference</label>
                                     </div> 
@@ -594,7 +594,7 @@
                                 </select>
                             </td>
                             <td>
-                                <div class="input-container" >
+                                <div class="input-container"  id="BaggageReferenceNumber2" style="display: none">
                                     <input type="text" id="baggageReferenceNumber2" name="baggageReferenceNumber2" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label id="baggageReferenceLabel2" class="form-control-label">Baggage Reference</label>
                                 </div> 
@@ -622,7 +622,7 @@
                                 </select>
                             </td>
                             <td>
-                                <div class="input-container" >
+                                <div class="input-container"  id="BaggageReferenceNumber3" style="display: none">
                                     <input type="text" id="baggageReferenceNumber3" name="baggageReferenceNumber2" style="width: 260px; text-transform: uppercase" maxlength="10" title="Enter your baggage reference." class="form-control inline-label" onblur="checkvalue(this)"/>
                                     <label id="baggageReferenceLabel2" class="form-control-label">Baggage Reference</label>
                                 </div> 
@@ -791,15 +791,18 @@
                          $("#specificIssueDropdown").append($('<option>', {
                              value: '',
                              text: 'Please Select'
+
                          }));
+                         $("#BaggageReferenceNumber").css("display", "none");
                          if (dropdown2Option != 7 && dropdown3Option != 7)
-                            $("#claimTypeGroup").css("display", "none");
+                             $("#claimTypeGroup").css("display", "none");
                          break;
                      }
                      case 1:
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
+                         $("#BaggageReferenceNumber").css("display", "none");
                          if (dropdown2Option != 7 && dropdown3Option != 7)
                             $("#claimTypeGroup").css("display", "none");
                          break;
@@ -808,6 +811,7 @@
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'AirportExperience.xml', 'option', 'Please Select');
+                         $("#BaggageReferenceNumber").css("display", "none");
                          if (dropdown2Option != 7 && dropdown3Option != 7)
                             $("#claimTypeGroup").css("display", "none");
                          break;
@@ -816,6 +820,7 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'BaggageIrregularities.xml', 'issue', 'Please Select');
+                             $("#BaggageReferenceNumber").css("display", "block");
                              if (dropdown2Option != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                              break;
@@ -824,6 +829,7 @@
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
+                         $("#BaggageReferenceNumber").css("display", "none");
                          if (dropdown2Option != 7 && dropdown3Option != 7)
                             $("#claimTypeGroup").css("display", "none");
                          break;
@@ -833,6 +839,7 @@
                      {
                          $("#specificIssueDropdown").empty();
                          setSelect('#specificIssueDropdown', 'Compliment.xml', 'option', 'Please Select');
+                         $("#BaggageReferenceNumber").css("display", "none");
                          if (dropdown2Option != 7 && dropdown3Option != 7)
                             $("#claimTypeGroup").css("display", "none");
                          break;
@@ -842,6 +849,7 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'Ec261.xml', 'option', 'Please Select');
+                             $("#BaggageReferenceNumber").css("display", "none");
                              if (dropdown2Option != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                              break;
@@ -851,6 +859,7 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'FlightDelayDisruption.xml', 'issue', 'Please Select');
+                             $("#BaggageReferenceNumber").css("display", "none");
                              $("#claimTypeGroup").css("display",  "block");
                              break;
                          }
@@ -859,6 +868,7 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'InFlightExperience.xml', 'option', 'Please Select');
+                             $("#BaggageReferenceNumber").css("display", "none");
                              if (dropdown2Option != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                              break;
@@ -868,6 +878,7 @@
                          {
                              $("#specificIssueDropdown").empty();
                              setSelect('#specificIssueDropdown', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
+                             $("#BaggageReferenceNumber").css("display", "none");
                              if (dropdown2Option != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                              break;
@@ -890,6 +901,7 @@
                                   value: '',
                                   text: 'Please Select'
                               }));
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -898,6 +910,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -906,6 +919,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'AirportExperience.xml', 'option', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -914,6 +928,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'BaggageIrregularities.xml', 'issue', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "block");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -922,6 +937,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -931,6 +947,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'Compliment.xml', 'option', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -940,6 +957,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'Ec261.xml', 'option', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -949,6 +967,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'FlightDelayDisruption.xml', 'issue', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               $("#claimTypeGroup").css("display", "block");
                               break;
                           }
@@ -957,6 +976,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'InFlightExperience.xml', 'option', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -966,6 +986,7 @@
                           {
                               $("#specificIssueDropdown2").empty();
                               setSelect('#specificIssueDropdown2', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
+                              $("#BaggageReferenceNumber2").css("display", "none");
                               if (dropdownOption != 7 && dropdown3Option != 7)
                                 $("#claimTypeGroup").css("display", "none");
                               break;
@@ -988,6 +1009,7 @@
                                    value: '',
                                    text: 'Please Select'
                                }));
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
@@ -996,6 +1018,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'AerClubFrequentFlyer.xml', 'option', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
@@ -1004,6 +1027,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'AirportExperience.xml', 'option', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
@@ -1012,6 +1036,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'BaggageIrregularities.xml', 'issue', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "block");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
@@ -1020,6 +1045,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'BookingWebsiteIssues.xml', 'issue', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
@@ -1029,6 +1055,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'Compliment.xml', 'option', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
@@ -1038,6 +1065,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'Ec261.xml', 'option', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
@@ -1047,6 +1075,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'FlightDelayDisruption.xml', 'issue', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                $("#claimTypeGroup").css("display", "block");
                                break;
                            }
@@ -1055,6 +1084,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'InFlightExperience.xml', 'option', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
@@ -1064,6 +1094,7 @@
                            {
                                $("#specificIssueDropdown3").empty();
                                setSelect('#specificIssueDropdown3', 'SpecialAssistanceGuestRelations.xml', 'option', 'Please Select');
+                               $("#BaggageReferenceNumber3").css("display", "none");
                                if (dropdownOption != 7 && dropdown2Option != 7)
                                     $("#claimTypeGroup").css("display", "none");
                                break;
