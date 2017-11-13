@@ -316,7 +316,7 @@
                             <tr>
                                 <td>
                                     <div class="input-container" >
-                                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" name="_helpQueryFlightNumber" id="_helpQueryFlightNumber" maxlength="4" style="width: 260px" title="Please select a valid date" required="required" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Number</label>
                                     </div>
                                 </td>
