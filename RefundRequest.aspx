@@ -106,7 +106,7 @@
           }
           else
           {
-              $('#countryState').attr('maxlength', 6);
+              $('#countryState').attr('maxlength', 20);
           }
             
       }
