@@ -23,17 +23,17 @@ public partial class RefundRequest : System.Web.UI.Page
         string lsFormIdBuild = _FormID;
         //use this if we need to split mailboxes or IDs for processing.
         //form IDs are identical for both on deploy 3/29/2017
-        if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
+        //form ID is now based on Guest or Rep to assist with processing 11/15/17 Paumyr
+        if (guestGroup.SelectedValue != "guest")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["USARefundFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["USARefundFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["GuestRefundFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["GuestRefundFormId2"];
             sUSAorOther = "NA";
-
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["OthersRefundFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["OthersRefundFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["RepRefundFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["RepRefundFormId2"];
             sUSAorOther = "Other";
 
         }
@@ -70,7 +70,14 @@ public partial class RefundRequest : System.Web.UI.Page
             sbBodyTextString.AppendLine("Representative Address 2: " + Request.Form["address2"]);
             sbBodyTextString.AppendLine("Representative Town/City: " + Request.Form["townCity"]);
             sbBodyTextString.AppendLine("Representative Country: " + Request.Form["_helpQueryCountryList"]);
-            sbBodyTextString.AppendLine("Representative County/State: " + Request.Form["countryState"]);
+            if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
+            {
+                sbBodyTextString.AppendLine("Representative State: " + Request.Form["countryState"]);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Representative County: " + Request.Form["countryState"]);    
+            }
             sbBodyTextString.AppendLine("Representative Postal/Zip Code: " + Request.Form["zipCode"]);
             string countrycode = CountryCode.SelectedValue;
             char[] delimiterChars = { '(', ')' };
@@ -89,7 +96,14 @@ public partial class RefundRequest : System.Web.UI.Page
             sbBodyTextString.AppendLine("Guest Address 2: " + Request.Form["address2"]);
             sbBodyTextString.AppendLine("Guest Town/City: " + Request.Form["townCity"]);
             sbBodyTextString.AppendLine("Guest Country: " + Request.Form["_helpQueryCountryList"]);
-            sbBodyTextString.AppendLine("Guest County/State: " + Request.Form["countryState"]);
+            if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
+            {
+                sbBodyTextString.AppendLine("Guest State: " + Request.Form["countryState"]);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Guest County: " + Request.Form["countryState"]);    
+            }
             sbBodyTextString.AppendLine("Guest Postal/Zip Code: " + Request.Form["zipCode"]);
             string countrycode = CountryCode.SelectedValue;
             char[] delimiterChars = { '(', ')' };

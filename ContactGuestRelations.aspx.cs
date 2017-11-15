@@ -30,17 +30,18 @@ public partial class ContactGuestRelations : System.Web.UI.Page
 
         //use this if we need to split mailboxes or IDs for processing.
         //form IDs are identical for both on deploy 3/29/2017
-        if (lsFormIdBuild == "USA" || lsFormIdBuild == "CAN")
+        //form ID is now based on Guest or Rep to assist with processing 11/15/17 Paumyr
+        if (guestGroup.SelectedValue != "guest")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["USAContactUsFormID"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["USAContactUsFormID"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["GuestContactUsFormID"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["GuestContactUsFormID"];
             sUSAorOther = "NA";
 
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["OtherContactUsFormID"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["OtherContactUsFormID"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["RepContactUsFormID"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["RepContactUsFormID"];
             sUSAorOther = "Other";
 
         }
@@ -76,7 +77,14 @@ public partial class ContactGuestRelations : System.Web.UI.Page
             sbBodyTextString.AppendLine("Representative Address 1: " + Request.Form["address1"]);
             sbBodyTextString.AppendLine("Representative Address 2: " + Request.Form["address2"]);
             sbBodyTextString.AppendLine("Representative Town/City: " + Request.Form["townCity"]);
-            sbBodyTextString.AppendLine("Representative Country/State: " + Request.Form["countryState"]);
+            if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
+            {
+                sbBodyTextString.AppendLine("Representative State: " + Request.Form["countryState"]);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Representative County: " + Request.Form["countryState"]);    
+            }
             sbBodyTextString.AppendLine("Representative Postal/Zip Code: " + Request.Form["zipCode"]);
             char[] delimiterChars = { '(', ')' };
             string[] code = CountryCode.SelectedItem.ToString().Split(delimiterChars);
@@ -95,7 +103,16 @@ public partial class ContactGuestRelations : System.Web.UI.Page
             sbBodyTextString.AppendLine("Guest Address 1: " + Request.Form["address1"]);
             sbBodyTextString.AppendLine("Guest Address 2: " + Request.Form["address2"]);
             sbBodyTextString.AppendLine("Guest Town/City: " + Request.Form["townCity"]);
-            sbBodyTextString.AppendLine("Guest Country/State: " + Request.Form["countryState"]);
+            if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
+            {
+                sbBodyTextString.AppendLine("Guest State: " + Request.Form["countryState"]);
+            }
+            else
+            {
+                sbBodyTextString.AppendLine("Guest County: " + Request.Form["countryState"]);    
+            }
+
+            
             sbBodyTextString.AppendLine("Guest Postal/Zip Code: " + Request.Form["zipCode"]);
 
         }
