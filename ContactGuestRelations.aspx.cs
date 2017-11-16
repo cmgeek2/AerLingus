@@ -74,10 +74,12 @@ public partial class ContactGuestRelations : System.Web.UI.Page
             sbBodyTextString.AppendLine("Representative Company Name: " + Request.Form["repCompanyName"]);
             sbBodyTextString.AppendLine("Relationship to the Guest: " + Request.Form["relationshipToGuestDropDown"]);
             // Get address information
+            sbBodyTextString.AppendLine("Representative Country: " + Request.Form["countriesList"]);
             sbBodyTextString.AppendLine("Representative Address 1: " + Request.Form["address1"]);
             sbBodyTextString.AppendLine("Representative Address 2: " + Request.Form["address2"]);
             sbBodyTextString.AppendLine("Representative Town/City: " + Request.Form["townCity"]);
-            if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
+            
+            if (Request.Form["countriesList"] == "USA" || Request.Form["countriesList"] == "CAN")
             {
                 sbBodyTextString.AppendLine("Representative State: " + Request.Form["countryState"]);
             }
@@ -103,7 +105,7 @@ public partial class ContactGuestRelations : System.Web.UI.Page
             sbBodyTextString.AppendLine("Guest Address 1: " + Request.Form["address1"]);
             sbBodyTextString.AppendLine("Guest Address 2: " + Request.Form["address2"]);
             sbBodyTextString.AppendLine("Guest Town/City: " + Request.Form["townCity"]);
-            if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
+            if (Request.Form["countriesList"] == "USA" || Request.Form["countriesList"] == "CAN")
             {
                 sbBodyTextString.AppendLine("Guest State: " + Request.Form["countryState"]);
             }
