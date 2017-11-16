@@ -349,7 +349,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="dateOfFlight2" name="dateOfFlight2" maxlength="4" style="width: 260px"  title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="dateOfFlight2" name="dateOfFlight2" style="width: 260px"  title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -373,7 +373,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="dateOfFlight3" name="dateOfFlight3" maxlength="4" style="width: 260px"title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="dateOfFlight3" name="dateOfFlight3" style="width: 260px"title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -399,7 +399,7 @@
                                 </td>
                                 <td>
                                     <div class="input-container">
-                                        <input type="text" id="dateOfFlight4" name="dateOfFlight4" maxlength="4" style="width: 260px" title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                        <input type="text" id="dateOfFlight4" name="dateOfFlight4" style="width: 260px" title="Please select a valid date" class="form-control inline-label" onblur="checkvalue(this)"/>
                                         <label class="form-control-label">Flight Date</label> 
                                     </div>
                                 </td>
@@ -1172,42 +1172,46 @@
              element.classList.remove('filled');
          }
 
-         $('#_helpQueryDateOfFlight').change(function () {
-             var newValue = this.value;
-             if (newValue != "") {
-                 document.getElementById('_helpQueryDateOfFlight').classList.add('filled');
-             } else {
-                 document.getElementById('_helpQueryDateOfFlight').classList.remove('filled');
-             }
+         $('#dateOfFlight').change(function () {
+            var textBox = document.getElementById('dateOfFlight');
+            if (textBox.value != "") {
+                textBox.className += "filled";
+                checkvalue(textBox);
+            } else {
+                textBox.className.remove("filled");
+            }
+        });
 
-         });
+        $('#dateOfFlight2').change(function () {
+            var textBox = document.getElementById('dateOfFlight2');
+            if (textBox.value != "") {
+                textBox.className += "filled";
+                checkvalue(textBox);
+            } else {
+                textBox.className.remove("filled");
+            }
+        });
 
-         $('#dateOfFlight2').change(function () {
-             var newValue = this.value;             
-             if (newValue != "") {
-                 document.getElementById('dateOfFlight2').classList.add('filled');
-             } else {
-                 document.getElementById('dateOfFlight2').classList.remove('filled');
-             }
-         });
+        $('#dateOfFlight3').change(function () {
+            var textBox = document.getElementById('dateOfFlight3');
+            if (textBox.value != "") {
+                textBox.className += "filled";
+                checkvalue(textBox);
+            } else {
+                textBox.className.remove("filled");
+            }
+        });
 
-         $('#dateOfFlight3').change(function () {
-             var newValue = this.value;
-             if (newValue != "") {
-                 document.getElementById('dateOfFlight3').classList.add('filled');
-             } else {
-                 document.getElementById('dateOfFlight3').classList.remove('filled');
-             }
-         });
+        $('#dateOfFlight4').change(function () {
+            var textBox = document.getElementById('dateOfFlight4');
+            if (textBox.value != "") {
+                textBox.className += "filled";
+                checkvalue(textBox);
+            } else {
+                textBox.className.remove("filled");
+            }
+        });
 
-         $('#dateOfFlight4').change(function () {
-             var newValue = this.value;
-             if (newValue != "") {
-                 document.getElementById('dateOfFlight4').classList.add('filled');
-             } else {
-                 document.getElementById('dateOfFlight4').classList.remove('filled');
-             }
-         });
      
                         
          var validFileSize = 5 * 1024 * 1024;
