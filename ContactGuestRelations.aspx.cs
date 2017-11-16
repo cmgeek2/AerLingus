@@ -33,15 +33,15 @@ public partial class ContactGuestRelations : System.Web.UI.Page
         //form ID is now based on Guest or Rep to assist with processing 11/15/17 Paumyr
         if (guestGroup.SelectedValue != "guest")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["GuestContactUsFormID"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["GuestContactUsFormID"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["RepContactUsFormID"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["RepContactUsFormID"];
             sUSAorOther = "NA";
 
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["RepContactUsFormID"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["RepContactUsFormID"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["GuestContactUsFormID"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["GuestContactUsFormID"];
             sUSAorOther = "Other";
 
         }

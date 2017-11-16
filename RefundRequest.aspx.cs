@@ -26,14 +26,14 @@ public partial class RefundRequest : System.Web.UI.Page
         //form ID is now based on Guest or Rep to assist with processing 11/15/17 Paumyr
         if (guestGroup.SelectedValue != "guest")
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["GuestRefundFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["GuestRefundFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["RepRefundFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["RepRefundFormId2"];
             sUSAorOther = "NA";
         }
         else
         {
-            sEmailFormId1 = ConfigurationManager.AppSettings["RepRefundFormId1"];
-            sEmailFormId2 = ConfigurationManager.AppSettings["RepRefundFormId2"];
+            sEmailFormId1 = ConfigurationManager.AppSettings["GuestRefundFormId1"];
+            sEmailFormId2 = ConfigurationManager.AppSettings["GuestRefundFormId2"];
             sUSAorOther = "Other";
 
         }
