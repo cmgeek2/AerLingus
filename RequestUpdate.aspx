@@ -249,7 +249,7 @@
                             </tr>
                         </table>
                     </div>
-                    <div id="bankDiv" style="display: none;">
+                    <div id="bankDiv" style="display: block;">
                         <div style="margin-left: 20px;" >
                             <asp:CheckBox runat="server" ID="bankCheckBox" Text="Click here to add bank details"  CssClass="checkbox"/>
                         </div> 
@@ -357,16 +357,16 @@
              }
          });
 
-            $("#_helpQueryCountryList").change(function () {
-             if(this.value!="USA" && this.value!="IRL" && this.value!="CAN" && this.value!="GBR" ) 
-             {
-                 var div1 = document.getElementById('bankDiv');
-                 div1.style.display = "block";
-             } else {
-                 var div1 = document.getElementById('bankDiv');
-                 div1.style.display = "none";
-             }
-         });
+            //$("#_helpQueryCountryList").change(function () {
+             //if(this.value!="USA" && this.value!="IRL" && this.value!="CAN" && this.value!="GBR" ) 
+             //{
+             //    var div1 = document.getElementById('bankDiv');
+             //    div1.style.display = "block";
+             //} else {
+             //    var div1 = document.getElementById('bankDiv');
+             //    div1.style.display = "none";
+             //}
+         //});
 
          $("#<%=bankCheckBox.ClientID %>").change(function() {
              var bankDiv = document.getElementById('bankInfoDiv');
