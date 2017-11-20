@@ -256,28 +256,44 @@
                         <div id="bankInfoDiv" style="display: none;">
                             <table>
                                 <tr>
-                                    <td colspan="3">
+                                    <td>
+                                        <div class="input-container" >
+                                            <input type="text" id="accountHolderName" name="accountHolderName" maxlength="40" style="width: 260px" title="Account Holder Name" class="form-control inline-label  " onblur="checkvalue(this)" />
+                                            <label class="form-control-label">Account Holder Name</label>
+                                        </div>
+                                        </td>
+                                        <td>
+                                            <div class="input-container" >
+                                                <input type="text" id="accountNumber" name="accountNumber" maxlength="25" style="width: 260px" title="Account Number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                                <label class="form-control-label">Account Number</label>
+                                            </div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>
                                         <div class="input-container" >
                                             <input type="text" id="bankName" name="bankName" maxlength="40" style="width: 260px" title="Bank Name" class="form-control inline-label  " onblur="checkvalue(this)" />
                                             <label class="form-control-label">Bank Name</label>
                                         </div>
                                     </td>
                                     <td>
-                                    <div class="input-container" >
-                                        <input type="text" id="accountHolderName" name="accountHolderName" maxlength="40" style="width: 260px" title="Account Holder Name" class="form-control inline-label  " onblur="checkvalue(this)" />
-                                        <label class="form-control-label">Account Holder Name</label>
-                                    </div>
+                                        <div class="input-container" >
+                                            <label class="visuallyhidden">Select your Bank's Country</label>
+                                            <asp:XmlDataSource ID="xmlBankCountry" runat="server" DataFile="BankCountries.xml" XPath="BankCountry/Country"></asp:XmlDataSource>
+                                            <asp:DropDownList  CssClass=" dropdown-toggle"  ID="BankCountry" Height="30px"  runat="server" Width="260px"  DataSourceID="xmlBankCountry" DataTextField="name" DataValueField="value"></asp:DropDownList>                                
+                                        </div>
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text" id="accountNumber" name="accountNumber" maxlength="25" style="width: 260px" title="Account Number" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                            <label class="form-control-label">Account Number</label>
+                                            <label class="visuallyhidden">Select your Currency</label>
+                                            <asp:XmlDataSource ID="xmlCurrency" runat="server" DataFile="Currency.xml" XPath="BankCurrency/Currency"></asp:XmlDataSource>
+                                            <asp:DropDownList  CssClass=" dropdown-toggle"  ID="Currency" Height="30px"  runat="server" Width="260px"  DataSourceID="xmlCurrency" DataTextField="name" DataValueField="value"></asp:DropDownList>                                
                                         </div>
                                     </td>
                                 </tr>
                         
                                 <tr>
-                                    <td colspan="3">
+                                    <td>
                                         <div class="input-container" >
                                             <input type="text"  id="swiftCode" name="swiftCode" maxlength="15" style="width: 260px" title="Swift (BIC) Code" class="form-control inline-label  " onblur="checkvalue(this)" />
                                             <label class="form-control-label">Swift (BIC) Code</label>

@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BankCurrency>
+  <Currency value="none" Name="Select Currency" ></Currency>
+  <Currency value="AUD" Name="AUD" ></Currency>
+  <Currency value="AED" Name="AED" ></Currency>
+  <Currency value="BGN" Name="BGN" ></Currency>
+  <Currency value="CAD" Name="CAD" ></Currency>
+  <Currency value="CHF" Name="CHF" ></Currency>
+  <Currency value="CZK" Name="CZK" ></Currency>
+  <Currency value="DKK" Name="DKK" ></Currency>
+  <Currency value="EUR" Name="EUR" ></Currency>
+  <Currency value="GBP" Name="GBP" ></Currency>
+  <Currency value="HUF" Name="HUF" ></Currency>
+  <Currency value="HRK" Name="HRK" ></Currency>
+  <Currency value="JPY" Name="JPY" ></Currency>
+  <Currency value="NOK" Name="NOK" ></Currency>
+  <Currency value="NZD" Name="NZD" ></Currency>
+  <Currency value="PLN" Name="PLN" ></Currency>
+  <Currency value="SEK" Name="SEK" ></Currency>
+  <Currency value="USD" Name="USD" ></Currency>
+  <Currency value="ZAR" Name="ZAR" ></Currency>
+</BankCurrency>

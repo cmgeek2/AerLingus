@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<BankCountry>
+  <Country value="none" Name="Select Country of Bank" ></Country>
+  <Country value="Australia" Name="Australia" ></Country>
+  <Country value="Austria" Name="Austria" ></Country>
+  <Country value="Bahrain" Name="Bahrain" ></Country>
+  <Country value="Belgium" Name="Belgium" ></Country>
+  <Country value="Bulgaria" Name="Bulgaria" ></Country>
+  <Country value="Canada" Name="Canada" ></Country>
+  <Country value="Croatia" Name="Croatia" ></Country>
+  <Country value="Cyprus" Name="Cyprus" ></Country>
+  <Country value="Czech Republic" Name="Czech Republic" ></Country>
+  <Country value="Denmark" Name="Denmark" ></Country>
+  <Country value="Estonia" Name="Estonia" ></Country>
+  <Country value="Finland" Name="Finland" ></Country>
+  <Country value="France" Name="France" ></Country>
+  <Country value="Germany" Name="Germany" ></Country>
+  <Country value="Greece" Name="Greece" ></Country>
+  <Country value="Greenland" Name="Greenland" ></Country>
+  <Country value="Hong Kong" Name="Hong Kong" ></Country>
+  <Country value="Hungary" Name="Hungary" ></Country>
+  <Country value="Iceland" Name="Iceland" ></Country>
+  <Country value="India" Name="India" ></Country>
+  <Country value="Ireland" Name="Ireland" ></Country>
+  <Country value="Israel" Name="Israel" ></Country>
+  <Country value="Italy" Name="Italy" ></Country>
+  <Country value="Japan" Name="Japan" ></Country>
+  <Country value="Jordan" Name="Jordan" ></Country>
+  <Country value="Latvia" Name="Latvia" ></Country>
+  <Country value="Lebannon" Name="Lebannon" ></Country>
+  <Country value="Liechtenstein" Name="Liechtenstein" ></Country>
+  <Country value="Lithuania" Name="Lithuania" ></Country>
+  <Country value="Luxembourg" Name="Luxembourg" ></Country>
+  <Country value="Monaco" Name="Monaco" ></Country>
+  <Country value="Netherlands" Name="Netherlands" ></Country>
+  <Country value="New Zealand" Name="New Zealand" ></Country>
+  <Country value="Norway" Name="Norway" ></Country>
+  <Country value="Poland" Name="Poland" ></Country>
+  <Country value="Portugal" Name="Portugal" ></Country>
+  <Country value="Romania" Name="Romania" ></Country>
+  <Country value="Russia" Name="Russia" ></Country>
+  <Country value="Serbia/Montenegro" Name="Serbia/Montenegro" ></Country>
+  <Country value="Singapore" Name="Singapore" ></Country>
+  <Country value="Slovakia" Name="Slovakia" ></Country>
+  <Country value="South Africa" Name="South Africa" ></Country>
+  <Country value="Spain" Name="Spain" ></Country>
+  <Country value="Sweden" Name="Sweden" ></Country>
+  <Country value="Switzerland" Name="Switzerland" ></Country>
+  <Country value="Turkey" Name="Turkey" ></Country>
+  <Country value="United Arab Emirates" Name="United Arab Emirates" ></Country>
+  <Country value="United Kingdom" Name="United Kingdom" ></Country>
+  <Country value="United States of America" Name="United States of America" ></Country>
+</BankCountry>

@@ -119,6 +119,8 @@ public partial class RequestUpdate: System.Web.UI.Page
         if (bankCheckBox.Checked)
         {
             sbBodyTextString.AppendLine("Bank Name: " + Request.Form["bankName"]);
+            sbBodyTextString.AppendLine("Country of Bank: " + Request.Form["BankCountry"]);
+            sbBodyTextString.AppendLine("Currency: " + Request.Form["Currency"]);
             sbBodyTextString.AppendLine("Account Holder Name: " + Request.Form["accountHolderName"]);
             sbBodyTextString.AppendLine("Account Number: " + Request.Form["accountNumber"]);
             sbBodyTextString.AppendLine("Swift (BIC) Code: " + Request.Form["swiftCode"]);
