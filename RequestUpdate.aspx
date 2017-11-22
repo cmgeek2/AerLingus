@@ -301,7 +301,7 @@
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text"  id="ibanNumber" name="ibanNumber" maxlength="25" style="width: 260px" title="IBAN Number" class="form-control inline-label  "  onblur="checkvalue(this)" />
+                                            <input type="text"  id="ibanNumber" name="ibanNumber" maxlength="34" style="width: 260px" title="IBAN Number" class="form-control inline-label  "  onblur="checkvalue(this)" />
                                             <label class="form-control-label">IBAN Number</label>
                                         </div>
                                     </td>
