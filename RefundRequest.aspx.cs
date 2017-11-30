@@ -228,7 +228,7 @@ public partial class RefundRequest : System.Web.UI.Page
         _helpMessage.From = new MailAddress(ConfigurationManager.AppSettings["ContactUsFromAddress"]);
         
         
-        if (Request.Form["_helpQueryCountryList"] == "USA")
+        if (Request.Form["_helpQueryCountryList"] == "USA" || Request.Form["_helpQueryCountryList"] == "CAN")
         {
             _helpMessage.To.Add(ConfigurationManager.AppSettings["USARefundToAddress"]);
             _helpMessage.Subject = ConfigurationManager.AppSettings["USARefundSubject"];
