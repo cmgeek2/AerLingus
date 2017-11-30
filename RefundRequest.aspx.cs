@@ -248,11 +248,40 @@ public partial class RefundRequest : System.Web.UI.Page
         _helpMessage.BodyEncoding = Encoding.UTF8;
         _helpMessage.SubjectEncoding = Encoding.UTF8;
 
+//file upload
         if (_helpQueryFileUploader.HasFile)
         {
 
             _helpMessage.Attachments.Add(new System.Net.Mail.Attachment(_helpQueryFileUploader.PostedFile.InputStream, _helpQueryFileUploader.FileName));
         }
+        
+        if (_helpQueryFileUploader2.HasFile)
+        {
+
+            _helpMessage.Attachments.Add(new System.Net.Mail.Attachment(_helpQueryFileUploader2.PostedFile.InputStream, _helpQueryFileUploader2.FileName));
+        }
+        
+        
+        if (_helpQueryFileUploader3.HasFile)
+        {
+
+            _helpMessage.Attachments.Add(new System.Net.Mail.Attachment(_helpQueryFileUploader3.PostedFile.InputStream, _helpQueryFileUploader3.FileName));
+        }
+        
+        if (_helpQueryFileUploader4.HasFile)
+        {
+
+            _helpMessage.Attachments.Add(new System.Net.Mail.Attachment(_helpQueryFileUploader4.PostedFile.InputStream, _helpQueryFileUploader4.FileName));
+        }
+        
+        
+        if (_helpQueryFileUploader5.HasFile)
+        {
+
+            _helpMessage.Attachments.Add(new System.Net.Mail.Attachment(_helpQueryFileUploader5.PostedFile.InputStream, _helpQueryFileUploader5.FileName));
+        }
+    
+//send message
         try
         {
             SMTPServer.Send(_helpMessage);
