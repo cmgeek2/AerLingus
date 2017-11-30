@@ -98,7 +98,7 @@
       function countrySelected()
       {
           var country = $('#_helpQueryCountryList').find(":selected").text();
-          if (country == "United States of America" || country == "Canda") 
+          if (country == "United States of America" || country == "Canada") 
           {
               $('#countryState').attr('maxlength', 2);
               $('#countryState').css({ 'text-transform': "uppercase" });
