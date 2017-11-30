@@ -9,6 +9,10 @@
   -->
 
   <FlightRelated>
+    <Name value="RF CU RQ SC"/>
+    <ID value="Aer Lingus changed my flight (Schedule Change)"></ID>   
+  </FlightRelated>
+  <FlightRelated>
     <Name value="RF CU RQ BV"/>
     <ID value="Bereavement"> </ID>
   </FlightRelated>
@@ -33,16 +37,12 @@
     <ID value="Request within 24 hours of purchase (travel to/from US only)"></ID>   
   </FlightRelated>
   <FlightRelated>
-    <Name value="RF CU RQ SC"/>
-    <ID value="Aer Lingus changed my flight (Schedule Change)"></ID>   
+    <Name value="RF CU RQ TO"/>
+    <ID value="Tax Refund"></ID>   
   </FlightRelated>
   <FlightRelated>
     <Name value="TE DD PDE UC"/>
     <ID value="Unable to fly due to medical reasons"></ID>  
-  </FlightRelated>
-  <FlightRelated>
-    <Name value="RF CU RQ TO"/>
-    <ID value="Tax Refund"></ID>   
   </FlightRelated>
 
 
