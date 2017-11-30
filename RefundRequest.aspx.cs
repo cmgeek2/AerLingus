@@ -159,35 +159,35 @@ public partial class RefundRequest : System.Web.UI.Page
         }
 
         // Additional guests information
-        if (Request.Form["salutationGuest2"] != "")
+        if (Request.Form["secondGuestFirstName"] != "")
         {
             sbBodyTextString.AppendLine("Guest 2 Title: " + Request.Form["salutationGuest2"]);
             sbBodyTextString.AppendLine("Guest 2 Given Name: " + (Request.Form["secondGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 2 Last Name: " + (Request.Form["secondGuestLastName"]).ToUpper());
         }
 
-        if (Request.Form["salutationGuest3"] != "")
+        if (Request.Form["thirdGuestFirstName"] != "")
         {
             sbBodyTextString.AppendLine("Guest 3 Title: " + Request.Form["salutationGuest3"]);
             sbBodyTextString.AppendLine("Guest 3 Given Name: " + (Request.Form["thirdGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 3 Last Name: " + (Request.Form["thirdGuestLastName"]).ToUpper());
         }
 
-        if (Request.Form["salutationGuest4"] != "")
+        if (Request.Form["fourthGuestFirstName"] != "")
         {
             sbBodyTextString.AppendLine("Guest 4 Title: " + Request.Form["salutationGuest4"]);
             sbBodyTextString.AppendLine("Guest 4 Given Name: " + (Request.Form["fourthGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 4 Last Name: " + Request.Form["fourthGuestLastName"]);
         }
 
-        if (Request.Form["salutationGuest5"] != "")
+        if (Request.Form["fifthGuestFirstName"] != "")
         {
             sbBodyTextString.AppendLine("Guest 5 Title: " + Request.Form["salutationGuest5"]);
             sbBodyTextString.AppendLine("Guest 5 Given Name: " + (Request.Form["fifthGuestFirstName"]).ToUpper());
             sbBodyTextString.AppendLine("Guest 5 Last Name: " + (Request.Form["fifthGuestLastName"]).ToUpper());
         }
 
-        if (Request.Form["salutationGuest6"] != "")
+        if (Request.Form["sixthGuestFirstName"] != "")
         {
             sbBodyTextString.AppendLine("Guest 6 Title: " + Request.Form["salutationGuest6"]);
             sbBodyTextString.AppendLine("Guest 6 Given Name: " + (Request.Form["sixthGuestFirstName"]).ToUpper());
