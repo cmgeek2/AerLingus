@@ -196,7 +196,7 @@
                         <tr>
                             <td >
                                 <div class="input-container" >
-                                    <input type="text" name="address1" id="address1" style="width: 395px" class="form-control inline-label" required="required" title="Please enter a valid address" pattern="\d+(\s\S+)+" onblur="checkvalue(this)"/>
+                                    <input type="text" name="address1" id="address1" style="width: 395px" class="form-control inline-label" required="required" title="Must contain house number and street address" pattern="\d+(\s\S+)+" onblur="checkvalue(this)"/>
                                     <label class="form-control-label">Address 1</label>
                                 </div> 
                             </td>
