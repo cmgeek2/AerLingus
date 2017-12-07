@@ -17,7 +17,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="/js/jquery.validate.js"></script>
     <script src="/js/jquery-1.8.2.js"></script>
-    <script src="/js/common.js"></script>
+    <script src="common.js"></script>
     <style>
         .gray-wide-bg {
             width: 900px;

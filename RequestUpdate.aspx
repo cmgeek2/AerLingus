@@ -307,8 +307,8 @@
                                     </td>
                                     <td>
                                         <div class="input-container" >
-                                            <input type="text"  id="codeNumber" name="codeNumber" maxlength="15" style="width: 260px" title="Code Number" class="form-control inline-label" onblur="checkvalue(this)"/>
-                                            <label class="form-control-label">Code Number</label>
+                                            <input type="text"  id="codeNumber" name="codeNumber" maxlength="15" style="width: 260px" title="Sort Code/Routing Number" class="form-control inline-label" onblur="checkvalue(this)"/>
+                                            <label class="form-control-label">Sort Code/Routing Number</label>
                                         </div>
                                     </td>
                                 </tr>
