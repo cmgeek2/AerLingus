@@ -29,7 +29,7 @@ function parseSelectXML(xml, selectid, xmlnode, firstOption,defaultselect) {
         var selectvalue = $(this).find('Name').attr('value');
         if (selectvalue == defaultselect){ 
             selecthtml += '<option value="' + selectvalue + '" selected>' + selecttext + '</option>';
-            setSelect('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
+            setSelect('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select', 'RF CU RQ CX');
         }
         else
         {

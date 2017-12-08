@@ -811,7 +811,14 @@
          setSelect('#salutationGuest4', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest5', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest6', 'Titles.xml', 'title', 'Title');
-         setSelect('#refundReasonDropDownList1', 'RefundReasons.xml', 'reason', 'Please Select', 'Flight Related');
+         var strReastExists = reasonExists()
+         if (strReastExists == true){
+            setSelect('#refundReasonDropDownList1', 'RefundReasons.xml', 'reason', 'Please Select', 'Flight Related');
+        }
+            else
+        {
+            setSelect('#refundReasonDropDownList1', 'RefundReasons.xml', 'reason', 'Please Select'); 
+        }
          setSelect('#refundReasonDropDownList2', 'RefundReasons.xml', 'reason', 'Please Select');
          setSelect('#refundReasonDropDownList3', 'RefundReasons.xml', 'reason', 'Please Select');
          setSelect('#refundReasonDropDownList4', 'RefundReasons.xml', 'reason', 'Please Select');
@@ -1385,20 +1392,22 @@
 
              });
          });
-
          
 
-         //getting value to set reason and reason detail 12/7/17 PTM
-         //if (ReasonExists)
-         //{
-         //   $('refundReasonDropDownList1  option[value="Flight Related"]').prop("selected", true);
-         //   $("refundReasonDropDownList1").val("Flight Related").change();
-         //   $('refundReason1  option[value="Flight Cancelled"]').prop("selected", true);
-         //}   
-         
-         
+         function reasonExists() {
+            var strReason = getParameterByName("reasondetail")
+            if (strReason == "flightdisruption") {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
 
-            //find URL Query String ?reasondetail=
+         }
+
+         
+         //find URL Query String ?reasondetail=
             function getParameterByName(name, url) {
                 if (!url) url = window.location.href;
                 name = name.replace(/[\[\]]/g, "\\$&");
