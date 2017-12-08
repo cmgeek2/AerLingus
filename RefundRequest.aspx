@@ -116,7 +116,7 @@
     
    
   
-<body>>
+<body>
   
    
   <div id="page1" data-role="page">
