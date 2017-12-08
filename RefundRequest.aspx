@@ -811,7 +811,7 @@
          setSelect('#salutationGuest4', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest5', 'Titles.xml', 'title', 'Title');
          setSelect('#salutationGuest6', 'Titles.xml', 'title', 'Title');
-         setSelect('#refundReasonDropDownList1', 'RefundReasons.xml', 'reason', 'Please Select');
+         setSelect('#refundReasonDropDownList1', 'RefundReasons.xml', 'reason', 'Please Select', 'Flight Related');
          setSelect('#refundReasonDropDownList2', 'RefundReasons.xml', 'reason', 'Please Select');
          setSelect('#refundReasonDropDownList3', 'RefundReasons.xml', 'reason', 'Please Select');
          setSelect('#refundReasonDropDownList4', 'RefundReasons.xml', 'reason', 'Please Select');
