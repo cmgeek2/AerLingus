@@ -1386,25 +1386,17 @@
              });
          });
 
-         //getting value to set reason and reason detail 12/7/17 PTM
-         if (ReasonExists)
-         {
-            $('refundReasonDropDownList1  option[value="Flight Related"]').prop("selected", true);
-            $("refundReasonDropDownList1").val("Flight Related").change();
-            $('refundReason1  option[value="Flight Cancelled"]').prop("selected", true);
-         }   
          
-         function ReasonExists() {  
-            var strReasonDetail = getParameterByName('reasondetail');
-            if (strReasonDetail != null)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
+
+         //getting value to set reason and reason detail 12/7/17 PTM
+         //if (ReasonExists)
+         //{
+         //   $('refundReasonDropDownList1  option[value="Flight Related"]').prop("selected", true);
+         //   $("refundReasonDropDownList1").val("Flight Related").change();
+         //   $('refundReason1  option[value="Flight Cancelled"]').prop("selected", true);
+         //}   
+         
+         
 
             //find URL Query String ?reasondetail=
             function getParameterByName(name, url) {
