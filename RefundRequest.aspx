@@ -813,7 +813,8 @@
          setSelect('#salutationGuest6', 'Titles.xml', 'title', 'Title');
          var strReastExists = reasonExists()
          if (strReastExists == true){
-            setSelect('#refundReasonDropDownList1', 'RefundReasons.xml', 'reason', 'Please Select', 'Flight Related');
+            setSelect('#refundReasonDropDownList1', 'RefundReasons.xml', 'reason', 'Please Select', 'Flight Related Refund');
+            setSelect('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select', 'RF CU RQ CX');
         }
             else
         {
