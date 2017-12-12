@@ -10,35 +10,31 @@
 
   <FlightRelated>
     <Name value="RF CU RQ SC"/>
-    <ID value="Aer Lingus changed my flight (Schedule Change)"></ID>   
+    <ID value="Unsuitable new flight time (Schedule Change)"></ID>   
   </FlightRelated>
   <FlightRelated>
-    <Name value="RF CU RQ BV"/>
-    <ID value="Bereavement"> </ID>
+    <Name value="RF CU RQ CX"/>
+    <ID value="Cancellation due to a disruption"></ID>
+  </FlightRelated>
+  <FlightRelated>
+    <Name value="RF CU RQ FX"/>
+    <ID value="Flex/Advantage/Business class cancellation"></ID>
   </FlightRelated>
   <FlightRelated>
     <Name value="RF CU RQ CA"/>
-    <ID value="Cancel my booking"> </ID>
+    <ID value="General cancellation and request for government taxes refund"> </ID>
+  </FlightRelated>
+  <FlightRelated>
+    <Name value="RF CU RQ 2HR"/>
+    <ID value="Cancellation within 24 hours of purchase (travel to/from US only)"></ID>   
   </FlightRelated>
   <FlightRelated>
     <Name value="RF CU RQ DU"/>
     <ID value="Duplicate booking"></ID>
   </FlightRelated>
   <FlightRelated>
-    <Name value="RF CU RQ FX"/>
-    <ID value="Flex/Business class booking"></ID>
-   </FlightRelated>
-  <FlightRelated>
-    <Name value="RF CU RQ CX"/>
-    <ID value="Flight Cancelled"></ID>
-  </FlightRelated>
-  <FlightRelated>
-    <Name value="RF CU RQ 2HR"/>
-    <ID value="Request within 24 hours of purchase (travel to/from US only)"></ID>   
-  </FlightRelated>
-  <FlightRelated>
-    <Name value="RF CU RQ TO"/>
-    <ID value="Tax Refund"></ID>   
+    <Name value="RF CU RQ BV"/>
+    <ID value="Bereavement"> </ID>
   </FlightRelated>
   <FlightRelated>
     <Name value="TE DD PDE UC"/>
@@ -48,11 +44,11 @@
 
   <FeeRelated>
     <Name value="RF CU RQ FR"/>
-    <ID value="Bag Fee"></ID> 
+    <ID value="Checked Bag"></ID> 
   </FeeRelated>
   <FeeRelated>
     <Name value="RF CU RQ FR"/>
-    <ID value="PreOrder Meal"></ID>   
+    <ID value="Pre-Order Meal"></ID>   
   </FeeRelated>
   <FeeRelated>
     <Name value="RF CU RQ PB"/>
@@ -61,7 +57,7 @@
 
   <FeeRelated>
     <Name value="RF CU RQ FR"/>
-    <ID value="Seat fee (Choice/Exit/Premium)"></ID>
+    <ID value="Seat (Choice/Exit/Premium)"></ID>
   </FeeRelated>
   
   <FeeRelated>
@@ -70,7 +66,7 @@
   </FeeRelated>
   <FeeRelated>
     <Name value="RF CU RQ FR"/>
-    <ID value="Other fee"></ID>  
+    <ID value="Other"></ID>  
   </FeeRelated>
 
   <Other>

@@ -2,12 +2,12 @@
 <root>
   <reasons>
     <reason>
-      <Name value="Fee Related" />
-      <ID value="Fee Related" />
+      <Name value="Fee Related Refund" />
+      <ID value="Fee Related Refund" />
     </reason>
     <reason>
-      <Name value="Flight Related" />
-      <ID value="Flight Related" />
+      <Name value="Flight Related Refund" />
+      <ID value="Flight Related Refund" />
     </reason>
     <reason>
       <Name value="Other" />
