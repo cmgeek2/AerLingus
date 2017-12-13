@@ -733,18 +733,88 @@
                                     <label id="charCount" runat="server" style="font-size: 12px" >Characters Remaining :2000</label>
                                 </td>
                             </tr>
+                        </table>
+                    </div>
+                    <table width="900">
+                        <tr>
+                            <td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
+                        </tr>
+                        <tr>
+                            <td colspan="3">To add more than one file, simply click the '+' sign:</td>
+                        </tr>
+                    </table>
+                    <table>
+                        <tr>
+                            <td>
+                                <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>  
+                                <asp:FileUpload ID="_helpQueryFileUploader"  onchange="return CheckFile(this);" runat="server" />
+                            </td>
+                            <td>    
+                                <button type="button" title="Add another file" id="addFile2" class="transparentBtn" aria-label="Click to add an additional file">+</button>
+                            </td>
+                            </tr>
+                    </table>
+                    <div id="file2" style="display: none;">
+                        <table>
                             <tr>
-			                    <td colspan="3"> Please upload all the relevant documentation with your request so it can be processed.</td>
-		                    </tr>
-                            <tr>
-                                <td colspan="3">
-                                    <asp:Label BorderWidth="0" ID="fileUploadLabel" runat="server" Text="File To Upload:"></asp:Label>                           
-                                    <asp:FileUpload ID="fileUploader" onchange="return CheckFile(this);" runat="server" />
+                                <td>
+                                    <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel2" runat="server" Text="File To Upload:"></asp:Label>  
+                                    <asp:FileUpload ID="_helpQueryFileUploader2"  onchange="return CheckFile(this);" runat="server" />
+                                </td>
+                                <td>    
+                                    <button type="button" title="Add another file" id="addFile3" class="transparentBtn" aria-label="Click to add an additional file">+</button>
+                                </td>
+                                <td>
+                                    <button type="button" title="Remove file" id="removeFile2" class="transparentBtn" aria-label="Click to remove an additional file">-</button>
                                 </td>
                             </tr>
-                            <tr><td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td></tr>
                         </table>
-                    </div>        
+                    </div>
+                    <div id="file3" style="display: none;">
+                        <table>
+                            <tr>
+                                <td>
+                                    <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel3" runat="server" Text="File To Upload:"></asp:Label>  
+                                    <asp:FileUpload ID="_helpQueryFileUploader3"  onchange="return CheckFile(this);" runat="server" />
+                                </td>
+                                <td>    
+                                    <button type="button" title="Add another file" id="addFile4" class="transparentBtn" aria-label="Click to add an additional file">+</button>
+                                </td>
+                                <td>
+                                    <button type="button" title="Remove file" id="removeFile3" class="transparentBtn" aria-label="Click to remove an additional file">-</button>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                    <div id="file4" style="display: none;">
+                            <table>
+                                <tr>
+                                    <td>
+                                        <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel4" runat="server" Text="File To Upload:"></asp:Label>  
+                                        <asp:FileUpload ID="_helpQueryFileUploader4"  onchange="return CheckFile(this);" runat="server" />
+                                    </td>
+                                    <td>    
+                                        <button type="button" title="Add another file" id="addFile5" class="transparentBtn" aria-label="Click to add an additional file">+</button>
+                                    </td>
+                                    <td>
+                                        <button type="button" title="Remove file" id="removeFile4" class="transparentBtn" aria-label="Click to remove an additional file">-</button>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                        <div id="file5" style="display: none;">
+                                <table>
+                                    <tr>
+                                        <td>
+                                            <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel5" runat="server" Text="File To Upload:"></asp:Label>  
+                                            <asp:FileUpload ID="_helpQueryFileUploader5"  onchange="return CheckFile(this);" runat="server" />
+                                        </td>
+                                        <td>
+                                            <button type="button" title="Remove file" id="removeFile5" class="transparentBtn" aria-label="Click to remove an additional file">-</button>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>        
                     <div style="margin-left: 350px;padding:20px" >      
                         <asp:Button ID="Submitbtn" CssClass="button button-standard button-shamrockGreen-gradient" runat="server" Text="Submit"  ValidationGroup="Submit" OnClick="SubmitButton_Click" ></asp:Button>
                     </div>
@@ -1104,6 +1174,52 @@
                    }
                });
 
+                // show files div
+                $(document).ready(function () {
+                    $("#addFile2").click(function () {
+                    $("#file2").show();
+                        });
+                    });
+                $(document).ready(function () {
+                    $("#addFile3").click(function () {
+                    $("#file3").show();
+                        });
+                    });
+
+                $(document).ready(function () {
+                    $("#addFile4").click(function () {
+                    $("#file4").show();
+                        });
+                    });
+                $(document).ready(function () {
+                    $("#addFile5").click(function () {
+                    $("#file5").show();
+                        });
+                    });
+                    
+                //hide files div
+                    $(document).ready(function () {
+                    $("#removeFile2").click(function () {
+                    $("#file2").hide();
+                        });
+                    });
+                $(document).ready(function () {
+                    $("#removeFile3").click(function () {
+                    $("#file3").hide();
+                        });
+                    });
+
+                $(document).ready(function () {
+                    $("#removeFile4").click(function () {
+                    $("#file4").hide();
+                        });
+                    });
+                $(document).ready(function () {
+                    $("#removeFile5").click(function () {
+                    $("#file5").hide();
+                        });
+                    });
+         
 
 
 
