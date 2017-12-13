@@ -579,7 +579,7 @@
                     <!------------------------------------------------- -->                           
                     <table style="width: 100%">
                         <tr>
-                            <td> <h2 class="xl2 tealGreen"> Reason for Refund </h2></td>
+                            <td> <h2 class="xl2 tealGreen"> Type of Refund Request </h2></td>
                         </tr>
                         <tr>
                             <td colspan="3">*Please select the reason you are requesting a refund:</td>
@@ -597,7 +597,7 @@
 
                     <!-------------------------------------------------------------------------------------------------------------- -->
                     <!------ Refund Section ------------- -->
-                    <div>To add more than one reason, simply click the '+' sign:</div>
+                    <div>To add more than one type of refund request, simply click the “+” sign:</div>
                     <div class="input-container" id="refundReason1Div">
                         <table>
                             <tr>
@@ -1118,13 +1118,13 @@
                  $("#refundReason1").attr("Disabled", true);
              }
 
-             if (this.value == "Flight Related") {
+             if (this.value == "Flight Related Refund") {
                  setSelect('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
                  //setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
-             if (this.value == "Fee Related") {
+             if (this.value == "Fee Related Refund") {
                  setSelect('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated', 'Please Select');
                  //setSelectQuery('#refundReason1', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
@@ -1170,13 +1170,13 @@
                  $("#refundReason2").attr("Disabled", true);
              }
 
-             if (this.value == "Flight Related") {
+             if (this.value == "Flight Related Refund") {
                  setSelect('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
                  //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
-             if (this.value == "Fee Related") {
+             if (this.value == "Fee Related Refund") {
                  setSelect('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated', 'Please Select');
                  //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
@@ -1218,13 +1218,13 @@
                  $("#refundReason3").attr("Disabled", true);
              }
 
-             if (this.value == "Flight Related") {
+             if (this.value == "Flight Related Refund") {
                  setSelect('#refundReason3', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
                  //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
-             if (this.value == "Fee Related") {
+             if (this.value == "Fee Related Refund") {
                  setSelect('#refundReason3', 'RefundRequestInfo.xml', 'FeeRelated', 'Please Select');
                  //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
@@ -1255,13 +1255,13 @@
                  $("#refundReason4").attr("Disabled", true);
              }
 
-             if (this.value == "Flight Related") {
+             if (this.value == "Flight Related Refund") {
                  setSelect('#refundReason4', 'RefundRequestInfo.xml', 'FlightRelated', 'Please Select');
                  //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FlightRelated');
                  return;
              }
 
-             if (this.value == "Fee Related") {
+             if (this.value == "Fee Related Refund") {
                  setSelect('#refundReason4', 'RefundRequestInfo.xml', 'FeeRelated', 'Please Select');
                  //setSelectQuery('#refundReason2', 'RefundRequestInfo.xml', 'FeeRelated');
                  return;
