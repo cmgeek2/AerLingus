@@ -399,7 +399,7 @@
                             </div>
                     <table width="100%">
                         <tr>
-                            <td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td>
+                            <td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 3 MB per file. The combined file size cannot exceed 10 MB.</font></td>
                         </tr>
                     </table>
                 <div style="margin-left: 350px" >
@@ -659,18 +659,30 @@
 
      </script>
                         <script type="text/javascript">
-                            var validFileSize = 5 * 1024 * 1024;
+                            var validFileSize = 3 * 1024 * 1024;
+                            var maxTotalFileSize = 10 * 1024 * 1024;
+                            var totalFileSize = 0; 
 
                             function CheckFileSize(file) {
                                 /*global document: false */
                                 var fileSize = file.files[0].size;
+                                totalFileSize = totalFileSize + fileSize;
                                 var isValidFile = false;
                                 if (fileSize !== 0 && fileSize <= validFileSize) {
                                     isValidFile = true;
                                 }
                                 else {
                                     file.value = null;
-                                    alert("File Size Should be Greater than 0 and less than 5 MB.");
+                                    alert("File Size Should be Greater than 0 and less than 3 MB.");
+                                }
+
+                                if (totalFileSize < maxTotalFileSize){
+                                    isValidFile = true;
+                                }
+                                else {
+                                    file.value = null;
+                                    totalFileSize = totalFileSize - fileSize; //remvoving value
+                                    alert("The combined file size cannot exceed 10 MB.");
                                 }
                                 return isValidFile;
                             }
