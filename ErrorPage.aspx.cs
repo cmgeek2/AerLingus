@@ -16,6 +16,7 @@ namespace ContactUs
 
             string sSiteTitle = ConfigurationManager.AppSettings["SiteTitle"];
             Page.Title = sSiteTitle;
+            
         }
     }
 }
