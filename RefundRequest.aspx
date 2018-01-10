@@ -735,9 +735,6 @@
                                         <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel3" runat="server" Text="File To Upload:"></asp:Label>  
                                         <asp:FileUpload ID="_helpQueryFileUploader3"  onchange="return CheckFile(this);" runat="server" />
                                     </td>
-                                    <td>    
-                                        <button type="button" title="Add another file" id="addFile4" class="transparentBtn" aria-label="Click to add an additional file">+</button>
-                                    </td>
                                     <td>
                                         <button type="button" title="Remove file" id="removeFile3" class="transparentBtn" aria-label="Click to remove an additional file">-</button>
                                     </td>
@@ -775,7 +772,7 @@
                                 </div>
                         <table width="100%">
                             <tr>
-                                <td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 5 MB</font></td>
+                                <td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 3 MB per file. The combined file size cannot exceed 7 MB.</font></td>
                             </tr>
                         </table>        
                     <div style="margin-left: 350px;padding:20px" >      
@@ -1345,20 +1342,33 @@
 
      
                         
-         var validFileSize = 5 * 1024 * 1024;
+        var validFileSize = 3 * 1024 * 1024;
+        var maxTotalFileSize = 7 * 1024 * 1024;
+        var totalFileSize = 0; 
 
          function CheckFileSize(file) {
              /*global document: false */
              var fileSize = file.files[0].size;
              var isValidFile = false;
+             totalFileSize = totalFileSize + fileSize;
              if (fileSize !== 0 && fileSize <= validFileSize) {
                  isValidFile = true;
              }
              else {
                  file.value = null;
-                 alert("File Size Should be Greater than 0 and less than 5 MB.");
+                 alert("File Size Should be Greater than 0 and less than 3 MB.");
              }
-             return isValidFile;
+
+             if (totalFileSize < maxTotalFileSize){
+                isValidFile = true;
+            }
+            else {
+                file.value = null;
+                totalFileSize = totalFileSize - fileSize; //remvoving value
+                alert("The combined file size cannot exceed 7 MB.");
+            }
+            
+            return isValidFile;
          }
                         
                             

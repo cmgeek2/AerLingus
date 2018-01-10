@@ -5,7 +5,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" >
 <head runat="server">
     <title></title>
-    <link href="ContactUs.css" type="text/css" rel="stylesheet" />    
+    <link rel="stylesheet" href="js/style-2.css" />
+    <link rel="stylesheet" href="js/screen.css"/>
+    <link rel="stylesheet" href="js/Style-3.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/Common.css"/>
+    <link rel="stylesheet" href="https://AstuteSolutions.com/distributable-assets/css/AerLingus/formStyle.css"/>
     <script  type="text/javascript">
         function getQueryVariable(variable) {
             var query = window.location.search.substring(1);
@@ -17,6 +22,7 @@
             }
         }
         var error1 = decodeURI(getQueryVariable("error"));
+        var baseURL = getQueryVariable("sender");
         alert(error1);
     </script>
 </head>
@@ -24,7 +30,11 @@
     <div class="DivBody" align="center">
         <div class="DivForm">
             <div id="BlockText" style="text-align: center; width:430;">
-                <img id="ErrorImage" alt="There was an error in the submission of your request.  Please try your submission again." src="images/error.png"  />
+            <br><br>
+                <p>There was an error in the submission of your request.  Please try your submission again.</p>
+                <script type="text/javascript">
+                    document.write("<p>To go back to the previous page, click <a href='" + baseURL + "'> here</a></p>");
+                </script>
                <br><br>
             </div>
             <div id="error_msg"></div>

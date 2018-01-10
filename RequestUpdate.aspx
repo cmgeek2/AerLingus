@@ -396,7 +396,7 @@
                             </div>
                     <table width="100%">
                         <tr>
-                            <td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 3 MB per file. The combined file size cannot exceed 10 MB.</font></td>
+                            <td colspan="3"><font  face="ARIAL" size="1" >Maximum size limit 3 MB per file. The combined file size cannot exceed 7 MB.</font></td>
                         </tr>
                     </table>
                 <div style="margin-left: 350px" >
@@ -657,7 +657,7 @@
      </script>
                         <script type="text/javascript">
                             var validFileSize = 3 * 1024 * 1024;
-                            var maxTotalFileSize = 10 * 1024 * 1024;
+                            var maxTotalFileSize = 7 * 1024 * 1024;
                             var totalFileSize = 0; 
 
                             function CheckFileSize(file) {
@@ -679,7 +679,7 @@
                                 else {
                                     file.value = null;
                                     totalFileSize = totalFileSize - fileSize; //remvoving value
-                                    alert("The combined file size cannot exceed 10 MB.");
+                                    alert("The combined file size cannot exceed 7 MB.");
                                 }
                                 return isValidFile;
                             }
