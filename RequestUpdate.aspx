@@ -359,9 +359,6 @@
                                     <asp:Label BorderWidth="0" ID="_helpQueryFileUploadLabel3" runat="server" Text="File To Upload:"></asp:Label>  
                                     <asp:FileUpload ID="_helpQueryFileUploader3"  onchange="return CheckFile(this);" runat="server" />
                                 </td>
-                                <td>    
-                                    <button type="button" title="Add another file" id="addFile4" class="transparentBtn" aria-label="Click to add an additional file">+</button>
-                                </td>
                                 <td>
                                     <button type="button" title="Remove file" id="removeFile3" class="transparentBtn" aria-label="Click to remove an additional file">-</button>
                                 </td>

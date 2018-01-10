@@ -180,18 +180,6 @@ public partial class RequestUpdate: System.Web.UI.Page
             _helpMessage.Attachments.Add(new System.Net.Mail.Attachment(_helpQueryFileUploader3.PostedFile.InputStream, _helpQueryFileUploader3.FileName));
         }
         
-        if (_helpQueryFileUploader4.HasFile)
-        {
-
-            _helpMessage.Attachments.Add(new System.Net.Mail.Attachment(_helpQueryFileUploader4.PostedFile.InputStream, _helpQueryFileUploader4.FileName));
-        }
-        
-        
-        if (_helpQueryFileUploader5.HasFile)
-        {
-
-            _helpMessage.Attachments.Add(new System.Net.Mail.Attachment(_helpQueryFileUploader5.PostedFile.InputStream, _helpQueryFileUploader5.FileName));
-        }
         
         //send message
         try
@@ -204,7 +192,8 @@ public partial class RequestUpdate: System.Web.UI.Page
         }
         catch (SmtpException smtpEx)
         {
-
+            var ls = smtpEx.ToString().Replace("\r", "").Replace("\n", "");
+            Response.Redirect("ErrorPage.aspx?sender=RequestUpdate.aspx&error=" + ls);
         }
 
     }
